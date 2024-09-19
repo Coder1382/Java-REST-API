@@ -9,11 +9,7 @@ import java.util.Properties;
 public class DatabaseConnector {
     public static Connection connector() {
         Connection connect=null;
-        String db=null;
-        String driver=null;
-        String url=null;
-        String login=null;
-        String pwd=null;
+        String db=null, driver=null, url=null, login=null, pwd=null;
         Properties props=new Properties();
         try {
             //FileInputStream fread = new FileInputStream("/home/dik/Desktop/java/myREST/target/classes/config.properties");

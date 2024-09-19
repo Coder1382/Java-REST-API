@@ -66,7 +66,6 @@ public class PostRequestHandler {
                 } catch (SQLException e) {
                     throw new RuntimeException(e);
                 }
-                System.out.println(str);
                 try {
                     for (int v = 0; v < arr[2].split(" ")[2].length(); ++v)
                         r = r * 10 + (arr[2].split(" ")[2].charAt(v) - 48);

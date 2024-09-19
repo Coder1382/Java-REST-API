@@ -1,18 +1,11 @@
 package rest;
-
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.URI;
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.Spy;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.testcontainers.containers.PostgreSQLContainer;
 
@@ -30,112 +23,133 @@ public class Tests /*extends SlingAllMethodsServlet*/ {
     @Test
     void TestTables() throws SQLException {
         Connection connect=DatabaseConnector.connector();
-        PostgreSQLContainer<?> postgres = new PostgreSQLContainer<>(
-                "postgres:16-alpine");
+        PostgreSQLContainer<?> postgres = new PostgreSQLContainer<>("postgres:16-alpine");
         postgres.start();
         int exist=0;
-        assertEquals(0, exist);
-        DatabaseManager.CreateFruitTable();
+        DatabaseManager.DropTable("fruit");
         DatabaseMetaData tables=connect.getMetaData();
-        ResultSet res=tables.getTables(null,null,"fruit",null);
+        ResultSet res=tables.getTables(null,null,"fruit",new String[] {"TABLE"});
+        if(res.next())
+            exist=1;
+        assertEquals(0, exist);
+        exist=0;
+        DatabaseManager.DropTable("suppliers");
+        tables=connect.getMetaData();
+        res=tables.getTables(null,null,"suppliers",new String[] {"TABLE"});
+        if(res.next())
+            exist=1;
+        assertEquals(0, exist);
+        exist=0;
+        DatabaseManager.DropTable("sellers");
+        tables=connect.getMetaData();
+        res=tables.getTables(null,null,"sellers",new String[] {"TABLE"});
+        if(res.next())
+            exist=1;
+        assertEquals(0, exist);
+        exist=0;
+        DatabaseManager.DropTable("seller_fruit");
+        tables=connect.getMetaData();
+        res=tables.getTables(null,null,"seller_fruit",new String[] {"TABLE"});
+        if(res.next())
+            exist=1;
+        assertEquals(0, exist);
+        exist=0;
+        DatabaseManager.CreateFruitTable();
+        tables=connect.getMetaData();
+        res=tables.getTables(null,null,"fruit",new String[] {"TABLE"});
         if(res.next())
             exist=1;
         assertEquals(1, exist);
-        DatabaseManager.DropTable("fruit");
-        tables=connect.getMetaData();
-        res=tables.getTables(null,null,"fruit",null);
-        if(res.next())
-            exist=1;
-        else exist=0;
-        DatabaseManager.CreateSellersTable();
-        tables=connect.getMetaData();
-        res=tables.getTables(null,null,"sellers",null);
-        if(res.next())
-            exist=1;
-        else exist=0;
-        DatabaseManager.DropTable("sellers");
-        tables=connect.getMetaData();
-        res=tables.getTables(null,null,"sellers",null);
-        if(res.next())
-            exist=1;
-        else exist=0;
+        DatabaseManager.TruncateTable("fruit");
+        exist=0;
         DatabaseManager.CreateSuppliersTable();
         tables=connect.getMetaData();
-        res=tables.getTables(null,null,"suppliers",null);
+        res=tables.getTables(null,null,"suppliers",new String[] {"TABLE"});
         if(res.next())
             exist=1;
-        else exist=0;
-        DatabaseManager.DropTable("suppliers");
+        assertEquals(1, exist);
+        DatabaseManager.TruncateTable("suppliers");
+        exist=0;
+        DatabaseManager.CreateSellersTable();
         tables=connect.getMetaData();
-        res=tables.getTables(null,null,"suppliers",null);
+        res=tables.getTables(null,null,"sellers",new String[] {"TABLE"});
         if(res.next())
             exist=1;
-        else exist=0;
+        assertEquals(1, exist);
+        DatabaseManager.TruncateTable("sellers");
+        exist=0;
         DatabaseManager.CreateCombinationTable();
         tables=connect.getMetaData();
-        res=tables.getTables(null,null,"seller_fruit",null);
+        res=tables.getTables(null,null,"seller_fruit",new String[] {"TABLE"});
         if(res.next())
             exist=1;
-        else exist=0;
-        DatabaseManager.DropTable("seller_fruit");
-        tables=connect.getMetaData();
-        res=tables.getTables(null,null,"seller_fruit",null);
-        if(res.next())
-            exist=1;
-        else exist=0;
+        assertEquals(1, exist);
+        DatabaseManager.TruncateTable("seller_fruit");
+        connect.createStatement().executeUpdate("INSERT INTO suppliers(company) VALUES('x-vendor')");
+        connect.createStatement().executeUpdate("INSERT INTO sellers(name, rating, supplier_id) VALUES('ivan', 5, 1)");
+        connect.createStatement().executeUpdate("INSERT INTO fruit(name, color, price) VALUES('green apple', 'green', 10)");
+        connect.createStatement().executeUpdate("INSERT INTO seller_fruit(seller_id, fruit_id) VALUES(1,1)");
         postgres.stop();
+        connect.close();
     }
     HttpServletRequest req=mock(HttpServletRequest.class);
     HttpServletResponse res=mock(HttpServletResponse.class);
     ResultSet result=mock(ResultSet.class);
     PrintWriter pw=mock(PrintWriter.class);
-       @ExtendWith(MockitoExtension.class)
-       @Test
-       public void getDataTest() throws ServletException, IOException, SQLException {
-            RequestManager app=mock(RequestManager.class);
-            GetRequestHandler.getData("select * from fruit", -1, "fruit");
-            GetRequestHandler.getData("select * from sellers", -1, "sellers");
-            GetRequestHandler.getData("select * from suppliers", -1, "suppliers");
-            //GetRequestHandler.getData("select * from seller_fruit", -1, "seller_fruit");
-            GetRequestHandler.getData("select * from fruit where id=?", 77, "fruit");
-            GetRequestHandler.getData("select * from sellers where id=?", 1, "sellers");
-            GetRequestHandler.getData("select * from suppliers where id=?", 1, "suppliers");
-           //GetRequestHandler.getData("select * from seller_fruit where id=?", 1, "seller_fruit");
-            //when(req.getRequestURI()).thenReturn("myREST/fruit");
-            //when(req.getRequestURI().split("/")[1]).thenReturn("fruit");
-           when(req.getQueryString()).thenReturn("id=-1");
-           when(res.getWriter()).thenReturn(pw);
-           req.setAttribute("/myREST/fruit", URI.class);
-            app.doGet(req,res);
-
-    }
+    RequestManager app=mock(RequestManager.class);
     @Test
-    public void postDataTest() throws ServletException, IOException, SQLException {
-        RequestManager app=mock(RequestManager.class);
-        PostRequestHandler.postData("id: 0, name: mango, color: orange, price: 10","fruit");
-        PostRequestHandler.postData("id: 0, name: petr, rating: 3, supplier_id: 2","sellers");
-        PostRequestHandler.postData("id: 0, company: company","suppliers");
+    public void getDataTest() throws ServletException, IOException, SQLException {
+        GetRequestHandler.getData("SELECT * FROM fruit", -1, "fruit");
+        GetRequestHandler.getData("SELECT * FROM sellers", -1, "sellers");
+        GetRequestHandler.getData("SELECT * FROM suppliers", -1, "suppliers");
+        //GetRequestHandler.getData("select * from seller_fruit", -1, "seller_fruit");
+        assertEquals(req.getQueryString(),null);
+        when(req.getQueryString()).thenReturn(null);
+        GetRequestHandler.getData("SELECT * FROM fruit WHERE id=?", 1, "fruit");
+        GetRequestHandler.getData("SELECT * FROM sellers WHERE id=?", 1, "sellers");
+        GetRequestHandler.getData("SELECT * FROM suppliers WHERE id=?", 1, "suppliers");
+        //GetRequestHandler.getData("select * from seller_fruit where id=?", 1, "seller_fruit");
+        //when(req.getRequestURI()).thenReturn("myREST/fruit");
         when(res.getWriter()).thenReturn(pw);
-        app.doGet(req,res);
+        req.setAttribute("/myREST/fruit", URI.class);
+        //app.doGet(req,res);
     }
+       @Test
+       public void postDataTest() throws ServletException, IOException, SQLException {
+           DatabaseManager.TruncateTable("sellers"); DatabaseManager.TruncateTable("suppliers");
+           DatabaseManager.TruncateTable("fruit"); DatabaseManager.TruncateTable("seller_fruit");
+           PostRequestHandler.postData("id: 0, name: mango, color: orange, price: 10","fruit");
+           PostRequestHandler.postData("id: 0, name: apple, color: green, price: 5","fruit");
+           PostRequestHandler.postData("id: 0, company: big","suppliers");
+           PostRequestHandler.postData("id: 0, company: small","suppliers");
+           PostRequestHandler.postData("id: 0, name: petr, rating: 3, supplier_id: 1","sellers");
+           PostRequestHandler.postData("id: 0, name: fedor, rating: 5, supplier_id: 2","sellers");
+           assertEquals(req.getQueryString(),null);
+           when(req.getQueryString()).thenReturn(null);
+           when(res.getWriter()).thenReturn(pw);
+           //app.doGet(req,res);
+       }
     @Test
     public void putDataTest() throws ServletException, IOException, SQLException {
-        RequestManager app=mock(RequestManager.class);
-        PutRequestHandler.putData("id: 77, name: null, color: null, price: 20","fruit", 0);
+        PutRequestHandler.putData("id: 1, name: null, color: null, price: 20","fruit", 0);
         PutRequestHandler.putData("id: 1, name: null, rating: 8, supplier_id: 0","sellers", 2);
-        PutRequestHandler.putData("id: 1, name: null, rating: 0, supplier_id: 3","sellers", 3);
-        PutRequestHandler.putData("id: 2, name: null, rating: 8, supplier_id: 1","sellers", 5);
+        PutRequestHandler.putData("id: 2, name: null, rating: 0, supplier_id: 1","sellers", 3);
+        PutRequestHandler.putData("id: 1, name: null, rating: 7, supplier_id: 2","sellers", 5);
+        assertEquals(req.getQueryString(),null);
+        when(req.getQueryString()).thenReturn(null);
         when(res.getWriter()).thenReturn(pw);
-        app.doGet(req,res);
+        //app.doGet(req,res);
     }
     @Test
     public void deleteDataTest() throws ServletException, IOException {
-        RequestManager app=mock(RequestManager.class);
-        DeleteRequestHandler.deleteData("id: 77, name: null, color: null, price: 0","fruit");
+
+        DeleteRequestHandler.deleteData("id: 1, name: null, color: null, price: 0","fruit");
         DeleteRequestHandler.deleteData("id: 1, name: null, rating: 0, supplier_id: 0","sellers");
         DeleteRequestHandler.deleteData("id: 1, company: null","suppliers");
+        assertEquals(req.getQueryString(),null);
+        when(req.getQueryString()).thenReturn(null);
         when(res.getWriter()).thenReturn(pw);
-        app.doGet(req,res);
+        //app.doGet(req,res);
 
     }
     @Test

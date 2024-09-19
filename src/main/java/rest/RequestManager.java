@@ -15,6 +15,25 @@ import java.util.List;
  */
 public class RequestManager extends HttpServlet {
     @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+        String[] uri=req.getRequestURI().split("/");
+        Gson jsn=new Gson();
+        List<Object> obj=new ArrayList<>();
+        if(uri[2].equals("fruit"))
+            obj=PostRequestHandler.postData(jsn.fromJson(req.getReader(), Fruit.class).toString(), "fruit");
+        if(uri[2].equals("sellers"))
+            obj=PostRequestHandler.postData(jsn.fromJson(req.getReader(), Seller.class).toString(), "sellers");
+        if(uri[2].equals("suppliers"))
+            obj=PostRequestHandler.postData(jsn.fromJson(req.getReader(), Supplier.class).toString(), "suppliers");
+        PrintWriter pw=res.getWriter();
+        if(pw!=null){
+            obj.forEach(e->{
+                pw.write(e.toString()+"\n");
+            });
+            pw.close();
+        }
+    }
+    @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         List<Object> obj=new ArrayList<>();
         String[] uri=req.getRequestURI().split("/");
@@ -26,25 +45,6 @@ public class RequestManager extends HttpServlet {
             obj= GetRequestHandler.getData("SELECT * FROM "+uri[2]+" WHERE id=?", id, uri[2]);
         }
         else  obj= GetRequestHandler.getData("SELECT * FROM "+uri[2],-1, uri[2]);
-        PrintWriter pw=res.getWriter();
-        if(pw!=null){
-            obj.forEach(e->{
-                pw.write(e.toString()+"\n");
-            });
-            pw.close();
-        }
-    }
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        String[] uri=req.getRequestURI().split("/");
-        Gson jsn=new Gson();
-        List<Object> obj=new ArrayList<>();
-        if(uri[2].equals("fruit"))
-            obj=PostRequestHandler.postData(jsn.fromJson(req.getReader(), Fruit.class).toString(), "fruit");
-        if(uri[2].equals("sellers"))
-            obj=PostRequestHandler.postData(jsn.fromJson(req.getReader(), Seller.class).toString(), "sellers");
-        if(uri[2].equals("suppliers"))
-            obj=PostRequestHandler.postData(jsn.fromJson(req.getReader(), Supplier.class).toString(), "suppliers");
         PrintWriter pw=res.getWriter();
         if(pw!=null){
             obj.forEach(e->{
