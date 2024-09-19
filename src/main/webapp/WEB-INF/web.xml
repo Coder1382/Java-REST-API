@@ -6,10 +6,13 @@
   <display-name>My Servlet</display-name>
   <servlet>
     <servlet-name>Servlet Bot</servlet-name>
-    <servlet-class>Servlets.Application</servlet-class>
+    <servlet-class>rest.RequestManager</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>Servlet Bot</servlet-name>
-    <url-pattern>/db</url-pattern>
+    <url-pattern>/sellers</url-pattern>
+    <url-pattern>/suppliers</url-pattern>
+    <url-pattern>/seller_fruit</url-pattern>
+    <url-pattern>/fruit</url-pattern>
   </servlet-mapping>
 </web-app>

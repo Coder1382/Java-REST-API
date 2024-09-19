@@ -1,19 +1,28 @@
-package Servlets;
+package rest;
 
-public class Suppliers {
+public class Supplier {
     long id;
     String company;
-    public Suppliers(){};
-    public Suppliers(String company){
+    public Supplier(){};
+    public Supplier(String company){
         this.company=company;
     }
-    public Suppliers(long id, String company){
+    public Supplier(long id, String company){
         this.id=id;
         this.company=company;
     }
     public String getCompany() {
         return company;
     }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
     public void setCompany(String company) {
         this.company = company;
     }

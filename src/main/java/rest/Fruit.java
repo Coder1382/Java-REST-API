@@ -1,4 +1,4 @@
-package Servlets;
+package rest;
 public class Fruit {
     long id;
     String name, color;

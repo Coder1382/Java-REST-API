@@ -1,16 +1,16 @@
-package Servlets;
+package rest;
 
-public class Sellers {
+public class Seller {
     long id, supplier_id;
     String name;
     int rating;
-    public Sellers(){}
-    public Sellers(String name, int rating, long supplier_id){
+    public Seller(){}
+    public Seller(String name, int rating, long supplier_id){
         this.name=name;
         this.rating=rating;
         this.supplier_id=supplier_id;
     }
-    public Sellers(long id, String name, int rating, long supplier_id){
+    public Seller(long id, String name, int rating, long supplier_id){
         this.id=id;
         this.name=name;
         this.rating=rating;
@@ -42,6 +42,6 @@ public class Sellers {
     }
     @Override
     public String toString() {
-        return "id: "+id+", name: "+name+", rating: "+rating;
+        return "id: "+id+", name: "+name+", rating: "+rating+", supplier_id: "+supplier_id;
     }
 }

@@ -1,13 +1,12 @@
-package Servlets;
+package rest;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.file.Paths;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.sql.Wrapper;
 import java.util.Properties;
-public class Manager {
+public class DatabaseConnector {
     public static Connection connector() {
         Connection connect=null;
         String db=null;
