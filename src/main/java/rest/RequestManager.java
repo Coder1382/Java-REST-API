@@ -22,9 +22,9 @@ public class RequestManager extends HttpServlet {
         if(uri[2].equals("fruit"))
             obj=PostRequestHandler.postData(jsn.fromJson(req.getReader(), Fruit.class).toString(), "fruit");
         else if(uri[2].equals("sellers"))
-            obj=PostRequestHandler.postData(jsn.fromJson(req.getReader(), Fruit.class).toString(), "sellers");
+            obj=PostRequestHandler.postData(jsn.fromJson(req.getReader(), Seller.class).toString(), "sellers");
         else if(uri[2].equals("suppliers"))
-            obj=PostRequestHandler.postData(jsn.fromJson(req.getReader(), Fruit.class).toString(), "suppliers");
+            obj=PostRequestHandler.postData(jsn.fromJson(req.getReader(), Supplier.class).toString(), "suppliers");
         PrintWriter pw=res.getWriter();
         if(pw!=null){
             obj.forEach(e->{

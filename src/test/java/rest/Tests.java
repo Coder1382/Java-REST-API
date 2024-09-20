@@ -19,7 +19,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.*;
 
-public class Tests /*extends SlingAllMethodsServlet*/ {
+public class
+Tests /*extends SlingAllMethodsServlet*/ {
     @Test
     void TestTables() throws SQLException {
         Connection connect=DatabaseConnector.connector();
