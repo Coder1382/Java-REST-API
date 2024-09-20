@@ -29,7 +29,13 @@ public class GetRequestHandler {
                         String name = result.getString("name");
                         int rating = result.getInt("rating");
                         long supplier_id = result.getLong("supplier_id");
-                        obj.add(new Seller(i, name, rating, supplier_id));
+                        PreparedStatement rdb = connect.prepareStatement("SELECT company FROM suppliers WHERE id=?");
+                        rdb.setLong(1,supplier_id);
+                        ResultSet rs = rdb.executeQuery();
+                        while(rs.next()){
+                            String company=rs.getString("company");
+                            obj.add(new Seller(i, name, rating, supplier_id, company));
+                        }
                     }
                 }
                 else if(table.equals("suppliers")) {
@@ -65,7 +71,13 @@ public class GetRequestHandler {
                         String name = result.getString("name");
                         int rating = result.getInt("rating");
                         long supplier_id = result.getLong("supplier_id");
-                        obj.add(new Seller(i, name, rating, supplier_id));
+                        PreparedStatement rdb = connect.prepareStatement("SELECT company FROM suppliers WHERE id=?");
+                        rdb.setLong(1,supplier_id);
+                        ResultSet rs = rdb.executeQuery();
+                        while(rs.next()){
+                            String company=rs.getString("company");
+                            obj.add(new Seller(i, name, rating, supplier_id, company));
+                        }
                     }
                 }
                 else if(table.equals("suppliers")) {
