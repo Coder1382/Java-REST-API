@@ -16,15 +16,15 @@ import java.util.List;
 public class RequestManager extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        String[] uri=req.getRequestURI().split("/");
         Gson jsn=new Gson();
         List<Object> obj=new ArrayList<>();
+        String[] uri=req.getRequestURI().split("/");
         if(uri[2].equals("fruit"))
             obj=PostRequestHandler.postData(jsn.fromJson(req.getReader(), Fruit.class).toString(), "fruit");
-        if(uri[2].equals("sellers"))
-            obj=PostRequestHandler.postData(jsn.fromJson(req.getReader(), Seller.class).toString(), "sellers");
-        if(uri[2].equals("suppliers"))
-            obj=PostRequestHandler.postData(jsn.fromJson(req.getReader(), Supplier.class).toString(), "suppliers");
+        else if(uri[2].equals("sellers"))
+            obj=PostRequestHandler.postData(jsn.fromJson(req.getReader(), Fruit.class).toString(), "sellers");
+        else if(uri[2].equals("suppliers"))
+            obj=PostRequestHandler.postData(jsn.fromJson(req.getReader(), Fruit.class).toString(), "suppliers");
         PrintWriter pw=res.getWriter();
         if(pw!=null){
             obj.forEach(e->{

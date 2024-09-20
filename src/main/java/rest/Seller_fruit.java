@@ -1,6 +1,7 @@
 package rest;
 
-public class Seller_fruit {
+public class
+Seller_fruit {
     long seller_id;
     long fruit_id;
     public Seller_fruit(){};

@@ -17,29 +17,13 @@ public class PostRequestHandler {
             int pr=0;
             try (Connection connect = DatabaseConnector.connector(); PreparedStatement addToDB = connect.
                     prepareStatement("INSERT INTO fruit(name,color,price) VALUES(?,?,?)")) {
-                try {
                     addToDB.setString(1, arr[1].split(" ")[2]);
-                } catch (SQLException e) {
-                    throw new RuntimeException(e);
-                }
-                try {
                     addToDB.setString(2, arr[2].split(" ")[2]);
-                } catch (SQLException e) {
-                    throw new RuntimeException(e);
-                }
-                try {
                     for (int v = 0; v < arr[3].split(" ")[2].length(); ++v)
                         pr = pr * 10 + (arr[3].split(" ")[2].charAt(v) - 48);
                     addToDB.setInt(3, pr);
-                } catch (SQLException e) {
-                    throw new RuntimeException(e);
-                }
-                try {
                     addToDB.executeUpdate();
-                } catch (SQLException e) {
-                    throw new RuntimeException(e);
-                }
-                PreparedStatement readDB = connect.prepareStatement("SELECT * FROM fruit WHERE name=? and color=? and price=?");
+                    PreparedStatement readDB = connect.prepareStatement("SELECT * FROM fruit WHERE name=? and color=? and price=?");
                 readDB.setString(1, arr[1].split(" ")[2]);
                 readDB.setString(2, arr[2].split(" ")[2]);
                 readDB.setInt(3, pr);
@@ -61,30 +45,14 @@ public class PostRequestHandler {
             long index=0;
             try (Connection connect = DatabaseConnector.connector(); PreparedStatement addToDB = connect.
                     prepareStatement("INSERT INTO sellers(name,rating,supplier_id) VALUES(?,?,?)")) {
-                try {
                     addToDB.setString(1, arr[1].split(" ")[2]);
-                } catch (SQLException e) {
-                    throw new RuntimeException(e);
-                }
-                try {
                     for (int v = 0; v < arr[2].split(" ")[2].length(); ++v)
                         r = r * 10 + (arr[2].split(" ")[2].charAt(v) - 48);
                     addToDB.setInt(2, r);
-                } catch (SQLException e) {
-                    throw new RuntimeException(e);
-                }
-                try {
                     for (int v = 0; v < arr[3].split(" ")[2].length(); ++v)
                         index = index * 10 + (arr[3].split(" ")[2].charAt(v) - 48);
                     addToDB.setLong(3, index);
-                } catch (SQLException e) {
-                    throw new RuntimeException(e);
-                }
-                try {
                     addToDB.executeUpdate();
-                } catch (SQLException e) {
-                    throw new RuntimeException(e);
-                }
                 PreparedStatement readDB = connect.prepareStatement("SELECT * FROM sellers WHERE name=? and rating=? and supplier_id=?");
                 readDB.setString(1, arr[1].split(" ")[2]);
                 readDB.setInt(2, r);
@@ -105,16 +73,8 @@ public class PostRequestHandler {
         else if(table.equals("suppliers")) {
             try (Connection connect = DatabaseConnector.connector(); PreparedStatement addToDB = connect.
                     prepareStatement("INSERT INTO suppliers(company) VALUES(?)")) {
-                try {
                     addToDB.setString(1, arr[1].split(" ")[2]);
-                } catch (SQLException e) {
-                    throw new RuntimeException(e);
-                }
-                try {
                     addToDB.executeUpdate();
-                } catch (SQLException e) {
-                    throw new RuntimeException(e);
-                }
                 PreparedStatement readDB = connect.prepareStatement("SELECT * FROM suppliers WHERE company=?");
                 readDB.setString(1, arr[1].split(" ")[2]);
                 ResultSet result = readDB.executeQuery();

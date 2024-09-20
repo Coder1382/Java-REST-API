@@ -9,6 +9,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.testcontainers.containers.PostgreSQLContainer;
 
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,8 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 public class Tests /*extends SlingAllMethodsServlet*/ {
     @Test
@@ -94,41 +94,47 @@ public class Tests /*extends SlingAllMethodsServlet*/ {
     }
     HttpServletRequest req=mock(HttpServletRequest.class);
     HttpServletResponse res=mock(HttpServletResponse.class);
-    ResultSet result=mock(ResultSet.class);
     PrintWriter pw=mock(PrintWriter.class);
-    RequestManager app=mock(RequestManager.class);
+    RequestManager app=new RequestManager();
     @Test
     public void getDataTest() throws ServletException, IOException, SQLException {
         GetRequestHandler.getData("SELECT * FROM fruit", -1, "fruit");
         GetRequestHandler.getData("SELECT * FROM sellers", -1, "sellers");
         GetRequestHandler.getData("SELECT * FROM suppliers", -1, "suppliers");
-        //GetRequestHandler.getData("select * from seller_fruit", -1, "seller_fruit");
+        GetRequestHandler.getData("SELECT * FROM seller_fruit", -1, "seller_fruit");
         assertEquals(req.getQueryString(),null);
-        when(req.getQueryString()).thenReturn(null);
         GetRequestHandler.getData("SELECT * FROM fruit WHERE id=?", 1, "fruit");
         GetRequestHandler.getData("SELECT * FROM sellers WHERE id=?", 1, "sellers");
         GetRequestHandler.getData("SELECT * FROM suppliers WHERE id=?", 1, "suppliers");
-        //GetRequestHandler.getData("select * from seller_fruit where id=?", 1, "seller_fruit");
-        //when(req.getRequestURI()).thenReturn("myREST/fruit");
+        req.setAttribute("/myREST/fruit", req.getRequestURI());
+        when(req.getRequestURI()).thenReturn("/myREST/fruit");
+        req.setAttribute("id=1", req.getQueryString());
+        when(req.getQueryString()).thenReturn("id=1");
         when(res.getWriter()).thenReturn(pw);
-        req.setAttribute("/myREST/fruit", URI.class);
-        //app.doGet(req,res);
+        app.doGet(req,res);
+        req.setAttribute("/myREST/fruit", req.getRequestURI());
+        when(req.getRequestURI()).thenReturn("/myREST/fruit");
+        req.setAttribute(null, req.getQueryString());
+        when(req.getQueryString()).thenReturn(null);
+        app.doGet(req,res);
     }
-       @Test
-       public void postDataTest() throws ServletException, IOException, SQLException {
-           DatabaseManager.TruncateTable("sellers"); DatabaseManager.TruncateTable("suppliers");
-           DatabaseManager.TruncateTable("fruit"); DatabaseManager.TruncateTable("seller_fruit");
-           PostRequestHandler.postData("id: 0, name: mango, color: orange, price: 10","fruit");
-           PostRequestHandler.postData("id: 0, name: apple, color: green, price: 5","fruit");
-           PostRequestHandler.postData("id: 0, company: big","suppliers");
-           PostRequestHandler.postData("id: 0, company: small","suppliers");
-           PostRequestHandler.postData("id: 0, name: petr, rating: 3, supplier_id: 1","sellers");
-           PostRequestHandler.postData("id: 0, name: fedor, rating: 5, supplier_id: 2","sellers");
-           assertEquals(req.getQueryString(),null);
-           when(req.getQueryString()).thenReturn(null);
-           when(res.getWriter()).thenReturn(pw);
-           //app.doGet(req,res);
-       }
+    @Test
+    public void postDataTest() throws ServletException, IOException, SQLException {
+        DatabaseManager.TruncateTable("sellers"); DatabaseManager.TruncateTable("suppliers");
+        DatabaseManager.TruncateTable("fruit"); DatabaseManager.TruncateTable("seller_fruit");
+        PostRequestHandler.postData("id: 0, name: mango, color: orange, price: 10","fruit");
+        PostRequestHandler.postData("id: 0, name: apple, color: green, price: 5","fruit");
+        PostRequestHandler.postData("id: 0, company: big","suppliers");
+        PostRequestHandler.postData("id: 0, company: small","suppliers");
+        PostRequestHandler.postData("id: 0, name: petr, rating: 3, supplier_id: 1","sellers");
+        PostRequestHandler.postData("id: 0, name: fedor, rating: 5, supplier_id: 2","sellers");
+        PostRequestHandler.postData("seller_id: 1, fruit_id: 2","seller_fruit");
+        assertEquals(req.getQueryString(),null);
+        req.setAttribute("/myREST/fruits", req.getRequestURI());
+        when(req.getRequestURI()).thenReturn("/myREST/fruits");
+        when(res.getWriter()).thenReturn(pw);
+        app.doPost(req,res);
+    }
     @Test
     public void putDataTest() throws ServletException, IOException, SQLException {
         PutRequestHandler.putData("id: 1, name: null, color: null, price: 20","fruit", 0);
@@ -136,21 +142,21 @@ public class Tests /*extends SlingAllMethodsServlet*/ {
         PutRequestHandler.putData("id: 2, name: null, rating: 0, supplier_id: 1","sellers", 3);
         PutRequestHandler.putData("id: 1, name: null, rating: 7, supplier_id: 2","sellers", 5);
         assertEquals(req.getQueryString(),null);
-        when(req.getQueryString()).thenReturn(null);
+        req.setAttribute("/myREST/fruits", req.getRequestURI());
+        when(req.getRequestURI()).thenReturn("/myREST/fruits");
         when(res.getWriter()).thenReturn(pw);
-        //app.doGet(req,res);
+        app.doPut(req,res);
     }
     @Test
     public void deleteDataTest() throws ServletException, IOException {
-
         DeleteRequestHandler.deleteData("id: 1, name: null, color: null, price: 0","fruit");
         DeleteRequestHandler.deleteData("id: 1, name: null, rating: 0, supplier_id: 0","sellers");
         DeleteRequestHandler.deleteData("id: 1, company: null","suppliers");
         assertEquals(req.getQueryString(),null);
-        when(req.getQueryString()).thenReturn(null);
+        req.setAttribute("/myREST/fruits", req.getRequestURI());
+        when(req.getRequestURI()).thenReturn("/myREST/fruits");
         when(res.getWriter()).thenReturn(pw);
-        //app.doGet(req,res);
-
+        app.doDelete(req,res);
     }
     @Test
     public void TestEntities(){

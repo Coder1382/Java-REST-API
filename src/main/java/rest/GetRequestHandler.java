@@ -11,7 +11,6 @@ import java.util.List;
 public class GetRequestHandler {
     public static List<Object> getData(String req, long id, String table) throws IOException {
         List<Object> obj= new ArrayList<>();
-        System.out.println(req);
         try (Connection connect = DatabaseConnector.connector(); PreparedStatement readDB = connect.prepareStatement(req)) {
             if(id<0) {
                 ResultSet result = readDB.executeQuery();
