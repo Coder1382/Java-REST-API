@@ -1,4 +1,4 @@
-package rest;
+package rest.dao;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.file.Paths;

@@ -3,16 +3,37 @@
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-  <display-name>My Servlet</display-name>
+  <display-name>MyServlets</display-name>
   <servlet>
-    <servlet-name>Servlet Bot</servlet-name>
-    <servlet-class>rest.RequestManager</servlet-class>
+    <servlet-name>ServletFruit</servlet-name>
+    <servlet-class>rest.servlets.RequestManagerFruit</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>Servlet Bot</servlet-name>
-    <url-pattern>/sellers</url-pattern>
-    <url-pattern>/suppliers</url-pattern>
-    <url-pattern>/seller_fruit</url-pattern>
+    <servlet-name>ServletFruit</servlet-name>
     <url-pattern>/fruit</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ServletSellers</servlet-name>
+    <servlet-class>rest.servlets.RequestManagerSellers</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletSellers</servlet-name>
+    <url-pattern>/sellers</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ServletSuppliers</servlet-name>
+    <servlet-class>rest.servlets.RequestManagerSuppliers</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletSuppliers</servlet-name>
+    <url-pattern>/suppliers</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ServletCombo</servlet-name>
+    <servlet-class>rest.servlets.RequestManagerCombo</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletCombo</servlet-name>
+    <url-pattern>/seller_fruit</url-pattern>
   </servlet-mapping>
 </web-app>

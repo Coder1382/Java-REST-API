@@ -1,4 +1,4 @@
-package rest;
+package rest.dao;
 
 public class Supplier {
     long id;
