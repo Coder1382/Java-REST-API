@@ -1,4 +1,5 @@
 package rest;
+import com.google.gson.Gson;
 import rest.services.*;
 import rest.servlets.*;
 import rest.dao.*;
@@ -116,15 +117,47 @@ Tests {
         RequestHandlerSuppliers.getData("SELECT * FROM suppliers WHERE id=?", 1);
         req.setAttribute("/myREST/fruit", req.getRequestURI());
         when(req.getRequestURI()).thenReturn("/myREST/fruit");
+        req.setAttribute(null, req.getQueryString());
+        when(req.getQueryString()).thenReturn(null);
+        appF.doGet(req,res);
+        req.setAttribute("/myREST/sellers", req.getRequestURI());
+        when(req.getRequestURI()).thenReturn("/myREST/sellers");
+        req.setAttribute(null, req.getQueryString());
+        when(req.getQueryString()).thenReturn(null);
+        appSel.doGet(req,res);
+        req.setAttribute("/myREST/suppliers", req.getRequestURI());
+        when(req.getRequestURI()).thenReturn("/myREST/suppliers");
+        req.setAttribute(null, req.getQueryString());
+        when(req.getQueryString()).thenReturn(null);
+        appSup.doGet(req,res);
+        req.setAttribute("/myREST/seller_fruit", req.getRequestURI());
+        when(req.getRequestURI()).thenReturn("/myREST/seller_fruit");
+        req.setAttribute(null, req.getQueryString());
+        when(req.getQueryString()).thenReturn(null);
+        appFs.doGet(req,res);
+        req.setAttribute("/myREST/fruit", req.getRequestURI());
+        when(req.getRequestURI()).thenReturn("/myREST/fruit");
         req.setAttribute("id=1", req.getQueryString());
         when(req.getQueryString()).thenReturn("id=1");
         when(res.getWriter()).thenReturn(pw);
-        appF.doGet(req,res); appSel.doGet(req,res); appSup.doGet(req,res);
-        req.setAttribute("/myREST/fruit", req.getRequestURI());
-        when(req.getRequestURI()).thenReturn("/myREST/fruit");
-        req.setAttribute(null, req.getQueryString());
-        when(req.getQueryString()).thenReturn(null);
-        appF.doGet(req,res); appSel.doGet(req,res); appSup.doGet(req,res);
+        appF.doGet(req,res);
+        req.setAttribute("/myREST/sellers", req.getRequestURI());
+        when(req.getRequestURI()).thenReturn("/myREST/sellers");
+        req.setAttribute("id=1", req.getQueryString());
+        when(req.getQueryString()).thenReturn("id=1");
+        when(res.getWriter()).thenReturn(pw);
+        appSel.doGet(req,res);
+        req.setAttribute("/myREST/suppliers", req.getRequestURI());
+        when(req.getRequestURI()).thenReturn("/myREST/suppliers");
+        req.setAttribute("id=1", req.getQueryString());
+        when(req.getQueryString()).thenReturn("id=1");
+        when(res.getWriter()).thenReturn(pw);
+        appSup.doGet(req,res);
+        req.setAttribute("/myREST/seller_fruit", req.getRequestURI());
+        when(req.getRequestURI()).thenReturn("/myREST/seller_fruit");
+        req.setAttribute("id=1", req.getQueryString());
+        when(req.getQueryString()).thenReturn("id=1");
+        appFs.doGet(req,res);
     }
     @Test
     public void postDataTest() throws ServletException, IOException, SQLException {
@@ -137,11 +170,24 @@ Tests {
         RequestHandlerSellers.postData("id: 0, name: petr, rating: 3, supplier_id: 1");
         RequestHandlerSellers.postData("id: 0, name: fedor, rating: 5, supplier_id: 2");
         RequestHandlerCombo.postData("seller_id: 1, fruit_id: 1");
+        RequestHandlerCombo.postData("seller_id: 1, fruit_id: 2");
         assertEquals(req.getQueryString(),null);
         req.setAttribute("/myREST/fruits", req.getRequestURI());
         when(req.getRequestURI()).thenReturn("/myREST/fruits");
         when(res.getWriter()).thenReturn(pw);
-        appF.doPost(req,res); appSel.doPost(req,res); appSup.doPost(req,res);
+        appF.doPost(req,res);
+        req.setAttribute("/myREST/seller", req.getRequestURI());
+        when(req.getRequestURI()).thenReturn("/myREST/seller");
+        when(res.getWriter()).thenReturn(pw);
+        appSel.doPost(req,res);
+        req.setAttribute("/myREST/supplier", req.getRequestURI());
+        when(req.getRequestURI()).thenReturn("/myREST/supplier");
+        when(res.getWriter()).thenReturn(pw);
+        appSup.doPost(req,res);
+        req.setAttribute("/myREST/_", req.getRequestURI());
+        when(req.getRequestURI()).thenReturn("/myREST/_");
+        when(res.getWriter()).thenReturn(pw);
+        appFs.doPost(req,res);
     }
     @Test
     public void putDataTest() throws ServletException, IOException, SQLException {
@@ -153,18 +199,39 @@ Tests {
         req.setAttribute("/myREST/fruits", req.getRequestURI());
         when(req.getRequestURI()).thenReturn("/myREST/fruits");
         when(res.getWriter()).thenReturn(pw);
-        appF.doPut(req,res); appSel.doPut(req,res); appSup.doPut(req,res);
+        appF.doPut(req,res);
+        req.setAttribute("/myREST/seller", req.getRequestURI());
+        when(req.getRequestURI()).thenReturn("/myREST/seller");
+        when(res.getWriter()).thenReturn(pw);
+        appSel.doPut(req,res);
+        req.setAttribute("/myREST/supplier", req.getRequestURI());
+        when(req.getRequestURI()).thenReturn("/myREST/supplier");
+        when(res.getWriter()).thenReturn(pw);
+        appSup.doPut(req,res);
     }
     @Test
     public void deleteDataTest() throws ServletException, IOException {
         RequestHandlerFruit.deleteData("id: 1, name: null, color: null, price: 0");
         RequestHandlerSellers.deleteData("id: 1, name: null, rating: 0, supplier_id: 0");
         RequestHandlerSuppliers.deleteData("id: 1, company: null");
+        RequestHandlerCombo.deleteData("seller_id: 1, fruit_id: 1");
         assertEquals(req.getQueryString(),null);
         req.setAttribute("/myREST/fruits", req.getRequestURI());
         when(req.getRequestURI()).thenReturn("/myREST/fruits");
         when(res.getWriter()).thenReturn(pw);
-        appF.doDelete(req,res); appSel.doDelete(req,res); appSup.doDelete(req,res);
+        appF.doDelete(req,res);
+        req.setAttribute("/myREST/seller", req.getRequestURI());
+        when(req.getRequestURI()).thenReturn("/myREST/seller");
+        when(res.getWriter()).thenReturn(pw);
+        appSel.doDelete(req,res);
+        req.setAttribute("/myREST/supplier", req.getRequestURI());
+        when(req.getRequestURI()).thenReturn("/myREST/supplier");
+        when(res.getWriter()).thenReturn(pw);
+        appSup.doDelete(req,res);
+        req.setAttribute("/myREST/_", req.getRequestURI());
+        when(req.getRequestURI()).thenReturn("/myREST/_");
+        when(res.getWriter()).thenReturn(pw);
+        appFs.doDelete(req,res);
     }
     @Test
     public void TestEntities(){

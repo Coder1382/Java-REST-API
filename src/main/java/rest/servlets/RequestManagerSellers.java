@@ -54,31 +54,30 @@ public class RequestManagerSellers extends HttpServlet {
         String[] uri=req.getRequestURI().split("/");
         Gson jsn=new Gson();
         List<Object> obj=new ArrayList<>();
-            String s=jsn.fromJson(req.getReader(), Seller.class).toString();
-            String r=(s.split("rating: "))[1];
-            String sup=(s.split("supplier_id: "))[1];
-            if(r.charAt(0)!='0' && sup.charAt(0)=='0') {
-                System.out.println(r);
+        if(uri[2].equals("sellers")) {
+            String s = jsn.fromJson(req.getReader(), Seller.class).toString();
+            String r = (s.split("rating: "))[1];
+            String sup = (s.split("supplier_id: "))[1];
+            if (r.charAt(0) != '0' && sup.charAt(0) == '0') {
                 try {
-                    obj = RequestHandlerSellers.putData(s,2);
+                    obj = RequestHandlerSellers.putData(s, 2);
                 } catch (SQLException e) {
                     throw new RuntimeException(e);
                 }
-            }
-            else if(r.charAt(0)=='0' && sup.charAt(0)!='0') {
+            } else if (r.charAt(0) == '0' && sup.charAt(0) != '0') {
                 try {
                     obj = RequestHandlerSellers.putData(s, 3);
                 } catch (SQLException e) {
                     throw new RuntimeException(e);
                 }
-            }
-            else if(r.charAt(0)!='0' && sup.charAt(0)!='0') {
+            } else if (r.charAt(0) != '0' && sup.charAt(0) != '0') {
                 try {
-                    obj = RequestHandlerSellers.putData(s,5);
+                    obj = RequestHandlerSellers.putData(s, 5);
                 } catch (SQLException e) {
                     throw new RuntimeException(e);
                 }
             }
+        }
         PrintWriter pw=res.getWriter();
         if(pw!=null){
             obj.forEach(e->{
@@ -92,6 +91,7 @@ public class RequestManagerSellers extends HttpServlet {
         String[] uri=req.getRequestURI().split("/");
         Gson jsn=new Gson();
         List<Object> obj=new ArrayList<>();
+        if(uri[2].equals("sellers"))
             obj=RequestHandlerSellers.deleteData(jsn.fromJson(req.getReader(), Seller.class).toString());
         PrintWriter pw=res.getWriter();
         if(pw!=null){
