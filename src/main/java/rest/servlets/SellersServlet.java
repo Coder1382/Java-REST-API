@@ -1,7 +1,7 @@
 package rest.servlets;//package servlets;
 import com.google.gson.Gson;
-import rest.dao.Seller;
-import rest.services.RequestHandlerSellers;
+import rest.model.Seller;
+import rest.services.SellersService;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -12,25 +12,15 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RequestManagerSellers extends HttpServlet {
+public class SellersServlet extends HttpServlet {
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        Gson jsn=new Gson();
-        List<Object> obj=new ArrayList<>();
         String[] uri=req.getRequestURI().split("/");
         if(uri[2].equals("sellers"))
-            obj=RequestHandlerSellers.postData(jsn.fromJson(req.getReader(), Seller.class).toString());
-        PrintWriter pw=res.getWriter();
-        if(pw!=null){
-            obj.forEach(e->{
-                pw.write(e.toString()+"\n");
-            });
-            pw.close();
-        }
+            SellersService.postData(req, res);
     }
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        List<Object> obj=new ArrayList<>();
         String[] uri=req.getRequestURI().split("/");
         if(uri[2].equals("sellers")) {
             if (req.getQueryString() != null) {
@@ -38,67 +28,43 @@ public class RequestManagerSellers extends HttpServlet {
                 long id = 0;
                 for (int v = 0; v < query[1].length(); ++v)
                     id = id * 10 + (query[1].charAt(v) - 48);
-                obj = RequestHandlerSellers.getData("SELECT * FROM sellers WHERE id=?", id);
-            } else obj = RequestHandlerSellers.getData("SELECT * FROM sellers", -1);
-        }
-        PrintWriter pw=res.getWriter();
-        if(pw!=null){
-            obj.forEach(e->{
-                pw.write(e.toString()+"\n");
-            });
-            pw.close();
+                SellersService.getData(req, id, res);
+            } else SellersService.getData(req, -1, res);
         }
     }
     @Override
     public void doPut(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         String[] uri=req.getRequestURI().split("/");
         Gson jsn=new Gson();
-        List<Object> obj=new ArrayList<>();
         if(uri[2].equals("sellers")) {
             String s = jsn.fromJson(req.getReader(), Seller.class).toString();
             String r = (s.split("rating: "))[1];
             String sup = (s.split("supplier_id: "))[1];
             if (r.charAt(0) != '0' && sup.charAt(0) == '0') {
                 try {
-                    obj = RequestHandlerSellers.putData(s, 2);
+                    SellersService.putData(s, 2, res);
                 } catch (SQLException e) {
                     throw new RuntimeException(e);
                 }
             } else if (r.charAt(0) == '0' && sup.charAt(0) != '0') {
                 try {
-                    obj = RequestHandlerSellers.putData(s, 3);
+                    SellersService.putData(s, 3, res);
                 } catch (SQLException e) {
                     throw new RuntimeException(e);
                 }
             } else if (r.charAt(0) != '0' && sup.charAt(0) != '0') {
                 try {
-                    obj = RequestHandlerSellers.putData(s, 5);
+                    SellersService.putData(s, 5, res);
                 } catch (SQLException e) {
                     throw new RuntimeException(e);
                 }
             }
         }
-        PrintWriter pw=res.getWriter();
-        if(pw!=null){
-            obj.forEach(e->{
-                pw.write(e.toString()+"\n");
-            });
-            pw.close();
-        }
     }
     @Override
     public void doDelete(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         String[] uri=req.getRequestURI().split("/");
-        Gson jsn=new Gson();
-        List<Object> obj=new ArrayList<>();
         if(uri[2].equals("sellers"))
-            obj=RequestHandlerSellers.deleteData(jsn.fromJson(req.getReader(), Seller.class).toString());
-        PrintWriter pw=res.getWriter();
-        if(pw!=null){
-            obj.forEach(e->{
-                pw.write(e.toString()+"\n");
-            });
-            pw.close();
-        }
+            SellersService.deleteData(req, res);
     }
 }

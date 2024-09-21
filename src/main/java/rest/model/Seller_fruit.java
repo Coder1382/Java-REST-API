@@ -1,10 +1,14 @@
-package rest.dao;
+package rest.model;
 
 public class
 Seller_fruit {
     long seller_id;
     long fruit_id;
-    public Seller_fruit(){};
+
+    public Seller_fruit() {
+    }
+
+    ;
 
     public long getSeller_id() {
         return seller_id;
@@ -22,12 +26,13 @@ Seller_fruit {
         this.fruit_id = fruit_id;
     }
 
-    public Seller_fruit(long seller_id, long fruit_id){
-        this.seller_id=seller_id;
-        this.fruit_id=fruit_id;
+    public Seller_fruit(long seller_id, long fruit_id) {
+        this.seller_id = seller_id;
+        this.fruit_id = fruit_id;
     }
+
     @Override
     public String toString() {
-        return "seller_id: "+seller_id+", fruit_id: "+fruit_id;
+        return "seller_id: " + seller_id + ", fruit_id: " + fruit_id;
     }
 }

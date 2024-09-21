@@ -1,19 +1,63 @@
-package rest.services;
+package rest.dao;
 
-import rest.dao.*;
+import rest.model.Seller_fruit;
 
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.StringTokenizer;
 
-public class RequestHandlerCombo {
-    public static String getData(String req, long id) throws IOException, SQLException {
+public class ComboDao {
+    public static List<Object> postData(long seller_id, long fruit_id) {
+        List<Object> obj = new ArrayList<>();
+        try (Connection connect = DatabaseConnector.connector(); PreparedStatement addToDB = connect.
+                prepareStatement("INSERT INTO seller_fruit(seller_id, fruit_id) VALUES(?,?)")) {
+            addToDB.setLong(1, seller_id);
+            addToDB.setLong(2, fruit_id);
+            addToDB.executeUpdate();
+            PreparedStatement readDB = connect.prepareStatement("SELECT * FROM seller_fruit WHERE seller_id=? and fruit_id=?");
+            readDB.setLong(1, seller_id);
+            readDB.setLong(2, fruit_id);
+            ResultSet result = readDB.executeQuery();
+            while (result.next()) {
+                long i = result.getLong("seller_id");
+                long j = result.getLong("fruit_id");
+                obj.add(new Seller_fruit(i, j));
+            }
+            connect.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return obj;
+    }
+
+    public static List<Object> deleteData(long seller_id, long fruit_id) {
+        List<Object> obj = new ArrayList<>();
+        try (Connection connect = DatabaseConnector.connector(); PreparedStatement deleteFromDB = connect.
+                prepareStatement("DELETE FROM seller_fruit WHERE seller_id=? and fruit_id=?")) {
+            PreparedStatement readDB = connect.prepareStatement("SELECT * FROM seller_fruit WHERE seller_id=? and fruit_id=?");
+            readDB.setLong(1, seller_id);
+            readDB.setLong(2, fruit_id);
+            ResultSet rs = readDB.executeQuery();
+            while (rs.next()) {
+                long i = rs.getLong("seller_id");
+                long j = rs.getLong("fruit_id");
+                obj.add(new Seller_fruit(i, j));
+            }
+            deleteFromDB.setLong(1, seller_id);
+            deleteFromDB.setLong(2, fruit_id);
+            deleteFromDB.executeUpdate();
+            connect.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return obj;
+    }
+
+    public static String getData(String req, long id) throws SQLException {
         String obj = "";
         Connection connect = DatabaseConnector.connector();
         try (PreparedStatement readDB = connect.prepareStatement(req)) {
@@ -45,9 +89,18 @@ public class RequestHandlerCombo {
                     }
                 }
             } else {
+                List<Long> buf = new ArrayList<>();
                 ResultSet result = readDB.executeQuery();
                 while (result.next()) {
+                    int k = 0;
                     id = result.getLong("seller_id");
+                    for (k = 0; k < buf.size(); ++k) {
+                        System.out.println(buf.get(k));
+                        if (buf.get(k).equals(id))
+                            break;
+                    }
+                    if (k < buf.size()) continue;
+                    else buf.add(id);
                     PreparedStatement readSel = connect.prepareStatement("SELECT name FROM sellers WHERE id=?");
                     readSel.setLong(1, id);
                     ResultSet r = readSel.executeQuery();
@@ -82,65 +135,6 @@ public class RequestHandlerCombo {
             throw new RuntimeException(e);
         } finally {
             connect.close();
-        }
-        return obj;
-    }
-
-    public static List<Object> postData(String str) throws IOException {
-        List<Object> obj = new ArrayList<>();
-        String[] arr = str.split(",");
-        long seller_id = 0, fruit_id = 0;
-        try (Connection connect = DatabaseConnector.connector(); PreparedStatement addToDB = connect.
-                prepareStatement("INSERT INTO seller_fruit(seller_id, fruit_id) VALUES(?,?)")) {
-            for (int v = 0; v < arr[0].split(" ")[1].length(); ++v)
-                seller_id = seller_id * 10 + (arr[0].split(" ")[1].charAt(v) - 48);
-            for (int v = 0; v < arr[1].split(" ")[2].length(); ++v)
-                fruit_id = fruit_id * 10 + (arr[1].split(" ")[2].charAt(v) - 48);
-            addToDB.setLong(1, seller_id);
-            addToDB.setLong(2, fruit_id);
-            addToDB.executeUpdate();
-            PreparedStatement readDB = connect.prepareStatement("SELECT * FROM seller_fruit WHERE seller_id=? and fruit_id=?");
-            readDB.setLong(1, seller_id);
-            readDB.setLong(2, fruit_id);
-            ResultSet result = readDB.executeQuery();
-            while (result.next()) {
-                long i = result.getLong("seller_id");
-                long j = result.getLong("fruit_id");
-                obj.add(new Seller_fruit(i, j));
-            }
-            connect.close();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-        return obj;
-    }
-
-    public static List<Object> deleteData(String str) throws IOException {
-        List<Object> obj = new ArrayList<>();
-        long seller_id = 0, fruit_id = 0;
-        String[] arr = str.split(",");
-        for (int v = 0; v < arr[0].split(" ")[1].length(); ++v)
-            seller_id = seller_id * 10 + (arr[0].split(" ")[1].charAt(v) - 48);
-        for (int v = 0; v < arr[1].split(" ")[2].length(); ++v)
-            fruit_id = fruit_id * 10 + (arr[1].split(" ")[2].charAt(v) - 48);
-        //System.out.println(seller_id); System.out.println(fruit_id);
-        try (Connection connect = DatabaseConnector.connector(); PreparedStatement deleteFromDB = connect.
-                prepareStatement("DELETE FROM seller_fruit WHERE seller_id=? and fruit_id=?")) {
-            PreparedStatement readDB = connect.prepareStatement("SELECT * FROM seller_fruit WHERE seller_id=? and fruit_id=?");
-            readDB.setLong(1, seller_id);
-            readDB.setLong(2, fruit_id);
-            ResultSet rs = readDB.executeQuery();
-            while (rs.next()) {
-                long i = rs.getLong("seller_id");
-                long j = rs.getLong("fruit_id");
-                obj.add(new Seller_fruit(i, j));
-            }
-            deleteFromDB.setLong(1, seller_id);
-            deleteFromDB.setLong(2, fruit_id);
-            deleteFromDB.executeUpdate();
-            connect.close();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
         }
         return obj;
     }

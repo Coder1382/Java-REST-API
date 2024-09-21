@@ -369,7 +369,7 @@
 		at java.base/java.lang.Thread.run(Thread.java:1583)
 20-Sep-2024 22:12:23.702 INFO [http-nio-8080-exec-4] org.apache.catalina.core.ApplicationContext.log Marking servlet [ServletCombo] as unavailable
 20-Sep-2024 22:12:23.702 SEVERE [http-nio-8080-exec-4] org.apache.catalina.core.StandardWrapperValve.invoke Allocate exception for servlet [ServletCombo]
-	java.lang.ClassCastException: class rest.servlets.RequestManagerCombo cannot be cast to class javax.servlet.Servlet (rest.servlets.RequestManagerCombo is in unnamed module of loader org.apache.catalina.loader.ParallelWebappClassLoader @4bd31064; javax.servlet.Servlet is in unnamed module of loader java.net.URLClassLoader @26a1ab54)
+	java.lang.ClassCastException: class rest.servlets.ComboServlet cannot be cast to class javax.servlet.Servlet (rest.servlets.ComboServlet is in unnamed module of loader org.apache.catalina.loader.ParallelWebappClassLoader @4bd31064; javax.servlet.Servlet is in unnamed module of loader java.net.URLClassLoader @26a1ab54)
 		at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:898)
 		at org.apache.catalina.core.StandardWrapper.allocate(StandardWrapper.java:659)
 		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:116)
@@ -391,7 +391,7 @@
 		at java.base/java.lang.Thread.run(Thread.java:1583)
 20-Sep-2024 22:14:10.323 INFO [http-nio-8080-exec-1] org.apache.catalina.core.ApplicationContext.log Marking servlet [ServletCombo] as unavailable
 20-Sep-2024 22:14:10.324 SEVERE [http-nio-8080-exec-1] org.apache.catalina.core.StandardWrapperValve.invoke Allocate exception for servlet [ServletCombo]
-	java.lang.ClassCastException: class rest.servlets.RequestManagerCombo cannot be cast to class javax.servlet.Servlet (rest.servlets.RequestManagerCombo is in unnamed module of loader org.apache.catalina.loader.ParallelWebappClassLoader @479cbee5; javax.servlet.Servlet is in unnamed module of loader java.net.URLClassLoader @7a07c5b4)
+	java.lang.ClassCastException: class rest.servlets.ComboServlet cannot be cast to class javax.servlet.Servlet (rest.servlets.ComboServlet is in unnamed module of loader org.apache.catalina.loader.ParallelWebappClassLoader @479cbee5; javax.servlet.Servlet is in unnamed module of loader java.net.URLClassLoader @7a07c5b4)
 		at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:898)
 		at org.apache.catalina.core.StandardWrapper.allocate(StandardWrapper.java:659)
 		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:116)
@@ -413,7 +413,7 @@
 		at java.base/java.lang.Thread.run(Thread.java:1583)
 20-Sep-2024 23:27:30.809 INFO [http-nio-8080-exec-3] org.apache.catalina.core.ApplicationContext.log Marking servlet [ServletCombo] as unavailable
 20-Sep-2024 23:27:30.809 SEVERE [http-nio-8080-exec-3] org.apache.catalina.core.StandardWrapperValve.invoke Allocate exception for servlet [ServletCombo]
-	java.lang.ClassCastException: class rest.servlets.RequestManagerCombo cannot be cast to class javax.servlet.Servlet (rest.servlets.RequestManagerCombo is in unnamed module of loader org.apache.catalina.loader.ParallelWebappClassLoader @5a37d3ed; javax.servlet.Servlet is in unnamed module of loader java.net.URLClassLoader @7a07c5b4)
+	java.lang.ClassCastException: class rest.servlets.ComboServlet cannot be cast to class javax.servlet.Servlet (rest.servlets.ComboServlet is in unnamed module of loader org.apache.catalina.loader.ParallelWebappClassLoader @5a37d3ed; javax.servlet.Servlet is in unnamed module of loader java.net.URLClassLoader @7a07c5b4)
 		at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:898)
 		at org.apache.catalina.core.StandardWrapper.allocate(StandardWrapper.java:659)
 		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:116)

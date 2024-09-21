@@ -6,7 +6,7 @@
   <display-name>MyServlets</display-name>
   <servlet>
     <servlet-name>ServletFruit</servlet-name>
-    <servlet-class>rest.servlets.RequestManagerFruit</servlet-class>
+    <servlet-class>rest.servlets.FruitServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ServletFruit</servlet-name>
@@ -14,7 +14,7 @@
   </servlet-mapping>
   <servlet>
     <servlet-name>ServletSellers</servlet-name>
-    <servlet-class>rest.servlets.RequestManagerSellers</servlet-class>
+    <servlet-class>rest.servlets.SellersServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ServletSellers</servlet-name>
@@ -22,7 +22,7 @@
   </servlet-mapping>
   <servlet>
     <servlet-name>ServletSuppliers</servlet-name>
-    <servlet-class>rest.servlets.RequestManagerSuppliers</servlet-class>
+    <servlet-class>rest.servlets.SuppliersServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ServletSuppliers</servlet-name>
@@ -30,7 +30,7 @@
   </servlet-mapping>
   <servlet>
     <servlet-name>ServletCombo</servlet-name>
-    <servlet-class>rest.servlets.RequestManagerCombo</servlet-class>
+    <servlet-class>rest.servlets.ComboServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ServletCombo</servlet-name>
