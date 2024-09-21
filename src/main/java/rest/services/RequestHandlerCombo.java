@@ -1,9 +1,6 @@
 package rest.services;
 
-import rest.dao.DatabaseConnector;
-import rest.dao.Seller_fruit;
-import rest.dao.Fruit;
-import rest.dao.Seller;
+import rest.dao.*;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -117,6 +114,7 @@ public class RequestHandlerCombo {
             seller_id = seller_id * 10 + (arr[0].split(" ")[1].charAt(v) - 48);
         for (int v = 0; v < arr[1].split(" ")[2].length(); ++v)
             fruit_id = fruit_id * 10 + (arr[1].split(" ")[2].charAt(v) - 48);
+        //System.out.println(seller_id); System.out.println(fruit_id);
         try (Connection connect = DatabaseConnector.connector(); PreparedStatement deleteFromDB = connect.
                 prepareStatement("DELETE FROM seller_fruit WHERE seller_id=? and fruit_id=?")) {
             PreparedStatement readDB = connect.prepareStatement("SELECT * FROM seller_fruit WHERE seller_id=? and fruit_id=?");
@@ -124,9 +122,8 @@ public class RequestHandlerCombo {
             readDB.setLong(2,fruit_id);
             ResultSet rs=readDB.executeQuery();
             while (rs.next()) {
-                long i = rs.getLong("sellet_id");
+                long i = rs.getLong("seller_id");
                 long j = rs.getLong("fruit_id");
-                int price = rs.getInt("price");
                 obj.add(new Seller_fruit(i, j));
             }
             deleteFromDB.setLong(1,seller_id);

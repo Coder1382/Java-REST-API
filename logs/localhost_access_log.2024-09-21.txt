@@ -77,3 +77,10 @@
 0:0:0:0:0:0:0:1 - - [21/Sep/2024:04:50:53 +0300] "PUT /myREST/seller HTTP/1.1" 405 685
 0:0:0:0:0:0:0:1 - - [21/Sep/2024:04:51:04 +0300] "PUT /myREST/sellers HTTP/1.1" 200 46
 0:0:0:0:0:0:0:1 - - [21/Sep/2024:04:51:15 +0300] "GET /myREST/sellers HTTP/1.1" 200 103
+0:0:0:0:0:0:0:1 - - [21/Sep/2024:04:57:58 +0300] "DELETE /myREST/seller_fruit HTTP/1.1" 500 1987
+0:0:0:0:0:0:0:1 - - [21/Sep/2024:04:58:23 +0300] "DELETE /myREST/seller_fruit HTTP/1.1" 500 1987
+0:0:0:0:0:0:0:1 - - [21/Sep/2024:04:58:31 +0300] "GET /myREST/seller_fruit HTTP/1.1" 200 53
+0:0:0:0:0:0:0:1 - - [21/Sep/2024:05:01:45 +0300] "GET /myREST/seller_fruit HTTP/1.1" 200 26
+0:0:0:0:0:0:0:1 - - [21/Sep/2024:05:01:56 +0300] "POST /myREST/seller_fruit HTTP/1.1" 200 26
+0:0:0:0:0:0:0:1 - - [21/Sep/2024:05:02:01 +0300] "GET /myREST/seller_fruit HTTP/1.1" 200 53
+0:0:0:0:0:0:0:1 - - [21/Sep/2024:05:02:05 +0300] "DELETE /myREST/seller_fruit HTTP/1.1" 200 26
