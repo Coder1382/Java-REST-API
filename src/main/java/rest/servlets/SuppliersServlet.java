@@ -1,4 +1,5 @@
 package rest.servlets;
+
 import com.google.gson.Gson;
 import rest.model.Supplier;
 import rest.services.SuppliersService;
@@ -15,14 +16,15 @@ import java.util.List;
 public class SuppliersServlet extends HttpServlet {
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        String[] uri=req.getRequestURI().split("/");
-        if(uri[2].equals("suppliers"))
+        String[] uri = req.getRequestURI().split("/");
+        if (uri[2].equals("suppliers"))
             SuppliersService.postData(req, res);
     }
+
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        String[] uri=req.getRequestURI().split("/");
-        if(uri[2].equals("suppliers")) {
+        String[] uri = req.getRequestURI().split("/");
+        if (uri[2].equals("suppliers")) {
             if (req.getQueryString() != null) {
                 String[] query = req.getQueryString().split("=");
                 long id = 0;
@@ -32,10 +34,11 @@ public class SuppliersServlet extends HttpServlet {
             } else SuppliersService.getData(req, -1, res);
         }
     }
+
     @Override
     public void doDelete(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        String[] uri=req.getRequestURI().split("/");
-        if(uri[2].equals("suppliers"))
+        String[] uri = req.getRequestURI().split("/");
+        if (uri[2].equals("suppliers"))
             SuppliersService.deleteData(req, res);
     }
 }

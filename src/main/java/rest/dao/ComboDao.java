@@ -27,6 +27,26 @@ public class ComboDao {
                 long j = result.getLong("fruit_id");
                 obj.add(new Seller_fruit(i, j));
             }
+            PreparedStatement readF = connect.prepareStatement("SELECT name FROM fruit WHERE id=?");
+            readF.setLong(1, fruit_id);
+            ResultSet rs = readF.executeQuery();
+            while (rs.next()) {
+                String n = rs.getString("name");
+                PreparedStatement wSel = connect.prepareStatement("UPDATE sellers SET fruits=array_append(fruits,?) WHERE id=?");
+                wSel.setString(1, n);
+                wSel.setLong(2, seller_id);
+                wSel.executeUpdate();
+            }
+            PreparedStatement readSel = connect.prepareStatement("SELECT name FROM sellers WHERE id=?");
+            readSel.setLong(1, seller_id);
+            ResultSet rst = readSel.executeQuery();
+            while (rst.next()) {
+                String n = rst.getString("name");
+                PreparedStatement wF = connect.prepareStatement("UPDATE fruit SET sel=array_append(sel,?) WHERE id=?");
+                wF.setString(1, n);
+                wF.setLong(2, fruit_id);
+                wF.executeUpdate();
+            }
             connect.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);

@@ -1,5 +1,5 @@
 CREATE TABLE sellers(id BIGSERIAL PRIMARY KEY, name VARCHAR(80) NOT NULL,
-rating INT CHECK (rating>0 AND rating<11), supplier_id BIGINT NOT NULL,
+rating INT CHECK (rating>0 AND rating<11), supplier_id BIGINT NOT NULL, fruits VARCHAR(80) [],
 CONSTRAINT fk FOREIGN KEY(supplier_id) REFERENCES suppliers(id) ON DELETE CASCADE);
 INSERT INTO sellers(name, rating, supplier_id) VALUES('ivan', 5, 2);
 INSERT INTO sellers(name, rating, supplier_id) VALUES('ibragim', 5, 1);
@@ -7,12 +7,12 @@ INSERT INTO sellers(name, rating, supplier_id) VALUES('moisey', 5, 1);
 INSERT INTO sellers(name, rating, supplier_id) VALUES('john', 5, 3);
 
 CREATE TABLE fruit(id BIGSERIAL PRIMARY KEY, name VARCHAR(80) NOT NULL, color VARCHAR(20),
-price NUMERIC CHECK (price>=0));
+price INT CHECK (price>=0), sel VARCHAR(80) []);
 INSERT INTO fruit(name, color, price) VALUES('green apple', 'green', 10);
 INSERT INTO fruit(name, color, price) VALUES('mango', 'yellow', 40);
 INSERT INTO fruit(name, color, price) VALUES('red apple', 'red', 15);
 
-CREATE TABLE suppliers(id BIGSERIAL PRIMARY KEY, company VARCHAR(80) NOT NULL);
+CREATE TABLE suppliers(id BIGSERIAL PRIMARY KEY, company VARCHAR(80) NOT NULL, clients VARCHAR(80) []);
 INSERT INTO suppliers(company) VALUES('big ideas');
 INSERT INTO suppliers(company) VALUES('x-vendor');
 INSERT INTO suppliers(company) VALUES('solid partner');

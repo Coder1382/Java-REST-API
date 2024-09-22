@@ -14,7 +14,6 @@ public class DatabaseConnector {
         String db = null, driver = null, url = null, login = null, pwd = null;
         Properties props = new Properties();
         try {
-            //FileInputStream fread = new FileInputStream("/home/dik/Desktop/java/myREST/target/classes/config.properties");
             FileInputStream read = new FileInputStream(Paths.get("config.properties").toAbsolutePath().toString());
             props.load(read);
             db = props.getProperty("db");

@@ -7,10 +7,7 @@ import rest.model.Supplier;
 import rest.services.FruitService;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -65,7 +62,14 @@ public class SuppliersDao {
             while (result.next()) {
                 long i = result.getLong("id");
                 String company = result.getString("company");
-                obj.add(new Supplier(i, company));
+                Array cl = result.getArray("clients");
+                if (cl != null) {
+                    String[] cli = (String[]) cl.getArray();
+                    List<String> s = new ArrayList<>();
+                    for (int k = 0; k < cli.length; ++k)
+                        s.add(cli[k] + ", ");
+                    obj.add(new Supplier(i, company, s));
+                } else obj.add(new Supplier(i, company));
             }
             connect.close();
         } catch (SQLException e) {

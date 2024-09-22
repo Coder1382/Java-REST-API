@@ -1,19 +1,29 @@
 package rest.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Fruit {
     long id;
-    String name, color;
+    String name;
+    String color;
     int price;
+    List<String> sel;
 
     public Fruit() {
+        id = 0;
+        name = "";
+        color = "";
+        price = 0;
+        sel = new ArrayList<>();
     }
 
-    ;
-
     public Fruit(String name, String color, int price) {
+        this.id = 0;
         this.name = name;
         this.color = color;
         this.price = price;
+        this.sel = new ArrayList<>();
     }
 
     public Fruit(long id, String name, String color, int price) {
@@ -21,6 +31,18 @@ public class Fruit {
         this.name = name;
         this.color = color;
         this.price = price;
+        this.sel = new ArrayList<>();
+    }
+
+    public Fruit(long id, String name, String color, int price, List<String> sel) {
+        this.id = id;
+        this.name = name;
+        this.color = color;
+        this.price = price;
+        this.sel = new ArrayList<>();
+        sel.forEach(e -> {
+            this.sel.add(e);
+        });
     }
 
     public long getId() {
@@ -57,6 +79,13 @@ public class Fruit {
 
     @Override
     public String toString() {
-        return "id: " + id + ", name: " + name + ", color: " + color + ", price: " + price;
+        String s = "";
+        if (sel.size() > 0) {
+            for (int i = 0; i < sel.size(); ++i) {
+                s += sel.get(i);
+                s += " ";
+            }
+            return "id: " + id + ", name: " + name + ", color: " + color + ", price: " + price + "\nsellers: " + s;
+        } else return "id: " + id + ", name: " + name + ", color: " + color + ", price: " + price;
     }
 }

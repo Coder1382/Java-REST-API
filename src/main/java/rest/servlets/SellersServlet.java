@@ -1,4 +1,5 @@
 package rest.servlets;//package servlets;
+
 import com.google.gson.Gson;
 import rest.model.Seller;
 import rest.services.SellersService;
@@ -15,14 +16,15 @@ import java.util.List;
 public class SellersServlet extends HttpServlet {
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        String[] uri=req.getRequestURI().split("/");
-        if(uri[2].equals("sellers"))
+        String[] uri = req.getRequestURI().split("/");
+        if (uri[2].equals("sellers"))
             SellersService.postData(req, res);
     }
+
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        String[] uri=req.getRequestURI().split("/");
-        if(uri[2].equals("sellers")) {
+        String[] uri = req.getRequestURI().split("/");
+        if (uri[2].equals("sellers")) {
             if (req.getQueryString() != null) {
                 String[] query = req.getQueryString().split("=");
                 long id = 0;
@@ -32,11 +34,12 @@ public class SellersServlet extends HttpServlet {
             } else SellersService.getData(req, -1, res);
         }
     }
+
     @Override
     public void doPut(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        String[] uri=req.getRequestURI().split("/");
-        Gson jsn=new Gson();
-        if(uri[2].equals("sellers")) {
+        String[] uri = req.getRequestURI().split("/");
+        Gson jsn = new Gson();
+        if (uri[2].equals("sellers")) {
             String s = jsn.fromJson(req.getReader(), Seller.class).toString();
             String r = (s.split("rating: "))[1];
             String sup = (s.split("supplier_id: "))[1];
@@ -61,10 +64,11 @@ public class SellersServlet extends HttpServlet {
             }
         }
     }
+
     @Override
     public void doDelete(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        String[] uri=req.getRequestURI().split("/");
-        if(uri[2].equals("sellers"))
+        String[] uri = req.getRequestURI().split("/");
+        if (uri[2].equals("sellers"))
             SellersService.deleteData(req, res);
     }
 }

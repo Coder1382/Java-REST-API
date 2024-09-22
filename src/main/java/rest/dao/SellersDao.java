@@ -2,11 +2,9 @@ package rest.dao;
 
 import rest.model.Fruit;
 import rest.model.Seller;
+import rest.model.Supplier;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,8 +29,10 @@ public class SellersDao {
                 long supplier_id = result.getLong("supplier_id");
                 obj.add(new Seller(i, name, rating, supplier_id));
             }
-
-
+            PreparedStatement wSup = connect.prepareStatement("UPDATE suppliers SET clients=array_append(clients,?) WHERE id=?");
+            wSup.setString(1, n);
+            wSup.setLong(2, index);
+            wSup.executeUpdate();
             connect.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -56,7 +56,14 @@ public class SellersDao {
                 ResultSet rs = rdb.executeQuery();
                 while (rs.next()) {
                     String company = rs.getString("company");
-                    obj.add(new Seller(i, name, rating, supplier_id, company));
+                    Array f = result.getArray("fruits");
+                    if (f != null) {
+                        String[] cli = (String[]) f.getArray();
+                        List<String> s = new ArrayList<>();
+                        for (int k = 0; k < cli.length; ++k)
+                            s.add(cli[k] + ", ");
+                        obj.add(new Seller(i, name, rating, supplier_id, company, s));
+                    } else obj.add(new Seller(i, name, rating, supplier_id, company));
                 }
             }
             connect.close();
