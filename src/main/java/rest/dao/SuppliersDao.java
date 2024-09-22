@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SuppliersDao {
-    public static List<Object> postData(String comp) {
+    public List<Object> addData(String comp) {
         List<Object> obj = new ArrayList<>();
         try (Connection connect = DatabaseConnector.connector(); PreparedStatement addToDB = connect.
                 prepareStatement("INSERT INTO suppliers(company) VALUES(?)")) {
@@ -33,7 +33,7 @@ public class SuppliersDao {
         return obj;
     }
 
-    public static List<Object> deleteData(long id) {
+    public List<Object> deleteData(long id) {
         List<Object> obj = new ArrayList<>();
         try (Connection connect = DatabaseConnector.connector(); PreparedStatement deleteFromDB = connect.
                 prepareStatement("DELETE FROM suppliers WHERE id=?")) {
@@ -53,7 +53,7 @@ public class SuppliersDao {
         return obj;
     }
 
-    public static List<Object> getData(String req, long id) throws IOException {
+    public List<Object> showData(String req, long id) throws IOException {
         List<Object> obj = new ArrayList<>();
         try (Connection connect = DatabaseConnector.connector(); PreparedStatement readDB = connect.prepareStatement(req)) {
             if (id > 0)

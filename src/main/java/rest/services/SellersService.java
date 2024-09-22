@@ -19,11 +19,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SellersService {
-    public static void getData(HttpServletRequest req, long id, HttpServletResponse res) throws IOException {
+    final SellersDao sdao = new SellersDao();
+
+    public void showData(HttpServletRequest req, long id, HttpServletResponse res) throws IOException {
         List<Object> obj = new ArrayList<>();
         if (id > 0)
-            obj = SellersDao.getData("SELECT * FROM sellers WHERE id=?", id);
-        else obj = SellersDao.getData("SELECT * FROM sellers", -1);
+            obj = sdao.showData("SELECT * FROM sellers WHERE id=?", id);
+        else obj = sdao.showData("SELECT * FROM sellers", -1);
         PrintWriter pw = res.getWriter();
         if (pw != null) {
             obj.forEach(e -> {
@@ -33,17 +35,14 @@ public class SellersService {
         }
     }
 
-    public static void postData(HttpServletRequest req, HttpServletResponse res) throws IOException {
+    public void addData(HttpServletRequest req, HttpServletResponse res) throws IOException {
         List<Object> obj = new ArrayList<>();
         Gson jsn = new Gson();
         String[] arr = (jsn.fromJson(req.getReader(), Seller.class).toString()).split(",");
         long id = 0, index = 0;
-        int r = 0;
         for (int v = 0; v < arr[2].split(" ")[2].length(); ++v)
-            r = r * 10 + (arr[2].split(" ")[2].charAt(v) - 48);
-        for (int v = 0; v < arr[3].split(" ")[2].length(); ++v)
-            index = index * 10 + (arr[3].split(" ")[2].charAt(v) - 48);
-        obj = SellersDao.postData(arr[1].split(" ")[2], r, index);
+            index = index * 10 + (arr[2].split(" ")[2].charAt(v) - 48);
+        obj = sdao.addData(arr[1].split(" ")[2], index);
         PrintWriter pw = res.getWriter();
         if (pw != null) {
             obj.forEach(e -> {
@@ -53,47 +52,29 @@ public class SellersService {
         }
     }
 
-    public static void putData(String str, int col, HttpServletResponse res) throws IOException, SQLException {
-        List<Object> obj = new ArrayList<>();
-        String[] arr = str.split(",");
-        long id = 0, y = 0;
-        int x = 0;
+    public void changeData(HttpServletRequest req, HttpServletResponse res) throws IOException, SQLException {
+        Gson jsn = new Gson();
+        String[] arr = (jsn.fromJson(req.getReader(), Seller.class).toString()).split(",");
+        long id = 0;
         for (int v = 0; v < (arr[0].split(" "))[1].length(); ++v)
             id = id * 10 + (arr[0].split(" "))[1].charAt(v) - 48;
-        if (col == 2) {
-            String[] s = arr[2].split(" ");
-            for (int v = 0; v < s[2].length(); ++v)
-                x = x * 10 + s[2].charAt(v) - 48;
-        } else if (col == 3) {
-            String[] s = arr[3].split(" ");
-            for (int v = 0; v < s[2].length(); ++v)
-                y = y * 10 + s[2].charAt(v) - 48;
-        } else if (col == 5) {
-            String[] s = arr[2].split(" ");
-            for (int v = 0; v < s[2].length(); ++v)
-                x = x * 10 + s[2].charAt(v) - 48;
-            String[] z = arr[3].split(" ");
-            for (int v = 0; v < z[2].length(); ++v)
-                y = y * 10 + z[2].charAt(v) - 48;
-        }
-        obj = SellersDao.putData(id, x, y, col);
+        System.out.println((arr[0].split(" "))[1]);
+        int signal = sdao.changeData(id, (arr[1].split(" "))[2]);
         PrintWriter pw = res.getWriter();
-        if (pw != null) {
-            obj.forEach(e -> {
-                pw.write(e.toString() + "\n");
-            });
+        if (pw != null && signal == 0) {
+            pw.write("fruit successfully added");
             pw.close();
         }
     }
 
-    public static void deleteData(HttpServletRequest req, HttpServletResponse res) throws IOException {
+    public void deleteData(HttpServletRequest req, HttpServletResponse res) throws IOException {
         List<Object> obj = new ArrayList<>();
         Gson jsn = new Gson();
         String[] arr = (jsn.fromJson(req.getReader(), Seller.class).toString()).split(",");
         long id = 0;
         for (int v = 0; v < (arr[0].split(" "))[1].length(); ++v)
             id = id * 10 + ((arr[0].split(" "))[1].charAt(v) - 48);
-        obj = SellersDao.deleteData(id);
+        obj = sdao.deleteData(id);
         PrintWriter pw = res.getWriter();
         if (pw != null) {
             obj.forEach(e -> {

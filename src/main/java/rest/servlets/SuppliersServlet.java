@@ -14,11 +14,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SuppliersServlet extends HttpServlet {
+    SuppliersService suserv = new SuppliersService();
+
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         String[] uri = req.getRequestURI().split("/");
         if (uri[2].equals("suppliers"))
-            SuppliersService.postData(req, res);
+            suserv.addData(req, res);
     }
 
     @Override
@@ -30,8 +32,8 @@ public class SuppliersServlet extends HttpServlet {
                 long id = 0;
                 for (int v = 0; v < query[1].length(); ++v)
                     id = id * 10 + (query[1].charAt(v) - 48);
-                SuppliersService.getData(req, id, res);
-            } else SuppliersService.getData(req, -1, res);
+                suserv.showData(req, id, res);
+            } else suserv.showData(req, -1, res);
         }
     }
 
@@ -39,6 +41,6 @@ public class SuppliersServlet extends HttpServlet {
     public void doDelete(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         String[] uri = req.getRequestURI().split("/");
         if (uri[2].equals("suppliers"))
-            SuppliersService.deleteData(req, res);
+            suserv.deleteData(req, res);
     }
 }

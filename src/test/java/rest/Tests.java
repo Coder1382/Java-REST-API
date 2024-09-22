@@ -51,12 +51,6 @@ Tests {
             exist = 1;
         assertEquals(0, exist);
         exist = 0;
-        DatabaseManager.DropTable("seller_fruit");
-        tables = connect.getMetaData();
-        res = tables.getTables(null, null, "seller_fruit", new String[]{"TABLE"});
-        if (res.next())
-            exist = 1;
-        assertEquals(0, exist);
         exist = 0;
         DatabaseManager.CreateFruitTable();
         tables = connect.getMetaData();
@@ -90,9 +84,8 @@ Tests {
         assertEquals(1, exist);
         DatabaseManager.TruncateTable("seller_fruit");
         connect.createStatement().executeUpdate("INSERT INTO suppliers(company) VALUES('x-vendor')");
-        connect.createStatement().executeUpdate("INSERT INTO sellers(name, rating, supplier_id) VALUES('ivan', 5, 1)");
+        connect.createStatement().executeUpdate("INSERT INTO sellers(name, supplier_id) VALUES('ivan', 1)");
         connect.createStatement().executeUpdate("INSERT INTO fruit(name, color, price) VALUES('green apple', 'green', 10)");
-        connect.createStatement().executeUpdate("INSERT INTO seller_fruit(seller_id, fruit_id) VALUES(1,1)");
         postgres.stop();
         connect.close();
     }
@@ -103,19 +96,22 @@ Tests {
     FruitServlet appF = new FruitServlet();
     SellersServlet appSel = new SellersServlet();
     SuppliersServlet appSup = new SuppliersServlet();
-    ComboServlet appFs = new ComboServlet();
 
     @Test
     public void getDataTest() throws ServletException, IOException, SQLException {
-        FruitDao.getData("SELECT * FROM fruit", -1);
-        SellersDao.getData("SELECT * FROM sellers", -1);
-        SuppliersDao.getData("SELECT * FROM suppliers", -1);
-        ComboDao.getData("SELECT seller_id FROM seller_fruit", -1);
-        ComboDao.getData("SELECT fruit_id FROM seller_fruit WHERE seller_id=?", 1);
+        FruitDao fdao=new FruitDao();
+        FruitService fserv=new FruitService();
+        SellersDao sdao=new SellersDao();
+        SellersService sserv=new SellersService();
+        SuppliersDao sudao=new SuppliersDao();
+        SuppliersService suserv=new SuppliersService();
+        fdao.showData("SELECT * FROM fruit", -1);
+        sdao.showData("SELECT * FROM sellers", -1);
+        sudao.showData("SELECT * FROM suppliers", -1);
         assertEquals(req.getQueryString(), null);
-        FruitDao.getData("SELECT * FROM fruit WHERE id=?", 1);
-        SellersDao.getData("SELECT * FROM sellers WHERE id=?", 1);
-        SuppliersDao.getData("SELECT * FROM suppliers WHERE id=?", 1);
+        fdao.showData("SELECT * FROM fruit WHERE id=?", 1);
+        sdao.showData("SELECT * FROM sellers WHERE id=?", 1);
+        sudao.showData("SELECT * FROM suppliers WHERE id=?", 1);
         req.setAttribute("/myREST/fruit", req.getRequestURI());
         when(req.getRequestURI()).thenReturn("/myREST/fruit");
         req.setAttribute(null, req.getQueryString());
@@ -131,11 +127,6 @@ Tests {
         req.setAttribute(null, req.getQueryString());
         when(req.getQueryString()).thenReturn(null);
         appSup.doGet(req, res);
-        req.setAttribute("/myREST/seller_fruit", req.getRequestURI());
-        when(req.getRequestURI()).thenReturn("/myREST/seller_fruit");
-        req.setAttribute(null, req.getQueryString());
-        when(req.getQueryString()).thenReturn(null);
-        appFs.doGet(req, res);
         req.setAttribute("/myREST/fruit", req.getRequestURI());
         when(req.getRequestURI()).thenReturn("/myREST/fruit");
         req.setAttribute("id=1", req.getQueryString());
@@ -154,34 +145,32 @@ Tests {
         when(req.getQueryString()).thenReturn("id=1");
         when(res.getWriter()).thenReturn(pw);
         appSup.doGet(req, res);
-        req.setAttribute("/myREST/seller_fruit", req.getRequestURI());
-        when(req.getRequestURI()).thenReturn("/myREST/seller_fruit");
-        req.setAttribute("id=1", req.getQueryString());
-        when(req.getQueryString()).thenReturn("id=1");
-        appFs.doGet(req, res);
     }
 
     @Test
     public void postDataTest() throws ServletException, IOException, SQLException {
+        FruitDao fdao=new FruitDao();
+        FruitService fserv=new FruitService();
+        SellersDao sdao=new SellersDao();
+        SellersService sserv=new SellersService();
+        SuppliersDao sudao=new SuppliersDao();
+        SuppliersService suserv=new SuppliersService();
         DatabaseManager.TruncateTable("sellers");
         DatabaseManager.TruncateTable("suppliers");
         DatabaseManager.TruncateTable("fruit");
         DatabaseManager.TruncateTable("seller_fruit");
-        FruitService.getData(req, 1, res);
-        FruitService.getData(req, -1, res);
-        SuppliersService.getData(req, -1, res);
-        SuppliersService.getData(req, 1, res);
-        SellersService.getData(req, -1, res);
-        SellersService.getData(req, 1, res);
-        ComboService.getData(req, res);
-        FruitDao.postData("mango", "orange", 10);
-        FruitDao.postData("apple", "green", 5);
-        SuppliersDao.postData("big");
-        SuppliersDao.postData("small");
-        SellersDao.postData("fedor", 5, 2);
-        SellersDao.postData("petr", 3, 1);
-        ComboDao.postData(1, 1);
-        ComboDao.postData(1, 2);
+        fserv.showData(req, 1, res);
+        fserv.showData(req, -1, res);
+        suserv.showData(req, -1, res);
+        suserv.showData(req, 1, res);
+        sserv.showData(req, -1, res);
+        sserv.showData(req, 1, res);
+        fdao.addData("mango", "orange", 10);
+        fdao.addData("apple", "green", 5);
+        sudao.addData("big");
+        sudao.addData("small");
+        sdao.addData("fedor" , 2);
+        sdao.addData("petr", 1);
         assertEquals(req.getQueryString(), null);
         req.setAttribute("/myREST/fruits", req.getRequestURI());
         when(req.getRequestURI()).thenReturn("/myREST/fruits");
@@ -195,18 +184,18 @@ Tests {
         when(req.getRequestURI()).thenReturn("/myREST/supplier");
         when(res.getWriter()).thenReturn(pw);
         appSup.doPost(req, res);
-        req.setAttribute("/myREST/_", req.getRequestURI());
-        when(req.getRequestURI()).thenReturn("/myREST/_");
-        when(res.getWriter()).thenReturn(pw);
-        appFs.doPost(req, res);
     }
 
     @Test
     public void putDataTest() throws ServletException, IOException, SQLException {
-        FruitDao.putData(1, 20);
-        SellersDao.putData(1, 8, 1, 2);
-        SellersDao.putData(2, 5, 1, 3);
-        SellersDao.putData(1, 7, 1, 5);
+        FruitDao fdao=new FruitDao();
+        FruitService fserv=new FruitService();
+        SellersDao sdao=new SellersDao();
+        SellersService sserv=new SellersService();
+        fdao.changeData(1, 20);
+        sdao.changeData(1, "tomato");
+        sdao.changeData(2, "cucumber");
+        sdao.changeData(1, "apple");
         assertEquals(req.getQueryString(), null);
         req.setAttribute("/myREST/fruits", req.getRequestURI());
         when(req.getRequestURI()).thenReturn("/myREST/fruits");
@@ -220,10 +209,15 @@ Tests {
 
     @Test
     public void deleteDataTest() throws ServletException, IOException {
-        FruitDao.deleteData(1);
-        SellersDao.deleteData(1);
-        SuppliersDao.deleteData(1);
-        ComboDao.deleteData(1, 1);
+        FruitDao fdao=new FruitDao();
+        FruitService fserv=new FruitService();
+        SellersDao sdao=new SellersDao();
+        SellersService sserv=new SellersService();
+        fdao.deleteData(1);
+        sdao.deleteData(1);
+        SuppliersDao sudao=new SuppliersDao();
+        SuppliersService suserv=new SuppliersService();
+        sudao.deleteData(1);
         assertEquals(req.getQueryString(), null);
         req.setAttribute("/myREST/fruits", req.getRequestURI());
         when(req.getRequestURI()).thenReturn("/myREST/fruits");
@@ -237,10 +231,6 @@ Tests {
         when(req.getRequestURI()).thenReturn("/myREST/supplier");
         when(res.getWriter()).thenReturn(pw);
         appSup.doDelete(req, res);
-        req.setAttribute("/myREST/_", req.getRequestURI());
-        when(req.getRequestURI()).thenReturn("/myREST/_");
-        when(res.getWriter()).thenReturn(pw);
-        appFs.doDelete(req, res);
     }
 
     @Test
@@ -266,21 +256,19 @@ Tests {
         Fruit frui = new Fruit(1, "tomato", "red", 1, l);
         fruit.toString();
         Seller sels = new Seller();
-        assertEquals(sels.toString(), "id: 0, name: , rating: 0, supplier_id: 0");
-        Seller seller = new Seller("izi", 2, 1);
-        seller.setRating(8);
+        assertEquals(sels.toString(), "id: 0, name: , supplier_id: 0");
+        Seller seller = new Seller("izi", 1);
         seller.setName("vasiliy");
         seller.setSupplier_id(2);
-        assertEquals(seller.getRating(), 8);
         assertEquals(seller.getName(), "vasiliy");
         assertEquals(seller.getSupplier_id(), 2);
-        Seller sel = new Seller(1, "izi", 2, 1);
+        Seller sel = new Seller(1, "izi", 2);
         sel.setId(2);
         assertEquals(sel.getId(), 2);
-        assertEquals(sel.toString(), "id: 2, name: izi, rating: 2, supplier_id: 1");
-        Seller selling = new Seller(1, "izi", 2, 1, list);
+        assertEquals(sel.toString(), "id: 2, name: izi, supplier_id: 2");
+        Seller selling = new Seller(1, "izi", 2, list);
         selling.toString();
-        Seller sells = new Seller(1, "izi", 2, 1, l);
+        Seller sells = new Seller(1, "izi", 1, l);
         sells.toString();
         Supplier su = new Supplier();
         assertEquals(su.toString(), "id: 0, supplier: ");
@@ -295,13 +283,5 @@ Tests {
         suppl.toString();
         Supplier supplying = new Supplier(1, "comp", l);
         supplying.toString();
-        Seller_fruit sf = new Seller_fruit();
-        assertEquals(sf.toString(), "seller_id: 0, fruit_id: 0");
-        Seller_fruit self = new Seller_fruit(1, 1);
-        self.setSeller_id(2);
-        self.setFruit_id(2);
-        assertEquals(self.getFruit_id(), 2);
-        assertEquals(self.getSeller_id(), 2);
-        assertEquals(self.toString(), "seller_id: 2, fruit_id: 2");
     }
 }

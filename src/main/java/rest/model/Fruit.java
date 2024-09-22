@@ -10,6 +10,7 @@ public class Fruit {
     int price;
     List<String> sel;
 
+
     public Fruit() {
         id = 0;
         name = "";

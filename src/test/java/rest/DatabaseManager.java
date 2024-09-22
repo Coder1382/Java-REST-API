@@ -16,7 +16,7 @@ public class DatabaseManager {
 
     public static void CreateSellersTable() throws SQLException {
         connect.createStatement().executeUpdate("CREATE TABLE IF NOT EXISTS sellers(id BIGSERIAL PRIMARY KEY, " +
-                "name VARCHAR(80) NOT NULL, rating INT CHECK (rating>0 AND rating<11), supplier_id BIGINT NOT NULL, fruits TEXT [], " +
+                "name VARCHAR(80) NOT NULL, supplier_id BIGINT NOT NULL, fruits TEXT [], " +
                 "CONSTRAINT fk FOREIGN KEY(supplier_id) REFERENCES suppliers(id) ON DELETE CASCADE)");
     }
 

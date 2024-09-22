@@ -8,39 +8,35 @@ public class Seller {
     long supplier_id;
     String name;
     String supplier;
-    int rating;
+    String fruit;
     List<String> fruits;
 
     public Seller() {
         name = "";
-        rating = 0;
         id = 0;
         supplier = "";
         supplier_id = 0;
         fruits = new ArrayList<>();
     }
 
-    public Seller(String name, int rating, long supplier_id) {
+    public Seller(String name, long supplier_id) {
         this.name = name;
-        this.rating = rating;
         this.supplier_id = supplier_id;
         this.supplier = "";
         this.fruits = new ArrayList<>();
     }
 
-    public Seller(long id, String name, int rating, long supplier_id) {
+    public Seller(long id, String name, long supplier_id) {
         this.id = id;
         this.name = name;
-        this.rating = rating;
         this.supplier_id = supplier_id;
         this.supplier = "";
         this.fruits = new ArrayList<>();
     }
 
-    public Seller(long id, String name, int rating, long supplier_id, List<String> fruits) {
+    public Seller(long id, String name, long supplier_id, List<String> fruits) {
         this.id = id;
         this.name = name;
-        this.rating = rating;
         this.supplier_id = supplier_id;
         this.supplier = "";
         this.fruits = new ArrayList<>();
@@ -49,26 +45,31 @@ public class Seller {
         });
     }
 
-    public Seller(long id, String name, int rating, long supplier_id, String supplier) {
+    public Seller(long id, String name, long supplier_id, String supplier) {
         this.id = id;
         this.name = name;
-        this.rating = rating;
         this.supplier_id = supplier_id;
         this.supplier = supplier;
         this.fruits = new ArrayList<>();
     }
 
-    public Seller(long id, String name, int rating, long supplier_id, String supplier, List<String> fruits) {
+    public Seller(long id, String name, long supplier_id, String supplier, List<String> fruits) {
         this.id = id;
         this.name = name;
-        this.rating = rating;
         this.supplier_id = supplier_id;
-        this.supplier = "";
         this.supplier = supplier;
         this.fruits = new ArrayList<>();
         fruits.forEach(e -> {
             this.fruits.add(e);
         });
+    }
+
+    public String getFruit() {
+        return fruit;
+    }
+
+    public void setFruit(String fruit) {
+        this.fruit = fruit;
     }
 
     public long getId() {
@@ -95,13 +96,6 @@ public class Seller {
         this.name = name;
     }
 
-    public int getRating() {
-        return rating;
-    }
-
-    public void setRating(int rating) {
-        this.rating = rating;
-    }
 
     @Override
     public String toString() {
@@ -112,17 +106,17 @@ public class Seller {
                     s += fruits.get(i);
                     s += " ";
                 }
-                return "id: " + id + ", name: " + name + ", rating: " + rating + ", supplier_id: " + supplier_id + "\nfruit: " + s;
-            } else return "id: " + id + ", name: " + name + ", rating: " + rating + ", supplier_id: " + supplier_id;
+                return "id: " + id + ", name: " + name + ", supplier_id: " + supplier_id + "\nfruits: " + s;
+            } else return "id: " + id + ", name: " + name + ", supplier_id: " + supplier_id;
         } else {
             if (fruits.size() > 0) {
                 for (int i = 0; i < fruits.size(); ++i) {
                     s += fruits.get(i);
                     s += " ";
                 }
-                return "id: " + id + ", name: " + name + ", rating: " + rating + ", supplier_id: " + "(id=" + supplier_id + ")" + "\nfruit: " + s;
+                return "id: " + id + ", name: " + name + ", supplier: " + supplier + "(id=" + supplier_id + ")" + "\nfruits: " + s;
             } else
-                return "id: " + id + ", name: " + name + ", rating: " + rating + ", supplier: " + supplier + "(id=" + supplier_id + ")";
+                return "id: " + id + ", name: " + name + ", supplier: " + supplier + "(id=" + supplier_id + ")";
         }
     }
 }

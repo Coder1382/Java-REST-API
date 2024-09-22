@@ -17,11 +17,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FruitService {
-    public static void getData(HttpServletRequest req, long id, HttpServletResponse res) throws IOException {
+    final FruitDao fdao = new FruitDao();
+
+    public void showData(HttpServletRequest req, long id, HttpServletResponse res) throws IOException {
         List<Object> obj = new ArrayList<>();
         if (id > 0)
-            obj = FruitDao.getData("SELECT * FROM fruit WHERE id=?", id);
-        else obj = FruitDao.getData("SELECT * FROM fruit", -1);
+            obj = fdao.showData("SELECT * FROM fruit WHERE id=?", id);
+        else obj = fdao.showData("SELECT * FROM fruit", -1);
         PrintWriter pw = res.getWriter();
         if (pw != null) {
             obj.forEach(e -> {
@@ -31,14 +33,14 @@ public class FruitService {
         }
     }
 
-    public static void postData(HttpServletRequest req, HttpServletResponse res) throws IOException {
+    public void addData(HttpServletRequest req, HttpServletResponse res) throws IOException {
         List<Object> obj = new ArrayList<>();
         Gson jsn = new Gson();
         String[] arr = (jsn.fromJson(req.getReader(), Fruit.class).toString()).split(",");
         int pr = 0;
         for (int v = 0; v < arr[3].split(" ")[2].length(); ++v)
             pr = pr * 10 + (arr[3].split(" ")[2].charAt(v) - 48);
-        obj = FruitDao.postData(arr[1].split(" ")[2], arr[2].split(" ")[2], pr);
+        obj = fdao.addData(arr[1].split(" ")[2], arr[2].split(" ")[2], pr);
         PrintWriter pw = res.getWriter();
         if (pw != null) {
             obj.forEach(e -> {
@@ -48,7 +50,7 @@ public class FruitService {
         }
     }
 
-    public static void putData(HttpServletRequest req, HttpServletResponse res) throws IOException, SQLException {
+    public void changeData(HttpServletRequest req, HttpServletResponse res) throws IOException, SQLException {
         List<Object> obj = new ArrayList<>();
         Gson jsn = new Gson();
         String[] arr = (jsn.fromJson(req.getReader(), Fruit.class).toString()).split(",");
@@ -56,10 +58,9 @@ public class FruitService {
         int pr = 0;
         for (int v = 0; v < (arr[0].split(" "))[1].length(); ++v)
             id = id * 10 + (arr[0].split(" "))[1].charAt(v) - 48;
-        String[] s = arr[3].split(" ");
-        for (int v = 0; v < s[2].length(); ++v)
-            pr = pr * 10 + s[2].charAt(v) - 48;
-        obj = FruitDao.putData(id, pr);
+        for (int v = 0; v < (arr[3].split(" "))[2].length(); ++v)
+            pr = pr * 10 + (arr[3].split(" "))[2].charAt(v) - 48;
+        obj = fdao.changeData(id, pr);
         PrintWriter pw = res.getWriter();
         if (pw != null) {
             obj.forEach(e -> {
@@ -69,14 +70,14 @@ public class FruitService {
         }
     }
 
-    public static void deleteData(HttpServletRequest req, HttpServletResponse res) throws IOException {
+    public void deleteData(HttpServletRequest req, HttpServletResponse res) throws IOException {
         List<Object> obj = new ArrayList<>();
         Gson jsn = new Gson();
         String[] arr = (jsn.fromJson(req.getReader(), Fruit.class).toString()).split(",");
         long id = 0;
         for (int v = 0; v < (arr[0].split(" "))[1].length(); ++v)
             id = id * 10 + ((arr[0].split(" "))[1].charAt(v) - 48);
-        obj = FruitDao.deleteData(id);
+        obj = fdao.deleteData(id);
         PrintWriter pw = res.getWriter();
         if (pw != null) {
             obj.forEach(e -> {

@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FruitDao {
-    public static List<Object> getData(String req, long id) throws IOException {
+    public List<Object> showData(String req, long id) throws IOException {
         List<Object> obj = new ArrayList<>();
         try (Connection connect = DatabaseConnector.connector(); PreparedStatement readDB = connect.prepareStatement(req)) {
             if (id > 0)
@@ -23,23 +23,17 @@ public class FruitDao {
                 String name = result.getString("name");
                 String color = result.getString("color");
                 int price = result.getInt("price");
-                Array sel = result.getArray("sel");
-                if (sel != null) {
-                    String[] sell = (String[]) sel.getArray();
-                    List<String> s = new ArrayList<>();
-                    for (int k = 0; k < sell.length; ++k)
-                        s.add(sell[k] + ", ");
-                    obj.add(new Fruit(i, name, color, price, s));
-                } else obj.add(new Fruit(i, name, color, price));
+                obj.add(new Fruit(i, name, color, price));
             }
             connect.close();
+
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
         return obj;
     }
 
-    public static List<Object> postData(String n, String col, int pr) {
+    public List<Object> addData(String n, String col, int pr) {
         List<Object> obj = new ArrayList<>();
         try (Connection connect = DatabaseConnector.connector(); PreparedStatement addToDB = connect.
                 prepareStatement("INSERT INTO fruit(name,color,price) VALUES(?,?,?)")) {
@@ -66,7 +60,7 @@ public class FruitDao {
         return obj;
     }
 
-    public static List<Object> putData(long id, int pr) {
+    public List<Object> changeData(long id, int pr) {
         List<Object> obj = new ArrayList<>();
         try (Connection connect = DatabaseConnector.connector(); PreparedStatement updateInDB = connect.
                 prepareStatement("UPDATE fruit SET price=? WHERE id=?")) {
@@ -89,7 +83,7 @@ public class FruitDao {
         return obj;
     }
 
-    public static List<Object> deleteData(long id) {
+    public List<Object> deleteData(long id) {
         List<Object> obj = new ArrayList<>();
         try (Connection connect = DatabaseConnector.connector(); PreparedStatement deleteFromDB = connect.
                 prepareStatement("DELETE FROM fruit WHERE id=?")) {

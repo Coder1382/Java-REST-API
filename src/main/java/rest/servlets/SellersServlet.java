@@ -14,11 +14,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SellersServlet extends HttpServlet {
+    final SellersService sserv = new SellersService();
+
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         String[] uri = req.getRequestURI().split("/");
         if (uri[2].equals("sellers"))
-            SellersService.postData(req, res);
+            sserv.addData(req, res);
     }
 
     @Override
@@ -30,37 +32,19 @@ public class SellersServlet extends HttpServlet {
                 long id = 0;
                 for (int v = 0; v < query[1].length(); ++v)
                     id = id * 10 + (query[1].charAt(v) - 48);
-                SellersService.getData(req, id, res);
-            } else SellersService.getData(req, -1, res);
+                sserv.showData(req, id, res);
+            } else sserv.showData(req, -1, res);
         }
     }
 
     @Override
     public void doPut(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         String[] uri = req.getRequestURI().split("/");
-        Gson jsn = new Gson();
         if (uri[2].equals("sellers")) {
-            String s = jsn.fromJson(req.getReader(), Seller.class).toString();
-            String r = (s.split("rating: "))[1];
-            String sup = (s.split("supplier_id: "))[1];
-            if (r.charAt(0) != '0' && sup.charAt(0) == '0') {
-                try {
-                    SellersService.putData(s, 2, res);
-                } catch (SQLException e) {
-                    throw new RuntimeException(e);
-                }
-            } else if (r.charAt(0) == '0' && sup.charAt(0) != '0') {
-                try {
-                    SellersService.putData(s, 3, res);
-                } catch (SQLException e) {
-                    throw new RuntimeException(e);
-                }
-            } else if (r.charAt(0) != '0' && sup.charAt(0) != '0') {
-                try {
-                    SellersService.putData(s, 5, res);
-                } catch (SQLException e) {
-                    throw new RuntimeException(e);
-                }
+            try {
+                sserv.changeData(req, res);
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
             }
         }
     }
@@ -69,6 +53,6 @@ public class SellersServlet extends HttpServlet {
     public void doDelete(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         String[] uri = req.getRequestURI().split("/");
         if (uri[2].equals("sellers"))
-            SellersService.deleteData(req, res);
+            sserv.deleteData(req, res);
     }
 }
