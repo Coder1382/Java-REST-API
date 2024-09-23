@@ -10,7 +10,8 @@ import java.util.List;
 
 public class SellersDao {
     public long addData(String n, long index) {
-        System.out.println(n); System.out.println(index);
+        System.out.println(n);
+        System.out.println(index);
         long id = 0;
         try (Connection connect = DatabaseConnector.connector(); PreparedStatement addToDB = connect.
                 prepareStatement("INSERT INTO sellers(name,supplier_id) VALUES(?,?)")) {
@@ -90,10 +91,23 @@ public class SellersDao {
     }
 
     public void deleteData(long id) {
-        try (Connection connect = DatabaseConnector.connector(); PreparedStatement deleteFromDB = connect.
-                prepareStatement("DELETE FROM sellers WHERE id=?")) {
+        try (Connection connect = DatabaseConnector.connector(); PreparedStatement readDB = connect.
+                prepareStatement("SELECT name, supplier_id FROM sellers WHERE id=?")) {
+            long i = 0;
+            String name = "";
+            readDB.setLong(1, id);
+            ResultSet rs = readDB.executeQuery();
+            while (rs.next()) {
+                name = rs.getString("name");
+                i = rs.getLong("supplier_id");
+            }
+            PreparedStatement deleteFromDB = connect.prepareStatement("DELETE FROM sellers WHERE id=?");
             deleteFromDB.setLong(1, id);
             deleteFromDB.executeUpdate();
+            PreparedStatement del = connect.prepareStatement("UPDATE suppliers SET clients=ARRAY_REMOVE(clients, ?) WHERE id=?");
+            del.setString(1, name);
+            del.setLong(2, i);
+            del.executeUpdate();
             connect.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
