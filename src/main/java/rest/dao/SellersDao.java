@@ -23,7 +23,6 @@ public class SellersDao {
             ResultSet result = readDB.executeQuery();
             while (result.next()) {
                 id = result.getLong("id");
-                System.out.println(id);
             }
             PreparedStatement wSup = connect.prepareStatement("UPDATE suppliers SET clients=array_append(clients,?) WHERE id=?");
             wSup.setString(1, n);
