@@ -30,8 +30,8 @@ public class FruitServlet extends HttpServlet {
             if (req.getQueryString() != null) {
                 String[] query = req.getQueryString().split("=");
                 long id = Long.parseLong(query[1]);
-                fserv.showData(req, id, res);
-            } else fserv.showData(req, -1, res);
+                fserv.showData(id, res);
+            } else fserv.showData(-1, res);
         }
     }
 

@@ -70,7 +70,6 @@ public class SellersDao {
         try (Connection connect = DatabaseConnector.connector(); PreparedStatement updateInDB = connect.
                 prepareStatement("UPDATE sellers SET fruits=array_append(fruits,?) WHERE id=?")) {
             updateInDB.setString(1, f);
-            System.out.println(f);
             updateInDB.setLong(2, id);
             updateInDB.executeUpdate();
             connect.close();

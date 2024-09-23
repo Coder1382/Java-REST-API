@@ -98,14 +98,16 @@ Tests {
     SuppliersServlet appSup = new SuppliersServlet();
 
     @Test
-    public void getDataTest() throws ServletException, IOException, SQLException {
-        FruitDao fdao=new FruitDao();
-        FruitService fserv=new FruitService();
-        SellersDao sdao=new SellersDao();
-        SellersService sserv=new SellersService();
-        SuppliersDao sudao=new SuppliersDao();
-        SuppliersService suserv=new SuppliersService();
+    public void showDataTest() throws ServletException, IOException, SQLException {
+        FruitDao fdao = new FruitDao();
+        FruitService fserv = new FruitService();
+        SellersDao sdao = new SellersDao();
+        SellersService sserv = new SellersService();
+        SuppliersDao sudao = new SuppliersDao();
+        SuppliersService suserv = new SuppliersService();
         fdao.showData("SELECT * FROM fruit", -1);
+        sdao.showData("SELECT * FROM sellers", -1);
+        sdao.changeData(1,"mango");
         sdao.showData("SELECT * FROM sellers", -1);
         sudao.showData("SELECT * FROM suppliers", -1);
         assertEquals(req.getQueryString(), null);
@@ -148,28 +150,28 @@ Tests {
     }
 
     @Test
-    public void postDataTest() throws ServletException, IOException, SQLException {
-        FruitDao fdao=new FruitDao();
-        FruitService fserv=new FruitService();
-        SellersDao sdao=new SellersDao();
-        SellersService sserv=new SellersService();
-        SuppliersDao sudao=new SuppliersDao();
-        SuppliersService suserv=new SuppliersService();
+    public void addDataTest() throws ServletException, IOException, SQLException {
+        FruitDao fdao = new FruitDao();
+        FruitService fserv = new FruitService();
+        SellersDao sdao = new SellersDao();
+        SellersService sserv = new SellersService();
+        SuppliersDao sudao = new SuppliersDao();
+        SuppliersService suserv = new SuppliersService();
         DatabaseManager.TruncateTable("sellers");
         DatabaseManager.TruncateTable("suppliers");
         DatabaseManager.TruncateTable("fruit");
         DatabaseManager.TruncateTable("seller_fruit");
-        fserv.showData(req, 1, res);
-        fserv.showData(req, -1, res);
-        suserv.showData(req, -1, res);
-        suserv.showData(req, 1, res);
-        sserv.showData(req, -1, res);
-        sserv.showData(req, 1, res);
+        fserv.showData(1, res);
+        fserv.showData(-1, res);
+        suserv.showData(-1, res);
+        suserv.showData(1, res);
+        sserv.showData(-1, res);
+        sserv.showData(1, res);
         fdao.addData("mango", "orange", 10);
         fdao.addData("apple", "green", 5);
         sudao.addData("big");
         sudao.addData("small");
-        sdao.addData("fedor" , 2);
+        sdao.addData("fedor", 2);
         sdao.addData("petr", 1);
         assertEquals(req.getQueryString(), null);
         req.setAttribute("/myREST/fruits", req.getRequestURI());
@@ -187,11 +189,11 @@ Tests {
     }
 
     @Test
-    public void putDataTest() throws ServletException, IOException, SQLException {
-        FruitDao fdao=new FruitDao();
-        FruitService fserv=new FruitService();
-        SellersDao sdao=new SellersDao();
-        SellersService sserv=new SellersService();
+    public void changeDataTest() throws ServletException, IOException, SQLException {
+        FruitDao fdao = new FruitDao();
+        FruitService fserv = new FruitService();
+        SellersDao sdao = new SellersDao();
+        SellersService sserv = new SellersService();
         fdao.changeData(1, 20);
         sdao.changeData(1, "mango");
         sdao.changeData(2, "apple");
@@ -208,14 +210,14 @@ Tests {
 
     @Test
     public void deleteDataTest() throws ServletException, IOException {
-        FruitDao fdao=new FruitDao();
-        FruitService fserv=new FruitService();
-        SellersDao sdao=new SellersDao();
-        SellersService sserv=new SellersService();
+        FruitDao fdao = new FruitDao();
+        FruitService fserv = new FruitService();
+        SellersDao sdao = new SellersDao();
+        SellersService sserv = new SellersService();
         fdao.deleteData(1);
         sdao.deleteData(1);
-        SuppliersDao sudao=new SuppliersDao();
-        SuppliersService suserv=new SuppliersService();
+        SuppliersDao sudao = new SuppliersDao();
+        SuppliersService suserv = new SuppliersService();
         sudao.deleteData(1);
         assertEquals(req.getQueryString(), null);
         req.setAttribute("/myREST/fruits", req.getRequestURI());

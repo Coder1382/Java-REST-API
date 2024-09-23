@@ -22,7 +22,7 @@ import java.util.List;
 public class SuppliersService {
     final SuppliersDao sudao = new SuppliersDao();
 
-    public void showData(HttpServletRequest req, long id, HttpServletResponse res) throws IOException {
+    public void showData(long id, HttpServletResponse res) throws IOException {
         List<Object> obj = new ArrayList<>();
         if (id > 0)
             obj = sudao.showData("SELECT * FROM suppliers WHERE id=?", id);

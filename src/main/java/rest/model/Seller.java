@@ -8,7 +8,6 @@ public class Seller {
     long supplier_id;
     String name;
     String supplier;
-    String fruit;
     List<String> fruits;
 
     public Seller() {
@@ -64,13 +63,6 @@ public class Seller {
         });
     }
 
-    public String getFruit() {
-        return fruit;
-    }
-
-    public void setFruit(String fruit) {
-        this.fruit = fruit;
-    }
 
     public long getId() {
         return id;
@@ -102,7 +94,7 @@ public class Seller {
                 for (int i = 0; i < fruits.size(); ++i) {
                     s.append(fruits.get(i));
                 }
-                s.delete(s.length()-2, s.length()-1);
+                s.delete(s.length() - 2, s.length() - 1);
                 return "id: " + id + ", name: " + name + "\nfruits: " + s;
             } else return "id: " + id + ", name: " + name;
         } else {
@@ -110,7 +102,7 @@ public class Seller {
                 for (int i = 0; i < fruits.size(); ++i) {
                     s.append(fruits.get(i));
                 }
-                s.delete(s.length()-2, s.length()-1);
+                s.delete(s.length() - 2, s.length() - 1);
                 return "id: " + id + ", name: " + name + ", supplier: " + supplier + "\nfruits: " + s;
             } else
                 return "id: " + id + ", name: " + name + ", supplier: " + supplier;

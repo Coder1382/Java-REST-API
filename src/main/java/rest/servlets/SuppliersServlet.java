@@ -30,8 +30,8 @@ public class SuppliersServlet extends HttpServlet {
             if (req.getQueryString() != null) {
                 String[] query = req.getQueryString().split("=");
                 long id = Long.parseLong(query[1]);
-                suserv.showData(req, id, res);
-            } else suserv.showData(req, -1, res);
+                suserv.showData(id, res);
+            } else suserv.showData(-1, res);
         }
     }
 

@@ -19,7 +19,7 @@ import java.util.List;
 public class FruitService {
     final FruitDao fdao = new FruitDao();
 
-    public void showData(HttpServletRequest req, long id, HttpServletResponse res) throws IOException {
+    public void showData(long id, HttpServletResponse res) throws IOException {
         List<Object> obj = new ArrayList<>();
         if (id > 0)
             obj = fdao.showData("SELECT * FROM fruit WHERE id=?", id);
@@ -34,11 +34,10 @@ public class FruitService {
     }
 
     public void addData(HttpServletRequest req, HttpServletResponse res) throws IOException {
-        long id = 0;
         Gson jsn = new Gson();
         String[] arr = (jsn.fromJson(req.getReader(), Fruit.class).toString()).split(",");
         int pr = Integer.parseInt(arr[3].split(" ")[2]);
-        id = fdao.addData(arr[1].split(" ")[2], arr[2].split(" ")[2], pr);
+        long id = fdao.addData(arr[1].split(" ")[2], arr[2].split(" ")[2], pr);
         PrintWriter pw = res.getWriter();
         if (pw != null) {
             pw.write("successfully added under id: " + id);
@@ -49,12 +48,8 @@ public class FruitService {
     public void changeData(HttpServletRequest req, HttpServletResponse res) throws IOException, SQLException {
         Gson jsn = new Gson();
         String[] arr = (jsn.fromJson(req.getReader(), Fruit.class).toString()).split(",");
-        long id = 0;
-        int pr = 0;
-        for (int v = 0; v < (arr[0].split(" "))[1].length(); ++v)
-            id = id * 10 + (arr[0].split(" "))[1].charAt(v) - 48;
-        for (int v = 0; v < (arr[3].split(" "))[2].length(); ++v)
-            pr = pr * 10 + (arr[3].split(" "))[2].charAt(v) - 48;
+        long id = Long.parseLong((arr[0].split(" "))[1]);
+        int pr = Integer.parseInt((arr[3].split(" "))[2]);
         fdao.changeData(id, pr);
         PrintWriter pw = res.getWriter();
         if (pw != null) {
@@ -66,9 +61,7 @@ public class FruitService {
     public void deleteData(HttpServletRequest req, HttpServletResponse res) throws IOException {
         Gson jsn = new Gson();
         String[] arr = (jsn.fromJson(req.getReader(), Fruit.class).toString()).split(",");
-        long id = 0;
-        for (int v = 0; v < (arr[0].split(" "))[1].length(); ++v)
-            id = id * 10 + ((arr[0].split(" "))[1].charAt(v) - 48);
+        long id = Long.parseLong((arr[0].split(" "))[1]);
         fdao.deleteData(id);
         PrintWriter pw = res.getWriter();
         if (pw != null) {

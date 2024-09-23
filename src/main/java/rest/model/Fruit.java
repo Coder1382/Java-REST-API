@@ -81,7 +81,7 @@ public class Fruit {
             for (int i = 0; i < sel.size(); ++i) {
                 s.append(sel.get(i));
             }
-            s.delete(s.length()-2, s.length()-1);
+            s.delete(s.length() - 2, s.length() - 1);
             return "id: " + id + ", name: " + name + ", color: " + color + ", price: " + price + "\nsellers: " + s;
         } else return "id: " + id + ", name: " + name + ", color: " + color + ", price: " + price;
     }
