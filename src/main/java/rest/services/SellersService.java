@@ -29,7 +29,7 @@ public class SellersService {
         PrintWriter pw = res.getWriter();
         if (pw != null) {
             obj.forEach(e -> {
-                pw.write(e.toString() + "\n");
+                pw.write(e.toString() + "\n\n");
             });
             pw.close();
         }

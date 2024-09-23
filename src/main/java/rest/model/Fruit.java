@@ -58,10 +58,6 @@ public class Fruit {
         this.color = color;
     }
 
-    public void setId(long id) {
-        this.id = id;
-    }
-
     public String getName() {
         return name;
     }
@@ -80,12 +76,12 @@ public class Fruit {
 
     @Override
     public String toString() {
-        String s = "";
+        StringBuilder s = new StringBuilder();
         if (sel.size() > 0) {
             for (int i = 0; i < sel.size(); ++i) {
-                s += sel.get(i);
-                s += " ";
+                s.append(sel.get(i));
             }
+            s.delete(s.length()-2, s.length()-1);
             return "id: " + id + ", name: " + name + ", color: " + color + ", price: " + price + "\nsellers: " + s;
         } else return "id: " + id + ", name: " + name + ", color: " + color + ", price: " + price;
     }

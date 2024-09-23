@@ -76,9 +76,6 @@ public class Seller {
         return id;
     }
 
-    public void setId(long id) {
-        this.id = id;
-    }
 
     public long getSupplier_id() {
         return supplier_id;
@@ -99,24 +96,24 @@ public class Seller {
 
     @Override
     public String toString() {
-        String s = "";
+        StringBuilder s = new StringBuilder();
         if (supplier.equals("")) {
             if (fruits.size() > 0) {
                 for (int i = 0; i < fruits.size(); ++i) {
-                    s += fruits.get(i);
-                    s += " ";
+                    s.append(fruits.get(i));
                 }
-                return "id: " + id + ", name: " + name + ", supplier_id: " + supplier_id + "\nfruits: " + s;
-            } else return "id: " + id + ", name: " + name + ", supplier_id: " + supplier_id;
+                s.delete(s.length()-2, s.length()-1);
+                return "id: " + id + ", name: " + name + "\nfruits: " + s;
+            } else return "id: " + id + ", name: " + name;
         } else {
             if (fruits.size() > 0) {
                 for (int i = 0; i < fruits.size(); ++i) {
-                    s += fruits.get(i);
-                    s += " ";
+                    s.append(fruits.get(i));
                 }
-                return "id: " + id + ", name: " + name + ", supplier: " + supplier + "(id=" + supplier_id + ")" + "\nfruits: " + s;
+                s.delete(s.length()-2, s.length()-1);
+                return "id: " + id + ", name: " + name + ", supplier: " + supplier + "\nfruits: " + s;
             } else
-                return "id: " + id + ", name: " + name + ", supplier: " + supplier + "(id=" + supplier_id + ")";
+                return "id: " + id + ", name: " + name + ", supplier: " + supplier;
         }
     }
 }

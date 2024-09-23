@@ -43,9 +43,6 @@ public class Supplier {
         return id;
     }
 
-    public void setId(long id) {
-        this.id = id;
-    }
 
     public void setName(String company) {
         this.name = company;
@@ -53,14 +50,14 @@ public class Supplier {
 
     @Override
     public String toString() {
-        String s = "";
+        StringBuilder s = new StringBuilder();
         if (clients.size() > 0) {
             for (int i = 0; i < clients.size(); ++i) {
-                s += clients.get(i);
-                s += " ";
+                s.append(clients.get(i));
             }
-            return "id: " + id + ", supplier: " + name + "\nsellers: " + s;
+            s.delete(s.length()-2, s.length()-1);
+            return "id: " + id + ", name: " + name + "\nsellers: " + s;
         }
-        return "id: " + id + ", supplier: " + name;
+        return "id: " + id + ", name: " + name;
     }
 }

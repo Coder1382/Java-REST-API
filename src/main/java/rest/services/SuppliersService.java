@@ -30,7 +30,7 @@ public class SuppliersService {
         PrintWriter pw = res.getWriter();
         if (pw != null) {
             obj.forEach(e -> {
-                pw.write(e.toString() + "\n");
+                pw.write(e.toString() + "\n\n");
             });
             pw.close();
         }
