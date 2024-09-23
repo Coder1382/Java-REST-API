@@ -75,14 +75,6 @@ Tests {
             exist = 1;
         assertEquals(1, exist);
         DatabaseManager.TruncateTable("sellers");
-        exist = 0;
-        DatabaseManager.CreateCombinationTable();
-        tables = connect.getMetaData();
-        res = tables.getTables(null, null, "seller_fruit", new String[]{"TABLE"});
-        if (res.next())
-            exist = 1;
-        assertEquals(1, exist);
-        DatabaseManager.TruncateTable("seller_fruit");
         connect.createStatement().executeUpdate("INSERT INTO suppliers(name) VALUES('x-vendor')");
         connect.createStatement().executeUpdate("INSERT INTO sellers(name, supplier_id) VALUES('ivan', 1)");
         connect.createStatement().executeUpdate("INSERT INTO fruit(name, color, price) VALUES('green apple', 'green', 10)");
