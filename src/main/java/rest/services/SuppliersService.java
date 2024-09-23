@@ -20,13 +20,10 @@ import java.util.HashMap;
 import java.util.List;
 
 public class SuppliersService {
-    final SuppliersDao sudao = new SuppliersDao();
+    private final SuppliersDao suppliersDao = new SuppliersDao();
 
     public void showData(long id, HttpServletResponse res) throws IOException {
-        List<Object> obj = new ArrayList<>();
-        if (id > 0)
-            obj = sudao.showData("SELECT * FROM suppliers WHERE id=?", id);
-        else obj = sudao.showData("SELECT * FROM suppliers", -1);
+        List<Object> obj = suppliersDao.showData(id);
         PrintWriter pw = res.getWriter();
         if (pw != null) {
             obj.forEach(e -> {
@@ -36,12 +33,8 @@ public class SuppliersService {
         }
     }
 
-    public void addData(HttpServletRequest req, HttpServletResponse res) throws IOException {
-        Gson jsn = new Gson();
-        String[] arr = (jsn.fromJson(req.getReader(), Supplier.class).toString()).split(",");
-        System.out.println(arr[0]);
-        System.out.println(arr[1]);
-        long id = sudao.addData(arr[1].split(" ")[2]);
+    public void saveData(String[] arr, HttpServletResponse res) throws IOException {
+        long id = suppliersDao.saveData(arr[1].split(" ")[2]);
         PrintWriter pw = res.getWriter();
         if (pw != null) {
             pw.write("successfully added under id: " + id);
@@ -49,11 +42,9 @@ public class SuppliersService {
         }
     }
 
-    public void deleteData(HttpServletRequest req, HttpServletResponse res) throws IOException {
-        Gson jsn = new Gson();
-        String[] arr = (jsn.fromJson(req.getReader(), Supplier.class).toString()).split(",");
+    public void deleteData(String[] arr, HttpServletResponse res) throws IOException {
         long id = Long.parseLong((arr[0].split(" "))[1]);
-        sudao.deleteData(id);
+        suppliersDao.deleteData(id);
         PrintWriter pw = res.getWriter();
         if (pw != null) {
             pw.write("successfully deleted");

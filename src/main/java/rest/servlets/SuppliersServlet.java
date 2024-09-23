@@ -14,13 +14,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SuppliersServlet extends HttpServlet {
-    SuppliersService suserv = new SuppliersService();
+    private final SuppliersService suppliersService = new SuppliersService();
 
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+        Gson jsn = new Gson();
         String[] uri = req.getRequestURI().split("/");
         if (uri[2].equals("suppliers"))
-            suserv.addData(req, res);
+            suppliersService.saveData((jsn.fromJson(req.getReader(), Supplier.class).toString()).split(","), res);
     }
 
     @Override
@@ -30,15 +31,16 @@ public class SuppliersServlet extends HttpServlet {
             if (req.getQueryString() != null) {
                 String[] query = req.getQueryString().split("=");
                 long id = Long.parseLong(query[1]);
-                suserv.showData(id, res);
-            } else suserv.showData(-1, res);
+                suppliersService.showData(id, res);
+            } else suppliersService.showData(-1, res);
         }
     }
 
     @Override
     public void doDelete(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+        Gson jsn = new Gson();
         String[] uri = req.getRequestURI().split("/");
         if (uri[2].equals("suppliers"))
-            suserv.deleteData(req, res);
+            suppliersService.deleteData((jsn.fromJson(req.getReader(), Supplier.class).toString()).split(","), res);
     }
 }

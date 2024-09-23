@@ -14,13 +14,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FruitServlet extends HttpServlet {
-    final FruitService fserv = new FruitService();
+    private final FruitService fruitService = new FruitService();
 
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+        Gson jsn = new Gson();
         String[] uri = req.getRequestURI().split("/");
         if (uri[2].equals("fruit"))
-            fserv.addData(req, res);
+            fruitService.saveData((jsn.fromJson(req.getReader(), Fruit.class).toString()).split(","), res);
     }
 
     @Override
@@ -30,17 +31,18 @@ public class FruitServlet extends HttpServlet {
             if (req.getQueryString() != null) {
                 String[] query = req.getQueryString().split("=");
                 long id = Long.parseLong(query[1]);
-                fserv.showData(id, res);
-            } else fserv.showData(-1, res);
+                fruitService.showData(id, res);
+            } else fruitService.showData(-1, res);
         }
     }
 
     @Override
     public void doPut(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+        Gson jsn = new Gson();
         String[] uri = req.getRequestURI().split("/");
         if (uri[2].equals("fruit")) {
             try {
-                fserv.changeData(req, res);
+                fruitService.changeData((jsn.fromJson(req.getReader(), Fruit.class).toString()).split(","), res);
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
@@ -49,9 +51,10 @@ public class FruitServlet extends HttpServlet {
 
     @Override
     public void doDelete(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+        Gson jsn = new Gson();
         String[] uri = req.getRequestURI().split("/");
         if (uri[2].equals("fruit"))
-            fserv.deleteData(req, res);
+            fruitService.deleteData((jsn.fromJson(req.getReader(), Fruit.class).toString()).split(","), res);
         PrintWriter pw = res.getWriter();
     }
 }

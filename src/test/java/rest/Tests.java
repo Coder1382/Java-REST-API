@@ -97,15 +97,15 @@ Tests {
         SellersService sserv = new SellersService();
         SuppliersDao sudao = new SuppliersDao();
         SuppliersService suserv = new SuppliersService();
-        fdao.showData("SELECT * FROM fruit", -1);
-        sdao.showData("SELECT * FROM sellers", -1);
-        sdao.changeData(1,"mango");
-        sdao.showData("SELECT * FROM sellers", -1);
-        sudao.showData("SELECT * FROM suppliers", -1);
+        fdao.showData(-1);
+        sdao.showData(-1);
+        sdao.changeData(1, "mango");
+        sdao.showData(-1);
+        sudao.showData(-1);
         assertEquals(req.getQueryString(), null);
-        fdao.showData("SELECT * FROM fruit WHERE id=?", 1);
-        sdao.showData("SELECT * FROM sellers WHERE id=?", 1);
-        sudao.showData("SELECT * FROM suppliers WHERE id=?", 1);
+        fdao.showData(1);
+        sdao.showData(1);
+        sudao.showData(1);
         req.setAttribute("/myREST/fruit", req.getRequestURI());
         when(req.getRequestURI()).thenReturn("/myREST/fruit");
         req.setAttribute(null, req.getQueryString());
@@ -142,7 +142,7 @@ Tests {
     }
 
     @Test
-    public void addDataTest() throws ServletException, IOException, SQLException {
+    public void saveDataTest() throws ServletException, IOException, SQLException {
         FruitDao fdao = new FruitDao();
         FruitService fserv = new FruitService();
         SellersDao sdao = new SellersDao();
@@ -152,19 +152,24 @@ Tests {
         DatabaseManager.TruncateTable("sellers");
         DatabaseManager.TruncateTable("suppliers");
         DatabaseManager.TruncateTable("fruit");
-        DatabaseManager.TruncateTable("seller_fruit");
         fserv.showData(1, res);
         fserv.showData(-1, res);
         suserv.showData(-1, res);
         suserv.showData(1, res);
         sserv.showData(-1, res);
         sserv.showData(1, res);
-        fdao.addData("mango", "orange", 10);
-        fdao.addData("apple", "green", 5);
-        sudao.addData("big");
-        sudao.addData("small");
-        sdao.addData("fedor", 2);
-        sdao.addData("petr", 1);
+        String[] s = new String[]{"id: 0", " name: mango", " color: orange", " price: 10"};
+        fserv.saveData(s, res);
+        fdao.saveData("mango", "orange", 10);
+        fdao.saveData("apple", "green", 5);
+        String[] z = new String[]{"id: 0", " name: big"};
+        suserv.saveData(z, res);
+        String[] u = new String[]{"id: 0", " name: ignat", " supplier: 1"};
+        sserv.saveData(u, res);
+        sudao.saveData("big");
+        sudao.saveData("small");
+        sdao.saveData("fedor", 2);
+        sdao.saveData("petr", 1);
         assertEquals(req.getQueryString(), null);
         req.setAttribute("/myREST/fruits", req.getRequestURI());
         when(req.getRequestURI()).thenReturn("/myREST/fruits");
@@ -186,7 +191,12 @@ Tests {
         FruitService fserv = new FruitService();
         SellersDao sdao = new SellersDao();
         SellersService sserv = new SellersService();
+        String[] s = new String[]{"id: 1", " name: ", " color: ", " price: 30"};
+        fserv.changeData(s, res);
         fdao.changeData(1, 20);
+        String[] z = new String[]{"id: 1", " name: mango", " supplier: 0"};
+        sserv.changeData(z, res);
+        fserv.changeData(s, res);
         sdao.changeData(1, "mango");
         sdao.changeData(2, "apple");
         assertEquals(req.getQueryString(), null);
@@ -201,7 +211,7 @@ Tests {
     }
 
     @Test
-    public void deleteDataTest() throws ServletException, IOException {
+    public void deleteDataTest() throws ServletException, IOException, SQLException {
         FruitDao fdao = new FruitDao();
         FruitService fserv = new FruitService();
         SellersDao sdao = new SellersDao();
@@ -210,6 +220,12 @@ Tests {
         sdao.deleteData(1);
         SuppliersDao sudao = new SuppliersDao();
         SuppliersService suserv = new SuppliersService();
+        String[] z = new String[]{"id: 1", " name: ", " color: ", " price: 0"};
+        fserv.deleteData(z, res);
+        String[] s = new String[]{"id: 1", " name: ", " supplier: 0"};
+        sserv.deleteData(s, res);
+        String[] u = new String[]{"id: 1", " name: "};
+        suserv.deleteData(u, res);
         sudao.deleteData(1);
         assertEquals(req.getQueryString(), null);
         req.setAttribute("/myREST/fruits", req.getRequestURI());
@@ -224,6 +240,9 @@ Tests {
         when(req.getRequestURI()).thenReturn("/myREST/supplier");
         when(res.getWriter()).thenReturn(pw);
         appSup.doDelete(req, res);
+        DatabaseManager.TruncateTable("sellers");
+        DatabaseManager.TruncateTable("suppliers");
+        DatabaseManager.TruncateTable("fruit");
     }
 
     @Test

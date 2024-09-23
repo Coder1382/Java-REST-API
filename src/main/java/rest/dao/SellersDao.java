@@ -9,9 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SellersDao {
-    public long addData(String n, long index) {
-        System.out.println(n);
-        System.out.println(index);
+    public long saveData(String n, long index) {
         long id = 0;
         try (Connection connect = DatabaseConnector.connector(); PreparedStatement addToDB = connect.
                 prepareStatement("INSERT INTO sellers(name,supplier_id) VALUES(?,?)")) {
@@ -36,9 +34,10 @@ public class SellersDao {
         return id;
     }
 
-    public List<Object> showData(String req, long id) {
+    public List<Object> showData(long id) {
         List<Object> obj = new ArrayList<>();
-        try (Connection connect = DatabaseConnector.connector(); PreparedStatement readDB = connect.prepareStatement(req)) {
+        String query = (id > 0 ? "SELECT * FROM sellers WHERE id=?" : "SELECT * FROM sellers");
+        try (Connection connect = DatabaseConnector.connector(); PreparedStatement readDB = connect.prepareStatement(query)) {
             if (id > 0)
                 readDB.setLong(1, id);
             ResultSet result = readDB.executeQuery();

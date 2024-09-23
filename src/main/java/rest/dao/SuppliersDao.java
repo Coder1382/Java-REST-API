@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SuppliersDao {
-    public long addData(String comp) {
+    public long saveData(String comp) {
         long id = 0;
         try (Connection connect = DatabaseConnector.connector(); PreparedStatement addToDB = connect.
                 prepareStatement("INSERT INTO suppliers(name) VALUES(?)")) {
@@ -32,19 +32,20 @@ public class SuppliersDao {
     }
 
     public void deleteData(long id) {
-        try (Connection connect = DatabaseConnector.connector(); PreparedStatement deleteFromDB = connect.
-                prepareStatement("DELETE FROM suppliers WHERE id=?")) {
-            deleteFromDB.setLong(1, id);
-            deleteFromDB.executeUpdate();
+        try (Connection connect = DatabaseConnector.connector(); PreparedStatement udb = connect.
+                prepareStatement("DELETE from suppliers WHERE id=?")) {
+            udb.setLong(1, id);
+            udb.executeUpdate();
             connect.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
 
-    public List<Object> showData(String req, long id) throws IOException {
+    public List<Object> showData(long id) throws IOException {
         List<Object> obj = new ArrayList<>();
-        try (Connection connect = DatabaseConnector.connector(); PreparedStatement readDB = connect.prepareStatement(req)) {
+        String query = (id > 0 ? "SELECT * FROM suppliers WHERE id=?" : "SELECT * FROM suppliers");
+        try (Connection connect = DatabaseConnector.connector(); PreparedStatement readDB = connect.prepareStatement(query)) {
             if (id > 0)
                 readDB.setLong(1, id);
             ResultSet result = readDB.executeQuery();

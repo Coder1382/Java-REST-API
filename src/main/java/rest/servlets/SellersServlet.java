@@ -14,13 +14,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SellersServlet extends HttpServlet {
-    final SellersService sserv = new SellersService();
+    private final SellersService sellersService = new SellersService();
 
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+        Gson jsn = new Gson();
         String[] uri = req.getRequestURI().split("/");
         if (uri[2].equals("sellers"))
-            sserv.addData(req, res);
+            sellersService.saveData((jsn.fromJson(req.getReader(), Seller.class).toString()).split(","), res);
     }
 
     @Override
@@ -30,17 +31,18 @@ public class SellersServlet extends HttpServlet {
             if (req.getQueryString() != null) {
                 String[] query = req.getQueryString().split("=");
                 long id = Long.parseLong(query[1]);
-                sserv.showData(id, res);
-            } else sserv.showData(-1, res);
+                sellersService.showData(id, res);
+            } else sellersService.showData(-1, res);
         }
     }
 
     @Override
     public void doPut(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+        Gson jsn = new Gson();
         String[] uri = req.getRequestURI().split("/");
         if (uri[2].equals("sellers")) {
             try {
-                sserv.changeData(req, res);
+                sellersService.changeData((jsn.fromJson(req.getReader(), Seller.class).toString()).split(","), res);
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
@@ -49,8 +51,9 @@ public class SellersServlet extends HttpServlet {
 
     @Override
     public void doDelete(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+        Gson jsn = new Gson();
         String[] uri = req.getRequestURI().split("/");
         if (uri[2].equals("sellers"))
-            sserv.deleteData(req, res);
+            sellersService.deleteData((jsn.fromJson(req.getReader(), Seller.class).toString()).split(","), res);
     }
 }

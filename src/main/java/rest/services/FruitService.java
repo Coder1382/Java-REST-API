@@ -17,13 +17,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FruitService {
-    final FruitDao fdao = new FruitDao();
+    private final FruitDao fruitDao = new FruitDao();
 
     public void showData(long id, HttpServletResponse res) throws IOException {
-        List<Object> obj = new ArrayList<>();
-        if (id > 0)
-            obj = fdao.showData("SELECT * FROM fruit WHERE id=?", id);
-        else obj = fdao.showData("SELECT * FROM fruit", -1);
+        List<Object> obj = fruitDao.showData(id);
         PrintWriter pw = res.getWriter();
         if (pw != null) {
             obj.forEach(e -> {
@@ -33,11 +30,9 @@ public class FruitService {
         }
     }
 
-    public void addData(HttpServletRequest req, HttpServletResponse res) throws IOException {
-        Gson jsn = new Gson();
-        String[] arr = (jsn.fromJson(req.getReader(), Fruit.class).toString()).split(",");
+    public void saveData(String[] arr, HttpServletResponse res) throws IOException {
         int pr = Integer.parseInt(arr[3].split(" ")[2]);
-        long id = fdao.addData(arr[1].split(" ")[2], arr[2].split(" ")[2], pr);
+        long id = fruitDao.saveData(arr[1].split(" ")[2], arr[2].split(" ")[2], pr);
         PrintWriter pw = res.getWriter();
         if (pw != null) {
             pw.write("successfully added under id: " + id);
@@ -45,12 +40,10 @@ public class FruitService {
         }
     }
 
-    public void changeData(HttpServletRequest req, HttpServletResponse res) throws IOException, SQLException {
-        Gson jsn = new Gson();
-        String[] arr = (jsn.fromJson(req.getReader(), Fruit.class).toString()).split(",");
+    public void changeData(String[] arr, HttpServletResponse res) throws IOException, SQLException {
         long id = Long.parseLong((arr[0].split(" "))[1]);
         int pr = Integer.parseInt((arr[3].split(" "))[2]);
-        fdao.changeData(id, pr);
+        fruitDao.changeData(id, pr);
         PrintWriter pw = res.getWriter();
         if (pw != null) {
             pw.write("price successfully changed");
@@ -58,11 +51,9 @@ public class FruitService {
         }
     }
 
-    public void deleteData(HttpServletRequest req, HttpServletResponse res) throws IOException {
-        Gson jsn = new Gson();
-        String[] arr = (jsn.fromJson(req.getReader(), Fruit.class).toString()).split(",");
+    public void deleteData(String[] arr, HttpServletResponse res) throws IOException {
         long id = Long.parseLong((arr[0].split(" "))[1]);
-        fdao.deleteData(id);
+        fruitDao.deleteData(id);
         PrintWriter pw = res.getWriter();
         if (pw != null) {
             pw.write("successfully deleted");
