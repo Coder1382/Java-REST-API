@@ -34,24 +34,19 @@ public class FruitService {
     }
 
     public void addData(HttpServletRequest req, HttpServletResponse res) throws IOException {
-        List<Object> obj = new ArrayList<>();
+        long id = 0;
         Gson jsn = new Gson();
         String[] arr = (jsn.fromJson(req.getReader(), Fruit.class).toString()).split(",");
-        int pr = 0;
-        for (int v = 0; v < arr[3].split(" ")[2].length(); ++v)
-            pr = pr * 10 + (arr[3].split(" ")[2].charAt(v) - 48);
-        obj = fdao.addData(arr[1].split(" ")[2], arr[2].split(" ")[2], pr);
+        int pr = Integer.parseInt(arr[3].split(" ")[2]);
+        id = fdao.addData(arr[1].split(" ")[2], arr[2].split(" ")[2], pr);
         PrintWriter pw = res.getWriter();
         if (pw != null) {
-            obj.forEach(e -> {
-                pw.write(e.toString() + "\n");
-            });
+            pw.write("successfully added under id: " + id);
             pw.close();
         }
     }
 
     public void changeData(HttpServletRequest req, HttpServletResponse res) throws IOException, SQLException {
-        List<Object> obj = new ArrayList<>();
         Gson jsn = new Gson();
         String[] arr = (jsn.fromJson(req.getReader(), Fruit.class).toString()).split(",");
         long id = 0;
@@ -60,29 +55,24 @@ public class FruitService {
             id = id * 10 + (arr[0].split(" "))[1].charAt(v) - 48;
         for (int v = 0; v < (arr[3].split(" "))[2].length(); ++v)
             pr = pr * 10 + (arr[3].split(" "))[2].charAt(v) - 48;
-        obj = fdao.changeData(id, pr);
+        fdao.changeData(id, pr);
         PrintWriter pw = res.getWriter();
         if (pw != null) {
-            obj.forEach(e -> {
-                pw.write(e.toString() + "\n");
-            });
+            pw.write("price successfully changed");
             pw.close();
         }
     }
 
     public void deleteData(HttpServletRequest req, HttpServletResponse res) throws IOException {
-        List<Object> obj = new ArrayList<>();
         Gson jsn = new Gson();
         String[] arr = (jsn.fromJson(req.getReader(), Fruit.class).toString()).split(",");
         long id = 0;
         for (int v = 0; v < (arr[0].split(" "))[1].length(); ++v)
             id = id * 10 + ((arr[0].split(" "))[1].charAt(v) - 48);
-        obj = fdao.deleteData(id);
+        fdao.deleteData(id);
         PrintWriter pw = res.getWriter();
         if (pw != null) {
-            obj.forEach(e -> {
-                pw.write(e.toString() + "\n");
-            });
+            pw.write("successfully deleted");
             pw.close();
         }
     }

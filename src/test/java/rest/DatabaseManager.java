@@ -22,7 +22,7 @@ public class DatabaseManager {
 
     public static void CreateSuppliersTable() throws SQLException {
         connect.createStatement().executeUpdate("CREATE TABLE IF NOT EXISTS suppliers(id BIGSERIAL PRIMARY KEY, " +
-                "company VARCHAR(80) NOT NULL, clients TEXT [])");
+                "name VARCHAR(80) NOT NULL, clients TEXT [])");
     }
 
     public static void CreateCombinationTable() throws SQLException {

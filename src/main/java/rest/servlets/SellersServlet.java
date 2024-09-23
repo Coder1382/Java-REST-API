@@ -29,9 +29,7 @@ public class SellersServlet extends HttpServlet {
         if (uri[2].equals("sellers")) {
             if (req.getQueryString() != null) {
                 String[] query = req.getQueryString().split("=");
-                long id = 0;
-                for (int v = 0; v < query[1].length(); ++v)
-                    id = id * 10 + (query[1].charAt(v) - 48);
+                long id = Long.parseLong(query[1]);
                 sserv.showData(req, id, res);
             } else sserv.showData(req, -1, res);
         }

@@ -5,38 +5,38 @@ import java.util.List;
 
 public class Supplier {
     long id;
-    String company;
+    String name;
     List<String> clients;
 
     public Supplier() {
         id = 0;
-        company = "";
+        name = "";
         this.clients = new ArrayList<>();
     }
 
     public Supplier(String company) {
         this.id = 0;
-        this.company = company;
+        this.name = company;
         this.clients = new ArrayList<>();
     }
 
     public Supplier(long id, String company) {
         this.id = id;
-        this.company = company;
+        this.name = company;
         this.clients = new ArrayList<>();
     }
 
     public Supplier(long id, String company, List<String> clients) {
         this.id = id;
-        this.company = company;
+        this.name = company;
         this.clients = new ArrayList<>();
         clients.forEach(e -> {
             this.clients.add(e);
         });
     }
 
-    public String getCompany() {
-        return company;
+    public String getName() {
+        return name;
     }
 
     public long getId() {
@@ -47,8 +47,8 @@ public class Supplier {
         this.id = id;
     }
 
-    public void setCompany(String company) {
-        this.company = company;
+    public void setName(String company) {
+        this.name = company;
     }
 
     @Override
@@ -59,8 +59,8 @@ public class Supplier {
                 s += clients.get(i);
                 s += " ";
             }
-            return "id: " + id + ", supplier: " + company + "\nsellers: " + s;
+            return "id: " + id + ", supplier: " + name + "\nsellers: " + s;
         }
-        return "id: " + id + ", supplier: " + company;
+        return "id: " + id + ", supplier: " + name;
     }
 }

@@ -83,7 +83,7 @@ Tests {
             exist = 1;
         assertEquals(1, exist);
         DatabaseManager.TruncateTable("seller_fruit");
-        connect.createStatement().executeUpdate("INSERT INTO suppliers(company) VALUES('x-vendor')");
+        connect.createStatement().executeUpdate("INSERT INTO suppliers(name) VALUES('x-vendor')");
         connect.createStatement().executeUpdate("INSERT INTO sellers(name, supplier_id) VALUES('ivan', 1)");
         connect.createStatement().executeUpdate("INSERT INTO fruit(name, color, price) VALUES('green apple', 'green', 10)");
         postgres.stop();
@@ -273,8 +273,8 @@ Tests {
         Supplier su = new Supplier();
         assertEquals(su.toString(), "id: 0, supplier: ");
         Supplier sup = new Supplier("comp");
-        sup.setCompany("company");
-        assertEquals(sup.getCompany(), "company");
+        sup.setName("name");
+        assertEquals(sup.getName(), "name");
         Supplier s = new Supplier(1, "comp");
         s.setId(7);
         assertEquals(s.getId(), 7);

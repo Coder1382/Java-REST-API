@@ -12,45 +12,34 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SuppliersDao {
-    public List<Object> addData(String comp) {
-        List<Object> obj = new ArrayList<>();
+    public long addData(String comp) {
+        long id = 0;
         try (Connection connect = DatabaseConnector.connector(); PreparedStatement addToDB = connect.
-                prepareStatement("INSERT INTO suppliers(company) VALUES(?)")) {
+                prepareStatement("INSERT INTO suppliers(name) VALUES(?)")) {
             addToDB.setString(1, comp);
             addToDB.executeUpdate();
-            PreparedStatement readDB = connect.prepareStatement("SELECT * FROM suppliers WHERE company=?");
+            PreparedStatement readDB = connect.prepareStatement("SELECT id FROM suppliers WHERE name=?");
             readDB.setString(1, comp);
             ResultSet result = readDB.executeQuery();
             while (result.next()) {
-                long i = result.getLong("id");
-                String company = result.getString("company");
-                obj.add(new Supplier(i, company));
+                id = result.getLong("id");
             }
             connect.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        return obj;
+        return id;
     }
 
-    public List<Object> deleteData(long id) {
-        List<Object> obj = new ArrayList<>();
+    public void deleteData(long id) {
         try (Connection connect = DatabaseConnector.connector(); PreparedStatement deleteFromDB = connect.
                 prepareStatement("DELETE FROM suppliers WHERE id=?")) {
-            PreparedStatement readDB = connect.prepareStatement("SELECT * FROM suppliers WHERE id=?");
-            readDB.setLong(1, id);
-            ResultSet rs = readDB.executeQuery();
-            while (rs.next()) {
-                String company = rs.getString("company");
-                obj.add(new Supplier(id, company));
-            }
             deleteFromDB.setLong(1, id);
             deleteFromDB.executeUpdate();
             connect.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        return obj;
     }
 
     public List<Object> showData(String req, long id) throws IOException {
@@ -61,15 +50,15 @@ public class SuppliersDao {
             ResultSet result = readDB.executeQuery();
             while (result.next()) {
                 long i = result.getLong("id");
-                String company = result.getString("company");
+                String name = result.getString("name");
                 Array cl = result.getArray("clients");
                 if (cl != null) {
                     String[] cli = (String[]) cl.getArray();
                     List<String> s = new ArrayList<>();
                     for (int k = 0; k < cli.length; ++k)
                         s.add(cli[k] + ", ");
-                    obj.add(new Supplier(i, company, s));
-                } else obj.add(new Supplier(i, company));
+                    obj.add(new Supplier(i, name, s));
+                } else obj.add(new Supplier(i, name));
             }
             connect.close();
         } catch (SQLException e) {

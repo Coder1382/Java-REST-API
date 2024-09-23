@@ -37,34 +37,26 @@ public class SuppliersService {
     }
 
     public void addData(HttpServletRequest req, HttpServletResponse res) throws IOException {
-        List<Object> obj = new ArrayList<>();
         Gson jsn = new Gson();
         String[] arr = (jsn.fromJson(req.getReader(), Supplier.class).toString()).split(",");
         System.out.println(arr[0]);
         System.out.println(arr[1]);
-        obj = sudao.addData(arr[1].split(" ")[2]);
+        long id = sudao.addData(arr[1].split(" ")[2]);
         PrintWriter pw = res.getWriter();
         if (pw != null) {
-            obj.forEach(e -> {
-                pw.write(e.toString() + "\n");
-            });
+            pw.write("successfully added under id: " + id);
             pw.close();
         }
     }
 
     public void deleteData(HttpServletRequest req, HttpServletResponse res) throws IOException {
-        List<Object> obj = new ArrayList<>();
         Gson jsn = new Gson();
         String[] arr = (jsn.fromJson(req.getReader(), Supplier.class).toString()).split(",");
-        long id = 0;
-        for (int v = 0; v < (arr[0].split(" "))[1].length(); ++v)
-            id = id * 10 + ((arr[0].split(" "))[1].charAt(v) - 48);
-        obj = sudao.deleteData(id);
+        long id = Long.parseLong((arr[0].split(" "))[1]);
+        sudao.deleteData(id);
         PrintWriter pw = res.getWriter();
         if (pw != null) {
-            obj.forEach(e -> {
-                pw.write(e.toString() + "\n");
-            });
+            pw.write("successfully deleted");
             pw.close();
         }
     }

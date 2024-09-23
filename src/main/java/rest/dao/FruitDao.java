@@ -33,75 +33,49 @@ public class FruitDao {
         return obj;
     }
 
-    public List<Object> addData(String n, String col, int pr) {
-        List<Object> obj = new ArrayList<>();
+    public long addData(String n, String col, int pr) {
+        long id = 0;
         try (Connection connect = DatabaseConnector.connector(); PreparedStatement addToDB = connect.
                 prepareStatement("INSERT INTO fruit(name,color,price) VALUES(?,?,?)")) {
             addToDB.setString(1, n);
             addToDB.setString(2, col);
             addToDB.setInt(3, pr);
             addToDB.executeUpdate();
-            PreparedStatement readDB = connect.prepareStatement("SELECT * FROM fruit WHERE name=? and color=? and price=?");
+            PreparedStatement readDB = connect.prepareStatement("SELECT id FROM fruit WHERE name=? and color=? and price=?");
             readDB.setString(1, n);
             readDB.setString(2, col);
             readDB.setInt(3, pr);
             ResultSet result = readDB.executeQuery();
             while (result.next()) {
-                long i = result.getLong("id");
-                String name = result.getString("name");
-                String color = result.getString("color");
-                int price = result.getInt("price");
-                obj.add(new Fruit(i, name, color, price));
+                id = result.getLong("id");
             }
             connect.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        return obj;
+        return id;
     }
 
-    public List<Object> changeData(long id, int pr) {
-        List<Object> obj = new ArrayList<>();
+    public void changeData(long id, int pr) {
         try (Connection connect = DatabaseConnector.connector(); PreparedStatement updateInDB = connect.
                 prepareStatement("UPDATE fruit SET price=? WHERE id=?")) {
             updateInDB.setInt(1, pr);
             updateInDB.setLong(2, id);
             updateInDB.executeUpdate();
-            PreparedStatement readDB = connect.prepareStatement("SELECT name, color, price FROM fruit WHERE id=?");
-            readDB.setLong(1, id);
-            ResultSet result = readDB.executeQuery();
-            while (result.next()) {
-                String name = result.getString("name");
-                String color = result.getString("color");
-                int price = result.getInt("price");
-                obj.add(new Fruit(id, name, color, price));
-            }
             connect.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        return obj;
     }
 
-    public List<Object> deleteData(long id) {
-        List<Object> obj = new ArrayList<>();
+    public void deleteData(long id) {
         try (Connection connect = DatabaseConnector.connector(); PreparedStatement deleteFromDB = connect.
                 prepareStatement("DELETE FROM fruit WHERE id=?")) {
-            PreparedStatement readDB = connect.prepareStatement("SELECT * FROM fruit WHERE id=?");
-            readDB.setLong(1, id);
-            ResultSet rs = readDB.executeQuery();
-            while (rs.next()) {
-                String name = rs.getString("name");
-                String color = rs.getString("color");
-                int price = rs.getInt("price");
-                obj.add(new Fruit(id, name, color, price));
-            }
             deleteFromDB.setLong(1, id);
             deleteFromDB.executeUpdate();
             connect.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        return obj;
     }
 }

@@ -36,18 +36,13 @@ public class SellersService {
     }
 
     public void addData(HttpServletRequest req, HttpServletResponse res) throws IOException {
-        List<Object> obj = new ArrayList<>();
         Gson jsn = new Gson();
         String[] arr = (jsn.fromJson(req.getReader(), Seller.class).toString()).split(",");
-        long id = 0, index = 0;
-        for (int v = 0; v < arr[2].split(" ")[2].length(); ++v)
-            index = index * 10 + (arr[2].split(" ")[2].charAt(v) - 48);
-        obj = sdao.addData(arr[1].split(" ")[2], index);
+        long index = Long.parseLong(arr[2].split(" ")[2]);
+        long id = sdao.addData(arr[1].split(" ")[2], index);
         PrintWriter pw = res.getWriter();
         if (pw != null) {
-            obj.forEach(e -> {
-                pw.write(e.toString() + "\n");
-            });
+            pw.write("successfully added under id: " + id);
             pw.close();
         }
     }
@@ -55,31 +50,24 @@ public class SellersService {
     public void changeData(HttpServletRequest req, HttpServletResponse res) throws IOException, SQLException {
         Gson jsn = new Gson();
         String[] arr = (jsn.fromJson(req.getReader(), Seller.class).toString()).split(",");
-        long id = 0;
-        for (int v = 0; v < (arr[0].split(" "))[1].length(); ++v)
-            id = id * 10 + (arr[0].split(" "))[1].charAt(v) - 48;
+        long id = Long.parseLong((arr[0].split(" "))[1]);
         System.out.println((arr[0].split(" "))[1]);
-        int signal = sdao.changeData(id, (arr[1].split(" "))[2]);
+        sdao.changeData(id, (arr[1].split(" "))[2]);
         PrintWriter pw = res.getWriter();
-        if (pw != null && signal == 0) {
+        if (pw != null) {
             pw.write("fruit successfully added");
             pw.close();
         }
     }
 
     public void deleteData(HttpServletRequest req, HttpServletResponse res) throws IOException {
-        List<Object> obj = new ArrayList<>();
         Gson jsn = new Gson();
         String[] arr = (jsn.fromJson(req.getReader(), Seller.class).toString()).split(",");
-        long id = 0;
-        for (int v = 0; v < (arr[0].split(" "))[1].length(); ++v)
-            id = id * 10 + ((arr[0].split(" "))[1].charAt(v) - 48);
-        obj = sdao.deleteData(id);
+        long id = Long.parseLong((arr[0].split(" "))[1]);
+        sdao.deleteData(id);
         PrintWriter pw = res.getWriter();
         if (pw != null) {
-            obj.forEach(e -> {
-                pw.write(e.toString() + "\n");
-            });
+            pw.write("successfully deleted");
             pw.close();
         }
     }
