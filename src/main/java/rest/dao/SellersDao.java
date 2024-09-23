@@ -67,11 +67,21 @@ public class SellersDao {
     }
 
     public void changeData(long id, String f) throws SQLException {
-        try (Connection connect = DatabaseConnector.connector(); PreparedStatement updateInDB = connect.
-                prepareStatement("UPDATE sellers SET fruits=array_append(fruits,?) WHERE id=?")) {
-            updateInDB.setString(1, f);
-            updateInDB.setLong(2, id);
-            updateInDB.executeUpdate();
+        try (Connection connect = DatabaseConnector.connector(); PreparedStatement readDB = connect.
+                prepareStatement("SELECT * FROM sellers WHERE id=? and ?=ANY(fruits)")) {
+            readDB.setLong(1, id);
+            readDB.setString(2, f);
+            ResultSet resset = readDB.executeQuery();
+            int i = 0;
+            while (resset.next()) {
+                ++i;
+            }
+            if (i == 0) {
+                PreparedStatement updateInDB = connect.prepareStatement("UPDATE sellers SET fruits=array_append(fruits,?) WHERE id=?");
+                updateInDB.setString(1, f);
+                updateInDB.setLong(2, id);
+                updateInDB.executeUpdate();
+            }
             connect.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
