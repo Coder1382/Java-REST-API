@@ -21,45 +21,20 @@ import java.util.List;
 public class SellersService {
     private final SellersDao sellersDao = new SellersDao();
 
-    public void showData(long id, HttpServletResponse res) throws IOException {
-        List<Object> obj = sellersDao.showData(id);
-        PrintWriter pw = res.getWriter();
-        if (pw != null) {
-            obj.forEach(e -> {
-                pw.write(e.toString() + "\n\n");
-            });
-            pw.close();
-        }
+    public List<Object> show(long id) throws IOException {
+        return sellersDao.show(id);
     }
 
-    public void saveData(String[] arr, HttpServletResponse res) throws IOException {
-        long index = Long.parseLong(arr[2].split(" ")[2]);
-        long id = sellersDao.saveData(arr[1].split(" ")[2], index);
-        PrintWriter pw = res.getWriter();
-        if (pw != null) {
-            pw.write("successfully added under id: " + id);
-            pw.close();
-        }
+    public long save(Seller seller) throws IOException {
+        return sellersDao.save(seller.getName(), seller.getSupplier_id());
     }
 
-    public void changeData(String[] arr, HttpServletResponse res) throws IOException, SQLException {
-        long id = Long.parseLong((arr[0].split(" "))[1]);
-        sellersDao.changeData(id, (arr[1].split(" "))[2]);
-        PrintWriter pw = res.getWriter();
-        if (pw != null) {
-            pw.write("fruit successfully added");
-            pw.close();
-        }
+    public void update(Seller seller) throws IOException, SQLException {
+        sellersDao.update(seller.getId(), seller.getName());
     }
 
-    public void deleteData(String[] arr, HttpServletResponse res) throws IOException {
+    public void delete(Seller seller) throws IOException {
         Gson jsn = new Gson();
-        long id = Long.parseLong((arr[0].split(" "))[1]);
-        sellersDao.deleteData(id);
-        PrintWriter pw = res.getWriter();
-        if (pw != null) {
-            pw.write("successfully deleted");
-            pw.close();
-        }
+        sellersDao.delete(seller.getId());
     }
 }

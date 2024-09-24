@@ -19,45 +19,19 @@ import java.util.List;
 public class FruitService {
     private final FruitDao fruitDao = new FruitDao();
 
-    public void showData(long id, HttpServletResponse res) throws IOException {
-        List<Object> obj = fruitDao.showData(id);
-        PrintWriter pw = res.getWriter();
-        if (pw != null) {
-            obj.forEach(e -> {
-                pw.write(e.toString() + "\n\n");
-            });
-            pw.close();
-        }
+    public List<Object> show(long id) throws IOException {
+        return fruitDao.show(id);
     }
 
-    public void saveData(String[] arr, HttpServletResponse res) throws IOException {
-        int pr = Integer.parseInt(arr[3].split(" ")[2]);
-        long id = fruitDao.saveData(arr[1].split(" ")[2], arr[2].split(" ")[2], pr);
-        PrintWriter pw = res.getWriter();
-        if (pw != null) {
-            pw.write("successfully added under id: " + id);
-            pw.close();
-        }
+    public long save(Fruit fruit) throws IOException {
+        return fruitDao.save(fruit.getName(), fruit.getColor(), fruit.getPrice());
     }
 
-    public void changeData(String[] arr, HttpServletResponse res) throws IOException, SQLException {
-        long id = Long.parseLong((arr[0].split(" "))[1]);
-        int pr = Integer.parseInt((arr[3].split(" "))[2]);
-        fruitDao.changeData(id, pr);
-        PrintWriter pw = res.getWriter();
-        if (pw != null) {
-            pw.write("price successfully changed");
-            pw.close();
-        }
+    public void update(Fruit fruit) throws IOException, SQLException {
+        fruitDao.update(fruit.getId(), fruit.getPrice());
     }
 
-    public void deleteData(String[] arr, HttpServletResponse res) throws IOException {
-        long id = Long.parseLong((arr[0].split(" "))[1]);
-        fruitDao.deleteData(id);
-        PrintWriter pw = res.getWriter();
-        if (pw != null) {
-            pw.write("successfully deleted");
-            pw.close();
-        }
+    public void delete(Fruit fruit) throws IOException {
+        fruitDao.delete(fruit.getId());
     }
 }

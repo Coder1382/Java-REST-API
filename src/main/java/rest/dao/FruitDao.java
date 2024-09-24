@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FruitDao {
-    public List<Object> showData(long id) throws IOException {
+    public List<Object> show(long id) throws IOException {
         List<Object> obj = new ArrayList<>();
         String query = (id > 0 ? "SELECT * FROM fruit WHERE id=?" : "SELECT * FROM fruit");
         try (Connection connect = DatabaseConnector.connector(); PreparedStatement readDB = connect.prepareStatement(query)) {
@@ -34,7 +34,7 @@ public class FruitDao {
         return obj;
     }
 
-    public long saveData(String n, String col, int pr) {
+    public long save(String n, String col, int pr) {
         long id = 0;
         try (Connection connect = DatabaseConnector.connector(); PreparedStatement addToDB = connect.
                 prepareStatement("INSERT INTO fruit(name,color,price) VALUES(?,?,?)")) {
@@ -57,7 +57,7 @@ public class FruitDao {
         return id;
     }
 
-    public void changeData(long id, int pr) {
+    public void update(long id, int pr) {
         try (Connection connect = DatabaseConnector.connector(); PreparedStatement updateInDB = connect.
                 prepareStatement("UPDATE fruit SET price=? WHERE id=?")) {
             updateInDB.setInt(1, pr);
@@ -69,7 +69,7 @@ public class FruitDao {
         }
     }
 
-    public void deleteData(long id) {
+    public void delete(long id) {
         try (Connection connect = DatabaseConnector.connector(); PreparedStatement deleteFromDB = connect.
                 prepareStatement("DELETE FROM fruit WHERE id=?")) {
             deleteFromDB.setLong(1, id);

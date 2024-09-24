@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SellersDao {
-    public long saveData(String n, long index) {
+    public long save(String n, long index) {
         long id = 0;
         try (Connection connect = DatabaseConnector.connector(); PreparedStatement addToDB = connect.
                 prepareStatement("INSERT INTO sellers(name,supplier_id) VALUES(?,?)")) {
@@ -34,7 +34,7 @@ public class SellersDao {
         return id;
     }
 
-    public List<Object> showData(long id) {
+    public List<Object> show(long id) {
         List<Object> obj = new ArrayList<>();
         String query = (id > 0 ? "SELECT * FROM sellers WHERE id=?" : "SELECT * FROM sellers");
         try (Connection connect = DatabaseConnector.connector(); PreparedStatement readDB = connect.prepareStatement(query)) {
@@ -67,7 +67,7 @@ public class SellersDao {
         return obj;
     }
 
-    public void changeData(long id, String f) throws SQLException {
+    public void update(long id, String f) throws SQLException {
         try (Connection connect = DatabaseConnector.connector(); PreparedStatement readDB = connect.
                 prepareStatement("SELECT * FROM sellers WHERE id=? and ?=ANY(fruits)")) {
             readDB.setLong(1, id);
@@ -89,7 +89,7 @@ public class SellersDao {
         }
     }
 
-    public void deleteData(long id) {
+    public void delete(long id) {
         try (Connection connect = DatabaseConnector.connector(); PreparedStatement readDB = connect.
                 prepareStatement("SELECT name, supplier_id FROM sellers WHERE id=?")) {
             long i = 0;

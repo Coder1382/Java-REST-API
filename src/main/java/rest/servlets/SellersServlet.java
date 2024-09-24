@@ -20,19 +20,25 @@ public class SellersServlet extends HttpServlet {
     public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         Gson jsn = new Gson();
         String[] uri = req.getRequestURI().split("/");
-        if (uri[2].equals("sellers"))
-            sellersService.saveData((jsn.fromJson(req.getReader(), Seller.class).toString()).split(","), res);
+        if (uri[2].equals("sellers")) {
+            PrintWriter pw = res.getWriter();
+            pw.write("successfully added under id: " + sellersService.save(jsn.fromJson(req.getReader(), Seller.class)));
+            pw.close();
+        }
     }
 
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         String[] uri = req.getRequestURI().split("/");
         if (uri[2].equals("sellers")) {
-            if (req.getQueryString() != null) {
-                String[] query = req.getQueryString().split("=");
-                long id = Long.parseLong(query[1]);
-                sellersService.showData(id, res);
-            } else sellersService.showData(-1, res);
+            long id = -1;
+            if (req.getQueryString() != null)
+                id = Long.parseLong(req.getQueryString().split("=")[1]);
+            PrintWriter pw = res.getWriter();
+            sellersService.show(id).forEach(e -> {
+                pw.write(e.toString() + "\n\n");
+            });
+            pw.close();
         }
     }
 
@@ -42,10 +48,13 @@ public class SellersServlet extends HttpServlet {
         String[] uri = req.getRequestURI().split("/");
         if (uri[2].equals("sellers")) {
             try {
-                sellersService.changeData((jsn.fromJson(req.getReader(), Seller.class).toString()).split(","), res);
+                sellersService.update(jsn.fromJson(req.getReader(), Seller.class));
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
+            PrintWriter pw = res.getWriter();
+            pw.write("fruit successfully added");
+            pw.close();
         }
     }
 
@@ -53,7 +62,11 @@ public class SellersServlet extends HttpServlet {
     public void doDelete(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         Gson jsn = new Gson();
         String[] uri = req.getRequestURI().split("/");
-        if (uri[2].equals("sellers"))
-            sellersService.deleteData((jsn.fromJson(req.getReader(), Seller.class).toString()).split(","), res);
+        if (uri[2].equals("sellers")) {
+            sellersService.delete(jsn.fromJson(req.getReader(), Seller.class));
+            PrintWriter pw = res.getWriter();
+            pw.write("successfully deleted");
+            pw.close();
+        }
     }
 }
