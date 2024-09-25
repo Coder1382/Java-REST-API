@@ -1,6 +1,7 @@
 package rest.servlets;//package servlets;
 
 import com.google.gson.Gson;
+import rest.dto.SellersDto;
 import rest.model.Seller;
 import rest.services.SellersService;
 
@@ -22,7 +23,7 @@ public class SellersServlet extends HttpServlet {
         String[] uri = req.getRequestURI().split("/");
         if (uri[2].equals("sellers")) {
             PrintWriter pw = res.getWriter();
-            pw.write("successfully added under id: " + sellersService.save(jsn.fromJson(req.getReader(), Seller.class)));
+            pw.write("successfully added under id: " + sellersService.save(jsn.fromJson(req.getReader(), SellersDto.class)));
             pw.close();
         }
     }
@@ -51,7 +52,7 @@ public class SellersServlet extends HttpServlet {
         String[] uri = req.getRequestURI().split("/");
         if (uri[2].equals("sellers")) {
             try {
-                sellersService.update(jsn.fromJson(req.getReader(), Seller.class));
+                sellersService.update(jsn.fromJson(req.getReader(), SellersDto.class));
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
@@ -66,7 +67,7 @@ public class SellersServlet extends HttpServlet {
         Gson jsn = new Gson();
         String[] uri = req.getRequestURI().split("/");
         if (uri[2].equals("sellers")) {
-            sellersService.delete(jsn.fromJson(req.getReader(), Seller.class));
+            sellersService.delete(jsn.fromJson(req.getReader(), SellersDto.class));
             PrintWriter pw = res.getWriter();
             pw.write("successfully deleted");
             pw.close();

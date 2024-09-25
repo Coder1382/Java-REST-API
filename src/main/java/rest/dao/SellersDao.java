@@ -1,5 +1,6 @@
 package rest.dao;
 
+import rest.dto.SellersDto;
 import rest.model.Fruit;
 import rest.model.Seller;
 import rest.model.Supplier;
@@ -34,8 +35,8 @@ public class SellersDao {
         return id;
     }
 
-    public List<Object> find(long id) {
-        List<Object> obj = new ArrayList<>();
+    public List<SellersDto> find(long id) {
+        List<SellersDto> sellersDtos = new ArrayList<>();
         String query = (id > 0 ? "SELECT * FROM sellers WHERE id=?" : "SELECT * FROM sellers");
         try (Connection connect = DatabaseConnector.connector(); PreparedStatement readDB = connect.prepareStatement(query)) {
             if (id > 0)
@@ -56,15 +57,15 @@ public class SellersDao {
                         List<Fruit> s = new ArrayList<>();
                         for (int k = 0; k < cli.length; ++k)
                             s.add(new Fruit(cli[k], "", 0));
-                        obj.add(new Seller(i, name, supplier_id, company, s));
-                    } else obj.add(new Seller(i, name, supplier_id, company));
+                        sellersDtos.add(new SellersDto(id, name, company, s));
+                    } else sellersDtos.add(new SellersDto(id, name, company));
                 }
             }
             connect.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        return obj;
+        return sellersDtos;
     }
 
     public void update(long id, String f) throws SQLException {

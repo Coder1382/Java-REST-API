@@ -1368,3 +1368,1148 @@
 25-Sep-2024 08:03:03.526 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/home/dik/Desktop/java/myREST/conf/Catalina/localhost/myREST.xml] has finished in [515] ms
 25-Sep-2024 08:03:03.528 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
 25-Sep-2024 08:03:03.534 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [553] milliseconds
+25-Sep-2024 08:58:54.046 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 08:58:54.048 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+25-Sep-2024 08:58:54.057 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 08:58:54.059 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 09:46:15.806 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.93
+25-Sep-2024 09:46:15.809 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Aug 2 2024 21:24:59 UTC
+25-Sep-2024 09:46:15.809 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.93.0
+25-Sep-2024 09:46:15.809 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+25-Sep-2024 09:46:15.809 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.8.0-45-generic
+25-Sep-2024 09:46:15.809 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+25-Sep-2024 09:46:15.809 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-21-openjdk-amd64
+25-Sep-2024 09:46:15.809 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           21.0.4+7-Ubuntu-1ubuntu222.04
+25-Sep-2024 09:46:15.809 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Ubuntu
+25-Sep-2024 09:46:15.810 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/dik/Desktop/java/myREST
+25-Sep-2024 09:46:15.810 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/dik/Desktop/java/myREST/tomcat
+25-Sep-2024 09:46:15.814 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+25-Sep-2024 09:46:15.814 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+25-Sep-2024 09:46:15.814 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+25-Sep-2024 09:46:15.814 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+25-Sep-2024 09:46:15.814 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+25-Sep-2024 09:46:15.814 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/dik/Desktop/java/myREST/tomcat
+25-Sep-2024 09:46:15.814 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/dik/Desktop/java/myREST
+25-Sep-2024 09:46:15.814 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/dik/Desktop/java/myREST/temp
+25-Sep-2024 09:46:15.814 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/dik/Desktop/java/myREST/conf/logging.properties
+25-Sep-2024 09:46:15.814 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+25-Sep-2024 09:46:15.814 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:/home/dik/Desktop/idea-IC-241.18034.62/lib/idea_rt.jar=43195:/home/dik/Desktop/idea-IC-241.18034.62/bin
+25-Sep-2024 09:46:15.814 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+25-Sep-2024 09:46:15.814 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stdout.encoding=UTF-8
+25-Sep-2024 09:46:15.815 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stderr.encoding=UTF-8
+25-Sep-2024 09:46:15.817 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+25-Sep-2024 09:46:16.061 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 09:46:16.079 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [422] milliseconds
+25-Sep-2024 09:46:16.116 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+25-Sep-2024 09:46:16.116 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.93]
+25-Sep-2024 09:46:16.122 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/home/dik/Desktop/java/myREST/conf/Catalina/localhost/myREST.xml]
+25-Sep-2024 09:46:16.763 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+25-Sep-2024 09:46:16.788 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/home/dik/Desktop/java/myREST/conf/Catalina/localhost/myREST.xml] has finished in [666] ms
+25-Sep-2024 09:46:16.791 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 09:46:16.796 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [715] milliseconds
+25-Sep-2024 09:52:31.446 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 09:52:31.447 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+25-Sep-2024 09:52:31.457 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 09:52:31.459 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 11:28:37.004 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.93
+25-Sep-2024 11:28:37.008 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Aug 2 2024 21:24:59 UTC
+25-Sep-2024 11:28:37.008 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.93.0
+25-Sep-2024 11:28:37.008 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+25-Sep-2024 11:28:37.008 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.8.0-45-generic
+25-Sep-2024 11:28:37.008 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+25-Sep-2024 11:28:37.008 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-21-openjdk-amd64
+25-Sep-2024 11:28:37.008 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           21.0.4+7-Ubuntu-1ubuntu222.04
+25-Sep-2024 11:28:37.008 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Ubuntu
+25-Sep-2024 11:28:37.009 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/dik/Desktop/java/myREST
+25-Sep-2024 11:28:37.009 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/dik/Desktop/java/myREST/tomcat
+25-Sep-2024 11:28:37.014 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+25-Sep-2024 11:28:37.014 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+25-Sep-2024 11:28:37.014 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+25-Sep-2024 11:28:37.014 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+25-Sep-2024 11:28:37.014 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+25-Sep-2024 11:28:37.014 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/dik/Desktop/java/myREST/tomcat
+25-Sep-2024 11:28:37.014 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/dik/Desktop/java/myREST
+25-Sep-2024 11:28:37.014 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/dik/Desktop/java/myREST/temp
+25-Sep-2024 11:28:37.015 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/dik/Desktop/java/myREST/conf/logging.properties
+25-Sep-2024 11:28:37.015 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+25-Sep-2024 11:28:37.015 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:/home/dik/Desktop/idea-IC-241.18034.62/lib/idea_rt.jar=43063:/home/dik/Desktop/idea-IC-241.18034.62/bin
+25-Sep-2024 11:28:37.015 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+25-Sep-2024 11:28:37.015 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stdout.encoding=UTF-8
+25-Sep-2024 11:28:37.015 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stderr.encoding=UTF-8
+25-Sep-2024 11:28:37.016 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+25-Sep-2024 11:28:37.290 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 11:28:37.303 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [431] milliseconds
+25-Sep-2024 11:28:37.334 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+25-Sep-2024 11:28:37.334 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.93]
+25-Sep-2024 11:28:37.340 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/home/dik/Desktop/java/myREST/conf/Catalina/localhost/myREST.xml]
+25-Sep-2024 11:28:37.880 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+25-Sep-2024 11:28:37.899 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/home/dik/Desktop/java/myREST/conf/Catalina/localhost/myREST.xml] has finished in [558] ms
+25-Sep-2024 11:28:37.901 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 11:28:37.907 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [602] milliseconds
+25-Sep-2024 11:33:55.527 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 11:33:55.528 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+25-Sep-2024 11:33:55.531 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [myREST] registered the JDBC driver [org.postgresql.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+25-Sep-2024 11:33:55.534 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 11:33:55.537 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 11:33:57.278 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.93
+25-Sep-2024 11:33:57.281 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Aug 2 2024 21:24:59 UTC
+25-Sep-2024 11:33:57.281 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.93.0
+25-Sep-2024 11:33:57.281 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+25-Sep-2024 11:33:57.281 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.8.0-45-generic
+25-Sep-2024 11:33:57.281 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+25-Sep-2024 11:33:57.281 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-21-openjdk-amd64
+25-Sep-2024 11:33:57.281 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           21.0.4+7-Ubuntu-1ubuntu222.04
+25-Sep-2024 11:33:57.281 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Ubuntu
+25-Sep-2024 11:33:57.281 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/dik/Desktop/java/myREST
+25-Sep-2024 11:33:57.281 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/dik/Desktop/java/myREST/tomcat
+25-Sep-2024 11:33:57.287 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+25-Sep-2024 11:33:57.287 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+25-Sep-2024 11:33:57.287 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+25-Sep-2024 11:33:57.287 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+25-Sep-2024 11:33:57.287 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+25-Sep-2024 11:33:57.287 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/dik/Desktop/java/myREST/tomcat
+25-Sep-2024 11:33:57.287 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/dik/Desktop/java/myREST
+25-Sep-2024 11:33:57.287 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/dik/Desktop/java/myREST/temp
+25-Sep-2024 11:33:57.287 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/dik/Desktop/java/myREST/conf/logging.properties
+25-Sep-2024 11:33:57.288 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+25-Sep-2024 11:33:57.288 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:/home/dik/Desktop/idea-IC-241.18034.62/lib/idea_rt.jar=37611:/home/dik/Desktop/idea-IC-241.18034.62/bin
+25-Sep-2024 11:33:57.288 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+25-Sep-2024 11:33:57.288 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stdout.encoding=UTF-8
+25-Sep-2024 11:33:57.288 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stderr.encoding=UTF-8
+25-Sep-2024 11:33:57.289 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+25-Sep-2024 11:33:57.577 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 11:33:57.591 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [449] milliseconds
+25-Sep-2024 11:33:57.621 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+25-Sep-2024 11:33:57.621 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.93]
+25-Sep-2024 11:33:57.626 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/home/dik/Desktop/java/myREST/conf/Catalina/localhost/myREST.xml]
+25-Sep-2024 11:33:58.201 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+25-Sep-2024 11:33:58.220 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/home/dik/Desktop/java/myREST/conf/Catalina/localhost/myREST.xml] has finished in [594] ms
+25-Sep-2024 11:33:58.223 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 11:33:58.228 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [636] milliseconds
+25-Sep-2024 11:35:47.222 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 11:35:47.224 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+25-Sep-2024 11:35:47.232 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 11:35:47.233 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 11:45:05.805 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.93
+25-Sep-2024 11:45:05.809 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Aug 2 2024 21:24:59 UTC
+25-Sep-2024 11:45:05.809 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.93.0
+25-Sep-2024 11:45:05.809 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+25-Sep-2024 11:45:05.809 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.8.0-45-generic
+25-Sep-2024 11:45:05.809 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+25-Sep-2024 11:45:05.809 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-21-openjdk-amd64
+25-Sep-2024 11:45:05.809 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           21.0.4+7-Ubuntu-1ubuntu222.04
+25-Sep-2024 11:45:05.809 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Ubuntu
+25-Sep-2024 11:45:05.810 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/dik/Desktop/java/myREST
+25-Sep-2024 11:45:05.810 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/dik/Desktop/java/myREST/tomcat
+25-Sep-2024 11:45:05.816 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+25-Sep-2024 11:45:05.816 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+25-Sep-2024 11:45:05.816 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+25-Sep-2024 11:45:05.816 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+25-Sep-2024 11:45:05.816 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+25-Sep-2024 11:45:05.816 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/dik/Desktop/java/myREST/tomcat
+25-Sep-2024 11:45:05.817 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/dik/Desktop/java/myREST
+25-Sep-2024 11:45:05.817 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/dik/Desktop/java/myREST/temp
+25-Sep-2024 11:45:05.817 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/dik/Desktop/java/myREST/conf/logging.properties
+25-Sep-2024 11:45:05.817 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+25-Sep-2024 11:45:05.817 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:/home/dik/Desktop/idea-IC-241.18034.62/lib/idea_rt.jar=34131:/home/dik/Desktop/idea-IC-241.18034.62/bin
+25-Sep-2024 11:45:05.817 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+25-Sep-2024 11:45:05.817 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stdout.encoding=UTF-8
+25-Sep-2024 11:45:05.817 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stderr.encoding=UTF-8
+25-Sep-2024 11:45:05.819 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+25-Sep-2024 11:45:06.098 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 11:45:06.117 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [513] milliseconds
+25-Sep-2024 11:45:06.148 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+25-Sep-2024 11:45:06.148 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.93]
+25-Sep-2024 11:45:06.153 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/home/dik/Desktop/java/myREST/conf/Catalina/localhost/myREST.xml]
+25-Sep-2024 11:45:06.704 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+25-Sep-2024 11:45:06.725 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/home/dik/Desktop/java/myREST/conf/Catalina/localhost/myREST.xml] has finished in [571] ms
+25-Sep-2024 11:45:06.727 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 11:45:06.733 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [614] milliseconds
+25-Sep-2024 11:52:09.026 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 11:52:09.027 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+25-Sep-2024 11:52:09.030 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [myREST] registered the JDBC driver [org.postgresql.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+25-Sep-2024 11:52:09.034 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 11:52:09.036 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 11:52:10.691 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.93
+25-Sep-2024 11:52:10.693 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Aug 2 2024 21:24:59 UTC
+25-Sep-2024 11:52:10.694 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.93.0
+25-Sep-2024 11:52:10.694 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+25-Sep-2024 11:52:10.694 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.8.0-45-generic
+25-Sep-2024 11:52:10.694 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+25-Sep-2024 11:52:10.694 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-21-openjdk-amd64
+25-Sep-2024 11:52:10.694 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           21.0.4+7-Ubuntu-1ubuntu222.04
+25-Sep-2024 11:52:10.694 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Ubuntu
+25-Sep-2024 11:52:10.694 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/dik/Desktop/java/myREST
+25-Sep-2024 11:52:10.694 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/dik/Desktop/java/myREST/tomcat
+25-Sep-2024 11:52:10.699 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+25-Sep-2024 11:52:10.699 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+25-Sep-2024 11:52:10.700 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+25-Sep-2024 11:52:10.700 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+25-Sep-2024 11:52:10.700 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+25-Sep-2024 11:52:10.700 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/dik/Desktop/java/myREST/tomcat
+25-Sep-2024 11:52:10.700 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/dik/Desktop/java/myREST
+25-Sep-2024 11:52:10.700 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/dik/Desktop/java/myREST/temp
+25-Sep-2024 11:52:10.700 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/dik/Desktop/java/myREST/conf/logging.properties
+25-Sep-2024 11:52:10.700 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+25-Sep-2024 11:52:10.700 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:/home/dik/Desktop/idea-IC-241.18034.62/lib/idea_rt.jar=33079:/home/dik/Desktop/idea-IC-241.18034.62/bin
+25-Sep-2024 11:52:10.700 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+25-Sep-2024 11:52:10.700 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stdout.encoding=UTF-8
+25-Sep-2024 11:52:10.700 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stderr.encoding=UTF-8
+25-Sep-2024 11:52:10.702 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+25-Sep-2024 11:52:10.980 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 11:52:10.998 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [439] milliseconds
+25-Sep-2024 11:52:11.031 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+25-Sep-2024 11:52:11.031 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.93]
+25-Sep-2024 11:52:11.037 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/home/dik/Desktop/java/myREST/conf/Catalina/localhost/myREST.xml]
+25-Sep-2024 11:52:11.606 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+25-Sep-2024 11:52:11.625 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/home/dik/Desktop/java/myREST/conf/Catalina/localhost/myREST.xml] has finished in [588] ms
+25-Sep-2024 11:52:11.628 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 11:52:11.633 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [633] milliseconds
+25-Sep-2024 11:53:44.538 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 11:53:44.539 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+25-Sep-2024 11:53:44.543 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [myREST] registered the JDBC driver [org.postgresql.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+25-Sep-2024 11:53:44.548 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 11:53:44.550 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 11:53:46.249 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.93
+25-Sep-2024 11:53:46.252 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Aug 2 2024 21:24:59 UTC
+25-Sep-2024 11:53:46.252 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.93.0
+25-Sep-2024 11:53:46.252 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+25-Sep-2024 11:53:46.252 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.8.0-45-generic
+25-Sep-2024 11:53:46.252 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+25-Sep-2024 11:53:46.252 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-21-openjdk-amd64
+25-Sep-2024 11:53:46.252 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           21.0.4+7-Ubuntu-1ubuntu222.04
+25-Sep-2024 11:53:46.253 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Ubuntu
+25-Sep-2024 11:53:46.253 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/dik/Desktop/java/myREST
+25-Sep-2024 11:53:46.253 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/dik/Desktop/java/myREST/tomcat
+25-Sep-2024 11:53:46.258 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+25-Sep-2024 11:53:46.258 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+25-Sep-2024 11:53:46.258 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+25-Sep-2024 11:53:46.258 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+25-Sep-2024 11:53:46.258 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+25-Sep-2024 11:53:46.258 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/dik/Desktop/java/myREST/tomcat
+25-Sep-2024 11:53:46.258 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/dik/Desktop/java/myREST
+25-Sep-2024 11:53:46.258 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/dik/Desktop/java/myREST/temp
+25-Sep-2024 11:53:46.259 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/dik/Desktop/java/myREST/conf/logging.properties
+25-Sep-2024 11:53:46.259 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+25-Sep-2024 11:53:46.259 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:/home/dik/Desktop/idea-IC-241.18034.62/lib/idea_rt.jar=44397:/home/dik/Desktop/idea-IC-241.18034.62/bin
+25-Sep-2024 11:53:46.259 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+25-Sep-2024 11:53:46.259 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stdout.encoding=UTF-8
+25-Sep-2024 11:53:46.259 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stderr.encoding=UTF-8
+25-Sep-2024 11:53:46.260 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+25-Sep-2024 11:53:46.565 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 11:53:46.584 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [515] milliseconds
+25-Sep-2024 11:53:46.621 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+25-Sep-2024 11:53:46.622 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.93]
+25-Sep-2024 11:53:46.629 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/home/dik/Desktop/java/myREST/conf/Catalina/localhost/myREST.xml]
+25-Sep-2024 11:53:47.161 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+25-Sep-2024 11:53:47.179 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/home/dik/Desktop/java/myREST/conf/Catalina/localhost/myREST.xml] has finished in [550] ms
+25-Sep-2024 11:53:47.181 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 11:53:47.186 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [600] milliseconds
+25-Sep-2024 11:56:30.711 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 11:56:30.712 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+25-Sep-2024 11:56:30.720 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 11:56:30.722 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 11:56:32.259 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.93
+25-Sep-2024 11:56:32.261 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Aug 2 2024 21:24:59 UTC
+25-Sep-2024 11:56:32.261 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.93.0
+25-Sep-2024 11:56:32.261 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+25-Sep-2024 11:56:32.262 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.8.0-45-generic
+25-Sep-2024 11:56:32.262 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+25-Sep-2024 11:56:32.262 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-21-openjdk-amd64
+25-Sep-2024 11:56:32.262 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           21.0.4+7-Ubuntu-1ubuntu222.04
+25-Sep-2024 11:56:32.262 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Ubuntu
+25-Sep-2024 11:56:32.262 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/dik/Desktop/java/myREST
+25-Sep-2024 11:56:32.262 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/dik/Desktop/java/myREST/tomcat
+25-Sep-2024 11:56:32.267 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+25-Sep-2024 11:56:32.267 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+25-Sep-2024 11:56:32.267 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+25-Sep-2024 11:56:32.267 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+25-Sep-2024 11:56:32.267 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+25-Sep-2024 11:56:32.267 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/dik/Desktop/java/myREST/tomcat
+25-Sep-2024 11:56:32.267 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/dik/Desktop/java/myREST
+25-Sep-2024 11:56:32.268 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/dik/Desktop/java/myREST/temp
+25-Sep-2024 11:56:32.268 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/dik/Desktop/java/myREST/conf/logging.properties
+25-Sep-2024 11:56:32.268 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+25-Sep-2024 11:56:32.268 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:/home/dik/Desktop/idea-IC-241.18034.62/lib/idea_rt.jar=34183:/home/dik/Desktop/idea-IC-241.18034.62/bin
+25-Sep-2024 11:56:32.268 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+25-Sep-2024 11:56:32.268 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stdout.encoding=UTF-8
+25-Sep-2024 11:56:32.268 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stderr.encoding=UTF-8
+25-Sep-2024 11:56:32.269 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+25-Sep-2024 11:56:32.553 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 11:56:32.568 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [442] milliseconds
+25-Sep-2024 11:56:32.595 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+25-Sep-2024 11:56:32.595 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.93]
+25-Sep-2024 11:56:32.600 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/home/dik/Desktop/java/myREST/conf/Catalina/localhost/myREST.xml]
+25-Sep-2024 11:56:33.143 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+25-Sep-2024 11:56:33.164 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/home/dik/Desktop/java/myREST/conf/Catalina/localhost/myREST.xml] has finished in [563] ms
+25-Sep-2024 11:56:33.167 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 11:56:33.173 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [603] milliseconds
+25-Sep-2024 11:57:07.369 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 11:57:07.371 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+25-Sep-2024 11:57:07.377 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 11:57:07.380 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 11:57:08.999 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.93
+25-Sep-2024 11:57:09.002 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Aug 2 2024 21:24:59 UTC
+25-Sep-2024 11:57:09.002 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.93.0
+25-Sep-2024 11:57:09.003 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+25-Sep-2024 11:57:09.003 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.8.0-45-generic
+25-Sep-2024 11:57:09.003 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+25-Sep-2024 11:57:09.003 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-21-openjdk-amd64
+25-Sep-2024 11:57:09.003 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           21.0.4+7-Ubuntu-1ubuntu222.04
+25-Sep-2024 11:57:09.003 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Ubuntu
+25-Sep-2024 11:57:09.003 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/dik/Desktop/java/myREST
+25-Sep-2024 11:57:09.003 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/dik/Desktop/java/myREST/tomcat
+25-Sep-2024 11:57:09.009 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+25-Sep-2024 11:57:09.009 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+25-Sep-2024 11:57:09.009 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+25-Sep-2024 11:57:09.009 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+25-Sep-2024 11:57:09.009 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+25-Sep-2024 11:57:09.009 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/dik/Desktop/java/myREST/tomcat
+25-Sep-2024 11:57:09.009 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/dik/Desktop/java/myREST
+25-Sep-2024 11:57:09.009 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/dik/Desktop/java/myREST/temp
+25-Sep-2024 11:57:09.009 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/dik/Desktop/java/myREST/conf/logging.properties
+25-Sep-2024 11:57:09.009 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+25-Sep-2024 11:57:09.009 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:/home/dik/Desktop/idea-IC-241.18034.62/lib/idea_rt.jar=41665:/home/dik/Desktop/idea-IC-241.18034.62/bin
+25-Sep-2024 11:57:09.009 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+25-Sep-2024 11:57:09.010 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stdout.encoding=UTF-8
+25-Sep-2024 11:57:09.010 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stderr.encoding=UTF-8
+25-Sep-2024 11:57:09.011 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+25-Sep-2024 11:57:09.291 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 11:57:09.310 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [457] milliseconds
+25-Sep-2024 11:57:09.348 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+25-Sep-2024 11:57:09.348 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.93]
+25-Sep-2024 11:57:09.355 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/home/dik/Desktop/java/myREST/conf/Catalina/localhost/myREST.xml]
+25-Sep-2024 11:57:09.915 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+25-Sep-2024 11:57:09.936 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/home/dik/Desktop/java/myREST/conf/Catalina/localhost/myREST.xml] has finished in [580] ms
+25-Sep-2024 11:57:09.938 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 11:57:09.943 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [631] milliseconds
+25-Sep-2024 11:57:28.071 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 11:57:28.072 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+25-Sep-2024 11:57:28.079 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 11:57:28.081 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 11:57:29.473 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.93
+25-Sep-2024 11:57:29.476 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Aug 2 2024 21:24:59 UTC
+25-Sep-2024 11:57:29.476 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.93.0
+25-Sep-2024 11:57:29.476 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+25-Sep-2024 11:57:29.476 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.8.0-45-generic
+25-Sep-2024 11:57:29.476 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+25-Sep-2024 11:57:29.476 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-21-openjdk-amd64
+25-Sep-2024 11:57:29.476 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           21.0.4+7-Ubuntu-1ubuntu222.04
+25-Sep-2024 11:57:29.476 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Ubuntu
+25-Sep-2024 11:57:29.476 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/dik/Desktop/java/myREST
+25-Sep-2024 11:57:29.477 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/dik/Desktop/java/myREST/tomcat
+25-Sep-2024 11:57:29.482 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+25-Sep-2024 11:57:29.482 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+25-Sep-2024 11:57:29.482 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+25-Sep-2024 11:57:29.482 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+25-Sep-2024 11:57:29.482 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+25-Sep-2024 11:57:29.482 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/dik/Desktop/java/myREST/tomcat
+25-Sep-2024 11:57:29.482 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/dik/Desktop/java/myREST
+25-Sep-2024 11:57:29.482 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/dik/Desktop/java/myREST/temp
+25-Sep-2024 11:57:29.482 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/dik/Desktop/java/myREST/conf/logging.properties
+25-Sep-2024 11:57:29.482 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+25-Sep-2024 11:57:29.482 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:/home/dik/Desktop/idea-IC-241.18034.62/lib/idea_rt.jar=34027:/home/dik/Desktop/idea-IC-241.18034.62/bin
+25-Sep-2024 11:57:29.482 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+25-Sep-2024 11:57:29.482 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stdout.encoding=UTF-8
+25-Sep-2024 11:57:29.482 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stderr.encoding=UTF-8
+25-Sep-2024 11:57:29.484 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+25-Sep-2024 11:57:29.790 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 11:57:29.808 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [465] milliseconds
+25-Sep-2024 11:57:29.834 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+25-Sep-2024 11:57:29.834 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.93]
+25-Sep-2024 11:57:29.839 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/home/dik/Desktop/java/myREST/conf/Catalina/localhost/myREST.xml]
+25-Sep-2024 11:57:30.391 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+25-Sep-2024 11:57:30.410 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/home/dik/Desktop/java/myREST/conf/Catalina/localhost/myREST.xml] has finished in [570] ms
+25-Sep-2024 11:57:30.412 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 11:57:30.418 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [608] milliseconds
+25-Sep-2024 12:07:34.447 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 12:07:34.448 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+25-Sep-2024 12:07:34.453 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 12:07:34.456 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 12:07:36.599 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.93
+25-Sep-2024 12:07:36.603 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Aug 2 2024 21:24:59 UTC
+25-Sep-2024 12:07:36.603 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.93.0
+25-Sep-2024 12:07:36.603 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+25-Sep-2024 12:07:36.603 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.8.0-45-generic
+25-Sep-2024 12:07:36.603 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+25-Sep-2024 12:07:36.603 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-21-openjdk-amd64
+25-Sep-2024 12:07:36.603 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           21.0.4+7-Ubuntu-1ubuntu222.04
+25-Sep-2024 12:07:36.603 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Ubuntu
+25-Sep-2024 12:07:36.603 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/dik/Desktop/java/myREST
+25-Sep-2024 12:07:36.603 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/dik/Desktop/java/myREST/tomcat
+25-Sep-2024 12:07:36.609 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+25-Sep-2024 12:07:36.609 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+25-Sep-2024 12:07:36.609 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+25-Sep-2024 12:07:36.609 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+25-Sep-2024 12:07:36.609 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+25-Sep-2024 12:07:36.609 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/dik/Desktop/java/myREST/tomcat
+25-Sep-2024 12:07:36.609 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/dik/Desktop/java/myREST
+25-Sep-2024 12:07:36.609 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/dik/Desktop/java/myREST/temp
+25-Sep-2024 12:07:36.609 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/dik/Desktop/java/myREST/conf/logging.properties
+25-Sep-2024 12:07:36.609 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+25-Sep-2024 12:07:36.609 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:/home/dik/Desktop/idea-IC-241.18034.62/lib/idea_rt.jar=37917:/home/dik/Desktop/idea-IC-241.18034.62/bin
+25-Sep-2024 12:07:36.609 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+25-Sep-2024 12:07:36.609 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stdout.encoding=UTF-8
+25-Sep-2024 12:07:36.610 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stderr.encoding=UTF-8
+25-Sep-2024 12:07:36.611 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+25-Sep-2024 12:07:36.882 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 12:07:36.897 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [425] milliseconds
+25-Sep-2024 12:07:36.925 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+25-Sep-2024 12:07:36.925 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.93]
+25-Sep-2024 12:07:36.930 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/home/dik/Desktop/java/myREST/conf/Catalina/localhost/myREST.xml]
+25-Sep-2024 12:07:37.493 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+25-Sep-2024 12:07:37.514 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/home/dik/Desktop/java/myREST/conf/Catalina/localhost/myREST.xml] has finished in [584] ms
+25-Sep-2024 12:07:37.517 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 12:07:37.522 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [624] milliseconds
+25-Sep-2024 12:10:32.872 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 12:10:32.873 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+25-Sep-2024 12:10:32.876 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [myREST] registered the JDBC driver [org.postgresql.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+25-Sep-2024 12:10:32.880 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 12:10:32.883 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 12:10:34.564 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.93
+25-Sep-2024 12:10:34.566 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Aug 2 2024 21:24:59 UTC
+25-Sep-2024 12:10:34.566 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.93.0
+25-Sep-2024 12:10:34.567 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+25-Sep-2024 12:10:34.567 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.8.0-45-generic
+25-Sep-2024 12:10:34.567 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+25-Sep-2024 12:10:34.567 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-21-openjdk-amd64
+25-Sep-2024 12:10:34.567 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           21.0.4+7-Ubuntu-1ubuntu222.04
+25-Sep-2024 12:10:34.567 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Ubuntu
+25-Sep-2024 12:10:34.567 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/dik/Desktop/java/myREST
+25-Sep-2024 12:10:34.567 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/dik/Desktop/java/myREST/tomcat
+25-Sep-2024 12:10:34.572 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+25-Sep-2024 12:10:34.572 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+25-Sep-2024 12:10:34.572 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+25-Sep-2024 12:10:34.572 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+25-Sep-2024 12:10:34.572 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+25-Sep-2024 12:10:34.572 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/dik/Desktop/java/myREST/tomcat
+25-Sep-2024 12:10:34.573 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/dik/Desktop/java/myREST
+25-Sep-2024 12:10:34.573 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/dik/Desktop/java/myREST/temp
+25-Sep-2024 12:10:34.573 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/dik/Desktop/java/myREST/conf/logging.properties
+25-Sep-2024 12:10:34.573 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+25-Sep-2024 12:10:34.573 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:/home/dik/Desktop/idea-IC-241.18034.62/lib/idea_rt.jar=38157:/home/dik/Desktop/idea-IC-241.18034.62/bin
+25-Sep-2024 12:10:34.573 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+25-Sep-2024 12:10:34.573 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stdout.encoding=UTF-8
+25-Sep-2024 12:10:34.573 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stderr.encoding=UTF-8
+25-Sep-2024 12:10:34.575 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+25-Sep-2024 12:10:34.844 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 12:10:34.858 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [422] milliseconds
+25-Sep-2024 12:10:34.888 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+25-Sep-2024 12:10:34.888 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.93]
+25-Sep-2024 12:10:34.894 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/home/dik/Desktop/java/myREST/conf/Catalina/localhost/myREST.xml]
+25-Sep-2024 12:10:35.472 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+25-Sep-2024 12:10:35.490 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/home/dik/Desktop/java/myREST/conf/Catalina/localhost/myREST.xml] has finished in [596] ms
+25-Sep-2024 12:10:35.493 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 12:10:35.499 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [639] milliseconds
+25-Sep-2024 12:10:57.408 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 12:10:57.409 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+25-Sep-2024 12:10:57.415 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 12:10:57.418 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 12:11:02.170 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.93
+25-Sep-2024 12:11:02.173 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Aug 2 2024 21:24:59 UTC
+25-Sep-2024 12:11:02.173 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.93.0
+25-Sep-2024 12:11:02.173 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+25-Sep-2024 12:11:02.173 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.8.0-45-generic
+25-Sep-2024 12:11:02.173 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+25-Sep-2024 12:11:02.173 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-21-openjdk-amd64
+25-Sep-2024 12:11:02.173 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           21.0.4+7-Ubuntu-1ubuntu222.04
+25-Sep-2024 12:11:02.173 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Ubuntu
+25-Sep-2024 12:11:02.173 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/dik/Desktop/java/myREST
+25-Sep-2024 12:11:02.173 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/dik/Desktop/java/myREST/tomcat
+25-Sep-2024 12:11:02.177 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+25-Sep-2024 12:11:02.177 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+25-Sep-2024 12:11:02.177 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+25-Sep-2024 12:11:02.178 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+25-Sep-2024 12:11:02.178 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+25-Sep-2024 12:11:02.178 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/dik/Desktop/java/myREST/tomcat
+25-Sep-2024 12:11:02.178 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/dik/Desktop/java/myREST
+25-Sep-2024 12:11:02.178 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/dik/Desktop/java/myREST/temp
+25-Sep-2024 12:11:02.178 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/dik/Desktop/java/myREST/conf/logging.properties
+25-Sep-2024 12:11:02.178 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+25-Sep-2024 12:11:02.178 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:/home/dik/Desktop/idea-IC-241.18034.62/lib/idea_rt.jar=39631:/home/dik/Desktop/idea-IC-241.18034.62/bin
+25-Sep-2024 12:11:02.178 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+25-Sep-2024 12:11:02.178 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stdout.encoding=UTF-8
+25-Sep-2024 12:11:02.178 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stderr.encoding=UTF-8
+25-Sep-2024 12:11:02.179 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+25-Sep-2024 12:11:02.406 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 12:11:02.423 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [357] milliseconds
+25-Sep-2024 12:11:02.459 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+25-Sep-2024 12:11:02.460 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.93]
+25-Sep-2024 12:11:02.466 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/home/dik/Desktop/java/myREST/conf/Catalina/localhost/myREST.xml]
+25-Sep-2024 12:11:03.016 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+25-Sep-2024 12:11:03.037 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/home/dik/Desktop/java/myREST/conf/Catalina/localhost/myREST.xml] has finished in [571] ms
+25-Sep-2024 12:11:03.039 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 12:11:03.046 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [621] milliseconds
+25-Sep-2024 12:11:21.796 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 12:11:21.797 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+25-Sep-2024 12:11:21.803 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 12:11:21.806 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 12:11:23.559 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.93
+25-Sep-2024 12:11:23.562 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Aug 2 2024 21:24:59 UTC
+25-Sep-2024 12:11:23.562 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.93.0
+25-Sep-2024 12:11:23.563 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+25-Sep-2024 12:11:23.563 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.8.0-45-generic
+25-Sep-2024 12:11:23.563 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+25-Sep-2024 12:11:23.563 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-21-openjdk-amd64
+25-Sep-2024 12:11:23.563 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           21.0.4+7-Ubuntu-1ubuntu222.04
+25-Sep-2024 12:11:23.563 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Ubuntu
+25-Sep-2024 12:11:23.563 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/dik/Desktop/java/myREST
+25-Sep-2024 12:11:23.563 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/dik/Desktop/java/myREST/tomcat
+25-Sep-2024 12:11:23.568 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+25-Sep-2024 12:11:23.568 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+25-Sep-2024 12:11:23.568 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+25-Sep-2024 12:11:23.569 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+25-Sep-2024 12:11:23.569 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+25-Sep-2024 12:11:23.569 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/dik/Desktop/java/myREST/tomcat
+25-Sep-2024 12:11:23.569 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/dik/Desktop/java/myREST
+25-Sep-2024 12:11:23.569 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/dik/Desktop/java/myREST/temp
+25-Sep-2024 12:11:23.569 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/dik/Desktop/java/myREST/conf/logging.properties
+25-Sep-2024 12:11:23.569 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+25-Sep-2024 12:11:23.569 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:/home/dik/Desktop/idea-IC-241.18034.62/lib/idea_rt.jar=42875:/home/dik/Desktop/idea-IC-241.18034.62/bin
+25-Sep-2024 12:11:23.569 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+25-Sep-2024 12:11:23.569 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stdout.encoding=UTF-8
+25-Sep-2024 12:11:23.569 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stderr.encoding=UTF-8
+25-Sep-2024 12:11:23.571 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+25-Sep-2024 12:11:23.855 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 12:11:23.875 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [457] milliseconds
+25-Sep-2024 12:11:23.910 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+25-Sep-2024 12:11:23.910 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.93]
+25-Sep-2024 12:11:23.915 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/home/dik/Desktop/java/myREST/conf/Catalina/localhost/myREST.xml]
+25-Sep-2024 12:11:24.446 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+25-Sep-2024 12:11:24.467 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/home/dik/Desktop/java/myREST/conf/Catalina/localhost/myREST.xml] has finished in [552] ms
+25-Sep-2024 12:11:24.470 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 12:11:24.475 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [598] milliseconds
+25-Sep-2024 12:12:21.767 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 12:12:21.768 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+25-Sep-2024 12:12:21.774 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 12:12:21.776 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 12:12:26.539 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.93
+25-Sep-2024 12:12:26.542 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Aug 2 2024 21:24:59 UTC
+25-Sep-2024 12:12:26.542 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.93.0
+25-Sep-2024 12:12:26.542 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+25-Sep-2024 12:12:26.542 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.8.0-45-generic
+25-Sep-2024 12:12:26.542 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+25-Sep-2024 12:12:26.542 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-21-openjdk-amd64
+25-Sep-2024 12:12:26.542 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           21.0.4+7-Ubuntu-1ubuntu222.04
+25-Sep-2024 12:12:26.543 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Ubuntu
+25-Sep-2024 12:12:26.543 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/dik/Desktop/java/myREST
+25-Sep-2024 12:12:26.543 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/dik/Desktop/java/myREST/tomcat
+25-Sep-2024 12:12:26.547 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+25-Sep-2024 12:12:26.547 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+25-Sep-2024 12:12:26.547 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+25-Sep-2024 12:12:26.547 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+25-Sep-2024 12:12:26.547 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+25-Sep-2024 12:12:26.547 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/dik/Desktop/java/myREST/tomcat
+25-Sep-2024 12:12:26.547 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/dik/Desktop/java/myREST
+25-Sep-2024 12:12:26.547 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/dik/Desktop/java/myREST/temp
+25-Sep-2024 12:12:26.547 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/dik/Desktop/java/myREST/conf/logging.properties
+25-Sep-2024 12:12:26.547 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+25-Sep-2024 12:12:26.547 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:/home/dik/Desktop/idea-IC-241.18034.62/lib/idea_rt.jar=35117:/home/dik/Desktop/idea-IC-241.18034.62/bin
+25-Sep-2024 12:12:26.547 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+25-Sep-2024 12:12:26.547 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stdout.encoding=UTF-8
+25-Sep-2024 12:12:26.548 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stderr.encoding=UTF-8
+25-Sep-2024 12:12:26.549 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+25-Sep-2024 12:12:26.770 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 12:12:26.783 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [357] milliseconds
+25-Sep-2024 12:12:26.810 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+25-Sep-2024 12:12:26.810 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.93]
+25-Sep-2024 12:12:26.815 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/home/dik/Desktop/java/myREST/conf/Catalina/localhost/myREST.xml]
+25-Sep-2024 12:12:27.297 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+25-Sep-2024 12:12:27.316 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/home/dik/Desktop/java/myREST/conf/Catalina/localhost/myREST.xml] has finished in [500] ms
+25-Sep-2024 12:12:27.318 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 12:12:27.323 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [539] milliseconds
+25-Sep-2024 12:12:50.976 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 12:12:50.978 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+25-Sep-2024 12:12:50.984 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 12:12:50.986 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 12:12:52.673 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.93
+25-Sep-2024 12:12:52.676 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Aug 2 2024 21:24:59 UTC
+25-Sep-2024 12:12:52.676 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.93.0
+25-Sep-2024 12:12:52.676 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+25-Sep-2024 12:12:52.676 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.8.0-45-generic
+25-Sep-2024 12:12:52.676 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+25-Sep-2024 12:12:52.676 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-21-openjdk-amd64
+25-Sep-2024 12:12:52.677 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           21.0.4+7-Ubuntu-1ubuntu222.04
+25-Sep-2024 12:12:52.677 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Ubuntu
+25-Sep-2024 12:12:52.677 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/dik/Desktop/java/myREST
+25-Sep-2024 12:12:52.677 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/dik/Desktop/java/myREST/tomcat
+25-Sep-2024 12:12:52.683 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+25-Sep-2024 12:12:52.683 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+25-Sep-2024 12:12:52.683 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+25-Sep-2024 12:12:52.683 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+25-Sep-2024 12:12:52.683 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+25-Sep-2024 12:12:52.683 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/dik/Desktop/java/myREST/tomcat
+25-Sep-2024 12:12:52.683 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/dik/Desktop/java/myREST
+25-Sep-2024 12:12:52.683 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/dik/Desktop/java/myREST/temp
+25-Sep-2024 12:12:52.684 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/dik/Desktop/java/myREST/conf/logging.properties
+25-Sep-2024 12:12:52.684 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+25-Sep-2024 12:12:52.684 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:/home/dik/Desktop/idea-IC-241.18034.62/lib/idea_rt.jar=39185:/home/dik/Desktop/idea-IC-241.18034.62/bin
+25-Sep-2024 12:12:52.684 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+25-Sep-2024 12:12:52.684 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stdout.encoding=UTF-8
+25-Sep-2024 12:12:52.684 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stderr.encoding=UTF-8
+25-Sep-2024 12:12:52.685 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+25-Sep-2024 12:12:52.966 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 12:12:52.982 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [445] milliseconds
+25-Sep-2024 12:12:53.017 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+25-Sep-2024 12:12:53.017 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.93]
+25-Sep-2024 12:12:53.023 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/home/dik/Desktop/java/myREST/conf/Catalina/localhost/myREST.xml]
+25-Sep-2024 12:12:53.552 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+25-Sep-2024 12:12:53.570 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/home/dik/Desktop/java/myREST/conf/Catalina/localhost/myREST.xml] has finished in [547] ms
+25-Sep-2024 12:12:53.573 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 12:12:53.578 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [594] milliseconds
+25-Sep-2024 12:18:34.324 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 12:18:34.325 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+25-Sep-2024 12:18:34.332 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 12:18:34.334 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 12:18:35.997 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.93
+25-Sep-2024 12:18:36.000 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Aug 2 2024 21:24:59 UTC
+25-Sep-2024 12:18:36.000 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.93.0
+25-Sep-2024 12:18:36.000 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+25-Sep-2024 12:18:36.000 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.8.0-45-generic
+25-Sep-2024 12:18:36.000 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+25-Sep-2024 12:18:36.000 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-21-openjdk-amd64
+25-Sep-2024 12:18:36.000 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           21.0.4+7-Ubuntu-1ubuntu222.04
+25-Sep-2024 12:18:36.001 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Ubuntu
+25-Sep-2024 12:18:36.001 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/dik/Desktop/java/myREST
+25-Sep-2024 12:18:36.001 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/dik/Desktop/java/myREST/tomcat
+25-Sep-2024 12:18:36.006 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+25-Sep-2024 12:18:36.006 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+25-Sep-2024 12:18:36.006 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+25-Sep-2024 12:18:36.006 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+25-Sep-2024 12:18:36.006 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+25-Sep-2024 12:18:36.006 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/dik/Desktop/java/myREST/tomcat
+25-Sep-2024 12:18:36.006 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/dik/Desktop/java/myREST
+25-Sep-2024 12:18:36.007 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/dik/Desktop/java/myREST/temp
+25-Sep-2024 12:18:36.007 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/dik/Desktop/java/myREST/conf/logging.properties
+25-Sep-2024 12:18:36.008 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+25-Sep-2024 12:18:36.008 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:/home/dik/Desktop/idea-IC-241.18034.62/lib/idea_rt.jar=43253:/home/dik/Desktop/idea-IC-241.18034.62/bin
+25-Sep-2024 12:18:36.008 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+25-Sep-2024 12:18:36.008 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stdout.encoding=UTF-8
+25-Sep-2024 12:18:36.008 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stderr.encoding=UTF-8
+25-Sep-2024 12:18:36.009 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+25-Sep-2024 12:18:36.315 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 12:18:36.333 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [468] milliseconds
+25-Sep-2024 12:18:36.371 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+25-Sep-2024 12:18:36.371 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.93]
+25-Sep-2024 12:18:36.378 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/home/dik/Desktop/java/myREST/conf/Catalina/localhost/myREST.xml]
+25-Sep-2024 12:18:36.908 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+25-Sep-2024 12:18:36.926 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/home/dik/Desktop/java/myREST/conf/Catalina/localhost/myREST.xml] has finished in [547] ms
+25-Sep-2024 12:18:36.928 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 12:18:36.933 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [598] milliseconds
+25-Sep-2024 12:22:27.143 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 12:22:27.144 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+25-Sep-2024 12:22:27.149 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 12:22:27.151 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 12:22:59.532 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.93
+25-Sep-2024 12:22:59.534 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Aug 2 2024 21:24:59 UTC
+25-Sep-2024 12:22:59.535 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.93.0
+25-Sep-2024 12:22:59.535 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+25-Sep-2024 12:22:59.535 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.8.0-45-generic
+25-Sep-2024 12:22:59.535 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+25-Sep-2024 12:22:59.535 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-21-openjdk-amd64
+25-Sep-2024 12:22:59.535 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           21.0.4+7-Ubuntu-1ubuntu222.04
+25-Sep-2024 12:22:59.535 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Ubuntu
+25-Sep-2024 12:22:59.535 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/dik/Desktop/java/myREST
+25-Sep-2024 12:22:59.535 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/dik/Desktop/java/myREST/tomcat
+25-Sep-2024 12:22:59.539 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+25-Sep-2024 12:22:59.539 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+25-Sep-2024 12:22:59.539 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+25-Sep-2024 12:22:59.540 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+25-Sep-2024 12:22:59.540 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+25-Sep-2024 12:22:59.540 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/dik/Desktop/java/myREST/tomcat
+25-Sep-2024 12:22:59.540 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/dik/Desktop/java/myREST
+25-Sep-2024 12:22:59.540 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/dik/Desktop/java/myREST/temp
+25-Sep-2024 12:22:59.540 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/dik/Desktop/java/myREST/conf/logging.properties
+25-Sep-2024 12:22:59.540 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+25-Sep-2024 12:22:59.540 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:/home/dik/Desktop/idea-IC-241.18034.62/lib/idea_rt.jar=36867:/home/dik/Desktop/idea-IC-241.18034.62/bin
+25-Sep-2024 12:22:59.540 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+25-Sep-2024 12:22:59.540 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stdout.encoding=UTF-8
+25-Sep-2024 12:22:59.540 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stderr.encoding=UTF-8
+25-Sep-2024 12:22:59.542 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+25-Sep-2024 12:22:59.770 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 12:22:59.782 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [353] milliseconds
+25-Sep-2024 12:22:59.807 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+25-Sep-2024 12:22:59.807 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.93]
+25-Sep-2024 12:22:59.812 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/home/dik/Desktop/java/myREST/conf/Catalina/localhost/myREST.xml]
+25-Sep-2024 12:23:00.292 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+25-Sep-2024 12:23:00.311 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/home/dik/Desktop/java/myREST/conf/Catalina/localhost/myREST.xml] has finished in [499] ms
+25-Sep-2024 12:23:00.313 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 12:23:00.319 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [535] milliseconds
+25-Sep-2024 12:26:00.987 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 12:26:00.988 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+25-Sep-2024 12:26:00.991 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [myREST] registered the JDBC driver [org.postgresql.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+25-Sep-2024 12:26:00.994 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 12:26:00.997 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 12:26:02.622 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.93
+25-Sep-2024 12:26:02.625 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Aug 2 2024 21:24:59 UTC
+25-Sep-2024 12:26:02.625 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.93.0
+25-Sep-2024 12:26:02.625 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+25-Sep-2024 12:26:02.625 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.8.0-45-generic
+25-Sep-2024 12:26:02.625 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+25-Sep-2024 12:26:02.625 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-21-openjdk-amd64
+25-Sep-2024 12:26:02.626 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           21.0.4+7-Ubuntu-1ubuntu222.04
+25-Sep-2024 12:26:02.626 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Ubuntu
+25-Sep-2024 12:26:02.626 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/dik/Desktop/java/myREST
+25-Sep-2024 12:26:02.626 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/dik/Desktop/java/myREST/tomcat
+25-Sep-2024 12:26:02.631 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+25-Sep-2024 12:26:02.631 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+25-Sep-2024 12:26:02.632 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+25-Sep-2024 12:26:02.632 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+25-Sep-2024 12:26:02.632 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+25-Sep-2024 12:26:02.632 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/dik/Desktop/java/myREST/tomcat
+25-Sep-2024 12:26:02.632 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/dik/Desktop/java/myREST
+25-Sep-2024 12:26:02.632 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/dik/Desktop/java/myREST/temp
+25-Sep-2024 12:26:02.632 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/dik/Desktop/java/myREST/conf/logging.properties
+25-Sep-2024 12:26:02.632 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+25-Sep-2024 12:26:02.632 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:/home/dik/Desktop/idea-IC-241.18034.62/lib/idea_rt.jar=40411:/home/dik/Desktop/idea-IC-241.18034.62/bin
+25-Sep-2024 12:26:02.632 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+25-Sep-2024 12:26:02.632 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stdout.encoding=UTF-8
+25-Sep-2024 12:26:02.632 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stderr.encoding=UTF-8
+25-Sep-2024 12:26:02.634 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+25-Sep-2024 12:26:02.932 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 12:26:02.949 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [464] milliseconds
+25-Sep-2024 12:26:02.982 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+25-Sep-2024 12:26:02.983 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.93]
+25-Sep-2024 12:26:02.988 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/home/dik/Desktop/java/myREST/conf/Catalina/localhost/myREST.xml]
+25-Sep-2024 12:26:03.601 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+25-Sep-2024 12:26:03.626 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/home/dik/Desktop/java/myREST/conf/Catalina/localhost/myREST.xml] has finished in [638] ms
+25-Sep-2024 12:26:03.628 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 12:26:03.633 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [683] milliseconds
+25-Sep-2024 12:31:10.420 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 12:31:10.420 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+25-Sep-2024 12:31:10.424 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [myREST] registered the JDBC driver [org.postgresql.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+25-Sep-2024 12:31:10.426 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 12:31:10.428 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 12:32:05.962 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.93
+25-Sep-2024 12:32:05.965 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Aug 2 2024 21:24:59 UTC
+25-Sep-2024 12:32:05.966 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.93.0
+25-Sep-2024 12:32:05.966 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+25-Sep-2024 12:32:05.966 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.8.0-45-generic
+25-Sep-2024 12:32:05.966 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+25-Sep-2024 12:32:05.966 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-21-openjdk-amd64
+25-Sep-2024 12:32:05.966 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           21.0.4+7-Ubuntu-1ubuntu222.04
+25-Sep-2024 12:32:05.966 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Ubuntu
+25-Sep-2024 12:32:05.966 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/dik/Desktop/java/myREST
+25-Sep-2024 12:32:05.967 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/dik/Desktop/java/myREST/tomcat
+25-Sep-2024 12:32:05.973 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+25-Sep-2024 12:32:05.973 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+25-Sep-2024 12:32:05.973 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+25-Sep-2024 12:32:05.973 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+25-Sep-2024 12:32:05.973 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+25-Sep-2024 12:32:05.973 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/dik/Desktop/java/myREST/tomcat
+25-Sep-2024 12:32:05.973 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/dik/Desktop/java/myREST
+25-Sep-2024 12:32:05.973 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/dik/Desktop/java/myREST/temp
+25-Sep-2024 12:32:05.973 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/dik/Desktop/java/myREST/conf/logging.properties
+25-Sep-2024 12:32:05.973 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+25-Sep-2024 12:32:05.974 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:/home/dik/Desktop/idea-IC-241.18034.62/lib/idea_rt.jar=36935:/home/dik/Desktop/idea-IC-241.18034.62/bin
+25-Sep-2024 12:32:05.974 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+25-Sep-2024 12:32:05.974 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stdout.encoding=UTF-8
+25-Sep-2024 12:32:05.974 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stderr.encoding=UTF-8
+25-Sep-2024 12:32:05.975 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+25-Sep-2024 12:32:06.261 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 12:32:06.279 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [451] milliseconds
+25-Sep-2024 12:32:06.312 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+25-Sep-2024 12:32:06.312 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.93]
+25-Sep-2024 12:32:06.319 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/home/dik/Desktop/java/myREST/conf/Catalina/localhost/myREST.xml]
+25-Sep-2024 12:32:06.883 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+25-Sep-2024 12:32:06.906 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/home/dik/Desktop/java/myREST/conf/Catalina/localhost/myREST.xml] has finished in [586] ms
+25-Sep-2024 12:32:06.909 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 12:32:06.915 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [634] milliseconds
+25-Sep-2024 12:33:11.735 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 12:33:11.736 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+25-Sep-2024 12:33:11.742 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 12:33:11.744 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 12:33:46.437 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.93
+25-Sep-2024 12:33:46.441 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Aug 2 2024 21:24:59 UTC
+25-Sep-2024 12:33:46.441 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.93.0
+25-Sep-2024 12:33:46.441 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+25-Sep-2024 12:33:46.441 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.8.0-45-generic
+25-Sep-2024 12:33:46.441 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+25-Sep-2024 12:33:46.441 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-21-openjdk-amd64
+25-Sep-2024 12:33:46.441 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           21.0.4+7-Ubuntu-1ubuntu222.04
+25-Sep-2024 12:33:46.441 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Ubuntu
+25-Sep-2024 12:33:46.442 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/dik/Desktop/java/myREST
+25-Sep-2024 12:33:46.442 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/dik/Desktop/java/myREST/tomcat
+25-Sep-2024 12:33:46.447 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+25-Sep-2024 12:33:46.447 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+25-Sep-2024 12:33:46.447 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+25-Sep-2024 12:33:46.447 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+25-Sep-2024 12:33:46.447 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+25-Sep-2024 12:33:46.447 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/dik/Desktop/java/myREST/tomcat
+25-Sep-2024 12:33:46.447 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/dik/Desktop/java/myREST
+25-Sep-2024 12:33:46.448 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/dik/Desktop/java/myREST/temp
+25-Sep-2024 12:33:46.448 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/dik/Desktop/java/myREST/conf/logging.properties
+25-Sep-2024 12:33:46.448 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+25-Sep-2024 12:33:46.448 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:/home/dik/Desktop/idea-IC-241.18034.62/lib/idea_rt.jar=35919:/home/dik/Desktop/idea-IC-241.18034.62/bin
+25-Sep-2024 12:33:46.448 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+25-Sep-2024 12:33:46.448 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stdout.encoding=UTF-8
+25-Sep-2024 12:33:46.448 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stderr.encoding=UTF-8
+25-Sep-2024 12:33:46.450 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+25-Sep-2024 12:33:46.724 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 12:33:46.738 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [426] milliseconds
+25-Sep-2024 12:33:46.764 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+25-Sep-2024 12:33:46.764 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.93]
+25-Sep-2024 12:33:46.768 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/home/dik/Desktop/java/myREST/conf/Catalina/localhost/myREST.xml]
+25-Sep-2024 12:33:47.312 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+25-Sep-2024 12:33:47.332 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/home/dik/Desktop/java/myREST/conf/Catalina/localhost/myREST.xml] has finished in [563] ms
+25-Sep-2024 12:33:47.334 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 12:33:47.340 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [600] milliseconds
+25-Sep-2024 12:34:35.456 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 12:34:35.456 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+25-Sep-2024 12:34:35.460 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [myREST] registered the JDBC driver [org.postgresql.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+25-Sep-2024 12:34:35.463 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 12:34:35.465 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 12:35:51.895 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.93
+25-Sep-2024 12:35:51.897 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Aug 2 2024 21:24:59 UTC
+25-Sep-2024 12:35:51.898 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.93.0
+25-Sep-2024 12:35:51.898 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+25-Sep-2024 12:35:51.898 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.8.0-45-generic
+25-Sep-2024 12:35:51.898 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+25-Sep-2024 12:35:51.898 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-21-openjdk-amd64
+25-Sep-2024 12:35:51.898 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           21.0.4+7-Ubuntu-1ubuntu222.04
+25-Sep-2024 12:35:51.898 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Ubuntu
+25-Sep-2024 12:35:51.898 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/dik/Desktop/java/myREST
+25-Sep-2024 12:35:51.898 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/dik/Desktop/java/myREST/tomcat
+25-Sep-2024 12:35:51.902 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+25-Sep-2024 12:35:51.902 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+25-Sep-2024 12:35:51.902 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+25-Sep-2024 12:35:51.902 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+25-Sep-2024 12:35:51.902 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+25-Sep-2024 12:35:51.902 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/dik/Desktop/java/myREST/tomcat
+25-Sep-2024 12:35:51.902 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/dik/Desktop/java/myREST
+25-Sep-2024 12:35:51.902 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/dik/Desktop/java/myREST/temp
+25-Sep-2024 12:35:51.902 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/dik/Desktop/java/myREST/conf/logging.properties
+25-Sep-2024 12:35:51.902 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+25-Sep-2024 12:35:51.902 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:/home/dik/Desktop/idea-IC-241.18034.62/lib/idea_rt.jar=36315:/home/dik/Desktop/idea-IC-241.18034.62/bin
+25-Sep-2024 12:35:51.903 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+25-Sep-2024 12:35:51.903 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stdout.encoding=UTF-8
+25-Sep-2024 12:35:51.903 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stderr.encoding=UTF-8
+25-Sep-2024 12:35:51.904 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+25-Sep-2024 12:35:52.113 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 12:35:52.125 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [336] milliseconds
+25-Sep-2024 12:35:52.152 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+25-Sep-2024 12:35:52.152 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.93]
+25-Sep-2024 12:35:52.157 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/home/dik/Desktop/java/myREST/conf/Catalina/localhost/myREST.xml]
+25-Sep-2024 12:35:52.702 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+25-Sep-2024 12:35:52.723 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/home/dik/Desktop/java/myREST/conf/Catalina/localhost/myREST.xml] has finished in [566] ms
+25-Sep-2024 12:35:52.725 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 12:35:52.731 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [605] milliseconds
+25-Sep-2024 12:39:04.076 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 12:39:04.077 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+25-Sep-2024 12:39:04.080 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [myREST] registered the JDBC driver [org.postgresql.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+25-Sep-2024 12:39:04.083 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 12:39:04.085 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 12:44:58.290 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.93
+25-Sep-2024 12:44:58.292 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Aug 2 2024 21:24:59 UTC
+25-Sep-2024 12:44:58.292 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.93.0
+25-Sep-2024 12:44:58.293 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+25-Sep-2024 12:44:58.293 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.8.0-45-generic
+25-Sep-2024 12:44:58.293 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+25-Sep-2024 12:44:58.293 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-21-openjdk-amd64
+25-Sep-2024 12:44:58.293 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           21.0.4+7-Ubuntu-1ubuntu222.04
+25-Sep-2024 12:44:58.293 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Ubuntu
+25-Sep-2024 12:44:58.293 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/dik/Desktop/java/myREST
+25-Sep-2024 12:44:58.293 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/dik/Desktop/java/myREST/tomcat
+25-Sep-2024 12:44:58.297 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+25-Sep-2024 12:44:58.297 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+25-Sep-2024 12:44:58.297 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+25-Sep-2024 12:44:58.297 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+25-Sep-2024 12:44:58.297 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+25-Sep-2024 12:44:58.297 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/dik/Desktop/java/myREST/tomcat
+25-Sep-2024 12:44:58.297 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/dik/Desktop/java/myREST
+25-Sep-2024 12:44:58.297 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/dik/Desktop/java/myREST/temp
+25-Sep-2024 12:44:58.297 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/dik/Desktop/java/myREST/conf/logging.properties
+25-Sep-2024 12:44:58.297 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+25-Sep-2024 12:44:58.297 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:/home/dik/Desktop/idea-IC-241.18034.62/lib/idea_rt.jar=46825:/home/dik/Desktop/idea-IC-241.18034.62/bin
+25-Sep-2024 12:44:58.298 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+25-Sep-2024 12:44:58.298 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stdout.encoding=UTF-8
+25-Sep-2024 12:44:58.298 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stderr.encoding=UTF-8
+25-Sep-2024 12:44:58.299 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+25-Sep-2024 12:44:58.513 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 12:44:58.526 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [337] milliseconds
+25-Sep-2024 12:44:58.550 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+25-Sep-2024 12:44:58.550 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.93]
+25-Sep-2024 12:44:58.554 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/home/dik/Desktop/java/myREST/conf/Catalina/localhost/myREST.xml]
+25-Sep-2024 12:44:59.074 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+25-Sep-2024 12:44:59.092 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/home/dik/Desktop/java/myREST/conf/Catalina/localhost/myREST.xml] has finished in [538] ms
+25-Sep-2024 12:44:59.095 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 12:44:59.100 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [572] milliseconds
+25-Sep-2024 12:55:15.202 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 12:55:15.203 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+25-Sep-2024 12:55:15.206 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [myREST] registered the JDBC driver [org.postgresql.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+25-Sep-2024 12:55:15.209 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 12:55:15.211 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 12:55:19.877 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.93
+25-Sep-2024 12:55:19.880 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Aug 2 2024 21:24:59 UTC
+25-Sep-2024 12:55:19.880 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.93.0
+25-Sep-2024 12:55:19.880 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+25-Sep-2024 12:55:19.880 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.8.0-45-generic
+25-Sep-2024 12:55:19.880 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+25-Sep-2024 12:55:19.880 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-21-openjdk-amd64
+25-Sep-2024 12:55:19.880 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           21.0.4+7-Ubuntu-1ubuntu222.04
+25-Sep-2024 12:55:19.880 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Ubuntu
+25-Sep-2024 12:55:19.880 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/dik/Desktop/java/myREST
+25-Sep-2024 12:55:19.880 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/dik/Desktop/java/myREST/tomcat
+25-Sep-2024 12:55:19.885 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+25-Sep-2024 12:55:19.885 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+25-Sep-2024 12:55:19.885 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+25-Sep-2024 12:55:19.885 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+25-Sep-2024 12:55:19.885 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+25-Sep-2024 12:55:19.885 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/dik/Desktop/java/myREST/tomcat
+25-Sep-2024 12:55:19.885 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/dik/Desktop/java/myREST
+25-Sep-2024 12:55:19.885 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/dik/Desktop/java/myREST/temp
+25-Sep-2024 12:55:19.885 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/dik/Desktop/java/myREST/conf/logging.properties
+25-Sep-2024 12:55:19.885 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+25-Sep-2024 12:55:19.885 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:/home/dik/Desktop/idea-IC-241.18034.62/lib/idea_rt.jar=40723:/home/dik/Desktop/idea-IC-241.18034.62/bin
+25-Sep-2024 12:55:19.885 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+25-Sep-2024 12:55:19.885 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stdout.encoding=UTF-8
+25-Sep-2024 12:55:19.885 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stderr.encoding=UTF-8
+25-Sep-2024 12:55:19.886 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+25-Sep-2024 12:55:20.085 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 12:55:20.097 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [325] milliseconds
+25-Sep-2024 12:55:20.120 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+25-Sep-2024 12:55:20.120 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.93]
+25-Sep-2024 12:55:20.124 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/home/dik/Desktop/java/myREST/conf/Catalina/localhost/myREST.xml]
+25-Sep-2024 12:55:20.646 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+25-Sep-2024 12:55:20.664 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/home/dik/Desktop/java/myREST/conf/Catalina/localhost/myREST.xml] has finished in [540] ms
+25-Sep-2024 12:55:20.667 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 12:55:20.672 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [574] milliseconds
+25-Sep-2024 13:03:45.459 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 13:03:45.460 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+25-Sep-2024 13:03:45.463 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [myREST] registered the JDBC driver [org.postgresql.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+25-Sep-2024 13:03:45.466 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 13:03:45.468 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 13:06:08.221 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.93
+25-Sep-2024 13:06:08.223 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Aug 2 2024 21:24:59 UTC
+25-Sep-2024 13:06:08.223 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.93.0
+25-Sep-2024 13:06:08.223 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+25-Sep-2024 13:06:08.223 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.8.0-45-generic
+25-Sep-2024 13:06:08.223 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+25-Sep-2024 13:06:08.223 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-21-openjdk-amd64
+25-Sep-2024 13:06:08.223 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           21.0.4+7-Ubuntu-1ubuntu222.04
+25-Sep-2024 13:06:08.224 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Ubuntu
+25-Sep-2024 13:06:08.224 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/dik/Desktop/java/myREST
+25-Sep-2024 13:06:08.224 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/dik/Desktop/java/myREST/tomcat
+25-Sep-2024 13:06:08.228 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+25-Sep-2024 13:06:08.228 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+25-Sep-2024 13:06:08.228 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+25-Sep-2024 13:06:08.228 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+25-Sep-2024 13:06:08.228 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+25-Sep-2024 13:06:08.228 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/dik/Desktop/java/myREST/tomcat
+25-Sep-2024 13:06:08.228 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/dik/Desktop/java/myREST
+25-Sep-2024 13:06:08.228 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/dik/Desktop/java/myREST/temp
+25-Sep-2024 13:06:08.228 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/dik/Desktop/java/myREST/conf/logging.properties
+25-Sep-2024 13:06:08.228 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+25-Sep-2024 13:06:08.228 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:/home/dik/Desktop/idea-IC-241.18034.62/lib/idea_rt.jar=46787:/home/dik/Desktop/idea-IC-241.18034.62/bin
+25-Sep-2024 13:06:08.228 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+25-Sep-2024 13:06:08.228 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stdout.encoding=UTF-8
+25-Sep-2024 13:06:08.228 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stderr.encoding=UTF-8
+25-Sep-2024 13:06:08.229 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+25-Sep-2024 13:06:08.431 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 13:06:08.444 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [325] milliseconds
+25-Sep-2024 13:06:08.469 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+25-Sep-2024 13:06:08.469 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.93]
+25-Sep-2024 13:06:08.474 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/home/dik/Desktop/java/myREST/conf/Catalina/localhost/myREST.xml]
+25-Sep-2024 13:06:08.951 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+25-Sep-2024 13:06:08.969 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/home/dik/Desktop/java/myREST/conf/Catalina/localhost/myREST.xml] has finished in [495] ms
+25-Sep-2024 13:06:08.971 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 13:06:08.976 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [531] milliseconds
+25-Sep-2024 13:19:22.824 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 13:19:22.825 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+25-Sep-2024 13:19:22.829 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [myREST] registered the JDBC driver [org.postgresql.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+25-Sep-2024 13:19:22.833 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 13:19:22.835 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 13:27:01.131 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.93
+25-Sep-2024 13:27:01.134 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Aug 2 2024 21:24:59 UTC
+25-Sep-2024 13:27:01.134 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.93.0
+25-Sep-2024 13:27:01.134 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+25-Sep-2024 13:27:01.134 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.8.0-45-generic
+25-Sep-2024 13:27:01.134 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+25-Sep-2024 13:27:01.134 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-21-openjdk-amd64
+25-Sep-2024 13:27:01.134 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           21.0.4+7-Ubuntu-1ubuntu222.04
+25-Sep-2024 13:27:01.135 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Ubuntu
+25-Sep-2024 13:27:01.135 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/dik/Desktop/java/myREST
+25-Sep-2024 13:27:01.135 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/dik/Desktop/java/myREST/tomcat
+25-Sep-2024 13:27:01.138 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+25-Sep-2024 13:27:01.139 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+25-Sep-2024 13:27:01.139 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+25-Sep-2024 13:27:01.139 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+25-Sep-2024 13:27:01.139 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+25-Sep-2024 13:27:01.139 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/dik/Desktop/java/myREST/tomcat
+25-Sep-2024 13:27:01.139 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/dik/Desktop/java/myREST
+25-Sep-2024 13:27:01.139 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/dik/Desktop/java/myREST/temp
+25-Sep-2024 13:27:01.139 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/dik/Desktop/java/myREST/conf/logging.properties
+25-Sep-2024 13:27:01.139 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+25-Sep-2024 13:27:01.139 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:/home/dik/Desktop/idea-IC-241.18034.62/lib/idea_rt.jar=40965:/home/dik/Desktop/idea-IC-241.18034.62/bin
+25-Sep-2024 13:27:01.139 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+25-Sep-2024 13:27:01.139 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stdout.encoding=UTF-8
+25-Sep-2024 13:27:01.139 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stderr.encoding=UTF-8
+25-Sep-2024 13:27:01.141 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+25-Sep-2024 13:27:01.346 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 13:27:01.358 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [336] milliseconds
+25-Sep-2024 13:27:01.381 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+25-Sep-2024 13:27:01.381 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.93]
+25-Sep-2024 13:27:01.386 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/home/dik/Desktop/java/myREST/conf/Catalina/localhost/myREST.xml]
+25-Sep-2024 13:27:01.899 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+25-Sep-2024 13:27:01.917 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/home/dik/Desktop/java/myREST/conf/Catalina/localhost/myREST.xml] has finished in [531] ms
+25-Sep-2024 13:27:01.919 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 13:27:01.925 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [565] milliseconds
+25-Sep-2024 13:27:39.068 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 13:27:39.069 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+25-Sep-2024 13:27:39.072 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [myREST] registered the JDBC driver [org.postgresql.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+25-Sep-2024 13:27:39.075 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 13:27:39.078 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 13:33:00.521 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.93
+25-Sep-2024 13:33:00.523 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Aug 2 2024 21:24:59 UTC
+25-Sep-2024 13:33:00.523 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.93.0
+25-Sep-2024 13:33:00.524 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+25-Sep-2024 13:33:00.524 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.8.0-45-generic
+25-Sep-2024 13:33:00.524 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+25-Sep-2024 13:33:00.524 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-21-openjdk-amd64
+25-Sep-2024 13:33:00.524 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           21.0.4+7-Ubuntu-1ubuntu222.04
+25-Sep-2024 13:33:00.524 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Ubuntu
+25-Sep-2024 13:33:00.524 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/dik/Desktop/java/myREST
+25-Sep-2024 13:33:00.524 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/dik/Desktop/java/myREST/tomcat
+25-Sep-2024 13:33:00.528 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+25-Sep-2024 13:33:00.528 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+25-Sep-2024 13:33:00.528 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+25-Sep-2024 13:33:00.528 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+25-Sep-2024 13:33:00.528 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+25-Sep-2024 13:33:00.528 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/dik/Desktop/java/myREST/tomcat
+25-Sep-2024 13:33:00.528 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/dik/Desktop/java/myREST
+25-Sep-2024 13:33:00.528 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/dik/Desktop/java/myREST/temp
+25-Sep-2024 13:33:00.528 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/dik/Desktop/java/myREST/conf/logging.properties
+25-Sep-2024 13:33:00.529 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+25-Sep-2024 13:33:00.529 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:/home/dik/Desktop/idea-IC-241.18034.62/lib/idea_rt.jar=36259:/home/dik/Desktop/idea-IC-241.18034.62/bin
+25-Sep-2024 13:33:00.529 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+25-Sep-2024 13:33:00.529 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stdout.encoding=UTF-8
+25-Sep-2024 13:33:00.529 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stderr.encoding=UTF-8
+25-Sep-2024 13:33:00.530 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+25-Sep-2024 13:33:00.808 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 13:33:00.825 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [446] milliseconds
+25-Sep-2024 13:33:00.860 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+25-Sep-2024 13:33:00.860 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.93]
+25-Sep-2024 13:33:00.866 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/home/dik/Desktop/java/myREST/conf/Catalina/localhost/myREST.xml]
+25-Sep-2024 13:33:01.449 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+25-Sep-2024 13:33:01.471 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/home/dik/Desktop/java/myREST/conf/Catalina/localhost/myREST.xml] has finished in [606] ms
+25-Sep-2024 13:33:01.474 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 13:33:01.480 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [653] milliseconds
+25-Sep-2024 13:33:59.445 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 13:33:59.447 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+25-Sep-2024 13:33:59.453 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 13:33:59.454 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 13:34:04.198 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.93
+25-Sep-2024 13:34:04.201 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Aug 2 2024 21:24:59 UTC
+25-Sep-2024 13:34:04.201 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.93.0
+25-Sep-2024 13:34:04.201 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+25-Sep-2024 13:34:04.201 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.8.0-45-generic
+25-Sep-2024 13:34:04.201 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+25-Sep-2024 13:34:04.201 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-21-openjdk-amd64
+25-Sep-2024 13:34:04.201 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           21.0.4+7-Ubuntu-1ubuntu222.04
+25-Sep-2024 13:34:04.201 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Ubuntu
+25-Sep-2024 13:34:04.202 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/dik/Desktop/java/myREST
+25-Sep-2024 13:34:04.202 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/dik/Desktop/java/myREST/tomcat
+25-Sep-2024 13:34:04.205 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+25-Sep-2024 13:34:04.205 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+25-Sep-2024 13:34:04.206 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+25-Sep-2024 13:34:04.206 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+25-Sep-2024 13:34:04.206 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+25-Sep-2024 13:34:04.206 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/dik/Desktop/java/myREST/tomcat
+25-Sep-2024 13:34:04.206 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/dik/Desktop/java/myREST
+25-Sep-2024 13:34:04.206 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/dik/Desktop/java/myREST/temp
+25-Sep-2024 13:34:04.206 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/dik/Desktop/java/myREST/conf/logging.properties
+25-Sep-2024 13:34:04.206 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+25-Sep-2024 13:34:04.206 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:/home/dik/Desktop/idea-IC-241.18034.62/lib/idea_rt.jar=42043:/home/dik/Desktop/idea-IC-241.18034.62/bin
+25-Sep-2024 13:34:04.206 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+25-Sep-2024 13:34:04.206 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stdout.encoding=UTF-8
+25-Sep-2024 13:34:04.206 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stderr.encoding=UTF-8
+25-Sep-2024 13:34:04.207 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+25-Sep-2024 13:34:04.430 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 13:34:04.442 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [350] milliseconds
+25-Sep-2024 13:34:04.471 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+25-Sep-2024 13:34:04.471 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.93]
+25-Sep-2024 13:34:04.478 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/home/dik/Desktop/java/myREST/conf/Catalina/localhost/myREST.xml]
+25-Sep-2024 13:34:05.000 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+25-Sep-2024 13:34:05.018 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/home/dik/Desktop/java/myREST/conf/Catalina/localhost/myREST.xml] has finished in [540] ms
+25-Sep-2024 13:34:05.020 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 13:34:05.026 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [583] milliseconds
+25-Sep-2024 13:48:15.745 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 13:48:15.746 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+25-Sep-2024 13:48:15.750 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [myREST] registered the JDBC driver [org.postgresql.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+25-Sep-2024 13:48:15.753 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 13:48:15.755 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 13:48:17.844 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.93
+25-Sep-2024 13:48:17.847 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Aug 2 2024 21:24:59 UTC
+25-Sep-2024 13:48:17.847 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.93.0
+25-Sep-2024 13:48:17.847 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+25-Sep-2024 13:48:17.848 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.8.0-45-generic
+25-Sep-2024 13:48:17.848 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+25-Sep-2024 13:48:17.848 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-21-openjdk-amd64
+25-Sep-2024 13:48:17.848 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           21.0.4+7-Ubuntu-1ubuntu222.04
+25-Sep-2024 13:48:17.848 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Ubuntu
+25-Sep-2024 13:48:17.848 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/dik/Desktop/java/myREST
+25-Sep-2024 13:48:17.848 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/dik/Desktop/java/myREST/tomcat
+25-Sep-2024 13:48:17.854 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+25-Sep-2024 13:48:17.854 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+25-Sep-2024 13:48:17.854 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+25-Sep-2024 13:48:17.854 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+25-Sep-2024 13:48:17.854 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+25-Sep-2024 13:48:17.854 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/dik/Desktop/java/myREST/tomcat
+25-Sep-2024 13:48:17.854 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/dik/Desktop/java/myREST
+25-Sep-2024 13:48:17.854 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/dik/Desktop/java/myREST/temp
+25-Sep-2024 13:48:17.854 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/dik/Desktop/java/myREST/conf/logging.properties
+25-Sep-2024 13:48:17.855 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+25-Sep-2024 13:48:17.855 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:/home/dik/Desktop/idea-IC-241.18034.62/lib/idea_rt.jar=40215:/home/dik/Desktop/idea-IC-241.18034.62/bin
+25-Sep-2024 13:48:17.855 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+25-Sep-2024 13:48:17.855 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stdout.encoding=UTF-8
+25-Sep-2024 13:48:17.855 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stderr.encoding=UTF-8
+25-Sep-2024 13:48:17.856 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+25-Sep-2024 13:48:18.139 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 13:48:18.159 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [456] milliseconds
+25-Sep-2024 13:48:18.193 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+25-Sep-2024 13:48:18.193 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.93]
+25-Sep-2024 13:48:18.200 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/home/dik/Desktop/java/myREST/conf/Catalina/localhost/myREST.xml]
+25-Sep-2024 13:48:18.775 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+25-Sep-2024 13:48:18.794 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/home/dik/Desktop/java/myREST/conf/Catalina/localhost/myREST.xml] has finished in [594] ms
+25-Sep-2024 13:48:18.797 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 13:48:18.805 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [645] milliseconds
+25-Sep-2024 13:58:47.346 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 13:58:47.347 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+25-Sep-2024 13:58:47.350 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [myREST] registered the JDBC driver [org.postgresql.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+25-Sep-2024 13:58:47.354 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 13:58:47.356 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 13:58:48.984 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.93
+25-Sep-2024 13:58:48.987 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Aug 2 2024 21:24:59 UTC
+25-Sep-2024 13:58:48.988 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.93.0
+25-Sep-2024 13:58:48.988 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+25-Sep-2024 13:58:48.988 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.8.0-45-generic
+25-Sep-2024 13:58:48.988 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+25-Sep-2024 13:58:48.988 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-21-openjdk-amd64
+25-Sep-2024 13:58:48.988 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           21.0.4+7-Ubuntu-1ubuntu222.04
+25-Sep-2024 13:58:48.988 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Ubuntu
+25-Sep-2024 13:58:48.988 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/dik/Desktop/java/myREST
+25-Sep-2024 13:58:48.988 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/dik/Desktop/java/myREST/tomcat
+25-Sep-2024 13:58:48.992 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+25-Sep-2024 13:58:48.992 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+25-Sep-2024 13:58:48.992 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+25-Sep-2024 13:58:48.992 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+25-Sep-2024 13:58:48.992 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+25-Sep-2024 13:58:48.993 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/dik/Desktop/java/myREST/tomcat
+25-Sep-2024 13:58:48.993 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/dik/Desktop/java/myREST
+25-Sep-2024 13:58:48.993 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/dik/Desktop/java/myREST/temp
+25-Sep-2024 13:58:48.993 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/dik/Desktop/java/myREST/conf/logging.properties
+25-Sep-2024 13:58:48.993 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+25-Sep-2024 13:58:48.993 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:/home/dik/Desktop/idea-IC-241.18034.62/lib/idea_rt.jar=33503:/home/dik/Desktop/idea-IC-241.18034.62/bin
+25-Sep-2024 13:58:48.993 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+25-Sep-2024 13:58:48.993 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stdout.encoding=UTF-8
+25-Sep-2024 13:58:48.993 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stderr.encoding=UTF-8
+25-Sep-2024 13:58:48.995 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+25-Sep-2024 13:58:49.274 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 13:58:49.290 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [462] milliseconds
+25-Sep-2024 13:58:49.323 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+25-Sep-2024 13:58:49.323 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.93]
+25-Sep-2024 13:58:49.329 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/home/dik/Desktop/java/myREST/conf/Catalina/localhost/myREST.xml]
+25-Sep-2024 13:58:49.909 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+25-Sep-2024 13:58:49.929 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/home/dik/Desktop/java/myREST/conf/Catalina/localhost/myREST.xml] has finished in [600] ms
+25-Sep-2024 13:58:49.931 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+25-Sep-2024 13:58:49.937 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [646] milliseconds

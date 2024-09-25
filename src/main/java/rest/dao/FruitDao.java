@@ -2,6 +2,7 @@ package rest.dao;
 
 import com.fasterxml.jackson.core.json.async.NonBlockingJsonParserBase;
 import rest.dao.DatabaseConnector;
+import rest.dto.FruitDto;
 import rest.model.Fruit;
 import rest.model.Seller;
 import rest.services.FruitService;
@@ -12,8 +13,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FruitDao {
-    public List<Object> find(long id) throws IOException {
-        List<Object> obj = new ArrayList<>();
+    public List<FruitDto> find(long id) throws IOException {
+        List<FruitDto> fruitDtos = new ArrayList<>();
         String query = (id > 0 ? "SELECT * FROM fruit WHERE id=?" : "SELECT * FROM fruit");
         try (Connection connect = DatabaseConnector.connector(); PreparedStatement readDB = connect.prepareStatement(query)) {
             if (id > 0)
@@ -24,14 +25,14 @@ public class FruitDao {
                 String name = result.getString("name");
                 String color = result.getString("color");
                 int price = result.getInt("price");
-                obj.add(new Fruit(id, name, color, price));
+                fruitDtos.add(new FruitDto(id, name, color, price));
             }
             connect.close();
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        return obj;
+        return fruitDtos;
     }
 
     public long save(String n, String col, int pr) {

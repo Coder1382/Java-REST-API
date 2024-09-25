@@ -1,6 +1,7 @@
 package rest.servlets;
 
 import com.google.gson.Gson;
+import rest.dto.FruitDto;
 import rest.model.Fruit;
 import rest.services.*;
 
@@ -23,7 +24,7 @@ public class FruitServlet extends HttpServlet {
         String[] uri = req.getRequestURI().split("/");
         if (uri[2].equals("fruit")) {
             PrintWriter pw = res.getWriter();
-            pw.write("successfully added under id: " + fruitService.save(jsn.fromJson(req.getReader(), Fruit.class)));
+            pw.write("successfully added under id: " + fruitService.save(jsn.fromJson(req.getReader(), FruitDto.class)));
             pw.close();
         }
     }
@@ -52,7 +53,7 @@ public class FruitServlet extends HttpServlet {
         String[] uri = req.getRequestURI().split("/");
         if (uri[2].equals("fruit")) {
             try {
-                fruitService.update(jsn.fromJson(req.getReader(), Fruit.class));
+                fruitService.update(jsn.fromJson(req.getReader(), FruitDto.class));
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
@@ -67,7 +68,7 @@ public class FruitServlet extends HttpServlet {
         Gson jsn = new Gson();
         String[] uri = req.getRequestURI().split("/");
         if (uri[2].equals("fruit")) {
-            fruitService.delete(jsn.fromJson(req.getReader(), Fruit.class));
+            fruitService.delete(jsn.fromJson(req.getReader(), FruitDto.class));
             PrintWriter pw = res.getWriter();
             pw.write("successfully deleted");
             pw.close();

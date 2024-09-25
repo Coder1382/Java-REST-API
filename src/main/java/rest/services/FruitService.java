@@ -3,6 +3,7 @@ package rest.services;
 import com.google.gson.Gson;
 import rest.dao.DatabaseConnector;
 import rest.dao.FruitDao;
+import rest.dto.FruitDto;
 import rest.model.Fruit;
 
 import javax.servlet.http.HttpServletRequest;
@@ -19,19 +20,19 @@ import java.util.List;
 public class FruitService {
     private final FruitDao fruitDao = new FruitDao();
 
-    public List<Object> find(long id) throws IOException {
+    public List<FruitDto> find(long id) throws IOException {
         return fruitDao.find(id);
     }
 
-    public long save(Fruit fruit) throws IOException {
+    public long save(FruitDto fruit) throws IOException {
         return fruitDao.save(fruit.getName(), fruit.getColor(), fruit.getPrice());
     }
 
-    public void update(Fruit fruit) throws IOException, SQLException {
+    public void update(FruitDto fruit) throws IOException, SQLException {
         fruitDao.update(fruit.getId(), fruit.getPrice());
     }
 
-    public void delete(Fruit fruit) throws IOException {
+    public void delete(FruitDto fruit) throws IOException {
         fruitDao.delete(fruit.getId());
     }
 }

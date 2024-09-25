@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import rest.dao.DatabaseConnector;
 import rest.dao.FruitDao;
 import rest.dao.SellersDao;
+import rest.dto.SellersDto;
 import rest.model.Fruit;
 import rest.model.Seller;
 
@@ -21,19 +22,19 @@ import java.util.List;
 public class SellersService {
     private final SellersDao sellersDao = new SellersDao();
 
-    public List<Object> find(long id) throws IOException {
+    public List<SellersDto> find(long id) throws IOException {
         return sellersDao.find(id);
     }
 
-    public long save(Seller seller) throws IOException {
+    public long save(SellersDto seller) throws IOException {
         return sellersDao.save(seller.getName(), seller.getSupplier_id());
     }
 
-    public void update(Seller seller) throws IOException, SQLException {
+    public void update(SellersDto seller) throws IOException, SQLException {
         sellersDao.update(seller.getId(), seller.getName());
     }
 
-    public void delete(Seller seller) throws IOException {
+    public void delete(SellersDto seller) throws IOException {
         Gson jsn = new Gson();
         sellersDao.delete(seller.getId());
     }

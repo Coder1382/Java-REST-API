@@ -1,6 +1,9 @@
 package rest;
 
 import rest.dao.*;
+import rest.dto.FruitDto;
+import rest.dto.SellersDto;
+import rest.dto.SuppliersDto;
 import rest.services.*;
 import rest.servlets.*;
 import rest.model.*;
@@ -123,7 +126,6 @@ Tests {
         req.setAttribute("id=1", req.getQueryString());
         when(req.getQueryString()).thenReturn("id=1");
         when(res.getWriter()).thenReturn(pw);
-        appF.doGet(req, res);
         req.setAttribute("/myREST/sellers", req.getRequestURI());
         when(req.getRequestURI()).thenReturn("/myREST/sellers");
         req.setAttribute("id=1", req.getQueryString());
@@ -155,13 +157,13 @@ Tests {
         suserv.find(1);
         sserv.find(-1);
         sserv.find(1);
-        Fruit fruit = new Fruit( 0, "mango", "orange", 10);
+        FruitDto fruit = new FruitDto( "mango", "orange", 10);
         fserv.save(fruit);
         fdao.save("mango", "orange", 10);
         fdao.save("apple", "green", 5);
-        Supplier z = new Supplier(0, "big");
+        SuppliersDto z = new SuppliersDto (0, "big");
         suserv.save(z);
-        Seller u = new Seller(0, "ignat", 1);
+        SellersDto u = new SellersDto ("ignat", 1);
         sserv.save(u);
         sudao.save("big");
         sudao.save("small");
@@ -190,17 +192,16 @@ Tests {
         SellersService sserv = new SellersService();
         SuppliersDao sudao = new SuppliersDao();
         SuppliersService suserv = new SuppliersService();
-        Fruit f = new Fruit(1, "", "", 30);
+        FruitDto f = new FruitDto ("", "", 30);
         fserv.update(f);
         fdao.update(1, 20);
-        Seller z = new Seller(1, "mango", 0);
+        SellersDto z = new SellersDto ("mango", 1);
         sserv.update(z);
         fserv.update(f);
         sdao.update(1, "mango");
         sdao.update(2, "apple");
         sdao.update(1, "mango");
         sdao.update(2, "apple");
-
         assertEquals(req.getQueryString(), null);
         req.setAttribute("/myREST/fruits", req.getRequestURI());
         when(req.getRequestURI()).thenReturn("/myREST/fruits");
@@ -222,11 +223,11 @@ Tests {
         sdao.delete(1);
         SuppliersDao sudao = new SuppliersDao();
         SuppliersService suserv = new SuppliersService();
-        Fruit f = new Fruit(1, "", "", 0);
+        FruitDto f = new FruitDto(1);
         fserv.delete(f);
-        Seller s = new Seller(1, "", 0);
+        SellersDto s = new SellersDto (1);
         sserv.delete(s);
-        Supplier u = new Supplier( 1, "");
+        SuppliersDto u = new SuppliersDto ( 1);
         suserv.delete(u);
         sudao.delete(1);
         assertEquals(req.getQueryString(), null);
