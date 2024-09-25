@@ -8,7 +8,7 @@ public class Seller {
     long supplier_id;
     String name;
     String supplier;
-    List<String> fruits;
+    List<Fruit> fruits;
 
     public Seller() {
         name = "";
@@ -33,7 +33,7 @@ public class Seller {
         this.fruits = new ArrayList<>();
     }
 
-    public Seller(long id, String name, long supplier_id, List<String> fruits) {
+    public Seller(long id, String name, long supplier_id, List<Fruit> fruits) {
         this.id = id;
         this.name = name;
         this.supplier_id = supplier_id;
@@ -52,7 +52,7 @@ public class Seller {
         this.fruits = new ArrayList<>();
     }
 
-    public Seller(long id, String name, long supplier_id, String supplier, List<String> fruits) {
+    public Seller(long id, String name, long supplier_id, String supplier, List<Fruit> fruits) {
         this.id = id;
         this.name = name;
         this.supplier_id = supplier_id;
@@ -68,6 +68,9 @@ public class Seller {
         return id;
     }
 
+    public String getSupplier() {
+        return supplier;
+    }
 
     public long getSupplier_id() {
         return supplier_id;
@@ -92,7 +95,7 @@ public class Seller {
         if (supplier.equals("")) {
             if (fruits.size() > 0) {
                 for (int i = 0; i < fruits.size(); ++i) {
-                    s.append(fruits.get(i));
+                    s.append(fruits.get(i).getName() + ", ");
                 }
                 s.delete(s.length() - 2, s.length() - 1);
                 return "id: " + id + ", name: " + name + "\nfruits: " + s;
@@ -100,7 +103,7 @@ public class Seller {
         } else {
             if (fruits.size() > 0) {
                 for (int i = 0; i < fruits.size(); ++i) {
-                    s.append(fruits.get(i));
+                    s.append(fruits.get(i).getName() + ", ");
                 }
                 s.delete(s.length() - 2, s.length() - 1);
                 return "id: " + id + ", name: " + name + ", supplier: " + supplier + "\nfruits: " + s;

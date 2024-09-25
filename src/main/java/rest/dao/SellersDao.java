@@ -34,7 +34,7 @@ public class SellersDao {
         return id;
     }
 
-    public List<Object> show(long id) {
+    public List<Object> find(long id) {
         List<Object> obj = new ArrayList<>();
         String query = (id > 0 ? "SELECT * FROM sellers WHERE id=?" : "SELECT * FROM sellers");
         try (Connection connect = DatabaseConnector.connector(); PreparedStatement readDB = connect.prepareStatement(query)) {
@@ -53,9 +53,9 @@ public class SellersDao {
                     Array f = result.getArray("fruits");
                     if (f != null) {
                         String[] cli = (String[]) f.getArray();
-                        List<String> s = new ArrayList<>();
+                        List<Fruit> s = new ArrayList<>();
                         for (int k = 0; k < cli.length; ++k)
-                            s.add(cli[k] + ", ");
+                            s.add(new Fruit(cli[k], "", 0));
                         obj.add(new Seller(i, name, supplier_id, company, s));
                     } else obj.add(new Seller(i, name, supplier_id, company));
                 }

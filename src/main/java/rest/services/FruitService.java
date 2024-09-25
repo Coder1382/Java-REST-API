@@ -19,8 +19,8 @@ import java.util.List;
 public class FruitService {
     private final FruitDao fruitDao = new FruitDao();
 
-    public List<Object> show(long id) throws IOException {
-        return fruitDao.show(id);
+    public List<Object> find(long id) throws IOException {
+        return fruitDao.find(id);
     }
 
     public long save(Fruit fruit) throws IOException {

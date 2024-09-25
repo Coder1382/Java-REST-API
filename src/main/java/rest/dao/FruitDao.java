@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FruitDao {
-    public List<Object> show(long id) throws IOException {
+    public List<Object> find(long id) throws IOException {
         List<Object> obj = new ArrayList<>();
         String query = (id > 0 ? "SELECT * FROM fruit WHERE id=?" : "SELECT * FROM fruit");
         try (Connection connect = DatabaseConnector.connector(); PreparedStatement readDB = connect.prepareStatement(query)) {
@@ -24,7 +24,7 @@ public class FruitDao {
                 String name = result.getString("name");
                 String color = result.getString("color");
                 int price = result.getInt("price");
-                obj.add(new Fruit(i, name, color, price));
+                obj.add(new Fruit(id, name, color, price));
             }
             connect.close();
 

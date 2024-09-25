@@ -16,10 +16,10 @@ import java.util.List;
 
 public class SuppliersServlet extends HttpServlet {
     private final SuppliersService suppliersService = new SuppliersService();
+    private final Gson jsn = new Gson();
 
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        Gson jsn = new Gson();
         String[] uri = req.getRequestURI().split("/");
         if (uri[2].equals("suppliers")) {
             PrintWriter pw = res.getWriter();
@@ -31,22 +31,25 @@ public class SuppliersServlet extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         String[] uri = req.getRequestURI().split("/");
-        if (uri[2].equals("suppliers")) {
+        if (uri.length < 5 && uri[2].equals("suppliers")) {
             long id = -1;
-            if (req.getQueryString() != null)
-                id = Long.parseLong(req.getQueryString().split("=")[1]);
+            if (uri.length == 4 && !uri[3].equals("all"))
+                try {
+                    id = Long.parseLong(uri[3]);
+                } catch (NumberFormatException e) {
+                    throw e;
+                }
             PrintWriter pw = res.getWriter();
-            suppliersService.show(id).forEach(e -> {
-                pw.write(e.toString() + "\n\n");
+            suppliersService.find(id).forEach(e -> {
+                pw.write(jsn.toJson(e) + "\n\n");
             });
             pw.close();
-        }
+        } else throw new RuntimeException("Bad URL");
     }
 
 
     @Override
     public void doDelete(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        Gson jsn = new Gson();
         String[] uri = req.getRequestURI().split("/");
         if (uri[2].equals("suppliers")) {
             suppliersService.delete(jsn.fromJson(req.getReader(), Supplier.class));

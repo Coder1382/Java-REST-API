@@ -8,7 +8,7 @@ public class Fruit {
     String name;
     String color;
     int price;
-    List<String> sel;
+    List<Seller> sellers;
 
 
     public Fruit() {
@@ -16,7 +16,7 @@ public class Fruit {
         name = "";
         color = "";
         price = 0;
-        sel = new ArrayList<>();
+        sellers = new ArrayList<>();
     }
 
     public Fruit(String name, String color, int price) {
@@ -24,7 +24,7 @@ public class Fruit {
         this.name = name;
         this.color = color;
         this.price = price;
-        this.sel = new ArrayList<>();
+        this.sellers = new ArrayList<>();
     }
 
     public Fruit(long id, String name, String color, int price) {
@@ -32,17 +32,17 @@ public class Fruit {
         this.name = name;
         this.color = color;
         this.price = price;
-        this.sel = new ArrayList<>();
+        this.sellers = new ArrayList<>();
     }
 
-    public Fruit(long id, String name, String color, int price, List<String> sel) {
+    public Fruit(long id, String name, String color, int price, List<Seller> sellers) {
         this.id = id;
         this.name = name;
         this.color = color;
         this.price = price;
-        this.sel = new ArrayList<>();
-        sel.forEach(e -> {
-            this.sel.add(e);
+        this.sellers = new ArrayList<>();
+        sellers.forEach(e -> {
+            this.sellers.add(e);
         });
     }
 
@@ -77,9 +77,9 @@ public class Fruit {
     @Override
     public String toString() {
         StringBuilder s = new StringBuilder();
-        if (sel.size() > 0) {
-            for (int i = 0; i < sel.size(); ++i) {
-                s.append(sel.get(i));
+        if (sellers.size() > 0) {
+            for (int i = 0; i < sellers.size(); ++i) {
+                s.append(sellers.get(i).getName() + ", ");
             }
             s.delete(s.length() - 2, s.length() - 1);
             return "id: " + id + ", name: " + name + ", color: " + color + ", price: " + price + "\nsellers: " + s;

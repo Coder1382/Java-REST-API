@@ -15,10 +15,10 @@ import java.util.List;
 
 public class SellersServlet extends HttpServlet {
     private final SellersService sellersService = new SellersService();
+    private final Gson jsn = new Gson();
 
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        Gson jsn = new Gson();
         String[] uri = req.getRequestURI().split("/");
         if (uri[2].equals("sellers")) {
             PrintWriter pw = res.getWriter();
@@ -30,21 +30,24 @@ public class SellersServlet extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         String[] uri = req.getRequestURI().split("/");
-        if (uri[2].equals("sellers")) {
+        if (uri.length < 5 && uri[2].equals("sellers")) {
             long id = -1;
-            if (req.getQueryString() != null)
-                id = Long.parseLong(req.getQueryString().split("=")[1]);
+            if (uri.length == 4 && !uri[3].equals("all"))
+                try {
+                    id = Long.parseLong(uri[3]);
+                } catch (NumberFormatException e) {
+                    throw e;
+                }
             PrintWriter pw = res.getWriter();
-            sellersService.show(id).forEach(e -> {
-                pw.write(e.toString() + "\n\n");
+            sellersService.find(id).forEach(e -> {
+                pw.write(jsn.toJson(e) + "\n\n");
             });
             pw.close();
-        }
+        } else throw new RuntimeException("Bad URL");
     }
 
     @Override
     public void doPut(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        Gson jsn = new Gson();
         String[] uri = req.getRequestURI().split("/");
         if (uri[2].equals("sellers")) {
             try {

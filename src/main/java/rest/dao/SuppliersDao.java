@@ -3,6 +3,7 @@ package rest.dao;
 import com.fasterxml.jackson.core.json.async.NonBlockingJsonParserBase;
 import rest.dao.DatabaseConnector;
 import rest.model.Fruit;
+import rest.model.Seller;
 import rest.model.Supplier;
 import rest.services.FruitService;
 
@@ -42,7 +43,7 @@ public class SuppliersDao {
         }
     }
 
-    public List<Object> showData(long id) throws IOException {
+    public List<Object> find(long id) throws IOException {
         List<Object> obj = new ArrayList<>();
         String query = (id > 0 ? "SELECT * FROM suppliers WHERE id=?" : "SELECT * FROM suppliers");
         try (Connection connect = DatabaseConnector.connector(); PreparedStatement readDB = connect.prepareStatement(query)) {
@@ -55,9 +56,9 @@ public class SuppliersDao {
                 Array cl = result.getArray("clients");
                 if (cl != null) {
                     String[] cli = (String[]) cl.getArray();
-                    List<String> s = new ArrayList<>();
+                    List<Seller> s = new ArrayList<>();
                     for (int k = 0; k < cli.length; ++k)
-                        s.add(cli[k] + ", ");
+                        s.add(new Seller(cli[k], 0));
                     obj.add(new Supplier(i, name, s));
                 } else obj.add(new Supplier(i, name));
             }

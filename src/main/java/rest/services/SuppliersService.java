@@ -23,8 +23,8 @@ import java.util.List;
 public class SuppliersService {
     private final SuppliersDao suppliersDao = new SuppliersDao();
 
-    public List<Object> show(long id) throws IOException {
-        return suppliersDao.showData(id);
+    public List<Object> find(long id) throws IOException {
+        return suppliersDao.find(id);
     }
 
     public long save(Supplier supplier) throws IOException {

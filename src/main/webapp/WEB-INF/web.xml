@@ -29,11 +29,27 @@
     <url-pattern>/suppliers</url-pattern>
   </servlet-mapping>
   <servlet>
-    <servlet-name>ServletCombo</servlet-name>
-    <servlet-class>rest.servlets.ComboServlet</servlet-class>
+    <servlet-name>ServletFruitId</servlet-name>
+    <servlet-class>rest.servlets.FruitServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>ServletCombo</servlet-name>
-    <url-pattern>/seller_fruit</url-pattern>
+    <servlet-name>ServletFruitId</servlet-name>
+    <url-pattern>/fruit/*</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ServletSellersId</servlet-name>
+    <servlet-class>rest.servlets.SellersServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletSellersId</servlet-name>
+    <url-pattern>/sellers/*</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ServletSuppliersId</servlet-name>
+    <servlet-class>rest.servlets.SuppliersServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletSuppliersId</servlet-name>
+    <url-pattern>/suppliers/*</url-pattern>
   </servlet-mapping>
 </web-app>

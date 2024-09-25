@@ -21,8 +21,8 @@ import java.util.List;
 public class SellersService {
     private final SellersDao sellersDao = new SellersDao();
 
-    public List<Object> show(long id) throws IOException {
-        return sellersDao.show(id);
+    public List<Object> find(long id) throws IOException {
+        return sellersDao.find(id);
     }
 
     public long save(Seller seller) throws IOException {
