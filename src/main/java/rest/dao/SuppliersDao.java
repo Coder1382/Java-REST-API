@@ -1,12 +1,6 @@
 package rest.dao;
 
-import com.fasterxml.jackson.core.json.async.NonBlockingJsonParserBase;
-import rest.dao.DatabaseConnector;
 import rest.dto.SuppliersDto;
-import rest.model.Fruit;
-import rest.model.Seller;
-import rest.model.Supplier;
-import rest.services.FruitService;
 
 import java.io.IOException;
 import java.sql.*;
@@ -17,7 +11,7 @@ public class SuppliersDao {
     public long save(String comp) {
         long id = 0;
         try (Connection connect = DatabaseConnector.connector(); PreparedStatement addToDB = connect.
-                prepareStatement("INSERT INTO suppliers(name) VALUES(?)")) {
+                prepareStatement("INSERT INTO suppliers (name) VALUES(?)")) {
             addToDB.setString(1, comp);
             addToDB.executeUpdate();
             PreparedStatement readDB = connect.prepareStatement("SELECT id FROM suppliers WHERE name=?");
@@ -46,22 +40,15 @@ public class SuppliersDao {
 
     public List<SuppliersDto> find(long id) throws IOException {
         List<SuppliersDto> suppliersDtos = new ArrayList<>();
-        String query = (id > 0 ? "SELECT * FROM suppliers WHERE id=?" : "SELECT * FROM suppliers");
-        try (Connection connect = DatabaseConnector.connector(); PreparedStatement readDB = connect.prepareStatement(query)) {
+        try (Connection connect = DatabaseConnector.connector(); PreparedStatement readDB = connect.
+                prepareStatement(id > 0 ? "SELECT * FROM suppliers WHERE id=?" : "SELECT * FROM suppliers")) {
             if (id > 0)
                 readDB.setLong(1, id);
             ResultSet result = readDB.executeQuery();
             while (result.next()) {
                 long i = result.getLong("id");
                 String name = result.getString("name");
-                Array cl = result.getArray("clients");
-                if (cl != null) {
-                    String[] cli = (String[]) cl.getArray();
-                    List<Seller> s = new ArrayList<>();
-                    for (int k = 0; k < cli.length; ++k)
-                        s.add(new Seller(cli[k], 0));
-                    suppliersDtos.add(new SuppliersDto(id, name, s));
-                } else suppliersDtos.add(new SuppliersDto(id, name));
+                suppliersDtos.add(new SuppliersDto(i, name));
             }
             connect.close();
         } catch (SQLException e) {

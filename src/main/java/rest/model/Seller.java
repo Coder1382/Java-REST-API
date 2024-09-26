@@ -1,61 +1,58 @@
 package rest.model;
 
+import rest.dto.SuppliersDto;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Seller {
     long id;
-    long supplier_id;
+    String supply;
     String name;
-    String supplier;
+    Supplier supplier;
     List<Fruit> fruits;
 
     public Seller() {
         name = "";
+        supply = "";
         id = 0;
-        supplier = "";
-        supplier_id = 0;
+        supplier = new Supplier();
         fruits = new ArrayList<>();
     }
 
-    public Seller(String name, long supplier_id) {
+    public Seller(String name, String sup) {
         this.name = name;
-        this.supplier_id = supplier_id;
-        this.supplier = "";
+        this.supply = sup;
+        supplier = new Supplier();
         this.fruits = new ArrayList<>();
     }
 
-    public Seller(long id, String name, long supplier_id) {
-        this.id = id;
+    public Seller(String name, Supplier supplier) {
         this.name = name;
-        this.supplier_id = supplier_id;
-        this.supplier = "";
-        this.fruits = new ArrayList<>();
+        this.supplier = supplier;
+        fruits = new ArrayList<>();
     }
 
-    public Seller(long id, String name, long supplier_id, List<Fruit> fruits) {
+    public Seller(long id, String sup) {
         this.id = id;
-        this.name = name;
-        this.supplier_id = supplier_id;
-        this.supplier = "";
-        this.fruits = new ArrayList<>();
-        fruits.forEach(e -> {
-            this.fruits.add(e);
-        });
+        this.name = "";
+        this.supply = sup;
+        supplier = new Supplier();
+        fruits = new ArrayList<>();
     }
 
-    public Seller(long id, String name, long supplier_id, String supplier) {
+    public Seller(long id, String name, Supplier supplier) {
         this.id = id;
         this.name = name;
-        this.supplier_id = supplier_id;
+        this.supply = "";
         this.supplier = supplier;
         this.fruits = new ArrayList<>();
     }
 
-    public Seller(long id, String name, long supplier_id, String supplier, List<Fruit> fruits) {
+    public Seller(long id, String name, Supplier supplier, List<Fruit> fruits) {
         this.id = id;
         this.name = name;
-        this.supplier_id = supplier_id;
+        this.supply = "";
         this.supplier = supplier;
         this.fruits = new ArrayList<>();
         fruits.forEach(e -> {
@@ -68,47 +65,21 @@ public class Seller {
         return id;
     }
 
-    public String getSupplier() {
-        return supplier;
-    }
-
-    public long getSupplier_id() {
-        return supplier_id;
-    }
-
-    public void setSupplier_id(long supplier_id) {
-        this.supplier_id = supplier_id;
-    }
-
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getSupplier() {
+        return supply;
     }
-
 
     @Override
     public String toString() {
         StringBuilder s = new StringBuilder();
-        if (supplier.equals("")) {
-            if (fruits.size() > 0) {
-                for (int i = 0; i < fruits.size(); ++i) {
-                    s.append(fruits.get(i).getName() + ", ");
-                }
-                s.delete(s.length() - 2, s.length() - 1);
-                return "id: " + id + ", name: " + name + "\nfruits: " + s;
-            } else return "id: " + id + ", name: " + name;
-        } else {
-            if (fruits.size() > 0) {
-                for (int i = 0; i < fruits.size(); ++i) {
-                    s.append(fruits.get(i).getName() + ", ");
-                }
-                s.delete(s.length() - 2, s.length() - 1);
-                return "id: " + id + ", name: " + name + ", supplier: " + supplier + "\nfruits: " + s;
-            } else
-                return "id: " + id + ", name: " + name + ", supplier: " + supplier;
+        for (int i = 0; i < fruits.size(); ++i) {
+            s.append(fruits.get(i).getName() + ", ");
         }
+        s.delete(s.length() - 2, s.length() - 1);
+        return "id: " + id + ", name: " + name + ", supplier: " + supplier.getName() + "\nfruits: " + s;
     }
 }

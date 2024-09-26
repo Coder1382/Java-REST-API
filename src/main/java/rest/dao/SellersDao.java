@@ -1,33 +1,28 @@
 package rest.dao;
 
+import rest.dto.FruitDto;
 import rest.dto.SellersDto;
-import rest.model.Fruit;
-import rest.model.Seller;
-import rest.model.Supplier;
+import rest.dto.SuppliersDto;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class SellersDao {
-    public long save(String n, long index) {
+    public long save(String name, String supplier) {
         long id = 0;
         try (Connection connect = DatabaseConnector.connector(); PreparedStatement addToDB = connect.
-                prepareStatement("INSERT INTO sellers(name,supplier_id) VALUES(?,?)")) {
-            addToDB.setString(1, n);
-            addToDB.setLong(2, index);
+                prepareStatement("INSERT INTO sellers(name, supplier) VALUES(?,?)")) {
+            addToDB.setString(1, name);
+            addToDB.setString(2, supplier);
             addToDB.executeUpdate();
-            PreparedStatement readDB = connect.prepareStatement("SELECT id FROM sellers WHERE name=? and supplier_id=?");
-            readDB.setString(1, n);
-            readDB.setLong(2, index);
+            PreparedStatement readDB = connect.prepareStatement("SELECT id FROM sellers WHERE name=? and supplier=?");
+            readDB.setString(1, name);
+            readDB.setString(2, supplier);
             ResultSet result = readDB.executeQuery();
             while (result.next()) {
                 id = result.getLong("id");
             }
-            PreparedStatement wSup = connect.prepareStatement("UPDATE suppliers SET clients=array_append(clients,?) WHERE id=?");
-            wSup.setString(1, n);
-            wSup.setLong(2, index);
-            wSup.executeUpdate();
             connect.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -37,29 +32,34 @@ public class SellersDao {
 
     public List<SellersDto> find(long id) {
         List<SellersDto> sellersDtos = new ArrayList<>();
-        String query = (id > 0 ? "SELECT * FROM sellers WHERE id=?" : "SELECT * FROM sellers");
-        try (Connection connect = DatabaseConnector.connector(); PreparedStatement readDB = connect.prepareStatement(query)) {
-            if (id > 0)
-                readDB.setLong(1, id);
+        List<FruitDto> fruitList = new ArrayList<>();
+        try (Connection connect = DatabaseConnector.connector(); PreparedStatement readDB = connect.
+                prepareStatement(id > 0 ? "SELECT * FROM sellers WHERE id=?" : "SELECT * FROM sellers")) {
+            if (id > 0) readDB.setLong(1, id);
             ResultSet result = readDB.executeQuery();
             while (result.next()) {
                 long i = result.getLong("id");
                 String name = result.getString("name");
-                long supplier_id = result.getLong("supplier_id");
-                PreparedStatement rdb = connect.prepareStatement("SELECT name FROM suppliers WHERE id=?");
-                rdb.setLong(1, supplier_id);
+                String supplier = result.getString("supplier");
+                PreparedStatement rdb = connect.prepareStatement("SELECT id FROM suppliers WHERE name=?");
+                rdb.setString(1, supplier);
                 ResultSet rs = rdb.executeQuery();
                 while (rs.next()) {
-                    String company = rs.getString("name");
-                    Array f = result.getArray("fruits");
-                    if (f != null) {
-                        String[] cli = (String[]) f.getArray();
-                        List<Fruit> s = new ArrayList<>();
-                        for (int k = 0; k < cli.length; ++k)
-                            s.add(new Fruit(cli[k], "", 0));
-                        sellersDtos.add(new SellersDto(id, name, company, s));
-                    } else sellersDtos.add(new SellersDto(id, name, company));
+                    id = rs.getLong("id");
                 }
+                Array arr = result.getArray("fruits");
+                if (arr != null) {
+                    String[] fruits = (String[]) arr.getArray();
+                    for (int k = 0; k < fruits.length; ++k) {
+                        PreparedStatement rdf = connect.prepareStatement("SELECT id, price FROM fruit WHERE name=?");
+                        rdf.setString(1, fruits[k]);
+                        ResultSet rf = rdf.executeQuery();
+                        while (rf.next()) {
+                            fruitList.add(new FruitDto(rf.getLong("id"), fruits[k], rf.getInt("price")));
+                        }
+                    }
+                    sellersDtos.add(new SellersDto(i, name, new SuppliersDto(id, supplier), fruitList));
+                } else sellersDtos.add(new SellersDto(i, name, new SuppliersDto(id, supplier)));
             }
             connect.close();
         } catch (SQLException e) {
@@ -68,11 +68,11 @@ public class SellersDao {
         return sellersDtos;
     }
 
-    public void update(long id, String f) throws SQLException {
+    public void update(long id, String fruit) throws SQLException {
         try (Connection connect = DatabaseConnector.connector(); PreparedStatement readDB = connect.
                 prepareStatement("SELECT * FROM sellers WHERE id=? and ?=ANY(fruits)")) {
             readDB.setLong(1, id);
-            readDB.setString(2, f);
+            readDB.setString(2, fruit);
             ResultSet resset = readDB.executeQuery();
             int i = 0;
             while (resset.next()) {
@@ -80,7 +80,7 @@ public class SellersDao {
             }
             if (i == 0) {
                 PreparedStatement updateInDB = connect.prepareStatement("UPDATE sellers SET fruits=array_append(fruits,?) WHERE id=?");
-                updateInDB.setString(1, f);
+                updateInDB.setString(1, fruit);
                 updateInDB.setLong(2, id);
                 updateInDB.executeUpdate();
             }
@@ -91,23 +91,10 @@ public class SellersDao {
     }
 
     public void delete(long id) {
-        try (Connection connect = DatabaseConnector.connector(); PreparedStatement readDB = connect.
-                prepareStatement("SELECT name, supplier_id FROM sellers WHERE id=?")) {
-            long i = 0;
-            String name = "";
-            readDB.setLong(1, id);
-            ResultSet rs = readDB.executeQuery();
-            while (rs.next()) {
-                name = rs.getString("name");
-                i = rs.getLong("supplier_id");
-            }
-            PreparedStatement deleteFromDB = connect.prepareStatement("DELETE FROM sellers WHERE id=?");
+        try (Connection connect = DatabaseConnector.connector(); PreparedStatement deleteFromDB = connect
+                .prepareStatement("DELETE FROM sellers WHERE id=?")) {
             deleteFromDB.setLong(1, id);
             deleteFromDB.executeUpdate();
-            PreparedStatement del = connect.prepareStatement("UPDATE suppliers SET clients=ARRAY_REMOVE(clients, ?) WHERE id=?");
-            del.setString(1, name);
-            del.setLong(2, i);
-            del.executeUpdate();
             connect.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);

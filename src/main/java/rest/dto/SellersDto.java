@@ -1,22 +1,20 @@
 package rest.dto;
 
-import rest.model.Fruit;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class SellersDto {
     long id;
-    long supplier_id;
     String name;
-    String supplier;
-    List<Fruit> fruits;
+    String supply;
+    SuppliersDto supplier;
+    List<FruitDto> fruits;
 
     public SellersDto() {
         name = "";
+        supply = "";
         id = 0;
-        supplier = "";
-        supplier_id = 0;
+        supplier = new SuppliersDto();
         fruits = new ArrayList<>();
     }
 
@@ -24,22 +22,49 @@ public class SellersDto {
         this.id = id;
     }
 
-    public SellersDto(String name, long supplier_id) {
+    public SellersDto(long id, String name) {
+        this.id = id;
+        this.supply = "";
         this.name = name;
-        this.supplier_id = supplier_id;
+        supplier = new SuppliersDto();
+        fruits = new ArrayList<>();
     }
 
-    public SellersDto(long id, String name, String supplier) {
-        this.id = id;
+    public SellersDto(String name, String sup) {
         this.name = name;
-        this.supplier_id = supplier_id;
+        this.supply = sup;
+        supplier = new SuppliersDto();
+        fruits = new ArrayList<>();
+    }
+
+    public SellersDto(String name, SuppliersDto supplier) {
+        this.name = name;
         this.supplier = supplier;
+        fruits = new ArrayList<>();
     }
 
-    public SellersDto(long id, String name, String supplier, List<Fruit> fruits) {
+    public SellersDto(String name, SuppliersDto supplier, List<FruitDto> fruits) {
+        this.name = name;
+        this.supply = "";
+        this.supplier = supplier;
+        this.fruits = new ArrayList<>();
+        fruits.forEach(e -> {
+            this.fruits.add(e);
+        });
+    }
+
+    public SellersDto(long id, String name, SuppliersDto supplier) {
         this.id = id;
         this.name = name;
-        this.supplier_id = supplier_id;
+        this.supply = "";
+        this.supplier = supplier;
+        this.fruits = new ArrayList<>();
+    }
+
+    public SellersDto(long id, String name, SuppliersDto supplier, List<FruitDto> fruits) {
+        this.id = id;
+        this.name = name;
+        this.supply = "";
         this.supplier = supplier;
         this.fruits = new ArrayList<>();
         fruits.forEach(e -> {
@@ -53,11 +78,7 @@ public class SellersDto {
     }
 
     public String getSupplier() {
-        return supplier;
-    }
-
-    public long getSupplier_id() {
-        return supplier_id;
+        return supply;
     }
 
     public String getName() {

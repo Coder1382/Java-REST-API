@@ -1,20 +1,10 @@
 package rest.services;
 
-import com.google.gson.Gson;
-import rest.dao.DatabaseConnector;
 import rest.dao.FruitDao;
 import rest.dto.FruitDto;
-import rest.model.Fruit;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class FruitService {
@@ -25,7 +15,7 @@ public class FruitService {
     }
 
     public long save(FruitDto fruit) throws IOException {
-        return fruitDao.save(fruit.getName(), fruit.getColor(), fruit.getPrice());
+        return fruitDao.save(fruit.getName(), fruit.getPrice());
     }
 
     public void update(FruitDto fruit) throws IOException, SQLException {

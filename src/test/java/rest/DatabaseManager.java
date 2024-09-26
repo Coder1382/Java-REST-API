@@ -11,26 +11,25 @@ public class DatabaseManager {
 
     public static void CreateFruitTable() throws SQLException {
         connect.createStatement().executeUpdate("CREATE TABLE IF NOT EXISTS fruit(id BIGSERIAL PRIMARY KEY, " +
-                "name VARCHAR(80), color VARCHAR(20), price NUMERIC CHECK (price>=0), sel TEXT [])");
+                "name TEXT UNIQUE NOT NULL, price NUMERIC CHECK (price>=0))");
     }
 
     public static void CreateSellersTable() throws SQLException {
         connect.createStatement().executeUpdate("CREATE TABLE IF NOT EXISTS sellers(id BIGSERIAL PRIMARY KEY, " +
-                "name VARCHAR(80), supplier_id BIGINT, fruits TEXT [], " +
-                "CONSTRAINT fk FOREIGN KEY(supplier_id) REFERENCES suppliers(id) ON DELETE CASCADE)");
+                "name TEXT NOT NULL, supplier TEXT, fruits TEXT [])");
     }
 
     public static void CreateSuppliersTable() throws SQLException {
         connect.createStatement().executeUpdate("CREATE TABLE IF NOT EXISTS suppliers(id BIGSERIAL PRIMARY KEY, " +
-                "name VARCHAR(80), clients TEXT [])");
+                "name TEXT UNIQUE NOT NULL)");
     }
 
 
     public static void DropTable(String table) throws SQLException {
-        connect.createStatement().executeUpdate("DROP TABLE IF EXISTS " + table + " CASCADE");
+        connect.createStatement().executeUpdate("DROP TABLE IF EXISTS " + table);
     }
 
     public static void TruncateTable(String table) throws SQLException {
-        connect.createStatement().executeUpdate("TRUNCATE TABLE " + table + " RESTART IDENTITY CASCADE");
+        connect.createStatement().executeUpdate("TRUNCATE TABLE " + table + " RESTART IDENTITY");
     }
 }

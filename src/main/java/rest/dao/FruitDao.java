@@ -1,11 +1,6 @@
 package rest.dao;
 
-import com.fasterxml.jackson.core.json.async.NonBlockingJsonParserBase;
-import rest.dao.DatabaseConnector;
 import rest.dto.FruitDto;
-import rest.model.Fruit;
-import rest.model.Seller;
-import rest.services.FruitService;
 
 import java.io.IOException;
 import java.sql.*;
@@ -15,17 +10,15 @@ import java.util.List;
 public class FruitDao {
     public List<FruitDto> find(long id) throws IOException {
         List<FruitDto> fruitDtos = new ArrayList<>();
-        String query = (id > 0 ? "SELECT * FROM fruit WHERE id=?" : "SELECT * FROM fruit");
-        try (Connection connect = DatabaseConnector.connector(); PreparedStatement readDB = connect.prepareStatement(query)) {
-            if (id > 0)
-                readDB.setLong(1, id);
+        try (Connection connect = DatabaseConnector.connector(); PreparedStatement readDB = connect.
+                prepareStatement(id > 0 ? "SELECT * FROM fruit WHERE id=?" : "SELECT * FROM fruit")) {
+            if (id > 0) readDB.setLong(1, id);
             ResultSet result = readDB.executeQuery();
             while (result.next()) {
                 long i = result.getLong("id");
                 String name = result.getString("name");
-                String color = result.getString("color");
                 int price = result.getInt("price");
-                fruitDtos.add(new FruitDto(id, name, color, price));
+                fruitDtos.add(new FruitDto(i, name, price));
             }
             connect.close();
 
@@ -35,18 +28,16 @@ public class FruitDao {
         return fruitDtos;
     }
 
-    public long save(String n, String col, int pr) {
+    public long save(String name, int pr) {
         long id = 0;
         try (Connection connect = DatabaseConnector.connector(); PreparedStatement addToDB = connect.
-                prepareStatement("INSERT INTO fruit(name,color,price) VALUES(?,?,?)")) {
-            addToDB.setString(1, n);
-            addToDB.setString(2, col);
-            addToDB.setInt(3, pr);
+                prepareStatement("INSERT INTO fruit(name, price) VALUES(?,?)")) {
+            addToDB.setString(1, name);
+            addToDB.setInt(2, pr);
             addToDB.executeUpdate();
-            PreparedStatement readDB = connect.prepareStatement("SELECT id FROM fruit WHERE name=? and color=? and price=?");
-            readDB.setString(1, n);
-            readDB.setString(2, col);
-            readDB.setInt(3, pr);
+            PreparedStatement readDB = connect.prepareStatement("SELECT id FROM fruit WHERE name=? and price=?");
+            readDB.setString(1, name);
+            readDB.setInt(2, pr);
             ResultSet result = readDB.executeQuery();
             while (result.next()) {
                 id = result.getLong("id");

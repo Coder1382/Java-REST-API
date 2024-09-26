@@ -1,24 +1,10 @@
 package rest.services;
 
-import com.google.gson.Gson;
-import rest.dao.DatabaseConnector;
-import rest.dao.FruitDao;
 import rest.dao.SuppliersDao;
 import rest.dto.SuppliersDto;
-import rest.model.Fruit;
-import rest.model.Seller;
-import rest.model.Supplier;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.HashMap;
+
 import java.util.List;
 
 public class SuppliersService {

@@ -2,7 +2,6 @@ package rest.servlets;//package servlets;
 
 import com.google.gson.Gson;
 import rest.dto.SellersDto;
-import rest.model.Seller;
 import rest.services.SellersService;
 
 import javax.servlet.ServletException;
@@ -20,10 +19,10 @@ public class SellersServlet extends HttpServlet {
 
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        String[] uri = req.getRequestURI().split("/");
-        if (uri[2].equals("sellers")) {
+        if (req.getRequestURI().split("/")[2].equals("sellers")) {
+            System.out.println(req.getParameterValues("name"));
             PrintWriter pw = res.getWriter();
-            pw.write("successfully added under id: " + sellersService.save(jsn.fromJson(req.getReader(), SellersDto.class)));
+            pw.write("saved under id: " + sellersService.save(jsn.fromJson(req.getReader(), SellersDto.class)));
             pw.close();
         }
     }
@@ -37,39 +36,36 @@ public class SellersServlet extends HttpServlet {
                 try {
                     id = Long.parseLong(uri[3]);
                 } catch (NumberFormatException e) {
-                    throw e;
+                    return;
                 }
             PrintWriter pw = res.getWriter();
             sellersService.find(id).forEach(e -> {
                 pw.write(jsn.toJson(e) + "\n\n");
             });
             pw.close();
-        } else throw new RuntimeException("Bad URL");
+        } else return;
     }
 
     @Override
     public void doPut(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        String[] uri = req.getRequestURI().split("/");
-        if (uri[2].equals("sellers")) {
+        if (req.getRequestURI().split("/").equals("sellers")) {
             try {
                 sellersService.update(jsn.fromJson(req.getReader(), SellersDto.class));
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
             PrintWriter pw = res.getWriter();
-            pw.write("fruit successfully added");
+            pw.write("fruit added");
             pw.close();
         }
     }
 
     @Override
     public void doDelete(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        Gson jsn = new Gson();
-        String[] uri = req.getRequestURI().split("/");
-        if (uri[2].equals("sellers")) {
+        if (req.getRequestURI().split("/")[2].equals("sellers")) {
             sellersService.delete(jsn.fromJson(req.getReader(), SellersDto.class));
             PrintWriter pw = res.getWriter();
-            pw.write("successfully deleted");
+            pw.write("deleted");
             pw.close();
         }
     }
