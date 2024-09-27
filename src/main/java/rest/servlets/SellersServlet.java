@@ -10,8 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class SellersServlet extends HttpServlet {
     private final SellersService sellersService = new SellersService();
@@ -20,9 +18,8 @@ public class SellersServlet extends HttpServlet {
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         if (req.getRequestURI().split("/")[2].equals("sellers")) {
-            System.out.println(req.getParameterValues("name"));
             PrintWriter pw = res.getWriter();
-            pw.write("saved under id: " + sellersService.save(jsn.fromJson(req.getReader(), SellersDto.class)));
+            pw.write("saved with id: " + sellersService.save(jsn.fromJson(req.getReader(), SellersDto.class)));
             pw.close();
         }
     }
@@ -48,15 +45,12 @@ public class SellersServlet extends HttpServlet {
 
     @Override
     public void doPut(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        if (req.getRequestURI().split("/").equals("sellers")) {
+        if (req.getRequestURI().split("/")[2].equals("sellers")) {
             try {
                 sellersService.update(jsn.fromJson(req.getReader(), SellersDto.class));
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
-            PrintWriter pw = res.getWriter();
-            pw.write("fruit added");
-            pw.close();
         }
     }
 
@@ -64,9 +58,6 @@ public class SellersServlet extends HttpServlet {
     public void doDelete(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         if (req.getRequestURI().split("/")[2].equals("sellers")) {
             sellersService.delete(jsn.fromJson(req.getReader(), SellersDto.class));
-            PrintWriter pw = res.getWriter();
-            pw.write("deleted");
-            pw.close();
         }
     }
 }

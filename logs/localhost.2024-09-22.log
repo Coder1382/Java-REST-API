@@ -1,6 +1,6 @@
 22-Sep-2024 07:45:12.342 SEVERE [http-nio-8080-exec-2] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [ServletSuppliers] in context with path [/myREST] threw exception
 	java.lang.ArrayIndexOutOfBoundsException: Index 2 out of bounds for length 2
-		at rest.services.SuppliersService.postData(SuppliersService.java:41)
+		at rest.services.SuppliersServiceTest.postData(SuppliersService.java:41)
 		at rest.servlets.SuppliersServlet.doPost(SuppliersServlet.java:20)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:555)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -28,7 +28,7 @@
 		at java.base/java.lang.Thread.run(Thread.java:1583)
 22-Sep-2024 08:00:22.760 SEVERE [http-nio-8080-exec-1] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [ServletSuppliers] in context with path [/myREST] threw exception
 	java.lang.ArrayIndexOutOfBoundsException: Index 2 out of bounds for length 2
-		at rest.services.SuppliersService.postData(SuppliersService.java:41)
+		at rest.services.SuppliersServiceTest.postData(SuppliersService.java:41)
 		at rest.servlets.SuppliersServlet.doPost(SuppliersServlet.java:20)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:555)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -59,7 +59,7 @@
   Hint: No function matches the given name and argument types. You might need to add explicit type casts.
   Position: 30
 		at rest.dao.SellersDao.postData(SellersDao.java:48)
-		at rest.services.SellersService.postData(SellersService.java:46)
+		at rest.services.SellersServiceTest.postData(SellersService.java:46)
 		at rest.servlets.SellersServlet.doPost(SellersServlet.java:20)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:555)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -102,7 +102,7 @@
   Hint: No function matches the given name and argument types. You might need to add explicit type casts.
   Position: 30
 		at rest.dao.SellersDao.postData(SellersDao.java:49)
-		at rest.services.SellersService.postData(SellersService.java:46)
+		at rest.services.SellersServiceTest.postData(SellersService.java:46)
 		at rest.servlets.SellersServlet.doPost(SellersServlet.java:20)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:555)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -145,7 +145,7 @@
   Hint: No function matches the given name and argument types. You might need to add explicit type casts.
   Position: 30
 		at rest.dao.SellersDao.postData(SellersDao.java:50)
-		at rest.services.SellersService.postData(SellersService.java:46)
+		at rest.services.SellersServiceTest.postData(SellersService.java:46)
 		at rest.servlets.SellersServlet.doPost(SellersServlet.java:20)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:555)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -188,7 +188,7 @@
   Hint: No function matches the given name and argument types. You might need to add explicit type casts.
   Position: 30
 		at rest.dao.SellersDao.postData(SellersDao.java:50)
-		at rest.services.SellersService.postData(SellersService.java:46)
+		at rest.services.SellersServiceTest.postData(SellersService.java:46)
 		at rest.servlets.SellersServlet.doPost(SellersServlet.java:20)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:555)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -229,7 +229,7 @@
 22-Sep-2024 08:42:11.847 SEVERE [http-nio-8080-exec-2] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [ServletSellers] in context with path [/myREST] threw exception
 	java.lang.RuntimeException: org.postgresql.util.PSQLException: ResultSet not positioned properly, perhaps you need to call next.
 		at rest.dao.SellersDao.postData(SellersDao.java:50)
-		at rest.services.SellersService.postData(SellersService.java:46)
+		at rest.services.SellersServiceTest.postData(SellersService.java:46)
 		at rest.servlets.SellersServlet.doPost(SellersServlet.java:20)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:555)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -263,7 +263,7 @@
 22-Sep-2024 08:42:48.641 SEVERE [http-nio-8080-exec-1] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [ServletSellers] in context with path [/myREST] threw exception
 	java.lang.RuntimeException: org.postgresql.util.PSQLException: ResultSet not positioned properly, perhaps you need to call next.
 		at rest.dao.SellersDao.postData(SellersDao.java:51)
-		at rest.services.SellersService.postData(SellersService.java:46)
+		at rest.services.SellersServiceTest.postData(SellersService.java:46)
 		at rest.servlets.SellersServlet.doPost(SellersServlet.java:20)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:555)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -297,7 +297,7 @@
 22-Sep-2024 08:47:44.214 SEVERE [http-nio-8080-exec-6] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [ServletSellers] in context with path [/myREST] threw exception
 	java.lang.RuntimeException: org.postgresql.util.PSQLException: ResultSet not positioned properly, perhaps you need to call next.
 		at rest.dao.SellersDao.postData(SellersDao.java:51)
-		at rest.services.SellersService.postData(SellersService.java:46)
+		at rest.services.SellersServiceTest.postData(SellersService.java:46)
 		at rest.servlets.SellersServlet.doPost(SellersServlet.java:20)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:555)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -331,7 +331,7 @@
 22-Sep-2024 09:05:15.178 SEVERE [http-nio-8080-exec-1] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [ServletSellers] in context with path [/myREST] threw exception
 	java.lang.RuntimeException: org.postgresql.util.PSQLException: ResultSet not positioned properly, perhaps you need to call next.
 		at rest.dao.SellersDao.postData(SellersDao.java:48)
-		at rest.services.SellersService.postData(SellersService.java:46)
+		at rest.services.SellersServiceTest.postData(SellersService.java:46)
 		at rest.servlets.SellersServlet.doPost(SellersServlet.java:20)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:555)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -365,7 +365,7 @@
 		... 26 more
 22-Sep-2024 15:15:13.712 SEVERE [http-nio-8080-exec-1] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [ServletSellers] in context with path [/myREST] threw exception
 	java.lang.ArrayIndexOutOfBoundsException: Index 2 out of bounds for length 2
-		at rest.services.SellersService.putData(SellersService.java:59)
+		at rest.services.SellersServiceTest.putData(SellersService.java:59)
 		at rest.servlets.SellersServlet.doPut(SellersServlet.java:43)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:558)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -393,7 +393,7 @@
 		at java.base/java.lang.Thread.run(Thread.java:1583)
 22-Sep-2024 15:17:21.205 SEVERE [http-nio-8080-exec-1] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [ServletSellers] in context with path [/myREST] threw exception
 	java.lang.ArrayIndexOutOfBoundsException: Index 2 out of bounds for length 2
-		at rest.services.SellersService.putData(SellersService.java:59)
+		at rest.services.SellersServiceTest.putData(SellersService.java:59)
 		at rest.servlets.SellersServlet.doPut(SellersServlet.java:43)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:558)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -421,7 +421,7 @@
 		at java.base/java.lang.Thread.run(Thread.java:1583)
 22-Sep-2024 15:17:36.683 SEVERE [http-nio-8080-exec-1] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [ServletSellers] in context with path [/myREST] threw exception
 	java.lang.ArrayIndexOutOfBoundsException: Index 2 out of bounds for length 2
-		at rest.services.SellersService.putData(SellersService.java:59)
+		at rest.services.SellersServiceTest.putData(SellersService.java:59)
 		at rest.servlets.SellersServlet.doPut(SellersServlet.java:43)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:558)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -449,7 +449,7 @@
 		at java.base/java.lang.Thread.run(Thread.java:1583)
 22-Sep-2024 15:18:53.395 SEVERE [http-nio-8080-exec-1] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [ServletSellers] in context with path [/myREST] threw exception
 	java.lang.ArrayIndexOutOfBoundsException: Index 2 out of bounds for length 2
-		at rest.services.SellersService.putData(SellersService.java:60)
+		at rest.services.SellersServiceTest.putData(SellersService.java:60)
 		at rest.servlets.SellersServlet.doPut(SellersServlet.java:43)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:558)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -477,7 +477,7 @@
 		at java.base/java.lang.Thread.run(Thread.java:1583)
 22-Sep-2024 16:01:29.285 SEVERE [http-nio-8080-exec-2] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [ServletSellers] in context with path [/myREST] threw exception
 	java.lang.ArrayIndexOutOfBoundsException: Index 2 out of bounds for length 2
-		at rest.services.SellersService.putData(SellersService.java:59)
+		at rest.services.SellersServiceTest.putData(SellersService.java:59)
 		at rest.servlets.SellersServlet.doPut(SellersServlet.java:43)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:558)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -505,7 +505,7 @@
 		at java.base/java.lang.Thread.run(Thread.java:1583)
 22-Sep-2024 16:10:40.475 SEVERE [http-nio-8080-exec-2] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [ServletSellers] in context with path [/myREST] threw exception
 	java.lang.ArrayIndexOutOfBoundsException: Index 2 out of bounds for length 2
-		at rest.services.SellersService.putData(SellersService.java:60)
+		at rest.services.SellersServiceTest.putData(SellersService.java:60)
 		at rest.servlets.SellersServlet.doPut(SellersServlet.java:43)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:558)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -533,7 +533,7 @@
 		at java.base/java.lang.Thread.run(Thread.java:1583)
 22-Sep-2024 16:12:32.789 SEVERE [http-nio-8080-exec-1] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [ServletSellers] in context with path [/myREST] threw exception
 	java.lang.ArrayIndexOutOfBoundsException: Index 2 out of bounds for length 2
-		at rest.services.SellersService.putData(SellersService.java:60)
+		at rest.services.SellersServiceTest.putData(SellersService.java:60)
 		at rest.servlets.SellersServlet.doPut(SellersServlet.java:43)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:558)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -561,7 +561,7 @@
 		at java.base/java.lang.Thread.run(Thread.java:1583)
 22-Sep-2024 16:16:04.736 SEVERE [http-nio-8080-exec-1] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [ServletSellers] in context with path [/myREST] threw exception
 	java.lang.ArrayIndexOutOfBoundsException: Index 1 out of bounds for length 1
-		at rest.services.SellersService.putData(SellersService.java:57)
+		at rest.services.SellersServiceTest.putData(SellersService.java:57)
 		at rest.servlets.SellersServlet.doPut(SellersServlet.java:43)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:558)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -589,7 +589,7 @@
 		at java.base/java.lang.Thread.run(Thread.java:1583)
 22-Sep-2024 16:17:55.906 SEVERE [http-nio-8080-exec-1] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [ServletSellers] in context with path [/myREST] threw exception
 	java.lang.ArrayIndexOutOfBoundsException: Index 2 out of bounds for length 2
-		at rest.services.SellersService.putData(SellersService.java:59)
+		at rest.services.SellersServiceTest.putData(SellersService.java:59)
 		at rest.servlets.SellersServlet.doPut(SellersServlet.java:43)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:558)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -617,7 +617,7 @@
 		at java.base/java.lang.Thread.run(Thread.java:1583)
 22-Sep-2024 16:18:23.842 SEVERE [http-nio-8080-exec-1] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [ServletSellers] in context with path [/myREST] threw exception
 	java.lang.ArrayIndexOutOfBoundsException: Index 2 out of bounds for length 2
-		at rest.services.SellersService.putData(SellersService.java:60)
+		at rest.services.SellersServiceTest.putData(SellersService.java:60)
 		at rest.servlets.SellersServlet.doPut(SellersServlet.java:43)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:558)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -645,7 +645,7 @@
 		at java.base/java.lang.Thread.run(Thread.java:1583)
 22-Sep-2024 16:20:09.950 SEVERE [http-nio-8080-exec-1] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [ServletSellers] in context with path [/myREST] threw exception
 	java.lang.ArrayIndexOutOfBoundsException: Index 2 out of bounds for length 2
-		at rest.services.SellersService.putData(SellersService.java:59)
+		at rest.services.SellersServiceTest.putData(SellersService.java:59)
 		at rest.servlets.SellersServlet.doPut(SellersServlet.java:43)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:558)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -673,7 +673,7 @@
 		at java.base/java.lang.Thread.run(Thread.java:1583)
 22-Sep-2024 16:24:23.012 SEVERE [http-nio-8080-exec-1] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [ServletSellers] in context with path [/myREST] threw exception
 	java.lang.ArrayIndexOutOfBoundsException: Index 2 out of bounds for length 2
-		at rest.services.SellersService.putData(SellersService.java:59)
+		at rest.services.SellersServiceTest.putData(SellersService.java:59)
 		at rest.servlets.SellersServlet.doPut(SellersServlet.java:43)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:558)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -701,7 +701,7 @@
 		at java.base/java.lang.Thread.run(Thread.java:1583)
 22-Sep-2024 16:25:09.850 SEVERE [http-nio-8080-exec-1] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [ServletSellers] in context with path [/myREST] threw exception
 	java.lang.ArrayIndexOutOfBoundsException: Index 2 out of bounds for length 2
-		at rest.services.SellersService.putData(SellersService.java:56)
+		at rest.services.SellersServiceTest.putData(SellersService.java:56)
 		at rest.servlets.SellersServlet.doPut(SellersServlet.java:43)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:558)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -729,7 +729,7 @@
 		at java.base/java.lang.Thread.run(Thread.java:1583)
 22-Sep-2024 16:26:42.099 SEVERE [http-nio-8080-exec-1] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [ServletSellers] in context with path [/myREST] threw exception
 	java.lang.ArrayIndexOutOfBoundsException: Index 2 out of bounds for length 2
-		at rest.services.SellersService.putData(SellersService.java:56)
+		at rest.services.SellersServiceTest.putData(SellersService.java:56)
 		at rest.servlets.SellersServlet.doPut(SellersServlet.java:43)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:558)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -765,7 +765,7 @@
 		at com.google.gson.Gson.fromJson(Gson.java:1361)
 		at com.google.gson.Gson.fromJson(Gson.java:1262)
 		at com.google.gson.Gson.fromJson(Gson.java:1199)
-		at rest.services.SellersService.putData(SellersService.java:55)
+		at rest.services.SellersServiceTest.putData(SellersService.java:55)
 		at rest.servlets.SellersServlet.doPut(SellersServlet.java:43)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:558)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -808,7 +808,7 @@
 		at com.google.gson.Gson.fromJson(Gson.java:1361)
 		at com.google.gson.Gson.fromJson(Gson.java:1262)
 		at com.google.gson.Gson.fromJson(Gson.java:1199)
-		at rest.services.SellersService.putData(SellersService.java:55)
+		at rest.services.SellersServiceTest.putData(SellersService.java:55)
 		at rest.servlets.SellersServlet.doPut(SellersServlet.java:43)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:558)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -851,7 +851,7 @@
 		at com.google.gson.Gson.fromJson(Gson.java:1361)
 		at com.google.gson.Gson.fromJson(Gson.java:1262)
 		at com.google.gson.Gson.fromJson(Gson.java:1199)
-		at rest.services.SellersService.putData(SellersService.java:55)
+		at rest.services.SellersServiceTest.putData(SellersService.java:55)
 		at rest.servlets.SellersServlet.doPut(SellersServlet.java:43)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:558)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -894,7 +894,7 @@
 		at com.google.gson.Gson.fromJson(Gson.java:1361)
 		at com.google.gson.Gson.fromJson(Gson.java:1262)
 		at com.google.gson.Gson.fromJson(Gson.java:1199)
-		at rest.services.SellersService.putData(SellersService.java:55)
+		at rest.services.SellersServiceTest.putData(SellersService.java:55)
 		at rest.servlets.SellersServlet.doPut(SellersServlet.java:43)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:558)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -937,7 +937,7 @@
 		at com.google.gson.Gson.fromJson(Gson.java:1361)
 		at com.google.gson.Gson.fromJson(Gson.java:1262)
 		at com.google.gson.Gson.fromJson(Gson.java:1199)
-		at rest.services.SellersService.putData(SellersService.java:55)
+		at rest.services.SellersServiceTest.putData(SellersService.java:55)
 		at rest.servlets.SellersServlet.doPut(SellersServlet.java:43)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:558)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -972,7 +972,7 @@
 		... 33 more
 22-Sep-2024 16:36:36.183 SEVERE [http-nio-8080-exec-1] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [ServletSellers] in context with path [/myREST] threw exception
 	java.lang.ArrayIndexOutOfBoundsException: Index 2 out of bounds for length 2
-		at rest.services.SellersService.putData(SellersService.java:60)
+		at rest.services.SellersServiceTest.putData(SellersService.java:60)
 		at rest.servlets.SellersServlet.doPut(SellersServlet.java:43)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:558)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -1000,7 +1000,7 @@
 		at java.base/java.lang.Thread.run(Thread.java:1583)
 22-Sep-2024 16:43:23.896 SEVERE [http-nio-8080-exec-1] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [ServletSellers] in context with path [/myREST] threw exception
 	java.lang.ArrayIndexOutOfBoundsException: Index 2 out of bounds for length 1
-		at rest.services.SellersService.putData(SellersService.java:60)
+		at rest.services.SellersServiceTest.putData(SellersService.java:60)
 		at rest.servlets.SellersServlet.doPut(SellersServlet.java:43)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:558)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -1028,7 +1028,7 @@
 		at java.base/java.lang.Thread.run(Thread.java:1583)
 22-Sep-2024 16:50:08.604 SEVERE [http-nio-8080-exec-2] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [ServletSellers] in context with path [/myREST] threw exception
 	java.lang.ArrayIndexOutOfBoundsException: Index 2 out of bounds for length 2
-		at rest.services.SellersService.putData(SellersService.java:60)
+		at rest.services.SellersServiceTest.putData(SellersService.java:60)
 		at rest.servlets.SellersServlet.doPut(SellersServlet.java:43)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:558)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -1056,7 +1056,7 @@
 		at java.base/java.lang.Thread.run(Thread.java:1583)
 22-Sep-2024 16:51:26.502 SEVERE [http-nio-8080-exec-1] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [ServletSellers] in context with path [/myREST] threw exception
 	java.lang.NullPointerException: Cannot invoke "rest.model.Seller.getFruit()" because the return value of "com.google.gson.Gson.fromJson(java.io.Reader, java.lang.Class)" is null
-		at rest.services.SellersService.putData(SellersService.java:59)
+		at rest.services.SellersServiceTest.putData(SellersService.java:59)
 		at rest.servlets.SellersServlet.doPut(SellersServlet.java:43)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:558)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -1084,7 +1084,7 @@
 		at java.base/java.lang.Thread.run(Thread.java:1583)
 22-Sep-2024 16:52:33.871 SEVERE [http-nio-8080-exec-2] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [ServletSellers] in context with path [/myREST] threw exception
 	java.lang.NullPointerException: Cannot invoke "rest.model.Seller.getId()" because the return value of "com.google.gson.Gson.fromJson(java.io.Reader, java.lang.Class)" is null
-		at rest.services.SellersService.putData(SellersService.java:59)
+		at rest.services.SellersServiceTest.putData(SellersService.java:59)
 		at rest.servlets.SellersServlet.doPut(SellersServlet.java:43)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:558)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -1112,7 +1112,7 @@
 		at java.base/java.lang.Thread.run(Thread.java:1583)
 22-Sep-2024 16:55:36.035 SEVERE [http-nio-8080-exec-1] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [ServletSellers] in context with path [/myREST] threw exception
 	java.lang.ArrayIndexOutOfBoundsException: Index 2 out of bounds for length 2
-		at rest.services.SellersService.putData(SellersService.java:60)
+		at rest.services.SellersServiceTest.putData(SellersService.java:60)
 		at rest.servlets.SellersServlet.doPut(SellersServlet.java:43)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:558)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -1140,7 +1140,7 @@
 		at java.base/java.lang.Thread.run(Thread.java:1583)
 22-Sep-2024 16:57:38.361 SEVERE [http-nio-8080-exec-4] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [ServletSellers] in context with path [/myREST] threw exception
 	java.lang.ArrayIndexOutOfBoundsException: Index 2 out of bounds for length 2
-		at rest.services.SellersService.postData(SellersService.java:43)
+		at rest.services.SellersServiceTest.postData(SellersService.java:43)
 		at rest.servlets.SellersServlet.doPost(SellersServlet.java:21)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:555)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)

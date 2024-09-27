@@ -152,7 +152,7 @@
 	java.lang.RuntimeException: org.postgresql.util.PSQLException: ERROR: insert or update on table "sellers" violates foreign key constraint "fk"
   Detail: Key (supplier_id)=(0) is not present in table "suppliers".
 		at rest.dao.SellersDao.save(SellersDao.java:32)
-		at rest.services.SellersService.save(SellersService.java:29)
+		at rest.services.SellersServiceTest.save(SellersService.java:29)
 		at rest.servlets.SellersServlet.doPost(SellersServlet.java:25)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:555)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -451,7 +451,7 @@
 	java.lang.RuntimeException: org.postgresql.util.PSQLException: ERROR: insert or update on table "sellers" violates foreign key constraint "fk"
   Detail: Key (supplier_id)=(3) is not present in table "suppliers".
 		at rest.dao.SellersDao.save(SellersDao.java:32)
-		at rest.services.SellersService.save(SellersService.java:29)
+		at rest.services.SellersServiceTest.save(SellersService.java:29)
 		at rest.servlets.SellersServlet.doPost(SellersServlet.java:25)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:555)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -492,7 +492,7 @@
 	java.lang.RuntimeException: org.postgresql.util.PSQLException: ERROR: insert or update on table "sellers" violates foreign key constraint "fk"
   Detail: Key (supplier_id)=(1) is not present in table "suppliers".
 		at rest.dao.SellersDao.save(SellersDao.java:32)
-		at rest.services.SellersService.save(SellersService.java:29)
+		at rest.services.SellersServiceTest.save(SellersService.java:29)
 		at rest.servlets.SellersServlet.doPost(SellersServlet.java:25)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:555)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -533,7 +533,7 @@
 	java.lang.RuntimeException: org.postgresql.util.PSQLException: ERROR: insert or update on table "sellers" violates foreign key constraint "fk"
   Detail: Key (supplier_id)=(1) is not present in table "suppliers".
 		at rest.dao.SellersDao.save(SellersDao.java:32)
-		at rest.services.SellersService.save(SellersService.java:29)
+		at rest.services.SellersServiceTest.save(SellersService.java:29)
 		at rest.servlets.SellersServlet.doPost(SellersServlet.java:25)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:555)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -574,7 +574,7 @@
 	java.lang.RuntimeException: org.postgresql.util.PSQLException: ERROR: insert or update on table "sellers" violates foreign key constraint "fk"
   Detail: Key (supplier_id)=(1) is not present in table "suppliers".
 		at rest.dao.SellersDao.save(SellersDao.java:32)
-		at rest.services.SellersService.save(SellersService.java:29)
+		at rest.services.SellersServiceTest.save(SellersService.java:29)
 		at rest.servlets.SellersServlet.doPost(SellersServlet.java:25)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:555)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -615,7 +615,7 @@
 	java.lang.RuntimeException: org.postgresql.util.PSQLException: ERROR: insert or update on table "sellers" violates foreign key constraint "fk"
   Detail: Key (supplier_id)=(0) is not present in table "suppliers".
 		at rest.dao.SellersDao.save(SellersDao.java:32)
-		at rest.services.SellersService.save(SellersService.java:29)
+		at rest.services.SellersServiceTest.save(SellersService.java:29)
 		at rest.servlets.SellersServlet.doPost(SellersServlet.java:25)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:555)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)

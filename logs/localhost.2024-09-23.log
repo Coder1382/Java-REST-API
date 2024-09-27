@@ -1,6 +1,6 @@
 23-Sep-2024 07:20:03.055 SEVERE [http-nio-8080-exec-9] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [ServletSuppliers] in context with path [/myREST] threw exception
 	java.lang.ArrayIndexOutOfBoundsException: Index 2 out of bounds for length 2
-		at rest.services.SuppliersService.addData(SuppliersService.java:44)
+		at rest.services.SuppliersServiceTest.addData(SuppliersService.java:44)
 		at rest.servlets.SuppliersServlet.doPost(SuppliersServlet.java:23)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:555)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -28,7 +28,7 @@
 		at java.base/java.lang.Thread.run(Thread.java:1583)
 23-Sep-2024 07:23:57.530 SEVERE [http-nio-8080-exec-1] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [ServletSuppliers] in context with path [/myREST] threw exception
 	java.lang.ArrayIndexOutOfBoundsException: Index 2 out of bounds for length 2
-		at rest.services.SuppliersService.addData(SuppliersService.java:44)
+		at rest.services.SuppliersServiceTest.addData(SuppliersService.java:44)
 		at rest.servlets.SuppliersServlet.doPost(SuppliersServlet.java:23)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:555)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -56,7 +56,7 @@
 		at java.base/java.lang.Thread.run(Thread.java:1583)
 23-Sep-2024 07:24:09.681 SEVERE [http-nio-8080-exec-1] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [ServletSuppliers] in context with path [/myREST] threw exception
 	java.lang.ArrayIndexOutOfBoundsException: Index 2 out of bounds for length 2
-		at rest.services.SuppliersService.addData(SuppliersService.java:44)
+		at rest.services.SuppliersServiceTest.addData(SuppliersService.java:44)
 		at rest.servlets.SuppliersServlet.doPost(SuppliersServlet.java:23)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:555)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -118,7 +118,7 @@
 		... 26 more
 23-Sep-2024 12:17:49.541 SEVERE [http-nio-8080-exec-5] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [ServletSellers] in context with path [/myREST] threw exception
 	java.lang.ArrayIndexOutOfBoundsException: Index 2 out of bounds for length 2
-		at rest.services.SellersService.addData(SellersService.java:41)
+		at rest.services.SellersServiceTest.addData(SellersService.java:41)
 		at rest.servlets.SellersServlet.doPost(SellersServlet.java:23)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:555)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -146,7 +146,7 @@
 		at java.base/java.lang.Thread.run(Thread.java:1583)
 23-Sep-2024 12:18:41.482 SEVERE [http-nio-8080-exec-2] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [ServletSellers] in context with path [/myREST] threw exception
 	java.lang.ArrayIndexOutOfBoundsException: Index 2 out of bounds for length 2
-		at rest.services.SellersService.addData(SellersService.java:41)
+		at rest.services.SellersServiceTest.addData(SellersService.java:41)
 		at rest.servlets.SellersServlet.doPost(SellersServlet.java:23)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:555)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -174,7 +174,7 @@
 		at java.base/java.lang.Thread.run(Thread.java:1583)
 23-Sep-2024 12:27:15.268 SEVERE [http-nio-8080-exec-2] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [ServletSellers] in context with path [/myREST] threw exception
 	java.lang.ArrayIndexOutOfBoundsException: Index 2 out of bounds for length 2
-		at rest.services.SellersService.addData(SellersService.java:41)
+		at rest.services.SellersServiceTest.addData(SellersService.java:41)
 		at rest.servlets.SellersServlet.doPost(SellersServlet.java:23)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:555)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -202,7 +202,7 @@
 		at java.base/java.lang.Thread.run(Thread.java:1583)
 23-Sep-2024 12:28:39.703 SEVERE [http-nio-8080-exec-5] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [ServletSellers] in context with path [/myREST] threw exception
 	java.lang.ArrayIndexOutOfBoundsException: Index 2 out of bounds for length 2
-		at rest.services.SellersService.addData(SellersService.java:41)
+		at rest.services.SellersServiceTest.addData(SellersService.java:41)
 		at rest.servlets.SellersServlet.doPost(SellersServlet.java:23)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:555)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -230,7 +230,7 @@
 		at java.base/java.lang.Thread.run(Thread.java:1583)
 23-Sep-2024 12:32:08.050 SEVERE [http-nio-8080-exec-2] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [ServletSellers] in context with path [/myREST] threw exception
 	java.lang.ArrayIndexOutOfBoundsException: Index 2 out of bounds for length 2
-		at rest.services.SellersService.addData(SellersService.java:41)
+		at rest.services.SellersServiceTest.addData(SellersService.java:41)
 		at rest.servlets.SellersServlet.doPost(SellersServlet.java:23)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:555)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -258,7 +258,7 @@
 		at java.base/java.lang.Thread.run(Thread.java:1583)
 23-Sep-2024 12:35:33.437 SEVERE [http-nio-8080-exec-2] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [ServletSellers] in context with path [/myREST] threw exception
 	java.lang.ArrayIndexOutOfBoundsException: Index 2 out of bounds for length 2
-		at rest.services.SellersService.addData(SellersService.java:41)
+		at rest.services.SellersServiceTest.addData(SellersService.java:41)
 		at rest.servlets.SellersServlet.doPost(SellersServlet.java:23)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:555)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -286,7 +286,7 @@
 		at java.base/java.lang.Thread.run(Thread.java:1583)
 23-Sep-2024 12:39:30.792 SEVERE [http-nio-8080-exec-2] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [ServletSellers] in context with path [/myREST] threw exception
 	java.lang.ArrayIndexOutOfBoundsException: Index 2 out of bounds for length 2
-		at rest.services.SellersService.addData(SellersService.java:41)
+		at rest.services.SellersServiceTest.addData(SellersService.java:41)
 		at rest.servlets.SellersServlet.doPost(SellersServlet.java:23)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:555)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -314,7 +314,7 @@
 		at java.base/java.lang.Thread.run(Thread.java:1583)
 23-Sep-2024 12:41:01.533 SEVERE [http-nio-8080-exec-1] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [ServletSellers] in context with path [/myREST] threw exception
 	java.lang.ArrayIndexOutOfBoundsException: Index 2 out of bounds for length 2
-		at rest.services.SellersService.addData(SellersService.java:41)
+		at rest.services.SellersServiceTest.addData(SellersService.java:41)
 		at rest.servlets.SellersServlet.doPost(SellersServlet.java:23)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:555)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -343,7 +343,7 @@
 23-Sep-2024 13:23:59.319 SEVERE [http-nio-8080-exec-3] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [ServletSellers] in context with path [/myREST] threw exception
 	java.lang.RuntimeException: org.postgresql.util.PSQLException: The column name name was not found in this ResultSet.
 		at rest.dao.SellersDao.deleteData(SellersDao.java:112)
-		at rest.services.SellersService.deleteData(SellersService.java:66)
+		at rest.services.SellersServiceTest.deleteData(SellersService.java:66)
 		at rest.servlets.SellersServlet.doDelete(SellersServlet.java:54)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:561)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -376,7 +376,7 @@
 		... 26 more
 23-Sep-2024 13:25:59.244 SEVERE [http-nio-8080-exec-2] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [ServletSellers] in context with path [/myREST] threw exception
 	java.lang.ArrayIndexOutOfBoundsException: Index 2 out of bounds for length 2
-		at rest.services.SellersService.addData(SellersService.java:41)
+		at rest.services.SellersServiceTest.addData(SellersService.java:41)
 		at rest.servlets.SellersServlet.doPost(SellersServlet.java:23)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:555)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -406,7 +406,7 @@
 	java.lang.RuntimeException: org.postgresql.util.PSQLException: ERROR: syntax error at or near "*"
   Position: 8
 		at rest.dao.SellersDao.deleteData(SellersDao.java:113)
-		at rest.services.SellersService.deleteData(SellersService.java:66)
+		at rest.services.SellersServiceTest.deleteData(SellersService.java:66)
 		at rest.servlets.SellersServlet.doDelete(SellersServlet.java:54)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:561)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -448,7 +448,7 @@
   Detail: Array value must start with "{" or dimension information.
   Position: 15
 		at rest.dao.SellersDao.deleteData(SellersDao.java:112)
-		at rest.services.SellersService.deleteData(SellersService.java:66)
+		at rest.services.SellersServiceTest.deleteData(SellersService.java:66)
 		at rest.servlets.SellersServlet.doDelete(SellersServlet.java:54)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:561)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -491,7 +491,7 @@
   Detail: Array value must start with "{" or dimension information.
   Position: 15
 		at rest.dao.SellersDao.deleteData(SellersDao.java:112)
-		at rest.services.SellersService.deleteData(SellersService.java:66)
+		at rest.services.SellersServiceTest.deleteData(SellersService.java:66)
 		at rest.servlets.SellersServlet.doDelete(SellersServlet.java:54)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:561)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -533,7 +533,7 @@
 	java.lang.RuntimeException: org.postgresql.util.PSQLException: ERROR: column "clients" does not exist
   Position: 15
 		at rest.dao.SellersDao.deleteData(SellersDao.java:112)
-		at rest.services.SellersService.deleteData(SellersService.java:66)
+		at rest.services.SellersServiceTest.deleteData(SellersService.java:66)
 		at rest.servlets.SellersServlet.doDelete(SellersServlet.java:54)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:561)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -575,7 +575,7 @@
   Hint: No operator matches the given name and argument types. You might need to add explicit type casts.
   Position: 61
 		at rest.dao.SellersDao.deleteData(SellersDao.java:112)
-		at rest.services.SellersService.deleteData(SellersService.java:66)
+		at rest.services.SellersServiceTest.deleteData(SellersService.java:66)
 		at rest.servlets.SellersServlet.doDelete(SellersServlet.java:54)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:561)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -615,7 +615,7 @@
 		... 26 more
 23-Sep-2024 14:17:15.471 SEVERE [http-nio-8080-exec-8] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [ServletSellers] in context with path [/myREST] threw exception
 	java.lang.ArrayIndexOutOfBoundsException: Index 2 out of bounds for length 2
-		at rest.services.SellersService.addData(SellersService.java:41)
+		at rest.services.SellersServiceTest.addData(SellersService.java:41)
 		at rest.servlets.SellersServlet.doPost(SellersServlet.java:23)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:555)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -645,7 +645,7 @@
 	java.lang.RuntimeException: org.postgresql.util.PSQLException: ERROR: update or delete on table "suppliers" violates foreign key constraint "fk" on table "sellers"
   Detail: Key (id)=(1) is still referenced from table "sellers".
 		at rest.dao.SuppliersDao.deleteData(SuppliersDao.java:41)
-		at rest.services.SuppliersService.deleteData(SuppliersService.java:56)
+		at rest.services.SuppliersServiceTest.deleteData(SuppliersService.java:56)
 		at rest.servlets.SuppliersServlet.doDelete(SuppliersServlet.java:42)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:561)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -686,7 +686,7 @@
 	java.lang.RuntimeException: org.postgresql.util.PSQLException: ERROR: insert or update on table "sellers" violates foreign key constraint "fk"
   Detail: Key (supplier_id)=(0) is not present in table "suppliers".
 		at rest.dao.SuppliersDao.deleteData(SuppliersDao.java:44)
-		at rest.services.SuppliersService.deleteData(SuppliersService.java:56)
+		at rest.services.SuppliersServiceTest.deleteData(SuppliersService.java:56)
 		at rest.servlets.SuppliersServlet.doDelete(SuppliersServlet.java:42)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:561)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -727,7 +727,7 @@
 	java.lang.RuntimeException: org.postgresql.util.PSQLException: ERROR: insert or update on table "sellers" violates foreign key constraint "fk"
   Detail: Key (supplier_id)=(0) is not present in table "suppliers".
 		at rest.dao.SuppliersDao.deleteData(SuppliersDao.java:44)
-		at rest.services.SuppliersService.deleteData(SuppliersService.java:56)
+		at rest.services.SuppliersServiceTest.deleteData(SuppliersService.java:56)
 		at rest.servlets.SuppliersServlet.doDelete(SuppliersServlet.java:42)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:561)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -768,7 +768,7 @@
 	java.lang.RuntimeException: org.postgresql.util.PSQLException: ERROR: insert or update on table "sellers" violates foreign key constraint "fk"
   Detail: Key (supplier_id)=(0) is not present in table "suppliers".
 		at rest.dao.SuppliersDao.deleteData(SuppliersDao.java:44)
-		at rest.services.SuppliersService.deleteData(SuppliersService.java:56)
+		at rest.services.SuppliersServiceTest.deleteData(SuppliersService.java:56)
 		at rest.servlets.SuppliersServlet.doDelete(SuppliersServlet.java:42)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:561)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -809,7 +809,7 @@
 	java.lang.RuntimeException: org.postgresql.util.PSQLException: ERROR: insert or update on table "sellers" violates foreign key constraint "fk"
   Detail: Key (supplier_id)=(0) is not present in table "suppliers".
 		at rest.dao.SuppliersDao.deleteData(SuppliersDao.java:44)
-		at rest.services.SuppliersService.deleteData(SuppliersService.java:56)
+		at rest.services.SuppliersServiceTest.deleteData(SuppliersService.java:56)
 		at rest.servlets.SuppliersServlet.doDelete(SuppliersServlet.java:42)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:561)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -850,7 +850,7 @@
 	java.lang.RuntimeException: org.postgresql.util.PSQLException: ERROR: insert or update on table "sellers" violates foreign key constraint "fk"
   Detail: Key (supplier_id)=(0) is not present in table "suppliers".
 		at rest.dao.SuppliersDao.deleteData(SuppliersDao.java:45)
-		at rest.services.SuppliersService.deleteData(SuppliersService.java:56)
+		at rest.services.SuppliersServiceTest.deleteData(SuppliersService.java:56)
 		at rest.servlets.SuppliersServlet.doDelete(SuppliersServlet.java:42)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:561)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -891,7 +891,7 @@
 	java.lang.RuntimeException: org.postgresql.util.PSQLException: ERROR: insert or update on table "sellers" violates foreign key constraint "fk"
   Detail: Key (supplier_id)=(0) is not present in table "suppliers".
 		at rest.dao.SuppliersDao.deleteData(SuppliersDao.java:46)
-		at rest.services.SuppliersService.deleteData(SuppliersService.java:56)
+		at rest.services.SuppliersServiceTest.deleteData(SuppliersService.java:56)
 		at rest.servlets.SuppliersServlet.doDelete(SuppliersServlet.java:42)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:561)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -932,7 +932,7 @@
 	java.lang.RuntimeException: org.postgresql.util.PSQLException: ERROR: insert or update on table "sellers" violates foreign key constraint "fk"
   Detail: Key (supplier_id)=(0) is not present in table "suppliers".
 		at rest.dao.SuppliersDao.deleteData(SuppliersDao.java:47)
-		at rest.services.SuppliersService.deleteData(SuppliersService.java:56)
+		at rest.services.SuppliersServiceTest.deleteData(SuppliersService.java:56)
 		at rest.servlets.SuppliersServlet.doDelete(SuppliersServlet.java:42)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:561)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -973,7 +973,7 @@
 	java.lang.RuntimeException: org.postgresql.util.PSQLException: ERROR: update or delete on table "suppliers" violates foreign key constraint "fk" on table "sellers"
   Detail: Key (id)=(1) is still referenced from table "sellers".
 		at rest.dao.SuppliersDao.deleteData(SuppliersDao.java:47)
-		at rest.services.SuppliersService.deleteData(SuppliersService.java:56)
+		at rest.services.SuppliersServiceTest.deleteData(SuppliersService.java:56)
 		at rest.servlets.SuppliersServlet.doDelete(SuppliersServlet.java:42)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:561)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -1014,7 +1014,7 @@
 	java.lang.RuntimeException: org.postgresql.util.PSQLException: ERROR: insert or update on table "sellers" violates foreign key constraint "fk"
   Detail: Key (supplier_id)=(0) is not present in table "suppliers".
 		at rest.dao.SuppliersDao.deleteData(SuppliersDao.java:47)
-		at rest.services.SuppliersService.deleteData(SuppliersService.java:56)
+		at rest.services.SuppliersServiceTest.deleteData(SuppliersService.java:56)
 		at rest.servlets.SuppliersServlet.doDelete(SuppliersServlet.java:42)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:561)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -1055,7 +1055,7 @@
 	java.lang.RuntimeException: org.postgresql.util.PSQLException: ERROR: update or delete on table "suppliers" violates foreign key constraint "fk" on table "sellers"
   Detail: Key (id)=(1) is still referenced from table "sellers".
 		at rest.dao.SuppliersDao.deleteData(SuppliersDao.java:47)
-		at rest.services.SuppliersService.deleteData(SuppliersService.java:56)
+		at rest.services.SuppliersServiceTest.deleteData(SuppliersService.java:56)
 		at rest.servlets.SuppliersServlet.doDelete(SuppliersServlet.java:42)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:561)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -1096,7 +1096,7 @@
 	java.lang.RuntimeException: org.postgresql.util.PSQLException: ERROR: syntax error at or near "LIMIT"
   Position: 37
 		at rest.dao.SuppliersDao.deleteData(SuppliersDao.java:59)
-		at rest.services.SuppliersService.deleteData(SuppliersService.java:56)
+		at rest.services.SuppliersServiceTest.deleteData(SuppliersService.java:56)
 		at rest.servlets.SuppliersServlet.doDelete(SuppliersServlet.java:42)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:561)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -1137,7 +1137,7 @@
 	java.lang.RuntimeException: org.postgresql.util.PSQLException: ERROR: syntax error at or near "LIMIT"
   Position: 37
 		at rest.dao.SuppliersDao.deleteData(SuppliersDao.java:58)
-		at rest.services.SuppliersService.deleteData(SuppliersService.java:56)
+		at rest.services.SuppliersServiceTest.deleteData(SuppliersService.java:56)
 		at rest.servlets.SuppliersServlet.doDelete(SuppliersServlet.java:42)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:561)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -1178,7 +1178,7 @@
 	java.lang.RuntimeException: org.postgresql.util.PSQLException: ERROR: syntax error at or near "LIMIT"
   Position: 37
 		at rest.dao.SuppliersDao.deleteData(SuppliersDao.java:58)
-		at rest.services.SuppliersService.deleteData(SuppliersService.java:56)
+		at rest.services.SuppliersServiceTest.deleteData(SuppliersService.java:56)
 		at rest.servlets.SuppliersServlet.doDelete(SuppliersServlet.java:42)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:561)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -1219,7 +1219,7 @@
 	java.lang.RuntimeException: org.postgresql.util.PSQLException: ERROR: syntax error at or near "LIMIT"
   Position: 55
 		at rest.dao.SuppliersDao.deleteData(SuppliersDao.java:57)
-		at rest.services.SuppliersService.deleteData(SuppliersService.java:56)
+		at rest.services.SuppliersServiceTest.deleteData(SuppliersService.java:56)
 		at rest.servlets.SuppliersServlet.doDelete(SuppliersServlet.java:42)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:561)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)

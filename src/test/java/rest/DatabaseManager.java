@@ -6,7 +6,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class DatabaseManager {
+public class
+DatabaseManager {
     static final Connection connect = DatabaseConnector.connector();
 
     public static void CreateFruitTable() throws SQLException {

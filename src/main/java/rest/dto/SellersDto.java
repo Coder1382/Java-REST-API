@@ -7,6 +7,7 @@ public class SellersDto {
     long id;
     String name;
     String supply;
+    String fruit;
     SuppliersDto supplier;
     List<FruitDto> fruits;
 
@@ -22,17 +23,19 @@ public class SellersDto {
         this.id = id;
     }
 
-    public SellersDto(long id, String name) {
+    public SellersDto(long id, String fruit) {
         this.id = id;
+        this.fruit = fruit;
+        this.name = "";
         this.supply = "";
-        this.name = name;
         supplier = new SuppliersDto();
         fruits = new ArrayList<>();
     }
 
-    public SellersDto(String name, String sup) {
+    public SellersDto(String name, String supply) {
         this.name = name;
-        this.supply = sup;
+        this.supply = supply;
+        this.fruit = "";
         supplier = new SuppliersDto();
         fruits = new ArrayList<>();
     }
@@ -40,6 +43,7 @@ public class SellersDto {
     public SellersDto(String name, SuppliersDto supplier) {
         this.name = name;
         this.supplier = supplier;
+        this.fruit = "";
         fruits = new ArrayList<>();
     }
 
@@ -47,6 +51,7 @@ public class SellersDto {
         this.name = name;
         this.supply = "";
         this.supplier = supplier;
+        this.fruit = "";
         this.fruits = new ArrayList<>();
         fruits.forEach(e -> {
             this.fruits.add(e);
@@ -57,6 +62,7 @@ public class SellersDto {
         this.id = id;
         this.name = name;
         this.supply = "";
+        this.fruit = "";
         this.supplier = supplier;
         this.fruits = new ArrayList<>();
     }
@@ -65,6 +71,7 @@ public class SellersDto {
         this.id = id;
         this.name = name;
         this.supply = "";
+        this.fruit = "";
         this.supplier = supplier;
         this.fruits = new ArrayList<>();
         fruits.forEach(e -> {
@@ -83,6 +90,10 @@ public class SellersDto {
 
     public String getName() {
         return name;
+    }
+
+    public String getFruit() {
+        return fruit;
     }
 
 }

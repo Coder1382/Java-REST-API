@@ -32,7 +32,6 @@ public class SellersDao {
 
     public List<SellersDto> find(long id) {
         List<SellersDto> sellersDtos = new ArrayList<>();
-        List<FruitDto> fruitList = new ArrayList<>();
         try (Connection connect = DatabaseConnector.connector(); PreparedStatement readDB = connect.
                 prepareStatement(id > 0 ? "SELECT * FROM sellers WHERE id=?" : "SELECT * FROM sellers")) {
             if (id > 0) readDB.setLong(1, id);
@@ -41,15 +40,16 @@ public class SellersDao {
                 long i = result.getLong("id");
                 String name = result.getString("name");
                 String supplier = result.getString("supplier");
+                Array arr = result.getArray("fruits");
                 PreparedStatement rdb = connect.prepareStatement("SELECT id FROM suppliers WHERE name=?");
                 rdb.setString(1, supplier);
                 ResultSet rs = rdb.executeQuery();
                 while (rs.next()) {
                     id = rs.getLong("id");
                 }
-                Array arr = result.getArray("fruits");
                 if (arr != null) {
                     String[] fruits = (String[]) arr.getArray();
+                    List<FruitDto> fruitList = new ArrayList<>();
                     for (int k = 0; k < fruits.length; ++k) {
                         PreparedStatement rdf = connect.prepareStatement("SELECT id, price FROM fruit WHERE name=?");
                         rdf.setString(1, fruits[k]);

@@ -70,5 +70,6 @@ public class FruitDao {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+
     }
 }

@@ -18,7 +18,7 @@ public class SuppliersServlet extends HttpServlet {
     public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         if (req.getRequestURI().split("/")[2].equals("suppliers")) {
             PrintWriter pw = res.getWriter();
-            pw.write("saved under id: " + suppliersService.save(jsn.fromJson(req.getReader(), SuppliersDto.class)));
+            pw.write("saved with id: " + suppliersService.save(jsn.fromJson(req.getReader(), SuppliersDto.class)));
             pw.close();
         }
     }
@@ -47,9 +47,6 @@ public class SuppliersServlet extends HttpServlet {
     public void doDelete(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         if (req.getRequestURI().split("/")[2].equals("suppliers")) {
             suppliersService.delete(jsn.fromJson(req.getReader(), SuppliersDto.class));
-            PrintWriter pw = res.getWriter();
-            pw.write("deleted");
-            pw.close();
         }
     }
 }

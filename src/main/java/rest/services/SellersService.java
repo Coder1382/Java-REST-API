@@ -1,6 +1,5 @@
 package rest.services;
 
-import com.google.gson.Gson;
 import rest.dao.SellersDao;
 import rest.dto.SellersDto;
 
@@ -20,11 +19,10 @@ public class SellersService {
     }
 
     public void update(SellersDto seller) throws IOException, SQLException {
-        sellersDao.update(seller.getId(), seller.getName());
+        sellersDao.update(seller.getId(), seller.getFruit());
     }
 
     public void delete(SellersDto seller) throws IOException {
-        Gson jsn = new Gson();
         sellersDao.delete(seller.getId());
     }
 }

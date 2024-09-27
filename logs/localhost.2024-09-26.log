@@ -2,7 +2,7 @@
 	java.lang.RuntimeException: org.postgresql.util.PSQLException: ERROR: column "supplier" does not exist
   Position: 32
 		at rest.dao.SellersDao.find(SellersDao.java:69)
-		at rest.services.SellersService.find(SellersService.java:26)
+		at rest.services.SellersServiceTest.find(SellersService.java:26)
 		at rest.servlets.SellersServlet.doGet(SellersServlet.java:43)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:529)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -84,7 +84,7 @@
 	java.lang.RuntimeException: org.postgresql.util.PSQLException: ERROR: column "supplier" does not exist
   Position: 32
 		at rest.dao.SellersDao.find(SellersDao.java:70)
-		at rest.services.SellersService.find(SellersService.java:26)
+		at rest.services.SellersServiceTest.find(SellersService.java:26)
 		at rest.servlets.SellersServlet.doGet(SellersServlet.java:43)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:529)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -125,7 +125,7 @@
 	java.lang.RuntimeException: org.postgresql.util.PSQLException: ERROR: column "supplier" does not exist
   Position: 32
 		at rest.dao.SellersDao.find(SellersDao.java:70)
-		at rest.services.SellersService.find(SellersService.java:26)
+		at rest.services.SellersServiceTest.find(SellersService.java:26)
 		at rest.servlets.SellersServlet.doGet(SellersServlet.java:43)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:529)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -165,7 +165,7 @@
 26-Sep-2024 10:43:52.289 SEVERE [http-nio-8080-exec-2] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [ServletSellers] in context with path [/myREST] threw exception
 	java.lang.NullPointerException: Cannot invoke "java.sql.Array.getArray()" because the return value of "java.sql.ResultSet.getArray(String)" is null
 		at rest.dao.SellersDao.find(SellersDao.java:53)
-		at rest.services.SellersService.find(SellersService.java:26)
+		at rest.services.SellersServiceTest.find(SellersService.java:26)
 		at rest.servlets.SellersServlet.doGet(SellersServlet.java:43)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:529)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -194,7 +194,7 @@
 26-Sep-2024 10:44:29.161 SEVERE [http-nio-8080-exec-2] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [ServletSellers] in context with path [/myREST] threw exception
 	java.lang.NullPointerException: Cannot invoke "java.sql.Array.getArray()" because the return value of "java.sql.ResultSet.getArray(String)" is null
 		at rest.dao.SellersDao.find(SellersDao.java:52)
-		at rest.services.SellersService.find(SellersService.java:26)
+		at rest.services.SellersServiceTest.find(SellersService.java:26)
 		at rest.servlets.SellersServlet.doGet(SellersServlet.java:43)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:529)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -223,7 +223,7 @@
 26-Sep-2024 10:49:25.059 SEVERE [http-nio-8080-exec-2] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [ServletSellers] in context with path [/myREST] threw exception
 	java.lang.NullPointerException: Cannot invoke "java.sql.Array.toString()" because the return value of "java.sql.ResultSet.getArray(String)" is null
 		at rest.dao.SellersDao.find(SellersDao.java:52)
-		at rest.services.SellersService.find(SellersService.java:26)
+		at rest.services.SellersServiceTest.find(SellersService.java:26)
 		at rest.servlets.SellersServlet.doGet(SellersServlet.java:43)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:529)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -252,7 +252,7 @@
 26-Sep-2024 10:58:53.658 SEVERE [http-nio-8080-exec-2] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [ServletSellers] in context with path [/myREST] threw exception
 	java.lang.NullPointerException: Cannot invoke "java.sql.ResultSet.getLong(String)" because the return value of "java.sql.PreparedStatement.getResultSet()" is null
 		at rest.dao.SellersDao.find(SellersDao.java:52)
-		at rest.services.SellersService.find(SellersService.java:26)
+		at rest.services.SellersServiceTest.find(SellersService.java:26)
 		at rest.servlets.SellersServlet.doGet(SellersServlet.java:43)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:529)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -283,7 +283,7 @@
   Hint: Perhaps you meant to reference the column "sellers.supplier".
   Position: 14
 		at rest.dao.SellersDao.delete(SellersDao.java:117)
-		at rest.services.SellersService.delete(SellersService.java:39)
+		at rest.services.SellersServiceTest.delete(SellersService.java:39)
 		at rest.servlets.SellersServlet.doDelete(SellersServlet.java:70)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:561)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -324,7 +324,7 @@
 26-Sep-2024 11:24:02.145 SEVERE [http-nio-8080-exec-3] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [ServletSellers] in context with path [/myREST] threw exception
 	java.lang.RuntimeException: org.postgresql.util.PSQLException: This connection has been closed.
 		at rest.dao.SellersDao.update(SellersDao.java:87)
-		at rest.services.SellersService.update(SellersService.java:34)
+		at rest.services.SellersServiceTest.update(SellersService.java:34)
 		at rest.servlets.SellersServlet.doPut(SellersServlet.java:55)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:558)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -359,7 +359,7 @@
 26-Sep-2024 11:24:20.132 SEVERE [http-nio-8080-exec-5] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [ServletSellers] in context with path [/myREST] threw exception
 	java.lang.RuntimeException: org.postgresql.util.PSQLException: This connection has been closed.
 		at rest.dao.SellersDao.find(SellersDao.java:65)
-		at rest.services.SellersService.find(SellersService.java:26)
+		at rest.services.SellersServiceTest.find(SellersService.java:26)
 		at rest.servlets.SellersServlet.doGet(SellersServlet.java:43)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:529)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -394,7 +394,7 @@
 26-Sep-2024 11:25:06.008 SEVERE [http-nio-8080-exec-3] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [ServletSellers] in context with path [/myREST] threw exception
 	java.lang.RuntimeException: org.postgresql.util.PSQLException: This connection has been closed.
 		at rest.dao.SellersDao.update(SellersDao.java:87)
-		at rest.services.SellersService.update(SellersService.java:34)
+		at rest.services.SellersServiceTest.update(SellersService.java:34)
 		at rest.servlets.SellersServlet.doPut(SellersServlet.java:55)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:558)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
@@ -429,7 +429,7 @@
 26-Sep-2024 11:25:29.431 SEVERE [http-nio-8080-exec-5] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [ServletSellers] in context with path [/myREST] threw exception
 	java.lang.RuntimeException: org.postgresql.util.PSQLException: This connection has been closed.
 		at rest.dao.SellersDao.find(SellersDao.java:65)
-		at rest.services.SellersService.find(SellersService.java:26)
+		at rest.services.SellersServiceTest.find(SellersService.java:26)
 		at rest.servlets.SellersServlet.doGet(SellersServlet.java:43)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:529)
 		at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
