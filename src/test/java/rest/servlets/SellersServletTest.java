@@ -54,10 +54,10 @@ public class SellersServletTest {
         SellersDto sellersDto = new SellersDto(1, "carrot");
         when(req.getRequestURI()).thenReturn("/myREST/sellers");
         when(jsn.fromJson(req.getReader(), SellersDto.class)).thenReturn(sellersDto);
-        doNothing().when(sellersService).update(sellersDto);
+        when(res.getWriter()).thenReturn(pw);
         try {
             sellersServlet.doPut(req, res);
-            verify(pw).write("updated");
+            verify(pw).write("updated under id : 4");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -68,10 +68,10 @@ public class SellersServletTest {
         SellersDto sellersDto = new SellersDto(1);
         when(req.getRequestURI()).thenReturn("/myREST/sellers");
         when(jsn.fromJson(req.getReader(), SellersDto.class)).thenReturn(sellersDto);
-        doNothing().when(sellersService).delete(sellersDto);
+        when(res.getWriter()).thenReturn(pw);
         try {
             sellersServlet.doDelete(req, res);
-            verify(pw).write("deleted");
+            verify(pw).write("deleted under id: 4");
         } catch (Exception e) {
             e.printStackTrace();
         }

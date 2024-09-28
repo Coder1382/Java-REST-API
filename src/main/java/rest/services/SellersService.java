@@ -7,7 +7,8 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
-public class SellersService {
+public class
+SellersService {
     private final SellersDao sellersDao = new SellersDao();
 
     public List<SellersDto> find(long id) throws IOException {
@@ -15,14 +16,14 @@ public class SellersService {
     }
 
     public long save(SellersDto seller) throws IOException {
-        return sellersDao.save(seller.getName(), seller.getSupplier());
+        return sellersDao.save(seller);
     }
 
-    public void update(SellersDto seller) throws IOException, SQLException {
-        sellersDao.update(seller.getId(), seller.getFruit());
+    public long update(SellersDto seller) throws IOException, SQLException {
+        return sellersDao.update(seller);
     }
 
-    public void delete(SellersDto seller) throws IOException {
-        sellersDao.delete(seller.getId());
+    public long delete(SellersDto seller) throws IOException {
+        return sellersDao.delete(seller);
     }
 }

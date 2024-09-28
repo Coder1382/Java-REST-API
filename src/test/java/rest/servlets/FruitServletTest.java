@@ -1,6 +1,7 @@
 package rest.servlets;
 
 import com.google.gson.Gson;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -54,24 +55,25 @@ public class FruitServletTest {
         FruitDto fruitDto = new FruitDto(1, 10);
         when(req.getRequestURI()).thenReturn("/myREST/fruit");
         when(jsn.fromJson(req.getReader(), FruitDto.class)).thenReturn(fruitDto);
-        doNothing().when(fruitService).update(fruitDto);
+        when(res.getWriter()).thenReturn(pw);
         try {
             fruitServlet.doPut(req, res);
-            verify(pw).write("updated");
+            verify(pw).write("updated under id: 4");
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
 
     @Test
     public void deleteTest() throws IOException {
         FruitDto fruitDto = new FruitDto(1);
         when(req.getRequestURI()).thenReturn("/myREST/fruit");
         when(jsn.fromJson(req.getReader(), FruitDto.class)).thenReturn(fruitDto);
-        doNothing().when(fruitService).delete(fruitDto);
+        when(res.getWriter()).thenReturn(pw);
         try {
             fruitServlet.doDelete(req, res);
-            verify(pw).write("deleted");
+            verify(pw).write("deleted under id: 4");
         } catch (Exception e) {
             e.printStackTrace();
         }

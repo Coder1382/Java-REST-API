@@ -15,14 +15,14 @@ public class FruitService {
     }
 
     public long save(FruitDto fruit) throws IOException {
-        return fruitDao.save(fruit.getName(), fruit.getPrice());
+        return fruitDao.save(fruit);
     }
 
-    public void update(FruitDto fruit) throws IOException, SQLException {
-        fruitDao.update(fruit.getId(), fruit.getPrice());
+    public long update(FruitDto fruit) throws IOException, SQLException {
+        return fruitDao.update(fruit);
     }
 
-    public void delete(FruitDto fruit) throws IOException {
-        fruitDao.delete(fruit.getId());
+    public long delete(FruitDto fruit) throws IOException {
+        return fruitDao.delete(fruit);
     }
 }

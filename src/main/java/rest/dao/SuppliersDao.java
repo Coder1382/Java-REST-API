@@ -8,7 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SuppliersDao {
-    public long save(String comp) {
+    public long save(SuppliersDto supplier) {
+        String comp = supplier.getName();
         long id = 0;
         try (Connection connect = DatabaseConnector.connector(); PreparedStatement addToDB = connect.
                 prepareStatement("INSERT INTO suppliers (name) VALUES(?)")) {
@@ -27,7 +28,8 @@ public class SuppliersDao {
         return id;
     }
 
-    public void delete(long id) {
+    public long delete(SuppliersDto supplier) {
+        long id = supplier.getId();
         try (Connection connect = DatabaseConnector.connector(); PreparedStatement udb = connect.
                 prepareStatement("DELETE from suppliers WHERE id=?")) {
             udb.setLong(1, id);
@@ -36,6 +38,7 @@ public class SuppliersDao {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+        return id;
     }
 
     public List<SuppliersDto> find(long id) throws IOException {

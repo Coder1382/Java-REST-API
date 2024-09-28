@@ -1,6 +1,7 @@
 package rest.servlets;//package servlets;
 
 import com.google.gson.Gson;
+import rest.dto.FruitDto;
 import rest.dto.SellersDto;
 import rest.services.SellersService;
 
@@ -47,7 +48,9 @@ public class SellersServlet extends HttpServlet {
     public void doPut(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         if (req.getRequestURI().split("/")[2].equals("sellers")) {
             try {
-                sellersService.update(jsn.fromJson(req.getReader(), SellersDto.class));
+                PrintWriter pw = res.getWriter();
+                pw.write("updated under id: " + sellersService.update(jsn.fromJson(req.getReader(), SellersDto.class)));
+                pw.close();
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
@@ -57,7 +60,9 @@ public class SellersServlet extends HttpServlet {
     @Override
     public void doDelete(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         if (req.getRequestURI().split("/")[2].equals("sellers")) {
-            sellersService.delete(jsn.fromJson(req.getReader(), SellersDto.class));
+            PrintWriter pw = res.getWriter();
+            pw.write("deleted under id: " + sellersService.delete(jsn.fromJson(req.getReader(), SellersDto.class)));
+            pw.close();
         }
     }
 }

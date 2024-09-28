@@ -47,7 +47,9 @@ public class FruitServlet extends HttpServlet {
     public void doPut(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         if (req.getRequestURI().split("/")[2].equals("fruit")) {
             try {
-                fruitService.update(jsn.fromJson(req.getReader(), FruitDto.class));
+                PrintWriter pw = res.getWriter();
+                pw.write("updated under id: " + fruitService.update(jsn.fromJson(req.getReader(), FruitDto.class)));
+                pw.close();
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
@@ -58,6 +60,9 @@ public class FruitServlet extends HttpServlet {
     public void doDelete(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         if (req.getRequestURI().split("/")[2].equals("fruit")) {
             fruitService.delete(jsn.fromJson(req.getReader(), FruitDto.class));
+            PrintWriter pw = res.getWriter();
+            pw.write("deleted under id: " + fruitService.delete(jsn.fromJson(req.getReader(), FruitDto.class)));
+            pw.close();
         }
     }
 }

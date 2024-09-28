@@ -28,7 +28,9 @@ public class FruitDao {
         return fruitDtos;
     }
 
-    public long save(String name, int pr) {
+    public long save(FruitDto fruit) {
+        String name = fruit.getName();
+        int pr = fruit.getPrice();
         long id = 0;
         try (Connection connect = DatabaseConnector.connector(); PreparedStatement addToDB = connect.
                 prepareStatement("INSERT INTO fruit(name, price) VALUES(?,?)")) {
@@ -49,19 +51,22 @@ public class FruitDao {
         return id;
     }
 
-    public void update(long id, int pr) {
+    public long update(FruitDto fruit) {
+        long id = fruit.getId();
         try (Connection connect = DatabaseConnector.connector(); PreparedStatement updateInDB = connect.
                 prepareStatement("UPDATE fruit SET price=? WHERE id=?")) {
-            updateInDB.setInt(1, pr);
+            updateInDB.setInt(1, fruit.getPrice());
             updateInDB.setLong(2, id);
             updateInDB.executeUpdate();
             connect.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+        return id;
     }
 
-    public void delete(long id) {
+    public long delete(FruitDto fruit) {
+        long id = fruit.getId();
         try (Connection connect = DatabaseConnector.connector(); PreparedStatement deleteFromDB = connect.
                 prepareStatement("DELETE FROM fruit WHERE id=?")) {
             deleteFromDB.setLong(1, id);
@@ -70,6 +75,6 @@ public class FruitDao {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-
+        return id;
     }
 }

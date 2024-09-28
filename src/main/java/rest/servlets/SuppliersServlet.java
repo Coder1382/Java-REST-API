@@ -1,6 +1,7 @@
 package rest.servlets;
 
 import com.google.gson.Gson;
+import rest.dto.SellersDto;
 import rest.dto.SuppliersDto;
 import rest.services.SuppliersService;
 
@@ -46,7 +47,9 @@ public class SuppliersServlet extends HttpServlet {
     @Override
     public void doDelete(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         if (req.getRequestURI().split("/")[2].equals("suppliers")) {
-            suppliersService.delete(jsn.fromJson(req.getReader(), SuppliersDto.class));
+            PrintWriter pw = res.getWriter();
+            pw.write("deleted under id: " + suppliersService.delete(jsn.fromJson(req.getReader(), SuppliersDto.class)));
+            pw.close();
         }
     }
 }

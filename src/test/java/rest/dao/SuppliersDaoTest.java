@@ -3,8 +3,7 @@ package rest.dao;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.ValueSource;
+
 import org.testcontainers.containers.PostgreSQLContainer;
 import rest.dto.SuppliersDto;
 
@@ -23,21 +22,20 @@ public class SuppliersDaoTest {
         postgres.start();
     }
 
-    @ParameterizedTest
-    @ValueSource(longs = {1, -1, 0})
-    public void findTest(long id) throws IOException {
-        List<SuppliersDto> suppliersDtos = new ArrayList<SuppliersDto>();
-        assertEquals(suppliersDtos.getClass(), suppliersDao.find(id).getClass());
+    @Test
+    public void findTest() throws IOException {
+        assertEquals(suppliersDao.find(1).get(0).getId(), 1);
+        assertEquals(suppliersDao.find(1).get(0).getName(), "big");
     }
 
     @Test
     public void saveTest() {
-        assertEquals(Long.class, ((Long) suppliersDao.save("new")).getClass());
+        assertEquals(suppliersDao.save(new SuppliersDto("new")), 4);
     }
 
     @Test
     public void deleteTest() {
-        suppliersDao.delete(1);
+        assertEquals(suppliersDao.delete(new SuppliersDto(4)), 4);
     }
 
     @AfterEach

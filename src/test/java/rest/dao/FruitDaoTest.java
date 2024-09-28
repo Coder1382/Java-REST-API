@@ -3,8 +3,7 @@ package rest.dao;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.ValueSource;
+
 import org.testcontainers.containers.PostgreSQLContainer;
 import rest.dto.FruitDto;
 
@@ -25,26 +24,26 @@ public class FruitDaoTest {
     }
 
 
-    @ParameterizedTest
-    @ValueSource(longs = {1, -1, 0})
-    public void findTest(long id) throws IOException {
+    @Test
+    public void findTest() throws IOException {
         List<FruitDto> fruitDtos = new ArrayList<FruitDto>();
-        assertEquals(fruitDtos.getClass(), fruitDao.find(id).getClass());
+        assertEquals((fruitDao.find(1).get(0)).getName(), "mango");
+        assertEquals((fruitDao.find(1).get(0)).getPrice(), 10);
     }
 
     @Test
     public void saveTest() {
-        assertEquals(Long.class, ((Long) fruitDao.save("tomato", 7)).getClass());
+        assertEquals(fruitDao.save(new FruitDto("tomato", 1)), 4);
     }
 
     @Test
     public void updateTest() {
-        fruitDao.update(1, 8);
+        assertEquals(fruitDao.update(new FruitDto(4, 8)), 4);
     }
 
     @Test
     public void deleteTest() {
-        fruitDao.delete(1);
+        assertEquals(fruitDao.delete(new FruitDto(4)), 4);
     }
 
     @AfterEach

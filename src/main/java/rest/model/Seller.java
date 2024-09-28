@@ -79,7 +79,7 @@ public class Seller {
         for (int i = 0; i < fruits.size(); ++i) {
             s.append(fruits.get(i).getName() + ", ");
         }
-        s.delete(s.length() - 2, s.length() - 1);
+        //s.delete(s.length() - 2, s.length() - 1);
         return "id: " + id + ", name: " + name + ", supplier: " + supplier.getName() + "\nfruits: " + s;
     }
 }

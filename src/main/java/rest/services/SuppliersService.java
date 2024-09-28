@@ -15,11 +15,11 @@ public class SuppliersService {
     }
 
     public long save(SuppliersDto supplier) throws IOException {
-        return suppliersDao.save(supplier.getName());
+        return suppliersDao.save(supplier);
     }
 
 
-    public void delete(SuppliersDto supplier) throws IOException {
-        suppliersDao.delete(supplier.getId());
+    public long delete(SuppliersDto supplier) throws IOException {
+        return suppliersDao.delete(supplier);
     }
 }

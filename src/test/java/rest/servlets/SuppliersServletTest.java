@@ -54,10 +54,10 @@ public class SuppliersServletTest {
         SuppliersDto suppliersDto = new SuppliersDto(1);
         when(req.getRequestURI()).thenReturn("/myREST/suppliers");
         when(jsn.fromJson(req.getReader(), SuppliersDto.class)).thenReturn(suppliersDto);
-        doNothing().when(suppliersService).delete(suppliersDto);
+        when(res.getWriter()).thenReturn(pw);
         try {
             suppliersServlet.doDelete(req, res);
-            verify(pw).write("deleted");
+            verify(pw).write("deleted under id: 4");
         } catch (Exception e) {
             e.printStackTrace();
         }

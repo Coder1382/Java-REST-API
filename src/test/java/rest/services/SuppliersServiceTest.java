@@ -1,8 +1,6 @@
 package rest.services;
 
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.ValueSource;
 import rest.dto.SuppliersDto;
 
 import java.io.IOException;
@@ -14,11 +12,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class SuppliersServiceTest {
     SuppliersService suppliersService = new SuppliersService();
 
-    @ParameterizedTest
-    @ValueSource(longs = {2, -1, 0})
-    public void findTest(long id) throws IOException {
-        List<SuppliersDto> suppliersDtos = new ArrayList<SuppliersDto>();
-        assertEquals(suppliersDtos.getClass(), suppliersService.find(id).getClass());
+    @Test
+    public void findTest() throws IOException {
+        assertEquals((suppliersService.find(1).get(0)).getName(), "big");
+        assertEquals((suppliersService.find(1).get(0)).getId(), 1);
     }
 
     @Test
