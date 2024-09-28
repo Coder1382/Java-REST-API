@@ -2,6 +2,8 @@ package rest.servlets;
 
 import com.google.gson.Gson;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 import rest.dto.SuppliersDto;
 import rest.services.SuppliersService;
 
@@ -21,21 +23,16 @@ public class SuppliersServletTest {
     SuppliersService suppliersService = mock(SuppliersService.class);
     Gson jsn = mock(Gson.class);
 
-    @Test
-    public void FindTest() throws IOException, ServletException {
-        when(req.getRequestURI()).thenReturn("/myREST/suppliers");
+    @ParameterizedTest
+    @ValueSource(strings = {"/myREST/suppliers", "/myREST/suppliers/all", "/myREST/suppliers/1", "/myREST/suppliers/q"})
+    public void findTest(String str) throws IOException, ServletException {
+        when(req.getRequestURI()).thenReturn(str);
         when(res.getWriter()).thenReturn(pw);
-        suppliersServlet.doGet(req, res);
-        when(req.getRequestURI()).thenReturn("/myREST/suppliers/all");
-        suppliersServlet.doGet(req, res);
-        when(req.getRequestURI()).thenReturn("/myREST/suppliers/1");
-        suppliersServlet.doGet(req, res);
-        when(req.getRequestURI()).thenReturn("/myREST/suppliers/q");
         suppliersServlet.doGet(req, res);
     }
 
     @Test
-    public void SaveTest() throws IOException {
+    public void saveTest() throws IOException {
         SuppliersDto suppliersDto = new SuppliersDto("big");
         long id = 1;
         when(req.getRequestURI()).thenReturn("/myREST/suppliers");
@@ -50,7 +47,7 @@ public class SuppliersServletTest {
     }
 
     @Test
-    public void DeleteTest() throws IOException {
+    public void deleteTest() throws IOException {
         SuppliersDto suppliersDto = new SuppliersDto(1);
         when(req.getRequestURI()).thenReturn("/myREST/suppliers");
         when(jsn.fromJson(req.getReader(), SuppliersDto.class)).thenReturn(suppliersDto);

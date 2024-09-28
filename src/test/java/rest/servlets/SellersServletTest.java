@@ -2,6 +2,8 @@ package rest.servlets;
 
 import com.google.gson.Gson;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 import rest.dto.SellersDto;
 import rest.services.SellersService;
 
@@ -22,21 +24,16 @@ public class SellersServletTest {
     SellersService sellersService = mock(SellersService.class);
     Gson jsn = mock(Gson.class);
 
-    @Test
-    public void FindTest() throws IOException, ServletException {
-        when(req.getRequestURI()).thenReturn("/myREST/sellers");
+    @ParameterizedTest
+    @ValueSource(strings = {"/myREST/sellers", "/myREST/sellers/all", "/myREST/sellers/1", "/myREST/sellers/q"})
+    public void findTest(String str) throws IOException, ServletException {
+        when(req.getRequestURI()).thenReturn(str);
         when(res.getWriter()).thenReturn(pw);
-        sellersServlet.doGet(req, res);
-        when(req.getRequestURI()).thenReturn("/myREST/sellers/all");
-        sellersServlet.doGet(req, res);
-        when(req.getRequestURI()).thenReturn("/myREST/sellers/1");
-        sellersServlet.doGet(req, res);
-        when(req.getRequestURI()).thenReturn("/myREST/sellers/q");
         sellersServlet.doGet(req, res);
     }
 
     @Test
-    public void SaveTest() throws IOException {
+    public void saveTest() throws IOException {
         SellersDto sellersDto = new SellersDto("afonia", "big");
         long id = 1;
         when(req.getRequestURI()).thenReturn("/myREST/sellers");
@@ -51,7 +48,7 @@ public class SellersServletTest {
     }
 
     @Test
-    public void UpdateTest() throws IOException, SQLException {
+    public void updateTest() throws IOException, SQLException {
         SellersDto sellersDto = new SellersDto(1, "carrot");
         when(req.getRequestURI()).thenReturn("/myREST/sellers");
         when(jsn.fromJson(req.getReader(), SellersDto.class)).thenReturn(sellersDto);
@@ -64,7 +61,7 @@ public class SellersServletTest {
     }
 
     @Test
-    public void DeleteTest() throws IOException {
+    public void deleteTest() throws IOException {
         SellersDto sellersDto = new SellersDto(1);
         when(req.getRequestURI()).thenReturn("/myREST/sellers");
         when(jsn.fromJson(req.getReader(), SellersDto.class)).thenReturn(sellersDto);

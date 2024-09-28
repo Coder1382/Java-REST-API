@@ -1,6 +1,8 @@
 package rest.services;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 import rest.dto.SellersDto;
 
 import java.io.IOException;
@@ -9,25 +11,24 @@ import java.sql.SQLException;
 public class SellersServiceTest {
     SellersService sellersService = new SellersService();
 
-    @Test
-    public void FindTest() throws IOException {
-        sellersService.find(2);
-        sellersService.find(-1);
-        sellersService.find(0);
+    @ParameterizedTest
+    @ValueSource(longs = {2, -1, 0})
+    public void findTest(long id) throws IOException {
+        sellersService.find(id);
     }
 
     @Test
-    public void SaveTest() throws IOException {
+    public void saveTest() throws IOException {
         sellersService.save(new SellersDto("afonia", "big"));
     }
 
     @Test
-    public void UpdateTest() throws SQLException, IOException {
+    public void updateTest() throws SQLException, IOException {
         sellersService.update(new SellersDto(2, "tomato"));
     }
 
     @Test
-    public void DeleteTest() throws IOException {
+    public void deleteTest() throws IOException {
         sellersService.delete(new SellersDto(2));
     }
 }

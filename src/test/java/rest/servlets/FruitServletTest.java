@@ -2,6 +2,8 @@ package rest.servlets;
 
 import com.google.gson.Gson;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 import rest.dto.FruitDto;
 import rest.services.FruitService;
 
@@ -22,21 +24,16 @@ public class FruitServletTest {
     FruitService fruitService = mock(FruitService.class);
     Gson jsn = mock(Gson.class);
 
-    @Test
-    public void FindTest() throws IOException, ServletException {
-        when(req.getRequestURI()).thenReturn("/myREST/fruit");
+    @ParameterizedTest
+    @ValueSource(strings = {"/myREST/fruit", "/myREST/fruit/all", "/myREST/fruit/1", "/myREST/fruit/q"})
+    public void findTest(String str) throws IOException, ServletException {
+        when(req.getRequestURI()).thenReturn(str);
         when(res.getWriter()).thenReturn(pw);
-        fruitServlet.doGet(req, res);
-        when(req.getRequestURI()).thenReturn("/myREST/fruit/all");
-        fruitServlet.doGet(req, res);
-        when(req.getRequestURI()).thenReturn("/myREST/fruit/1");
-        fruitServlet.doGet(req, res);
-        when(req.getRequestURI()).thenReturn("/myREST/fruit/q");
         fruitServlet.doGet(req, res);
     }
 
     @Test
-    public void SaveTest() throws IOException {
+    public void saveTest() throws IOException {
         FruitDto fruitDto = new FruitDto("carrot", 2);
         long id = 1;
         when(req.getRequestURI()).thenReturn("/myREST/fruit");
@@ -51,7 +48,7 @@ public class FruitServletTest {
     }
 
     @Test
-    public void UpdateTest() throws IOException, SQLException {
+    public void updateTest() throws IOException, SQLException {
         FruitDto fruitDto = new FruitDto(1, 10);
         when(req.getRequestURI()).thenReturn("/myREST/fruit");
         when(jsn.fromJson(req.getReader(), FruitDto.class)).thenReturn(fruitDto);
@@ -64,7 +61,7 @@ public class FruitServletTest {
     }
 
     @Test
-    public void DeleteTest() throws IOException {
+    public void deleteTest() throws IOException {
         FruitDto fruitDto = new FruitDto(1);
         when(req.getRequestURI()).thenReturn("/myREST/fruit");
         when(jsn.fromJson(req.getReader(), FruitDto.class)).thenReturn(fruitDto);

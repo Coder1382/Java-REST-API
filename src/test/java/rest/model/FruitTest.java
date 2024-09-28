@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class FruitTest {
     @Test
-    public void FruitDtoTest() {
+    public void fruitDtoTest() {
         Fruit fruit = new Fruit();
         fruit = new Fruit("name");
         assertEquals(fruit.getName(), "name");

@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class SuppliersDtoTest {
     @Test
-    public void SellersDtoTest() {
+    public void sellersDtoTest() {
         SuppliersDto supplier = new SuppliersDto();
         supplier = new SuppliersDto("comp");
         assertEquals(supplier.getName(), "comp");

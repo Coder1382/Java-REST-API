@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class SellersDtoTest {
     @Test
-    public void SellersDtoTest() {
+    public void sellersDtoTest() {
         SellersDto seller = new SellersDto();
         seller = new SellersDto(1);
         seller = new SellersDto("name", "comp");

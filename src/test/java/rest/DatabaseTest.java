@@ -13,22 +13,22 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class DatabaseTest {
     @Test
-    public void TablesTest() throws SQLException {
+    public void tablesTest() throws SQLException {
         Connection connect = DatabaseConnector.connector();
         PostgreSQLContainer<?> postgres = new PostgreSQLContainer<>("postgres:16-alpine");
         postgres.start();
-        DatabaseManager.DropTable("fruit");
-        DatabaseManager.DropTable("suppliers");
-        DatabaseManager.DropTable("sellers");
+        DatabaseManager.dropTable("fruit");
+        DatabaseManager.dropTable("suppliers");
+        DatabaseManager.dropTable("sellers");
         DatabaseMetaData tables = connect.getMetaData();
         ResultSet fruit = tables.getTables(null, null, "fruit", new String[]{"TABLE"});
         ResultSet suppliers = tables.getTables(null, null, "suppliers", new String[]{"TABLE"});
         ResultSet sellers = tables.getTables(null, null, "sellers", new String[]{"TABLE"});
         int exist = (fruit.next() ? 1 : (sellers.next() ? 1 : (suppliers.next() ? 1 : 0)));
         assertEquals(0, exist);
-        DatabaseManager.CreateFruitTable();
-        DatabaseManager.CreateSuppliersTable();
-        DatabaseManager.CreateSellersTable();
+        DatabaseManager.createFruitTable();
+        DatabaseManager.createSuppliersTable();
+        DatabaseManager.createSellersTable();
         tables = connect.getMetaData();
         fruit = tables.getTables(null, null, "fruit", new String[]{"TABLE"});
         sellers = tables.getTables(null, null, "suppliers", new String[]{"TABLE"});
@@ -40,10 +40,10 @@ public class DatabaseTest {
     }
 
     @Test
-    public void FillTest() throws SQLException {
-        DatabaseManager.TruncateTable("fruit");
-        DatabaseManager.TruncateTable("sellers");
-        DatabaseManager.TruncateTable("suppliers");
+    public void fillTest() throws SQLException {
+        DatabaseManager.truncateTable("fruit");
+        DatabaseManager.truncateTable("sellers");
+        DatabaseManager.truncateTable("suppliers");
         Connection connect = DatabaseConnector.connector();
         connect.createStatement().executeUpdate("INSERT INTO suppliers(name) VALUES('big')");
         connect.createStatement().executeUpdate("INSERT INTO suppliers(name) VALUES('small')");
