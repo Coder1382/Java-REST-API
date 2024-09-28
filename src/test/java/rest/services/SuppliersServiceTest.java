@@ -6,6 +6,10 @@ import org.junit.jupiter.params.provider.ValueSource;
 import rest.dto.SuppliersDto;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class SuppliersServiceTest {
     SuppliersService suppliersService = new SuppliersService();
@@ -13,12 +17,13 @@ public class SuppliersServiceTest {
     @ParameterizedTest
     @ValueSource(longs = {2, -1, 0})
     public void findTest(long id) throws IOException {
-        suppliersService.find(id);
+        List<SuppliersDto> suppliersDtos = new ArrayList<SuppliersDto>();
+        assertEquals(suppliersDtos.getClass(), suppliersService.find(id).getClass());
     }
 
     @Test
     public void saveTest() throws IOException {
-        suppliersService.save(new SuppliersDto("old"));
+        assertEquals(Long.class, ((Long) suppliersService.save(new SuppliersDto("old"))).getClass());
     }
 
     @Test

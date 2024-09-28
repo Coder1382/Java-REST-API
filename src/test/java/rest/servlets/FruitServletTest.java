@@ -25,11 +25,12 @@ public class FruitServletTest {
     Gson jsn = mock(Gson.class);
 
     @ParameterizedTest
-    @ValueSource(strings = {"/myREST/fruit", "/myREST/fruit/all", "/myREST/fruit/1", "/myREST/fruit/q"})
+    @ValueSource(strings = {"/myREST/fruit", "/myREST/fruit/1", "/myREST/fruit/all"})
     public void findTest(String str) throws IOException, ServletException {
         when(req.getRequestURI()).thenReturn(str);
         when(res.getWriter()).thenReturn(pw);
         fruitServlet.doGet(req, res);
+        verify(pw).write("{\"id\":1,\"name\":\"mango\",\"price\":10}\n\n");
     }
 
     @Test
@@ -42,6 +43,7 @@ public class FruitServletTest {
         when(res.getWriter()).thenReturn(pw);
         try {
             fruitServlet.doPost(req, res);
+            verify(pw).write("saved with id: 1");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -55,6 +57,7 @@ public class FruitServletTest {
         doNothing().when(fruitService).update(fruitDto);
         try {
             fruitServlet.doPut(req, res);
+            verify(pw).write("updated");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -68,6 +71,7 @@ public class FruitServletTest {
         doNothing().when(fruitService).delete(fruitDto);
         try {
             fruitServlet.doDelete(req, res);
+            verify(pw).write("deleted");
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -15,5 +15,6 @@ public class FruitTest {
         fruit = new Fruit(1, "tomato", 1);
         assertEquals(fruit.getId(), 1);
         fruit = new Fruit("name", 5);
+        assertEquals(fruit.getPrice(), 5);
     }
 }

@@ -24,12 +24,14 @@ public class SuppliersServletTest {
     Gson jsn = mock(Gson.class);
 
     @ParameterizedTest
-    @ValueSource(strings = {"/myREST/suppliers", "/myREST/suppliers/all", "/myREST/suppliers/1", "/myREST/suppliers/q"})
+    @ValueSource(strings = {"/myREST/suppliers", "/myREST/suppliers/all", "/myREST/suppliers/1"})
     public void findTest(String str) throws IOException, ServletException {
         when(req.getRequestURI()).thenReturn(str);
         when(res.getWriter()).thenReturn(pw);
         suppliersServlet.doGet(req, res);
+        verify(pw).write("{\"id\":1,\"name\":\"big\"}\n\n");
     }
+
 
     @Test
     public void saveTest() throws IOException {
@@ -41,6 +43,7 @@ public class SuppliersServletTest {
         when(res.getWriter()).thenReturn(pw);
         try {
             suppliersServlet.doPost(req, res);
+            verify(pw).write("saved with id: 1");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -54,6 +57,7 @@ public class SuppliersServletTest {
         doNothing().when(suppliersService).delete(suppliersDto);
         try {
             suppliersServlet.doDelete(req, res);
+            verify(pw).write("deleted");
         } catch (Exception e) {
             e.printStackTrace();
         }

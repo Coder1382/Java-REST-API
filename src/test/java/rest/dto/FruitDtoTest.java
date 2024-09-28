@@ -15,5 +15,6 @@ public class FruitDtoTest {
         fruit = new FruitDto(1, "tomato", 1);
         assertEquals(fruit.getId(), 1);
         fruit = new FruitDto(1, 5);
+        assertEquals(fruit.getPrice(), 5);
     }
 }

@@ -6,8 +6,13 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.testcontainers.containers.PostgreSQLContainer;
+import rest.dto.SuppliersDto;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class SuppliersDaoTest {
     SuppliersDao suppliersDao = new SuppliersDao();
@@ -21,12 +26,13 @@ public class SuppliersDaoTest {
     @ParameterizedTest
     @ValueSource(longs = {1, -1, 0})
     public void findTest(long id) throws IOException {
-        suppliersDao.find(id);
+        List<SuppliersDto> suppliersDtos = new ArrayList<SuppliersDto>();
+        assertEquals(suppliersDtos.getClass(), suppliersDao.find(id).getClass());
     }
 
     @Test
     public void saveTest() {
-        suppliersDao.save("new");
+        assertEquals(Long.class, ((Long) suppliersDao.save("new")).getClass());
     }
 
     @Test

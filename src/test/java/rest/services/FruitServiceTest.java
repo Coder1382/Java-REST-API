@@ -7,6 +7,10 @@ import rest.dto.FruitDto;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class FruitServiceTest {
     FruitService fruitService = new FruitService();
@@ -14,13 +18,13 @@ public class FruitServiceTest {
     @ParameterizedTest
     @ValueSource(longs = {2, -1, 0})
     public void findTest(long id) throws IOException {
-        fruitService.find(id);
+        List<FruitDto> fruitDtos = new ArrayList<FruitDto>();
+        assertEquals(fruitDtos.getClass(), fruitService.find(id).getClass());
     }
 
     @Test
-
     public void saveTest() throws IOException {
-        fruitService.save(new FruitDto("carrot", 7));
+        assertEquals(Long.class, ((Long) fruitService.save(new FruitDto("carrot", 7))).getClass());
     }
 
     @Test

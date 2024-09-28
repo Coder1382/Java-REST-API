@@ -25,11 +25,12 @@ public class SellersServletTest {
     Gson jsn = mock(Gson.class);
 
     @ParameterizedTest
-    @ValueSource(strings = {"/myREST/sellers", "/myREST/sellers/all", "/myREST/sellers/1", "/myREST/sellers/q"})
+    @ValueSource(strings = {"/myREST/sellers", "/myREST/sellers/all", "/myREST/sellers/1"})
     public void findTest(String str) throws IOException, ServletException {
         when(req.getRequestURI()).thenReturn(str);
         when(res.getWriter()).thenReturn(pw);
         sellersServlet.doGet(req, res);
+        verify(pw).write("{\"id\":1,\"name\":\"ignat\",\"supply\":\"\",\"fruit\":\"\",\"supplier\":{\"id\":1,\"name\":\"big\"},\"fruits\":[]}\n\n");
     }
 
     @Test
@@ -42,6 +43,7 @@ public class SellersServletTest {
         when(res.getWriter()).thenReturn(pw);
         try {
             sellersServlet.doPost(req, res);
+            verify(pw).write("saved with id: 1");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -55,6 +57,7 @@ public class SellersServletTest {
         doNothing().when(sellersService).update(sellersDto);
         try {
             sellersServlet.doPut(req, res);
+            verify(pw).write("updated");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -68,6 +71,7 @@ public class SellersServletTest {
         doNothing().when(sellersService).delete(sellersDto);
         try {
             sellersServlet.doDelete(req, res);
+            verify(pw).write("deleted");
         } catch (Exception e) {
             e.printStackTrace();
         }

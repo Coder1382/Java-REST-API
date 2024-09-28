@@ -6,8 +6,14 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.testcontainers.containers.PostgreSQLContainer;
+import rest.dto.FruitDto;
+
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class FruitDaoTest {
     FruitDao fruitDao = new FruitDao();
@@ -18,15 +24,17 @@ public class FruitDaoTest {
         postgres.start();
     }
 
+
     @ParameterizedTest
     @ValueSource(longs = {1, -1, 0})
     public void findTest(long id) throws IOException {
-        fruitDao.find(id);
+        List<FruitDto> fruitDtos = new ArrayList<FruitDto>();
+        assertEquals(fruitDtos.getClass(), fruitDao.find(id).getClass());
     }
 
     @Test
     public void saveTest() {
-        fruitDao.save("tomato", 7);
+        assertEquals(Long.class, ((Long) fruitDao.save("tomato", 7)).getClass());
     }
 
     @Test

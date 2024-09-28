@@ -17,13 +17,17 @@ public class SellersDtoTest {
         List<FruitDto> flist = new ArrayList<>();
         SuppliersDto supply = new SuppliersDto();
         seller = new SellersDto(1, "name", supply);
+        assertEquals(seller.getName(), "name");
         seller = new SellersDto(1, "name", supply, flist);
         assertEquals(seller.getName(), "name");
         seller = new SellersDto(1, "mango");
+        assertEquals(seller.getFruit(), "mango");
         seller = new SellersDto("name", "sup");
         assertEquals(seller.getSupplier(), "sup");
         seller = new SellersDto("name", supply);
+        assertEquals(seller.getName(), "name");
         seller = new SellersDto("name", supply, flist);
+        assertEquals(seller.getName(), "name");
         seller = new SellersDto(1, "fruit");
         assertEquals(seller.getFruit(), "fruit");
     }
