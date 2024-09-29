@@ -2,6 +2,8 @@ package rest.services;
 
 import rest.dao.SuppliersDao;
 import rest.dto.SuppliersDto;
+import rest.model.Seller;
+import rest.model.Supplier;
 
 import java.io.IOException;
 
@@ -14,12 +16,14 @@ public class SuppliersService {
         return suppliersDao.find(id);
     }
 
-    public long save(SuppliersDto supplier) throws IOException {
+    public long save(SuppliersDto suppliersDto) throws IOException {
+        Supplier supplier=new Supplier(suppliersDto.getName());
         return suppliersDao.save(supplier);
     }
 
 
-    public long delete(SuppliersDto supplier) throws IOException {
+    public long delete(SuppliersDto suppliersDto) throws IOException {
+        Supplier supplier=new Supplier(suppliersDto.getId());
         return suppliersDao.delete(supplier);
     }
 }

@@ -12,13 +12,21 @@ public class Fruit {
         price = 0;
     }
 
+    public Fruit(String name, int price) {
+        this.name = name;
+        this.price = price;
+    }
+
+    public Fruit(long id) {
+        this.id = id;
+    }
+
     public Fruit(String name) {
         this.name = name;
     }
 
-    public Fruit(String name, int price) {
-        this.id = 0;
-        this.name = name;
+    public Fruit(long id, int price) {
+        this.id = id;
         this.price = price;
     }
 
@@ -41,9 +49,9 @@ public class Fruit {
         return price;
     }
 
-
     @Override
     public String toString() {
         return "id: " + id + ", name: " + name + ", price: " + price;
     }
+
 }

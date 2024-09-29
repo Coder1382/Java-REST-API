@@ -6,10 +6,9 @@ import org.junit.jupiter.api.Test;
 
 import org.testcontainers.containers.PostgreSQLContainer;
 import rest.dto.SellersDto;
+import rest.model.Seller;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -30,17 +29,17 @@ public class SellersDaoTest {
 
     @Test
     public void saveTest() {
-        assertEquals(sellersDao.save(new SellersDto("akim", "big")), 4);
+        assertEquals(sellersDao.save(new Seller("akim", "big")), 4);
     }
 
     @Test
     public void updateTest() throws SQLException {
-        assertEquals(sellersDao.update(new SellersDto(4, "mango")), 4);
+        assertEquals(sellersDao.update(new Seller(4, "mango")), 4);
     }
 
     @Test
     public void deleteTest() {
-        assertEquals(sellersDao.delete(new SellersDto(4)), 4);
+        assertEquals(sellersDao.delete(new Seller(4)), 4);
     }
 
     @AfterEach

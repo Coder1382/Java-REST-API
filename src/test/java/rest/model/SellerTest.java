@@ -9,8 +9,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class SellerTest {
     @Test
-    public void sellersDtoTest() {
+    public void sellerTest() {
         Seller seller = new Seller();
+        assertEquals(seller.getId(),0);
+        seller=new Seller(1);
+        assertEquals(seller.getId(),1);
         seller = new Seller("name", "comp");
         assertEquals(seller.getId(), 0);
         List<Fruit> flist = new ArrayList<>();
@@ -21,11 +24,14 @@ public class SellerTest {
         assertEquals(seller.getName(), "name");
         seller = new Seller(1, "mango");
         assertEquals(seller.getId(), 1);
+        assertEquals(seller.getFruit(), "mango");
         seller = new Seller("name", "sup");
         assertEquals(seller.getSupplier(), "sup");
         seller = new Seller("name", supply);
         assertEquals(seller.getName(), "name");
         seller = new Seller(1, "name", supply, flist);
         assertEquals(seller.getId(), 1);
+        seller = new Seller( "name", supply, flist);
+        assertEquals(seller.getId(),0);
     }
 }

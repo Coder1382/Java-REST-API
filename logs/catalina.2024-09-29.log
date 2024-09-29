@@ -117,3 +117,43 @@
 29-Sep-2024 02:53:29.059 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [myREST] registered the JDBC driver [org.postgresql.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
 29-Sep-2024 02:53:29.065 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
 29-Sep-2024 02:53:29.067 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+29-Sep-2024 09:42:39.696 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.93
+29-Sep-2024 09:42:39.699 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Aug 2 2024 21:24:59 UTC
+29-Sep-2024 09:42:39.699 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.93.0
+29-Sep-2024 09:42:39.699 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+29-Sep-2024 09:42:39.699 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.8.0-45-generic
+29-Sep-2024 09:42:39.699 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+29-Sep-2024 09:42:39.699 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-21-openjdk-amd64
+29-Sep-2024 09:42:39.699 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           21.0.4+7-Ubuntu-1ubuntu222.04
+29-Sep-2024 09:42:39.699 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Ubuntu
+29-Sep-2024 09:42:39.699 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/dik/Desktop/java/myREST
+29-Sep-2024 09:42:39.699 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/dik/Desktop/java/myREST/tomcat
+29-Sep-2024 09:42:39.704 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+29-Sep-2024 09:42:39.704 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+29-Sep-2024 09:42:39.704 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+29-Sep-2024 09:42:39.704 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+29-Sep-2024 09:42:39.704 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+29-Sep-2024 09:42:39.704 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/dik/Desktop/java/myREST/tomcat
+29-Sep-2024 09:42:39.704 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/dik/Desktop/java/myREST
+29-Sep-2024 09:42:39.704 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/dik/Desktop/java/myREST/temp
+29-Sep-2024 09:42:39.704 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/dik/Desktop/java/myREST/conf/logging.properties
+29-Sep-2024 09:42:39.704 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+29-Sep-2024 09:42:39.705 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:/home/dik/Desktop/idea-IC-241.18034.62/lib/idea_rt.jar=44823:/home/dik/Desktop/idea-IC-241.18034.62/bin
+29-Sep-2024 09:42:39.705 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+29-Sep-2024 09:42:39.705 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stdout.encoding=UTF-8
+29-Sep-2024 09:42:39.705 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stderr.encoding=UTF-8
+29-Sep-2024 09:42:39.707 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+29-Sep-2024 09:42:39.969 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+29-Sep-2024 09:42:39.989 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [464] milliseconds
+29-Sep-2024 09:42:40.027 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+29-Sep-2024 09:42:40.028 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.93]
+29-Sep-2024 09:42:40.035 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/home/dik/Desktop/java/myREST/conf/Catalina/localhost/myREST.xml]
+29-Sep-2024 09:42:40.662 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+29-Sep-2024 09:42:40.684 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/home/dik/Desktop/java/myREST/conf/Catalina/localhost/myREST.xml] has finished in [649] ms
+29-Sep-2024 09:42:40.687 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+29-Sep-2024 09:42:40.692 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [701] milliseconds
+29-Sep-2024 09:45:17.460 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+29-Sep-2024 09:45:17.461 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+29-Sep-2024 09:45:17.465 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [myREST] registered the JDBC driver [org.postgresql.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+29-Sep-2024 09:45:17.470 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+29-Sep-2024 09:45:17.473 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]

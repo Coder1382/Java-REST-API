@@ -6,8 +6,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class SupplierTest {
     @Test
-    public void sellersDtoTest() {
+    public void sellerTest() {
         Supplier supplier = new Supplier();
+        assertEquals(supplier.getId(),0);
+        supplier=new Supplier(1);
+        assertEquals(supplier.getId(),1);
         supplier = new Supplier("comp");
         assertEquals(supplier.getName(), "comp");
         supplier = new Supplier(1, "comp");

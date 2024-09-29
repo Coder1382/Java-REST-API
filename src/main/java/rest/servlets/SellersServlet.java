@@ -47,13 +47,13 @@ public class SellersServlet extends HttpServlet {
     @Override
     public void doPut(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         if (req.getRequestURI().split("/")[2].equals("sellers")) {
+            PrintWriter pw = res.getWriter();
             try {
-                PrintWriter pw = res.getWriter();
                 pw.write("updated under id: " + sellersService.update(jsn.fromJson(req.getReader(), SellersDto.class)));
-                pw.close();
-            } catch (SQLException e) {
+            } catch (SQLException | RuntimeException e) {
                 throw new RuntimeException(e);
             }
+            pw.close();
         }
     }
 

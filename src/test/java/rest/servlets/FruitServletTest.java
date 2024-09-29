@@ -1,7 +1,6 @@
 package rest.servlets;
 
 import com.google.gson.Gson;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -51,7 +50,8 @@ public class FruitServletTest {
     }
 
     @Test
-    public void updateTest() throws IOException, SQLException {
+    public void updateTest_1() throws IOException, SQLException {
+        SQLException ex = mock(SQLException.class);
         FruitDto fruitDto = new FruitDto(1, 10);
         when(req.getRequestURI()).thenReturn("/myREST/fruit");
         when(jsn.fromJson(req.getReader(), FruitDto.class)).thenReturn(fruitDto);
@@ -64,6 +64,21 @@ public class FruitServletTest {
         }
     }
 
+    @Test
+    public void updateTest_2() throws IOException, SQLException {
+        SQLException ex = mock(SQLException.class);
+        FruitDto fruitDto = new FruitDto(1, 10);
+        when(req.getRequestURI()).thenReturn("/myREST/frui");
+        when(jsn.fromJson(req.getReader(), FruitDto.class)).thenReturn(fruitDto);
+        when(res.getWriter()).thenReturn(pw);
+        doThrow(RuntimeException.class).when(ex);
+        try {
+            fruitServlet.doPut(req, res);
+            verify(doThrow(RuntimeException.class).when(ex));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     @Test
     public void deleteTest() throws IOException {

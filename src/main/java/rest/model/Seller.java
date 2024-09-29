@@ -1,14 +1,13 @@
 package rest.model;
 
-import rest.dto.SuppliersDto;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class Seller {
     long id;
-    String supply;
     String name;
+    String supply;
+    String fruit;
     Supplier supplier;
     List<Fruit> fruits;
 
@@ -20,31 +19,50 @@ public class Seller {
         fruits = new ArrayList<>();
     }
 
-    public Seller(String name, String sup) {
-        this.name = name;
-        this.supply = sup;
+    public Seller(long id) {
+        this.id = id;
+    }
+
+    public Seller(long id, String fruit) {
+        this.id = id;
+        this.fruit = fruit;
+        this.name = "";
+        this.supply = "";
         supplier = new Supplier();
-        this.fruits = new ArrayList<>();
+        fruits = new ArrayList<>();
+    }
+
+    public Seller(String name, String supply) {
+        this.name = name;
+        this.supply = supply;
+        this.fruit = "";
+        supplier = new Supplier();
+        fruits = new ArrayList<>();
     }
 
     public Seller(String name, Supplier supplier) {
         this.name = name;
         this.supplier = supplier;
+        this.fruit = "";
         fruits = new ArrayList<>();
     }
 
-    public Seller(long id, String sup) {
-        this.id = id;
-        this.name = "";
-        this.supply = sup;
-        supplier = new Supplier();
-        fruits = new ArrayList<>();
+    public Seller(String name, Supplier supplier, List<Fruit> fruits) {
+        this.name = name;
+        this.supply = "";
+        this.supplier = supplier;
+        this.fruit = "";
+        this.fruits = new ArrayList<>();
+        fruits.forEach(e -> {
+            this.fruits.add(e);
+        });
     }
 
     public Seller(long id, String name, Supplier supplier) {
         this.id = id;
         this.name = name;
         this.supply = "";
+        this.fruit = "";
         this.supplier = supplier;
         this.fruits = new ArrayList<>();
     }
@@ -53,6 +71,7 @@ public class Seller {
         this.id = id;
         this.name = name;
         this.supply = "";
+        this.fruit = "";
         this.supplier = supplier;
         this.fruits = new ArrayList<>();
         fruits.forEach(e -> {
@@ -65,12 +84,16 @@ public class Seller {
         return id;
     }
 
+    public String getSupplier() {
+        return supply;
+    }
+
     public String getName() {
         return name;
     }
 
-    public String getSupplier() {
-        return supply;
+    public String getFruit() {
+        return fruit;
     }
 
     @Override
@@ -79,7 +102,8 @@ public class Seller {
         for (int i = 0; i < fruits.size(); ++i) {
             s.append(fruits.get(i).getName() + ", ");
         }
-        //s.delete(s.length() - 2, s.length() - 1);
+        s.delete(s.length() - 2, s.length() - 1);
         return "id: " + id + ", name: " + name + ", supplier: " + supplier.getName() + "\nfruits: " + s;
     }
+
 }

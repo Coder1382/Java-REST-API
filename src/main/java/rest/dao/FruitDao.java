@@ -1,6 +1,7 @@
 package rest.dao;
 
 import rest.dto.FruitDto;
+import rest.model.Fruit;
 
 import java.io.IOException;
 import java.sql.*;
@@ -28,7 +29,7 @@ public class FruitDao {
         return fruitDtos;
     }
 
-    public long save(FruitDto fruit) {
+    public long save(Fruit fruit) {
         String name = fruit.getName();
         int pr = fruit.getPrice();
         long id = 0;
@@ -51,7 +52,7 @@ public class FruitDao {
         return id;
     }
 
-    public long update(FruitDto fruit) {
+    public long update(Fruit fruit) {
         long id = fruit.getId();
         try (Connection connect = DatabaseConnector.connector(); PreparedStatement updateInDB = connect.
                 prepareStatement("UPDATE fruit SET price=? WHERE id=?")) {
@@ -65,7 +66,7 @@ public class FruitDao {
         return id;
     }
 
-    public long delete(FruitDto fruit) {
+    public long delete(Fruit fruit) {
         long id = fruit.getId();
         try (Connection connect = DatabaseConnector.connector(); PreparedStatement deleteFromDB = connect.
                 prepareStatement("DELETE FROM fruit WHERE id=?")) {

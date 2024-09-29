@@ -1,6 +1,5 @@
 package rest.model;
 
-
 public class Supplier {
     long id;
     String name;
@@ -10,8 +9,12 @@ public class Supplier {
         name = "";
     }
 
+    public Supplier(long id) {
+        this.id = id;
+        this.name="";
+    }
+
     public Supplier(String company) {
-        this.id = 0;
         this.name = company;
     }
 
@@ -29,9 +32,9 @@ public class Supplier {
         return id;
     }
 
-
     @Override
     public String toString() {
         return "id: " + id + ", name: " + name;
     }
+
 }

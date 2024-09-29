@@ -50,14 +50,31 @@ public class SellersServletTest {
     }
 
     @Test
-    public void updateTest() throws IOException, SQLException {
+    public void updateTest_1() throws IOException, SQLException {
+        SQLException ex = mock(SQLException.class);
         SellersDto sellersDto = new SellersDto(1, "carrot");
         when(req.getRequestURI()).thenReturn("/myREST/sellers");
         when(jsn.fromJson(req.getReader(), SellersDto.class)).thenReturn(sellersDto);
         when(res.getWriter()).thenReturn(pw);
         try {
             sellersServlet.doPut(req, res);
-            verify(pw).write("updated under id : 4");
+            verify(pw).write("updated under id: 4");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void updateTest_2() throws IOException, SQLException {
+        SQLException ex = mock(SQLException.class);
+        SellersDto sellersDto = new SellersDto(1, "fruit");
+        when(req.getRequestURI()).thenReturn("/myREST/seller");
+        when(jsn.fromJson(req.getReader(), SellersDto.class)).thenReturn(sellersDto);
+        when(res.getWriter()).thenReturn(pw);
+        doThrow(RuntimeException.class).when(ex);
+        try {
+            sellersServlet.doPut(req, res);
+            verify(doThrow(RuntimeException.class).when(ex));
         } catch (Exception e) {
             e.printStackTrace();
         }

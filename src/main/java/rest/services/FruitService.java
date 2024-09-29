@@ -2,6 +2,7 @@ package rest.services;
 
 import rest.dao.FruitDao;
 import rest.dto.FruitDto;
+import rest.model.Fruit;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -14,15 +15,18 @@ public class FruitService {
         return fruitDao.find(id);
     }
 
-    public long save(FruitDto fruit) throws IOException {
+    public long save(FruitDto fruitDto) throws IOException {
+        Fruit fruit=new Fruit(fruitDto.getName(),fruitDto.getPrice());
         return fruitDao.save(fruit);
     }
 
-    public long update(FruitDto fruit) throws IOException, SQLException {
+    public long update(FruitDto fruitDto) throws IOException, SQLException {
+        Fruit fruit=new Fruit(fruitDto.getId(),fruitDto.getPrice());
         return fruitDao.update(fruit);
     }
 
-    public long delete(FruitDto fruit) throws IOException {
+    public long delete(FruitDto fruitDto) throws IOException {
+        Fruit fruit=new Fruit(fruitDto.getId());
         return fruitDao.delete(fruit);
     }
 }

@@ -11,7 +11,9 @@ public class SellersDtoTest {
     @Test
     public void sellersDtoTest() {
         SellersDto seller = new SellersDto();
+        assertEquals(seller.getId(), 0);
         seller = new SellersDto(1);
+        assertEquals(seller.getId(), 1);
         seller = new SellersDto("name", "comp");
         assertEquals(seller.getId(), 0);
         List<FruitDto> flist = new ArrayList<>();

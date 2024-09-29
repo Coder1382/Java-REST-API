@@ -6,10 +6,9 @@ import org.junit.jupiter.api.Test;
 
 import org.testcontainers.containers.PostgreSQLContainer;
 import rest.dto.SuppliersDto;
+import rest.model.Supplier;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -30,12 +29,12 @@ public class SuppliersDaoTest {
 
     @Test
     public void saveTest() {
-        assertEquals(suppliersDao.save(new SuppliersDto("new")), 4);
+        assertEquals(suppliersDao.save(new Supplier("new")), 4);
     }
 
     @Test
     public void deleteTest() {
-        assertEquals(suppliersDao.delete(new SuppliersDto(4)), 4);
+        assertEquals(suppliersDao.delete(new Supplier(4)), 4);
     }
 
     @AfterEach

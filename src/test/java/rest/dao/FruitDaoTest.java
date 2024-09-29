@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import org.testcontainers.containers.PostgreSQLContainer;
 import rest.dto.FruitDto;
+import rest.model.Fruit;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -33,17 +34,17 @@ public class FruitDaoTest {
 
     @Test
     public void saveTest() {
-        assertEquals(fruitDao.save(new FruitDto("tomato", 1)), 4);
+        assertEquals(fruitDao.save(new Fruit("tomato", 1)), 4);
     }
 
     @Test
     public void updateTest() {
-        assertEquals(fruitDao.update(new FruitDto(4, 8)), 4);
+        assertEquals(fruitDao.update(new Fruit(4, 8)), 4);
     }
 
     @Test
     public void deleteTest() {
-        assertEquals(fruitDao.delete(new FruitDto(4)), 4);
+        assertEquals(fruitDao.delete(new Fruit(4)), 4);
     }
 
     @AfterEach

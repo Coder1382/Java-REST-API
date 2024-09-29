@@ -1,6 +1,7 @@
 package rest.dao;
 
 import rest.dto.SuppliersDto;
+import rest.model.Supplier;
 
 import java.io.IOException;
 import java.sql.*;
@@ -8,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SuppliersDao {
-    public long save(SuppliersDto supplier) {
+    public long save(Supplier supplier) {
         String comp = supplier.getName();
         long id = 0;
         try (Connection connect = DatabaseConnector.connector(); PreparedStatement addToDB = connect.
@@ -28,7 +29,7 @@ public class SuppliersDao {
         return id;
     }
 
-    public long delete(SuppliersDto supplier) {
+    public long delete(Supplier supplier) {
         long id = supplier.getId();
         try (Connection connect = DatabaseConnector.connector(); PreparedStatement udb = connect.
                 prepareStatement("DELETE from suppliers WHERE id=?")) {

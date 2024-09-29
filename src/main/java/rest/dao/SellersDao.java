@@ -3,13 +3,14 @@ package rest.dao;
 import rest.dto.FruitDto;
 import rest.dto.SellersDto;
 import rest.dto.SuppliersDto;
+import rest.model.Seller;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class SellersDao {
-    public long save(SellersDto seller) {
+    public long save(Seller seller) {
         String name = seller.getName();
         String supplier = seller.getSupplier();
         long id = 0;
@@ -70,7 +71,7 @@ public class SellersDao {
         return sellersDtos;
     }
 
-    public long update(SellersDto seller) throws SQLException {
+    public long update(Seller seller) throws SQLException {
         long id = seller.getId();
         String fruit = seller.getFruit();
         try (Connection connect = DatabaseConnector.connector(); PreparedStatement readDB = connect.
@@ -95,7 +96,7 @@ public class SellersDao {
         return id;
     }
 
-    public long delete(SellersDto seller) {
+    public long delete(Seller seller) {
         long id = seller.getId();
         try (Connection connect = DatabaseConnector.connector(); PreparedStatement deleteFromDB = connect
                 .prepareStatement("DELETE FROM sellers WHERE id=?")) {
