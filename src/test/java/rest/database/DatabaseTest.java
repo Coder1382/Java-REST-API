@@ -1,4 +1,4 @@
-package rest;
+package rest.database;
 
 import org.junit.jupiter.api.Test;
 import org.testcontainers.containers.PostgreSQLContainer;
@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class DatabaseTest {
     @Test
-    public void tablesTest() throws SQLException {
+    public void createTablesTest() throws SQLException {
         Connection connect = DatabaseConnector.connector();
         PostgreSQLContainer<?> postgres = new PostgreSQLContainer<>("postgres:16-alpine");
         postgres.start();
@@ -40,7 +40,7 @@ public class DatabaseTest {
     }
 
     @Test
-    public void fillTest() throws SQLException {
+    public void resetTablesTest() throws SQLException {
         DatabaseManager.truncateTable("fruit");
         DatabaseManager.truncateTable("sellers");
         DatabaseManager.truncateTable("suppliers");

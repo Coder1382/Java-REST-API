@@ -1,9 +1,8 @@
-package rest;
+package rest.database;
 
 import rest.dao.DatabaseConnector;
 
 import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class
