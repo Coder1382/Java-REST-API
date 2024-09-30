@@ -11,7 +11,7 @@ import java.util.List;
 public class FruitService {
     private final FruitDao fruitDao = new FruitDao();
 
-    public List<FruitDto> find(long id) throws IOException {
+    public List<Fruit> find(long id) throws IOException {
         return fruitDao.find(id);
     }
 

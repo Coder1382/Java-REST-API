@@ -11,7 +11,8 @@ public class Seller {
     private Supplier supplier;
     private List<Fruit> fruits;
 
-    public Seller() {}
+    public Seller() {
+    }
 
     public Seller(long id) {
         this.id = id;
@@ -20,6 +21,11 @@ public class Seller {
     public Seller(long id, String fruit) {
         this.id = id;
         this.fruit = fruit;
+    }
+
+    public Seller(String name, long id) {
+        this.id = id;
+        this.name = name;
     }
 
     public Seller(String name, String supply) {

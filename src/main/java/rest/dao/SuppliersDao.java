@@ -78,8 +78,8 @@ public class SuppliersDao {
         return id;
     }
 
-    public List<SuppliersDto> find(long id) throws IOException {
-        List<SuppliersDto> suppliersDtos = new ArrayList<>();
+    public List<Supplier> find(long id) throws IOException {
+        List<Supplier> suppliers = new ArrayList<>();
         try (Connection connect = DatabaseConnector.connector(); PreparedStatement readDB = connect.
                 prepareStatement(id > 0 ? "SELECT * FROM suppliers WHERE id=?" : "SELECT * FROM suppliers")) {
             if (id > 0) readDB.setLong(1, id);
@@ -90,22 +90,22 @@ public class SuppliersDao {
                 Array arr = result.getArray("sellers");
                 if (arr != null) {
                     String[] sellers = (String[]) arr.getArray();
-                    List<SellersDto> sellersList = new ArrayList<>();
+                    List<Seller> sellersList = new ArrayList<>();
                     for (int k = 0; k < sellers.length; ++k) {
                         PreparedStatement rdf = connect.prepareStatement("SELECT id FROM sellers WHERE name=?");
                         rdf.setString(1, sellers[k]);
                         ResultSet rf = rdf.executeQuery();
                         while (rf.next()) {
-                            sellersList.add(new SellersDto(rf.getLong("id"), sellers[k]));
+                            sellersList.add(new Seller(rf.getLong("id"), sellers[k]));
                         }
                     }
-                    suppliersDtos.add(new SuppliersDto(i, name, sellersList));
-                } else suppliersDtos.add(new SuppliersDto(i, name));
+                    suppliers.add(new Supplier(i, name, sellersList));
+                } else suppliers.add(new Supplier(i, name));
             }
             connect.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        return suppliersDtos;
+        return suppliers;
     }
 }

@@ -3,7 +3,9 @@ package rest.dao;
 import rest.dto.FruitDto;
 import rest.dto.SellersDto;
 import rest.dto.SuppliersDto;
+import rest.model.Fruit;
 import rest.model.Seller;
+import rest.model.Supplier;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -33,8 +35,8 @@ public class SellersDao {
         return id;
     }
 
-    public List<SellersDto> find(long id) {
-        List<SellersDto> sellersDtos = new ArrayList<>();
+    public List<Seller> find(long id) {
+        List<Seller> sellers = new ArrayList<>();
         try (Connection connect = DatabaseConnector.connector(); PreparedStatement readDB = connect.
                 prepareStatement(id > 0 ? "SELECT * FROM sellers WHERE id=?" : "SELECT * FROM sellers")) {
             if (id > 0) readDB.setLong(1, id);
@@ -52,23 +54,23 @@ public class SellersDao {
                 }
                 if (arr != null) {
                     String[] fruits = (String[]) arr.getArray();
-                    List<FruitDto> fruitList = new ArrayList<>();
+                    List<Fruit> fruitList = new ArrayList<>();
                     for (int k = 0; k < fruits.length; ++k) {
                         PreparedStatement rdf = connect.prepareStatement("SELECT id, price FROM fruit WHERE name=?");
                         rdf.setString(1, fruits[k]);
                         ResultSet rf = rdf.executeQuery();
                         while (rf.next()) {
-                            fruitList.add(new FruitDto(rf.getLong("id"), fruits[k], rf.getInt("price")));
+                            fruitList.add(new Fruit(rf.getLong("id"), fruits[k], rf.getInt("price")));
                         }
                     }
-                    sellersDtos.add(new SellersDto(i, name, new SuppliersDto(id, supplier), fruitList));
-                } else sellersDtos.add(new SellersDto(i, name, new SuppliersDto(id, supplier)));
+                    sellers.add(new Seller(i, name, new Supplier(id, supplier), fruitList));
+                } else sellers.add(new Seller(i, name, new Supplier(id, supplier)));
             }
             connect.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        return sellersDtos;
+        return sellers;
     }
 
     public long update(Seller seller) throws SQLException {

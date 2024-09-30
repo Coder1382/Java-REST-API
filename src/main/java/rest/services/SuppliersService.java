@@ -14,7 +14,7 @@ import java.util.List;
 public class SuppliersService {
     private final SuppliersDao suppliersDao = new SuppliersDao();
 
-    public List<SuppliersDto> find(long id) throws IOException {
+    public List<Supplier> find(long id) throws IOException {
         return suppliersDao.find(id);
     }
 

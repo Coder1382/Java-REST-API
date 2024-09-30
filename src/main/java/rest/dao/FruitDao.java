@@ -4,6 +4,7 @@ import rest.dto.FruitDto;
 import rest.dto.SellersDto;
 import rest.dto.SuppliersDto;
 import rest.model.Fruit;
+import rest.model.Seller;
 
 import java.io.IOException;
 import java.sql.*;
@@ -11,8 +12,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FruitDao {
-    public List<FruitDto> find(long id) throws IOException {
-        List<FruitDto> fruitDtos = new ArrayList<>();
+    public List<Fruit> find(long id) throws IOException {
+        List<Fruit> fruits = new ArrayList<>();
         try (Connection connect = DatabaseConnector.connector(); PreparedStatement readDB = connect.
                 prepareStatement(id > 0 ? "SELECT * FROM fruit WHERE id=?" : "SELECT * FROM fruit")) {
             if (id > 0) readDB.setLong(1, id);
@@ -24,23 +25,23 @@ public class FruitDao {
                 Array arr = result.getArray("sellers");
                 if (arr != null) {
                     String[] sellers = (String[]) arr.getArray();
-                    List<SellersDto> sellersList = new ArrayList<>();
+                    List<Seller> sellersList = new ArrayList<>();
                     for (int k = 0; k < sellers.length; ++k) {
                         PreparedStatement rdf = connect.prepareStatement("SELECT id FROM sellers WHERE name=?");
                         rdf.setString(1, sellers[k]);
                         ResultSet rf = rdf.executeQuery();
                         while (rf.next()) {
-                            sellersList.add(new SellersDto(sellers[k],rf.getLong("id")));
+                            sellersList.add(new Seller(sellers[k],rf.getLong("id")));
                         }
                     }
-                    fruitDtos.add(new FruitDto(i, name, price, sellersList));
-                } else fruitDtos.add(new FruitDto(i, name, price));
+                    fruits.add(new Fruit(i, name, price, sellersList));
+                } else fruits.add(new Fruit(i, name, price));
             }
             connect.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        return fruitDtos;
+        return fruits;
     }
 
     public long save(Fruit fruit) {
