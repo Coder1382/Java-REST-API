@@ -43,30 +43,21 @@ public class SuppliersDao {
     }
 
     public long update(Supplier supplier) throws SQLException {
-        String name = supplier.getName();
-        String seller = supplier.getSeller();
-        long id = -1;
+        String seller = supplier.getName();
+        long id = supplier.getId();
         try (Connection connect = DatabaseConnector.connector(); PreparedStatement readDB = connect.
-                prepareStatement("SELECT * FROM suppliers WHERE name=? and ?=ANY(sellers)")) {
-            readDB.setString(1, name);
+                prepareStatement("SELECT * FROM suppliers WHERE id=? and ?=ANY(sellers)")) {
+            readDB.setLong(1, id);
             readDB.setString(2, seller);
             ResultSet resset = readDB.executeQuery();
             while (resset.next()) {
-                id = resset.getLong("id");
+                return id;
             }
-            if (id == -1) {
-                PreparedStatement updateInDB = connect.prepareStatement("UPDATE suppliers SET sellers=array_append(sellers,?) WHERE name=?");
-                updateInDB.setString(1, seller);
-                updateInDB.setString(2, name);
-                updateInDB.executeUpdate();
-            }
-            PreparedStatement rDB = connect.prepareStatement("SELECT id FROM suppliers WHERE name=? and ?=ANY(sellers)");
-            rDB.setString(1, name);
-            readDB.setString(2, seller);
-            ResultSet rs = readDB.executeQuery();
-            while (rs.next()) {
-                id = rs.getLong("id");
-            }
+            PreparedStatement updateInDB = connect.prepareStatement("UPDATE suppliers SET sellers=array_append(sellers,?) WHERE id=?");
+            updateInDB.setString(1, seller);
+            updateInDB.setLong(2, id);
+            updateInDB.executeUpdate();
+
             connect.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);

@@ -116,16 +116,13 @@ public class SellersDao {
             readDB.setLong(1, id);
             readDB.setString(2, fruit);
             ResultSet resset = readDB.executeQuery();
-            int i = 0;
             while (resset.next()) {
-                ++i;
+                return id;
             }
-            if (i == 0) {
-                PreparedStatement updateInDB = connect.prepareStatement("UPDATE sellers SET fruits=array_append(fruits,?) WHERE id=?");
-                updateInDB.setString(1, fruit);
-                updateInDB.setLong(2, id);
-                updateInDB.executeUpdate();
-            }
+            PreparedStatement updateInDB = connect.prepareStatement("UPDATE sellers SET fruits=array_append(fruits,?) WHERE id=?");
+            updateInDB.setString(1, fruit);
+            updateInDB.setLong(2, id);
+            updateInDB.executeUpdate();
             connect.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);

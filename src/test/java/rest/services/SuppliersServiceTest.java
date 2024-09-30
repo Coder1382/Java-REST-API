@@ -13,8 +13,8 @@ public class SuppliersServiceTest {
 
     @Test
     public void findTest_1() throws IOException {
-        assertEquals((suppliersService.find().get(0)).getName(), "big");
-        assertEquals((suppliersService.find().get(0)).getId(), 1);
+        assertEquals((suppliersService.find().get(0)).getName(), "small");
+        assertEquals((suppliersService.find().get(0)).getId(), 2);
     }
 
     @Test
@@ -30,7 +30,7 @@ public class SuppliersServiceTest {
 
     @Test
     public void updateTest() throws SQLException, IOException {
-        assertEquals(suppliersService.update(new SuppliersDto("new", "fedor")), -1);
+        assertEquals(suppliersService.update(new SuppliersDto(1, "fedor")), 1);
     }
 
     @Test

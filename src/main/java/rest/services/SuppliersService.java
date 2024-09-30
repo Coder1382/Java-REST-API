@@ -27,7 +27,7 @@ public class SuppliersService {
     }
 
     public long update(SuppliersDto suppliersDto) throws IOException, SQLException {
-        Supplier supplier = new Supplier(suppliersDto.getName(), suppliersDto.getSeller());
+        Supplier supplier = new Supplier(suppliersDto.getId(), suppliersDto.getName());
         return suppliersDao.update(supplier);
     }
 

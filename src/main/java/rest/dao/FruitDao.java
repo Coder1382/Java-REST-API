@@ -103,7 +103,6 @@ public class FruitDao {
             readDB.setLong(1, id);
             readDB.setString(2, seller);
             ResultSet rs = readDB.executeQuery();
-            int i = 0;
             while (rs.next()) {
                 return id;
             }

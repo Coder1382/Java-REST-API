@@ -50,7 +50,7 @@ public class SuppliersDaoTest {
 
     @Test
     public void updateTest() throws SQLException {
-        assertEquals(suppliersDao.update(new Supplier("big", "ignat")), 1);
+        assertEquals(suppliersDao.update(new Supplier(1, "ignat")), 1);
     }
 
     @Test
