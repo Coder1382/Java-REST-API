@@ -13,7 +13,11 @@ public class
 SellersService {
     private final SellersDao sellersDao = new SellersDao();
 
-    public List<Seller> find(long id) throws IOException {
+    public List<Seller> find() throws IOException {
+        return sellersDao.find();
+    }
+
+    public Seller find(long id) throws IOException {
         return sellersDao.find(id);
     }
 

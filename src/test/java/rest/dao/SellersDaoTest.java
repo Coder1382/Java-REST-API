@@ -1,11 +1,9 @@
 package rest.dao;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 import org.testcontainers.containers.PostgreSQLContainer;
-import rest.dto.SellersDto;
+import rest.database.DatabaseTest;
 import rest.model.Seller;
 
 import java.sql.SQLException;
@@ -15,16 +13,32 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class SellersDaoTest {
     private SellersDao sellersDao = new SellersDao();
 
-    @BeforeEach
-    public void before() {
-        PostgreSQLContainer<?> postgres = new PostgreSQLContainer<>("postgres:16-alpine");
+    static DatabaseTest dbt = new DatabaseTest();
+    static PostgreSQLContainer<?> postgres = new PostgreSQLContainer<>("postgres:16-alpine");
+
+    @BeforeAll
+    public static void before() throws SQLException {
         postgres.start();
+        dbt.createTablesTest();
+        dbt.resetTablesTest();
+    }
+
+    @AfterAll
+    public static void after() {
+        PostgreSQLContainer<?> postgres = new PostgreSQLContainer<>("postgres:16-alpine");
+        postgres.stop();
     }
 
     @Test
-    public void findTest() {
-        assertEquals((sellersDao.find(1).get(0)).getName(), "ignat");
-        assertEquals((sellersDao.find(1).get(0)).getId(), 1);
+    public void findTest_1() {
+        assertEquals((sellersDao.find().get(0)).getName(), "ignat");
+        assertEquals((sellersDao.find().get(0)).getId(), 1);
+    }
+
+    @Test
+    public void findTest_2() {
+        assertEquals(sellersDao.find(1).getName(), "ignat");
+        assertEquals(sellersDao.find(1).getId(), 1);
     }
 
     @Test
@@ -42,9 +56,4 @@ public class SellersDaoTest {
         assertEquals(sellersDao.delete(new Seller(4)), 4);
     }
 
-    @AfterEach
-    public void after() {
-        PostgreSQLContainer<?> postgres = new PostgreSQLContainer<>("postgres:16-alpine");
-        postgres.stop();
-    }
 }

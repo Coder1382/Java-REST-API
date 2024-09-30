@@ -4,7 +4,6 @@ import org.junit.jupiter.api.*;
 
 import org.testcontainers.containers.PostgreSQLContainer;
 import rest.database.DatabaseTest;
-import rest.dto.FruitDto;
 import rest.model.Fruit;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
@@ -12,19 +11,19 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class FruitDaoTest {
     FruitDao fruitDao = new FruitDao();
-    static DatabaseTest dbt=new DatabaseTest();
+    static DatabaseTest dbt = new DatabaseTest();
     static PostgreSQLContainer<?> postgres = new PostgreSQLContainer<>("postgres:16-alpine");
+
     @BeforeAll
     public static void before() throws SQLException {
         postgres.start();
         dbt.createTablesTest();
         dbt.resetTablesTest();
     }
+
     @AfterAll
     public static void after() {
         PostgreSQLContainer<?> postgres = new PostgreSQLContainer<>("postgres:16-alpine");
@@ -32,10 +31,15 @@ public class FruitDaoTest {
     }
 
     @Test
-    public void findTest() throws IOException {
-        List<FruitDto> fruitDtos = new ArrayList<FruitDto>();
-        assertEquals((fruitDao.find(1).get(0)).getName(), "mango");
-        assertEquals((fruitDao.find(1).get(0)).getPrice(), 10);
+    public void findTest_1() throws IOException {
+        assertEquals((fruitDao.find().get(0)).getName(), "mango");
+        assertEquals((fruitDao.find().get(0)).getPrice(), 10);
+    }
+
+    @Test
+    public void findTest_2() throws IOException {
+        assertEquals(fruitDao.find(1).getName(), "mango");
+        assertEquals(fruitDao.find(1).getPrice(), 10);
     }
 
     @Test

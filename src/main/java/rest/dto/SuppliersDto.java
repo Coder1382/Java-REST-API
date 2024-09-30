@@ -4,12 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SuppliersDto {
-    private long id;
-    private String name;
-    private List<SellersDto> sellers;
-    private String seller;
+    private long id = 0;
+    private String name = "";
+    private List<SellersDto> sellers = new ArrayList<>();
+    private String seller = "";
 
-    public SuppliersDto() {}
+    public SuppliersDto() {
+    }
 
     public SuppliersDto(long id) {
         this.id = id;
@@ -27,7 +28,7 @@ public class SuppliersDto {
     public SuppliersDto(long id, String company, List<SellersDto> sellers) {
         this.id = id;
         this.name = company;
-        this.sellers=new ArrayList<>();
+        this.sellers = new ArrayList<>();
         sellers.forEach(e -> {
             this.sellers.add(e);
         });

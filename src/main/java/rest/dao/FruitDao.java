@@ -1,8 +1,5 @@
 package rest.dao;
 
-import rest.dto.FruitDto;
-import rest.dto.SellersDto;
-import rest.dto.SuppliersDto;
 import rest.model.Fruit;
 import rest.model.Seller;
 
@@ -12,11 +9,42 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FruitDao {
-    public List<Fruit> find(long id) throws IOException {
+    public Fruit find(long id) throws IOException {
+        Fruit fruits = new Fruit();
+        try (Connection connect = DatabaseConnector.connector(); PreparedStatement readDB = connect.
+                prepareStatement("SELECT * FROM fruit WHERE id=?")) {
+            readDB.setLong(1, id);
+            ResultSet result = readDB.executeQuery();
+            while (result.next()) {
+                String name = result.getString("name");
+                int price = result.getInt("price");
+                Array arr = result.getArray("sellers");
+                if (arr != null) {
+                    String[] sellers = (String[]) arr.getArray();
+                    List<Seller> sellersList = new ArrayList<>();
+                    for (int k = 0; k < sellers.length; ++k) {
+                        PreparedStatement rdf = connect.prepareStatement("SELECT id FROM sellers WHERE name=?");
+                        rdf.setString(1, sellers[k]);
+                        ResultSet rf = rdf.executeQuery();
+                        while (rf.next()) {
+                            sellersList.add(new Seller(sellers[k], rf.getLong("id")));
+                        }
+                    }
+                    fruits = new Fruit(id, name, price, sellersList);
+                }
+                fruits = new Fruit(id, name, price);
+            }
+            connect.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return fruits;
+    }
+
+    public List<Fruit> find() throws IOException {
         List<Fruit> fruits = new ArrayList<>();
         try (Connection connect = DatabaseConnector.connector(); PreparedStatement readDB = connect.
-                prepareStatement(id > 0 ? "SELECT * FROM fruit WHERE id=?" : "SELECT * FROM fruit")) {
-            if (id > 0) readDB.setLong(1, id);
+                prepareStatement("SELECT * FROM fruit")) {
             ResultSet result = readDB.executeQuery();
             while (result.next()) {
                 long i = result.getLong("id");
@@ -31,7 +59,7 @@ public class FruitDao {
                         rdf.setString(1, sellers[k]);
                         ResultSet rf = rdf.executeQuery();
                         while (rf.next()) {
-                            sellersList.add(new Seller(sellers[k],rf.getLong("id")));
+                            sellersList.add(new Seller(sellers[k], rf.getLong("id")));
                         }
                     }
                     fruits.add(new Fruit(i, name, price, sellersList));

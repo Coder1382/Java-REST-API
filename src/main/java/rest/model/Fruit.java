@@ -10,7 +10,8 @@ public class Fruit {
     private List<Seller> sellers;
     private String seller;
 
-    public Fruit() {}
+    public Fruit() {
+    }
 
     public Fruit(String name, int price) {
         this.name = name;

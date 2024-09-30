@@ -4,13 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FruitDto {
-    private long id;
-    private String name;
-    private int price;
-    private List<SellersDto> sellers;
-    private String seller;
+    private long id = 0;
+    private String name = "";
+    private int price = 0;
+    private List<SellersDto> sellers = new ArrayList<>();
+    private String seller = "";
 
-    public FruitDto() {}
+    public FruitDto() {
+    }
 
     public FruitDto(String name, int price) {
         this.name = name;
@@ -45,7 +46,7 @@ public class FruitDto {
         this.id = id;
         this.name = name;
         this.price = price;
-        this.sellers=new ArrayList<>();
+        this.sellers = new ArrayList<>();
         sellers.forEach(e -> {
             this.sellers.add(e);
         });

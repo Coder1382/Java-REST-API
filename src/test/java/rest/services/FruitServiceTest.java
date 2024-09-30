@@ -2,10 +2,13 @@ package rest.services;
 
 import org.junit.jupiter.api.Test;
 
+import org.mockito.Mockito;
 import rest.dto.FruitDto;
+import rest.model.Fruit;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -14,9 +17,15 @@ public class FruitServiceTest {
     FruitService fruitService = new FruitService();
 
     @Test
-    public void findTest() throws IOException {
-        assertEquals((fruitService.find(1).get(0)).getPrice(), 10);
-        assertEquals((fruitService.find(1).get(0)).getName(), "mango");
+    public void findTest_1() throws IOException {
+        assertEquals((fruitService.find().get(0)).getPrice(), 10);
+        assertEquals((fruitService.find().get(0)).getName(), "mango");
+    }
+
+    @Test
+    public void findTest_2() throws IOException {
+        assertEquals(fruitService.find(1).getPrice(), 10);
+        assertEquals(fruitService.find(1).getName(), "mango");
     }
 
     @Test

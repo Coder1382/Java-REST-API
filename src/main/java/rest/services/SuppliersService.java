@@ -1,9 +1,8 @@
 package rest.services;
 
 import rest.dao.SuppliersDao;
-import rest.dto.SellersDto;
 import rest.dto.SuppliersDto;
-import rest.model.Seller;
+
 import rest.model.Supplier;
 
 import java.io.IOException;
@@ -14,7 +13,11 @@ import java.util.List;
 public class SuppliersService {
     private final SuppliersDao suppliersDao = new SuppliersDao();
 
-    public List<Supplier> find(long id) throws IOException {
+    public List<Supplier> find() throws IOException {
+        return suppliersDao.find();
+    }
+
+    public Supplier find(long id) throws IOException {
         return suppliersDao.find(id);
     }
 

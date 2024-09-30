@@ -36,9 +36,11 @@ public class FruitServlet extends HttpServlet {
                     return;
                 }
             PrintWriter pw = res.getWriter();
-            fruitService.find(id).forEach(e -> {
-                pw.write(jsn.toJson(e) + "\n\n");
-            });
+            if (id == -1)
+                fruitService.find().forEach(e -> {
+                    pw.write(jsn.toJson(e) + "\n\n");
+                });
+            else pw.write(jsn.toJson(fruitService.find(id)));
             pw.close();
         }
     }

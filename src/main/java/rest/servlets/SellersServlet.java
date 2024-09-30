@@ -1,7 +1,6 @@
 package rest.servlets;//package servlets;
 
 import com.google.gson.Gson;
-import rest.dto.FruitDto;
 import rest.dto.SellersDto;
 import rest.services.SellersService;
 
@@ -37,9 +36,11 @@ public class SellersServlet extends HttpServlet {
                     return;
                 }
             PrintWriter pw = res.getWriter();
-            sellersService.find(id).forEach(e -> {
-                pw.write(jsn.toJson(e) + "\n\n");
-            });
+            if (id == -1)
+                sellersService.find().forEach(e -> {
+                    pw.write(jsn.toJson(e) + "\n\n");
+                });
+            else pw.write(jsn.toJson(sellersService.find(id)));
             pw.close();
         } else return;
     }

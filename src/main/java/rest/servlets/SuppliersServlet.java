@@ -1,7 +1,6 @@
 package rest.servlets;
 
 import com.google.gson.Gson;
-import rest.dto.SellersDto;
 import rest.dto.SuppliersDto;
 import rest.services.SuppliersService;
 
@@ -37,9 +36,11 @@ public class SuppliersServlet extends HttpServlet {
                     return;
                 }
             PrintWriter pw = res.getWriter();
-            suppliersService.find(id).forEach(e -> {
-                pw.write(jsn.toJson(e) + "\n\n");
-            });
+            if (id == -1)
+                suppliersService.find().forEach(e -> {
+                    pw.write(jsn.toJson(e) + "\n\n");
+                });
+            else pw.write(jsn.toJson(suppliersService.find(id)));
             pw.close();
         } else return;
     }

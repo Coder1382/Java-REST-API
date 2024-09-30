@@ -1,8 +1,5 @@
 package rest.dao;
 
-import rest.dto.FruitDto;
-import rest.dto.SellersDto;
-import rest.dto.SuppliersDto;
 import rest.model.Fruit;
 import rest.model.Seller;
 import rest.model.Supplier;
@@ -35,11 +32,49 @@ public class SellersDao {
         return id;
     }
 
-    public List<Seller> find(long id) {
-        List<Seller> sellers = new ArrayList<>();
+    public Seller find(long id) {
+        Seller sellers = new Seller();
         try (Connection connect = DatabaseConnector.connector(); PreparedStatement readDB = connect.
-                prepareStatement(id > 0 ? "SELECT * FROM sellers WHERE id=?" : "SELECT * FROM sellers")) {
-            if (id > 0) readDB.setLong(1, id);
+                prepareStatement("SELECT * FROM sellers WHERE id=?")) {
+            readDB.setLong(1, id);
+            ResultSet result = readDB.executeQuery();
+            while (result.next()) {
+                String name = result.getString("name");
+                String supplier = result.getString("supplier");
+                Array arr = result.getArray("fruits");
+                PreparedStatement rdb = connect.prepareStatement("SELECT id FROM suppliers WHERE name=?");
+                rdb.setString(1, supplier);
+                ResultSet rs = rdb.executeQuery();
+                while (rs.next()) {
+                    id = rs.getLong("id");
+                }
+                if (arr != null) {
+                    String[] fruits = (String[]) arr.getArray();
+                    List<Fruit> fruitList = new ArrayList<>();
+                    for (int k = 0; k < fruits.length; ++k) {
+                        PreparedStatement rdf = connect.prepareStatement("SELECT id, price FROM fruit WHERE name=?");
+                        rdf.setString(1, fruits[k]);
+                        ResultSet rf = rdf.executeQuery();
+                        while (rf.next()) {
+                            fruitList.add(new Fruit(rf.getLong("id"), fruits[k], rf.getInt("price")));
+                        }
+                    }
+                    sellers = new Seller(id, name, new Supplier(id, supplier), fruitList);
+                }
+                sellers = new Seller(id, name, new Supplier(id, supplier));
+            }
+            connect.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return sellers;
+    }
+
+    public List<Seller> find() {
+        List<Seller> sellers = new ArrayList<>();
+        long id = 0;
+        try (Connection connect = DatabaseConnector.connector(); PreparedStatement readDB = connect.
+                prepareStatement("SELECT * FROM sellers")) {
             ResultSet result = readDB.executeQuery();
             while (result.next()) {
                 long i = result.getLong("id");

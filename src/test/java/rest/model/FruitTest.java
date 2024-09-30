@@ -28,7 +28,7 @@ public class FruitTest {
         assertEquals(fruit.getPrice(), 5);
         fruit = new Fruit(1, "ignat");
         assertEquals(fruit.getSeller(), "ignat");
-        List<Seller> list=new ArrayList<>();
+        List<Seller> list = new ArrayList<>();
         list.add(new Seller());
         fruit = new Fruit(1, "fruit", 10, list);
         assertEquals(fruit.getName(), "fruit");

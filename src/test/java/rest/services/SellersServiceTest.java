@@ -1,6 +1,5 @@
 package rest.services;
 
-import com.google.gson.Gson;
 import org.junit.jupiter.api.Test;
 
 import rest.dto.SellersDto;
@@ -15,9 +14,15 @@ public class SellersServiceTest {
     SellersService sellersService = new SellersService();
 
     @Test
-    public void findTest() throws IOException {
-        assertEquals((sellersService.find(2).get(0)).getId(), 2);
-        assertEquals((sellersService.find(2).get(0)).getName(), "petr");
+    public void findTest_1() throws IOException {
+        assertEquals((sellersService.find().get(0)).getId(), 1);
+        assertEquals((sellersService.find().get(0)).getName(), "ignat");
+    }
+
+    @Test
+    public void findTest_2() throws IOException {
+        assertEquals(sellersService.find(2).getId(), 2);
+        assertEquals(sellersService.find(2).getName(), "petr");
     }
 
     @Test

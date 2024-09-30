@@ -2,9 +2,6 @@ package rest.servlets;
 
 import com.google.gson.Gson;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.ValueSource;
-import rest.dto.SellersDto;
 import rest.dto.SuppliersDto;
 import rest.services.SuppliersService;
 
@@ -25,15 +22,29 @@ public class SuppliersServletTest {
     SuppliersService suppliersService = mock(SuppliersService.class);
     Gson jsn = mock(Gson.class);
 
-    @ParameterizedTest
-    @ValueSource(strings = {"/myREST/suppliers", "/myREST/suppliers/all", "/myREST/suppliers/1"})
-    public void findTest(String str) throws IOException, ServletException {
-        when(req.getRequestURI()).thenReturn(str);
+    @Test
+    public void findTest_1() throws IOException, ServletException {
+        when(req.getRequestURI()).thenReturn("/myREST/suppliers");
         when(res.getWriter()).thenReturn(pw);
         suppliersServlet.doGet(req, res);
-        verify(pw).write("{\"id\":1,\"name\":\"big\",\"sellers\":[],\"seller\":\"\"}\n\n");
+        verify(pw).write("{\"id\":1,\"name\":\"big\"}\n\n");
     }
 
+    @Test
+    public void findTest_2() throws IOException, ServletException {
+        when(req.getRequestURI()).thenReturn("/myREST/suppliers/all");
+        when(res.getWriter()).thenReturn(pw);
+        suppliersServlet.doGet(req, res);
+        verify(pw).write("{\"id\":1,\"name\":\"big\"}\n\n");
+    }
+
+    @Test
+    public void findTest_3() throws IOException, ServletException {
+        when(req.getRequestURI()).thenReturn("/myREST/suppliers/1");
+        when(res.getWriter()).thenReturn(pw);
+        suppliersServlet.doGet(req, res);
+        verify(pw).write("{\"id\":1,\"name\":\"big\"}");
+    }
 
     @Test
     public void saveTest() throws IOException {

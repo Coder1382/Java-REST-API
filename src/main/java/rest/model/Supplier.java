@@ -9,7 +9,8 @@ public class Supplier {
     private List<Seller> sellers;
     private String seller;
 
-    public Supplier() {}
+    public Supplier() {
+    }
 
     public Supplier(long id) {
         this.id = id;
@@ -32,7 +33,7 @@ public class Supplier {
     public Supplier(long id, String company, List<Seller> sellers) {
         this.id = id;
         this.name = company;
-        this.sellers=new ArrayList<>();
+        this.sellers = new ArrayList<>();
         sellers.forEach(e -> {
             this.sellers.add(e);
         });

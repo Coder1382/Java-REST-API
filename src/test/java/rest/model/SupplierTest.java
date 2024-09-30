@@ -1,8 +1,6 @@
 package rest.model;
 
 import org.junit.jupiter.api.Test;
-import rest.dto.SellersDto;
-import rest.dto.SuppliersDto;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +20,7 @@ public class SupplierTest {
         assertEquals(supplier.getId(), 1);
         supplier = new Supplier("comp", "ignat");
         assertEquals(supplier.getSeller(), "ignat");
-        List<Seller> list=new ArrayList<>();
+        List<Seller> list = new ArrayList<>();
         list.add(new Seller());
         supplier = new Supplier(1, "supplier", list);
         assertEquals(supplier.getName(), "supplier");

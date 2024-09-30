@@ -4,14 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SellersDto {
-    private long id;
-    private String name;
-    private String supply;
-    private String fruit;
-    private SuppliersDto supplier;
-    private List<FruitDto> fruits;
+    private long id = 0;
+    private String name = "";
+    private String supply = "";
+    private String fruit = "";
+    private SuppliersDto supplier = new SuppliersDto();
+    private List<FruitDto> fruits = new ArrayList<>();
 
-    public SellersDto() {}
+    public SellersDto() {
+    }
 
     public SellersDto(long id) {
         this.id = id;
@@ -21,10 +22,12 @@ public class SellersDto {
         this.id = id;
         this.fruit = fruit;
     }
+
     public SellersDto(String name, long id) {
         this.id = id;
         this.name = name;
     }
+
     public SellersDto(String name, String supply) {
         this.name = name;
         this.supply = supply;
