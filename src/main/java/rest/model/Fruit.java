@@ -1,16 +1,16 @@
 package rest.model;
 
+import java.util.ArrayList;
+import java.util.List;
 
 public class Fruit {
-    long id;
-    String name;
-    int price;
+    private long id;
+    private String name;
+    private int price;
+    private List<Seller> sellers;
+    private String seller;
 
-    public Fruit() {
-        id = 0;
-        name = "";
-        price = 0;
-    }
+    public Fruit() {}
 
     public Fruit(String name, int price) {
         this.name = name;
@@ -30,10 +30,25 @@ public class Fruit {
         this.price = price;
     }
 
+    public Fruit(long id, String seller) {
+        this.id = id;
+        this.seller = seller;
+    }
+
     public Fruit(long id, String name, int price) {
         this.id = id;
         this.name = name;
         this.price = price;
+    }
+
+    public Fruit(long id, String name, int price, List<Seller> sellers) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.sellers = new ArrayList<>();
+        sellers.forEach(e -> {
+            this.sellers.add(e);
+        });
     }
 
     public long getId() {
@@ -49,9 +64,9 @@ public class Fruit {
         return price;
     }
 
-    @Override
-    public String toString() {
-        return "id: " + id + ", name: " + name + ", price: " + price;
+    public String getSeller() {
+        return seller;
     }
+
 
 }

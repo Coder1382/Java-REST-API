@@ -4,20 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SellersDto {
-    long id;
-    String name;
-    String supply;
-    String fruit;
-    SuppliersDto supplier;
-    List<FruitDto> fruits;
+    private long id;
+    private String name;
+    private String supply;
+    private String fruit;
+    private SuppliersDto supplier;
+    private List<FruitDto> fruits;
 
-    public SellersDto() {
-        name = "";
-        supply = "";
-        id = 0;
-        supplier = new SuppliersDto();
-        fruits = new ArrayList<>();
-    }
+    public SellersDto() {}
 
     public SellersDto(long id) {
         this.id = id;
@@ -26,32 +20,24 @@ public class SellersDto {
     public SellersDto(long id, String fruit) {
         this.id = id;
         this.fruit = fruit;
-        this.name = "";
-        this.supply = "";
-        supplier = new SuppliersDto();
-        fruits = new ArrayList<>();
     }
-
+    public SellersDto(String name, long id) {
+        this.id = id;
+        this.name = name;
+    }
     public SellersDto(String name, String supply) {
         this.name = name;
         this.supply = supply;
-        this.fruit = "";
-        supplier = new SuppliersDto();
-        fruits = new ArrayList<>();
     }
 
     public SellersDto(String name, SuppliersDto supplier) {
         this.name = name;
         this.supplier = supplier;
-        this.fruit = "";
-        fruits = new ArrayList<>();
     }
 
     public SellersDto(String name, SuppliersDto supplier, List<FruitDto> fruits) {
         this.name = name;
-        this.supply = "";
         this.supplier = supplier;
-        this.fruit = "";
         this.fruits = new ArrayList<>();
         fruits.forEach(e -> {
             this.fruits.add(e);
@@ -61,17 +47,12 @@ public class SellersDto {
     public SellersDto(long id, String name, SuppliersDto supplier) {
         this.id = id;
         this.name = name;
-        this.supply = "";
-        this.fruit = "";
         this.supplier = supplier;
-        this.fruits = new ArrayList<>();
     }
 
     public SellersDto(long id, String name, SuppliersDto supplier, List<FruitDto> fruits) {
         this.id = id;
         this.name = name;
-        this.supply = "";
-        this.fruit = "";
         this.supplier = supplier;
         this.fruits = new ArrayList<>();
         fruits.forEach(e -> {

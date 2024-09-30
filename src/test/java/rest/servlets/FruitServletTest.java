@@ -30,7 +30,7 @@ public class FruitServletTest {
         when(req.getRequestURI()).thenReturn(str);
         when(res.getWriter()).thenReturn(pw);
         fruitServlet.doGet(req, res);
-        verify(pw).write("{\"id\":1,\"name\":\"mango\",\"price\":10}\n\n");
+        verify(pw).write("{\"id\":1,\"name\":\"mango\",\"price\":10,\"sellers\":[]}\n\n");
     }
 
     @Test

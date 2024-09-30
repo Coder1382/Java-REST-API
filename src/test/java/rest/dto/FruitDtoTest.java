@@ -2,6 +2,9 @@ package rest.dto;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class FruitDtoTest {
@@ -19,5 +22,11 @@ public class FruitDtoTest {
         assertEquals(fruit.getId(), 1);
         fruit = new FruitDto(1, 5);
         assertEquals(fruit.getPrice(), 5);
+        fruit = new FruitDto(1, "ignat");
+        assertEquals(fruit.getSeller(), "ignat");
+        List<SellersDto> list=new ArrayList<>();
+        list.add(new SellersDto());
+        fruit = new FruitDto(1, "fruit", 10, list);
+        assertEquals(fruit.getName(), "fruit");
     }
 }

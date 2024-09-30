@@ -1,17 +1,23 @@
 package rest.model;
 
-public class Supplier {
-    long id;
-    String name;
+import java.util.ArrayList;
+import java.util.List;
 
-    public Supplier() {
-        id = 0;
-        name = "";
-    }
+public class Supplier {
+    private long id;
+    private String name;
+    private List<Seller> sellers;
+    private String seller;
+
+    public Supplier() {}
 
     public Supplier(long id) {
         this.id = id;
-        this.name="";
+    }
+
+    public Supplier(String company, String seller) {
+        this.name = company;
+        this.seller = seller;
     }
 
     public Supplier(String company) {
@@ -23,6 +29,18 @@ public class Supplier {
         this.name = company;
     }
 
+    public Supplier(long id, String company, List<Seller> sellers) {
+        this.id = id;
+        this.name = company;
+        this.sellers=new ArrayList<>();
+        sellers.forEach(e -> {
+            this.sellers.add(e);
+        });
+    }
+
+    public String getSeller() {
+        return seller;
+    }
 
     public String getName() {
         return name;
@@ -30,11 +48,6 @@ public class Supplier {
 
     public long getId() {
         return id;
-    }
-
-    @Override
-    public String toString() {
-        return "id: " + id + ", name: " + name;
     }
 
 }

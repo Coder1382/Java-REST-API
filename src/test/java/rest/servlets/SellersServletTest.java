@@ -30,7 +30,7 @@ public class SellersServletTest {
         when(req.getRequestURI()).thenReturn(str);
         when(res.getWriter()).thenReturn(pw);
         sellersServlet.doGet(req, res);
-        verify(pw).write("{\"id\":1,\"name\":\"ignat\",\"supply\":\"\",\"fruit\":\"\",\"supplier\":{\"id\":1,\"name\":\"big\"},\"fruits\":[]}\n\n");
+        verify(pw).write("{\"id\":1,\"name\":\"ignat\",\"supply\":\"\",\"fruit\":\"\",\"supplier\":{\"id\":1,\"name\":\"big\",\"sellers\":[],\"seller\":\"\"},\"fruits\":[]}\n\n");
     }
 
     @Test

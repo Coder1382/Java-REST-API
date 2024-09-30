@@ -1,6 +1,8 @@
 package rest.dao;
 
 import rest.dto.FruitDto;
+import rest.dto.SellersDto;
+import rest.dto.SuppliersDto;
 import rest.model.Fruit;
 
 import java.io.IOException;
@@ -19,10 +21,22 @@ public class FruitDao {
                 long i = result.getLong("id");
                 String name = result.getString("name");
                 int price = result.getInt("price");
-                fruitDtos.add(new FruitDto(i, name, price));
+                Array arr = result.getArray("sellers");
+                if (arr != null) {
+                    String[] sellers = (String[]) arr.getArray();
+                    List<SellersDto> sellersList = new ArrayList<>();
+                    for (int k = 0; k < sellers.length; ++k) {
+                        PreparedStatement rdf = connect.prepareStatement("SELECT id FROM sellers WHERE name=?");
+                        rdf.setString(1, sellers[k]);
+                        ResultSet rf = rdf.executeQuery();
+                        while (rf.next()) {
+                            sellersList.add(new SellersDto(sellers[k],rf.getLong("id")));
+                        }
+                    }
+                    fruitDtos.add(new FruitDto(i, name, price, sellersList));
+                } else fruitDtos.add(new FruitDto(i, name, price));
             }
             connect.close();
-
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -54,9 +68,18 @@ public class FruitDao {
 
     public long update(Fruit fruit) {
         long id = fruit.getId();
-        try (Connection connect = DatabaseConnector.connector(); PreparedStatement updateInDB = connect.
-                prepareStatement("UPDATE fruit SET price=? WHERE id=?")) {
-            updateInDB.setInt(1, fruit.getPrice());
+        String seller = fruit.getSeller();
+        try (Connection connect = DatabaseConnector.connector(); PreparedStatement readDB = connect.
+                prepareStatement("SELECT * FROM fruit WHERE id=? and ?=ANY(sellers)")) {
+            readDB.setLong(1, id);
+            readDB.setString(2, seller);
+            ResultSet rs = readDB.executeQuery();
+            int i = 0;
+            while (rs.next()) {
+                return id;
+            }
+            PreparedStatement updateInDB = connect.prepareStatement("UPDATE fruit SET sellers=array_append(sellers,?) WHERE id=?");
+            updateInDB.setString(1, seller);
             updateInDB.setLong(2, id);
             updateInDB.executeUpdate();
             connect.close();

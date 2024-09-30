@@ -32,5 +32,9 @@ public class SellersDtoTest {
         assertEquals(seller.getName(), "name");
         seller = new SellersDto(1, "fruit");
         assertEquals(seller.getFruit(), "fruit");
+        List<FruitDto> list=new ArrayList<>();
+        list.add(new FruitDto());
+        seller = new SellersDto(1, "seller",new SuppliersDto(), list);
+        assertEquals(seller.getName(), "seller");
     }
 }

@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
+import java.sql.SQLException;
 
 public class SuppliersServlet extends HttpServlet {
     private final SuppliersService suppliersService = new SuppliersService();
@@ -43,6 +44,18 @@ public class SuppliersServlet extends HttpServlet {
         } else return;
     }
 
+    @Override
+    public void doPut(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+        if (req.getRequestURI().split("/")[2].equals("suppliers")) {
+            PrintWriter pw = res.getWriter();
+            try {
+                pw.write("updated under id: " + suppliersService.update(jsn.fromJson(req.getReader(), SuppliersDto.class)));
+            } catch (SQLException | RuntimeException e) {
+                throw new RuntimeException(e);
+            }
+            pw.close();
+        }
+    }
 
     @Override
     public void doDelete(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {

@@ -1,16 +1,16 @@
 package rest.dto;
 
+import java.util.ArrayList;
+import java.util.List;
 
 public class FruitDto {
-    long id;
-    String name;
-    int price;
+    private long id;
+    private String name;
+    private int price;
+    private List<SellersDto> sellers;
+    private String seller;
 
-    public FruitDto() {
-        id = 0;
-        name = "";
-        price = 0;
-    }
+    public FruitDto() {}
 
     public FruitDto(String name, int price) {
         this.name = name;
@@ -30,16 +30,30 @@ public class FruitDto {
         this.price = price;
     }
 
+    public FruitDto(long id, String seller) {
+        this.id = id;
+        this.seller = seller;
+    }
+
     public FruitDto(long id, String name, int price) {
         this.id = id;
         this.name = name;
         this.price = price;
     }
 
+    public FruitDto(long id, String name, int price, List<SellersDto> sellers) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.sellers=new ArrayList<>();
+        sellers.forEach(e -> {
+            this.sellers.add(e);
+        });
+    }
+
     public long getId() {
         return id;
     }
-
 
     public String getName() {
         return name;
@@ -47,6 +61,10 @@ public class FruitDto {
 
     public int getPrice() {
         return price;
+    }
+
+    public String getSeller() {
+        return seller;
     }
 
 }

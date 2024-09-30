@@ -1,6 +1,9 @@
 package rest.model;
 
 import org.junit.jupiter.api.Test;
+import rest.dto.FruitDto;
+import rest.dto.SellersDto;
+import rest.dto.SuppliersDto;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,5 +36,9 @@ public class SellerTest {
         assertEquals(seller.getId(), 1);
         seller = new Seller( "name", supply, flist);
         assertEquals(seller.getId(),0);
+        List<Fruit> list=new ArrayList<>();
+        list.add(new Fruit());
+        seller = new Seller(1, "seller",new Supplier(), list);
+        assertEquals(seller.getName(), "seller");
     }
 }

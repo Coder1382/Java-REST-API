@@ -21,7 +21,7 @@ public class FruitService {
     }
 
     public long update(FruitDto fruitDto) throws IOException, SQLException {
-        Fruit fruit=new Fruit(fruitDto.getId(),fruitDto.getPrice());
+        Fruit fruit=new Fruit(fruitDto.getId(),fruitDto.getSeller());
         return fruitDao.update(fruit);
     }
 

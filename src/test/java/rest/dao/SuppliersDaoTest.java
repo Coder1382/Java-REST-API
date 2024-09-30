@@ -6,9 +6,11 @@ import org.junit.jupiter.api.Test;
 
 import org.testcontainers.containers.PostgreSQLContainer;
 import rest.dto.SuppliersDto;
+import rest.model.Fruit;
 import rest.model.Supplier;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -30,6 +32,12 @@ public class SuppliersDaoTest {
     @Test
     public void saveTest() {
         assertEquals(suppliersDao.save(new Supplier("new")), 4);
+    }
+
+
+    @Test
+    public void updateTest() throws SQLException {
+        assertEquals(suppliersDao.update(new Supplier("big", "ignat")), 1);
     }
 
     @Test

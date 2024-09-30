@@ -1,10 +1,9 @@
 package rest.dao;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 import org.testcontainers.containers.PostgreSQLContainer;
+import rest.database.DatabaseTest;
 import rest.dto.FruitDto;
 import rest.model.Fruit;
 
@@ -12,18 +11,25 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class FruitDaoTest {
     FruitDao fruitDao = new FruitDao();
-
-    @BeforeEach
-    public void before() {
-        PostgreSQLContainer<?> postgres = new PostgreSQLContainer<>("postgres:16-alpine");
+    static DatabaseTest dbt=new DatabaseTest();
+    static PostgreSQLContainer<?> postgres = new PostgreSQLContainer<>("postgres:16-alpine");
+    @BeforeAll
+    public static void before() throws SQLException {
         postgres.start();
+        dbt.createTablesTest();
+        dbt.resetTablesTest();
     }
-
+    @AfterAll
+    public static void after() {
+        PostgreSQLContainer<?> postgres = new PostgreSQLContainer<>("postgres:16-alpine");
+        postgres.stop();
+    }
 
     @Test
     public void findTest() throws IOException {
@@ -47,9 +53,4 @@ public class FruitDaoTest {
         assertEquals(fruitDao.delete(new Fruit(4)), 4);
     }
 
-    @AfterEach
-    public void after() {
-        PostgreSQLContainer<?> postgres = new PostgreSQLContainer<>("postgres:16-alpine");
-        postgres.stop();
-    }
 }

@@ -18,5 +18,11 @@ public class SuppliersDtoTest {
         assertEquals(supplier.getName(), "comp");
         supplier = new SuppliersDto(1, "comp");
         assertEquals(supplier.getId(), 1);
+        supplier = new SuppliersDto("comp", "ignat");
+        assertEquals(supplier.getSeller(), "ignat");
+        List<SellersDto> list=new ArrayList<>();
+        list.add(new SellersDto());
+        supplier = new SuppliersDto(1, "supplier", list);
+        assertEquals(supplier.getName(), "supplier");
     }
 }
