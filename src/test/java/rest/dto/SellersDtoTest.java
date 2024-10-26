@@ -10,31 +10,36 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class SellersDtoTest {
     @Test
     public void sellersDtoTest() {
-        SellersDto seller = new SellersDto();
-        assertEquals(seller.getId(), 0);
-        seller = new SellersDto(1);
-        assertEquals(seller.getId(), 1);
-        seller = new SellersDto("name", "comp");
-        assertEquals(seller.getId(), 0);
+        SellersDto sellersDto = new SellersDto();
+        assertEquals(sellersDto.getId(), 0);
+        sellersDto = new SellersDto("one");
+        assertEquals(sellersDto.getName(), "one");
+        sellersDto = new SellersDto("one", "big");
+        assertEquals(sellersDto.getName(), "one");
         List<FruitDto> flist = new ArrayList<>();
         SuppliersDto supply = new SuppliersDto();
-        seller = new SellersDto(1, "name", supply);
-        assertEquals(seller.getName(), "name");
-        seller = new SellersDto(1, "name", supply, flist);
-        assertEquals(seller.getName(), "name");
-        seller = new SellersDto(1, "mango");
-        assertEquals(seller.getFruit(), "mango");
-        seller = new SellersDto("name", "sup");
-        assertEquals(seller.getSupplier(), "sup");
-        seller = new SellersDto("name", supply);
-        assertEquals(seller.getName(), "name");
-        seller = new SellersDto("name", supply, flist);
-        assertEquals(seller.getName(), "name");
-        seller = new SellersDto(1, "fruit");
-        assertEquals(seller.getFruit(), "fruit");
+        sellersDto = new SellersDto(1, "one", supply);
+        assertEquals(sellersDto.getName(), "one");
+        sellersDto = new SellersDto(1, "one", supply, flist);
+        assertEquals(sellersDto.getName(), "one");
+        sellersDto = new SellersDto("mango", "one");
+        assertEquals(sellersDto.getName(), "mango");
+        sellersDto = new SellersDto("one", "big");
+        assertEquals(sellersDto.getSupplier(), "big");
+        sellersDto = new SellersDto("mango", supply);
+        assertEquals(sellersDto.getName(), "mango");
+        sellersDto = new SellersDto("one", supply, flist);
+        assertEquals(sellersDto.getName(), "one");
+        sellersDto = new SellersDto(1, "fruit");
+        assertEquals(sellersDto.getFruit(), "fruit");
         List<FruitDto> list = new ArrayList<>();
         list.add(new FruitDto());
-        seller = new SellersDto(1, "seller", new SuppliersDto(), list);
-        assertEquals(seller.getName(), "seller");
+        sellersDto = new SellersDto(1, "seller", new SuppliersDto(), list);
+        assertEquals(sellersDto.getName(), "seller");
+        sellersDto = new SellersDto("one", 1);
+        assertEquals(sellersDto.getName(), "one");
+        sellersDto = new SellersDto("one", "fruit", "mango");
+        assertEquals(sellersDto.getValue(), "mango");
+        assertEquals(sellersDto.getField(), "fruit");
     }
 }

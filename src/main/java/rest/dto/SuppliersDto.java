@@ -12,33 +12,32 @@ public class SuppliersDto {
     public SuppliersDto() {
     }
 
-    public SuppliersDto(long id) {
-        this.id = id;
+    public SuppliersDto(String name) {
+        this.name = name;
     }
 
-    public SuppliersDto(String company) {
-        this.name = company;
+    public SuppliersDto(long id, String name) {
+        this.id = id;
+        this.name = name;
     }
 
-    public SuppliersDto(long id, String company) {
+    public SuppliersDto(long id, String name, List<SellersDto> sellers) {
         this.id = id;
-        this.name = company;
-    }
-
-    public SuppliersDto(long id, String company, List<SellersDto> sellers) {
-        this.id = id;
-        this.name = company;
+        this.name = name;
         this.sellers = new ArrayList<>();
         sellers.forEach(e -> {
             this.sellers.add(e);
         });
     }
 
-    public SuppliersDto(String company, String seller) {
-        this.name = company;
+    public SuppliersDto(String name, String seller) {
+        this.name = name;
         this.seller = seller;
     }
-
+    public SuppliersDto(String seller, long id) {
+        this.id = id;
+        this.seller = seller;
+    }
     public String getSeller() {
         return seller;
     }

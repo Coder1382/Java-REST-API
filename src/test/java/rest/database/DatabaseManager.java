@@ -11,12 +11,12 @@ DatabaseManager {
 
     public static void createFruitTable() throws SQLException {
         connect.createStatement().executeUpdate("CREATE TABLE IF NOT EXISTS fruit(id BIGSERIAL PRIMARY KEY, " +
-                "name TEXT UNIQUE NOT NULL, price NUMERIC CHECK (price>=0), sellers TEXT [])");
+                "name TEXT UNIQUE NOT NULL, price NUMERIC CHECK (price>0), sellers TEXT [])");
     }
 
     public static void createSellersTable() throws SQLException {
         connect.createStatement().executeUpdate("CREATE TABLE IF NOT EXISTS sellers(id BIGSERIAL PRIMARY KEY, " +
-                "name TEXT NOT NULL, supplier TEXT, fruits TEXT [])");
+                "name TEXT UNIQUE NOT NULL, supplier TEXT, fruits TEXT [])");
     }
 
     public static void createSuppliersTable() throws SQLException {

@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FruitDto {
-    private long id = 0;
-    private String name = "";
-    private int price = 0;
-    private List<SellersDto> sellers = new ArrayList<>();
-    private String seller = "";
+    private long id;
+    private String name;
+    private int price;
+    private List<SellersDto> sellers;
+    private String seller;
 
     public FruitDto() {
     }
@@ -18,9 +18,6 @@ public class FruitDto {
         this.price = price;
     }
 
-    public FruitDto(long id) {
-        this.id = id;
-    }
 
     public FruitDto(String name) {
         this.name = name;
@@ -31,8 +28,8 @@ public class FruitDto {
         this.price = price;
     }
 
-    public FruitDto(long id, String seller) {
-        this.id = id;
+    public FruitDto(String name, String seller) {
+        this.name = name;
         this.seller = seller;
     }
 

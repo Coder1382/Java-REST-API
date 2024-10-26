@@ -1,7 +1,11 @@
 package rest.servlets;
 
 import com.google.gson.Gson;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.testcontainers.containers.PostgreSQLContainer;
+import rest.database.DatabaseTest;
 import rest.dto.FruitDto;
 import rest.services.FruitService;
 
@@ -21,18 +25,22 @@ public class FruitServletTest {
     FruitServlet fruitServlet = new FruitServlet();
     FruitService fruitService = mock(FruitService.class);
     Gson jsn = mock(Gson.class);
+    static DatabaseTest dbt = new DatabaseTest();
+    static PostgreSQLContainer<?> postgres = new PostgreSQLContainer<>("postgres:16-alpine");
+
+    @BeforeAll
+    public static void beforeAll() throws SQLException {
+        postgres.start();
+        dbt.TablesTest();
+    }
+    @AfterAll
+    public static void afterAll() {
+        postgres.stop();
+    }
 
     @Test
     public void findTest_1() throws IOException, ServletException {
         when(req.getRequestURI()).thenReturn("/myREST/fruit");
-        when(res.getWriter()).thenReturn(pw);
-        fruitServlet.doGet(req, res);
-        verify(pw).write("{\"id\":1,\"name\":\"mango\",\"price\":10}\n\n");
-    }
-
-    @Test
-    public void findTest_2() throws IOException, ServletException {
-        when(req.getRequestURI()).thenReturn("/myREST/fruit/all");
         when(res.getWriter()).thenReturn(pw);
         fruitServlet.doGet(req, res);
         verify(pw).write("{\"id\":1,\"name\":\"mango\",\"price\":10}\n\n");
@@ -48,7 +56,7 @@ public class FruitServletTest {
 
     @Test
     public void saveTest() throws IOException {
-        FruitDto fruitDto = new FruitDto("carrot", 2);
+        FruitDto fruitDto = new FruitDto("tomato", 30);
         long id = 1;
         when(req.getRequestURI()).thenReturn("/myREST/fruit");
         when(jsn.fromJson(req.getReader(), FruitDto.class)).thenReturn(fruitDto);
@@ -56,7 +64,7 @@ public class FruitServletTest {
         when(res.getWriter()).thenReturn(pw);
         try {
             fruitServlet.doPost(req, res);
-            verify(pw).write("saved with id: 1");
+            verify(pw).write("saved with id: 4");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -65,7 +73,7 @@ public class FruitServletTest {
     @Test
     public void updateTest_1() throws IOException, SQLException {
         SQLException ex = mock(SQLException.class);
-        FruitDto fruitDto = new FruitDto(1, 10);
+        FruitDto fruitDto = new FruitDto("tomato", 20);
         when(req.getRequestURI()).thenReturn("/myREST/fruit");
         when(jsn.fromJson(req.getReader(), FruitDto.class)).thenReturn(fruitDto);
         when(res.getWriter()).thenReturn(pw);
@@ -95,13 +103,13 @@ public class FruitServletTest {
 
     @Test
     public void deleteTest() throws IOException {
-        FruitDto fruitDto = new FruitDto(1);
+        FruitDto fruitDto = new FruitDto("mango");
         when(req.getRequestURI()).thenReturn("/myREST/fruit");
         when(jsn.fromJson(req.getReader(), FruitDto.class)).thenReturn(fruitDto);
         when(res.getWriter()).thenReturn(pw);
         try {
             fruitServlet.doDelete(req, res);
-            verify(pw).write("deleted under id: 4");
+            verify(pw).write("deleted under id: 1");
         } catch (Exception e) {
             e.printStackTrace();
         }

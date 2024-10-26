@@ -27,12 +27,12 @@ public class SuppliersService {
     }
 
     public long update(SuppliersDto suppliersDto) throws IOException, SQLException {
-        Supplier supplier = new Supplier(suppliersDto.getId(), suppliersDto.getName());
+        Supplier supplier = new Supplier(suppliersDto.getName(), suppliersDto.getSeller());
         return suppliersDao.update(supplier);
     }
 
     public long delete(SuppliersDto suppliersDto) throws IOException {
-        Supplier supplier = new Supplier(suppliersDto.getId());
+        Supplier supplier = new Supplier(suppliersDto.getName());
         return suppliersDao.delete(supplier);
     }
 }

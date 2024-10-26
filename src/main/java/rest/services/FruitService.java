@@ -25,12 +25,17 @@ public class FruitService {
     }
 
     public long update(FruitDto fruitDto) throws IOException, SQLException {
-        Fruit fruit = new Fruit(fruitDto.getId(), fruitDto.getSeller());
-        return fruitDao.update(fruit);
+        Fruit fruit;
+        if(fruitDto.getPrice()>0){
+            fruit = new Fruit(fruitDto.getName(), fruitDto.getPrice());
+            return fruitDao.updatePrice(fruit);
+        }
+        fruit = new Fruit(fruitDto.getName(), fruitDto.getSeller());
+        return fruitDao.updateSellers(fruit);
     }
 
     public long delete(FruitDto fruitDto) throws IOException {
-        Fruit fruit = new Fruit(fruitDto.getId());
+        Fruit fruit = new Fruit(fruitDto.getName());
         return fruitDao.delete(fruit);
     }
 }

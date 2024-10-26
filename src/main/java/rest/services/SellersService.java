@@ -27,12 +27,14 @@ SellersService {
     }
 
     public long update(SellersDto sellersDto) throws IOException, SQLException {
-        Seller seller = new Seller(sellersDto.getId(), sellersDto.getFruit());
-        return sellersDao.update(seller);
+        Seller seller=new Seller(sellersDto.getName(), sellersDto.getField(), sellersDto.getValue());
+        if(sellersDto.getField().equals("supplier"))
+            return sellersDao.updateSupplier(seller);
+        return sellersDao.updateFruit(seller);
     }
 
     public long delete(SellersDto sellersDto) throws IOException {
-        Seller seller = new Seller(sellersDto.getId());
+        Seller seller = new Seller(sellersDto.getName());
         return sellersDao.delete(seller);
     }
 }

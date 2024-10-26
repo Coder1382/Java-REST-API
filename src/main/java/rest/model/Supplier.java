@@ -16,23 +16,26 @@ public class Supplier {
         this.id = id;
     }
 
-    public Supplier(String company, String seller) {
-        this.name = company;
+    public Supplier(String name, String seller) {
+        this.name = name;
         this.seller = seller;
     }
 
-    public Supplier(String company) {
-        this.name = company;
+    public Supplier(String name) {
+        this.name = name;
     }
 
-    public Supplier(long id, String company) {
+    public Supplier(long id, String name) {
         this.id = id;
-        this.name = company;
+        this.name = name;
     }
-
-    public Supplier(long id, String company, List<Seller> sellers) {
+    public Supplier(String seller, long id) {
         this.id = id;
-        this.name = company;
+        this.seller = seller;
+    }
+    public Supplier(long id, String name, List<Seller> sellers) {
+        this.id = id;
+        this.name = name;
         this.sellers = new ArrayList<>();
         sellers.forEach(e -> {
             this.sellers.add(e);

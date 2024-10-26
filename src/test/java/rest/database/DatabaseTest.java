@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class DatabaseTest {
     @Test
-    public void createTablesTest() throws SQLException {
+    public void TablesTest() throws SQLException {
         Connection connect = DatabaseConnector.connector();
         PostgreSQLContainer<?> postgres = new PostgreSQLContainer<>("postgres:16-alpine");
         postgres.start();
@@ -35,25 +35,19 @@ public class DatabaseTest {
         suppliers = tables.getTables(null, null, "sellers", new String[]{"TABLE"});
         exist = (!fruit.next() ? 1 : (!sellers.next() ? 1 : (!suppliers.next() ? 1 : 0)));
         assertEquals(0, exist);
-        postgres.stop();
-        connect.close();
-    }
-
-    @Test
-    public void resetTablesTest() throws SQLException {
         DatabaseManager.truncateTable("fruit");
         DatabaseManager.truncateTable("sellers");
         DatabaseManager.truncateTable("suppliers");
-        Connection connect = DatabaseConnector.connector();
         connect.createStatement().executeUpdate("INSERT INTO suppliers(name) VALUES('big')");
         connect.createStatement().executeUpdate("INSERT INTO suppliers(name) VALUES('small')");
         connect.createStatement().executeUpdate("INSERT INTO suppliers(name) VALUES('middle')");
-        connect.createStatement().executeUpdate("INSERT INTO sellers(name, supplier) VALUES('ignat', 'big')");
-        connect.createStatement().executeUpdate("INSERT INTO sellers(name, supplier) VALUES('petr', 'small')");
-        connect.createStatement().executeUpdate("INSERT INTO sellers(name, supplier) VALUES('fedor', 'middle')");
+        connect.createStatement().executeUpdate("INSERT INTO sellers(name) VALUES('one')");
+        connect.createStatement().executeUpdate("INSERT INTO sellers(name) VALUES('two')");
+        connect.createStatement().executeUpdate("INSERT INTO sellers(name) VALUES('three')");
         connect.createStatement().executeUpdate("INSERT INTO fruit(name, price) VALUES('mango', 10)");
         connect.createStatement().executeUpdate("INSERT INTO fruit(name, price) VALUES('apple', 5)");
         connect.createStatement().executeUpdate("INSERT INTO fruit(name, price) VALUES('avocado', 15)");
+        postgres.stop();
         connect.close();
     }
 }

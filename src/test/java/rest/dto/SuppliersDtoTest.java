@@ -10,19 +10,17 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class SuppliersDtoTest {
     @Test
     public void sellersDtoTest() {
-        SuppliersDto supplier = new SuppliersDto();
-        assertEquals(supplier.getId(), 0);
-        supplier = new SuppliersDto(1);
-        assertEquals(supplier.getId(), 1);
-        supplier = new SuppliersDto("comp");
-        assertEquals(supplier.getName(), "comp");
-        supplier = new SuppliersDto(1, "comp");
-        assertEquals(supplier.getId(), 1);
-        supplier = new SuppliersDto("comp", "ignat");
-        assertEquals(supplier.getSeller(), "ignat");
+        SuppliersDto suppliersDto = new SuppliersDto();
+        assertEquals(suppliersDto.getId(), 0);
+        suppliersDto = new SuppliersDto("big");
+        assertEquals(suppliersDto.getName(), "big");
+        suppliersDto = new SuppliersDto(1, "big");
+        assertEquals(suppliersDto.getId(), 1);
+        suppliersDto = new SuppliersDto("big", "one");
+        assertEquals(suppliersDto.getSeller(), "one");
         List<SellersDto> list = new ArrayList<>();
         list.add(new SellersDto());
-        supplier = new SuppliersDto(1, "supplier", list);
-        assertEquals(supplier.getName(), "supplier");
+        suppliersDto = new SuppliersDto(1, "supplier", list);
+        assertEquals(suppliersDto.getName(), "supplier");
     }
 }

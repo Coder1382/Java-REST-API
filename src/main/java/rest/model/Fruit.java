@@ -18,9 +18,6 @@ public class Fruit {
         this.price = price;
     }
 
-    public Fruit(long id) {
-        this.id = id;
-    }
 
     public Fruit(String name) {
         this.name = name;
@@ -31,8 +28,8 @@ public class Fruit {
         this.price = price;
     }
 
-    public Fruit(long id, String seller) {
-        this.id = id;
+    public Fruit(String name, String seller) {
+        this.name = name;
         this.seller = seller;
     }
 
@@ -55,7 +52,6 @@ public class Fruit {
     public long getId() {
         return id;
     }
-
 
     public String getName() {
         return name;

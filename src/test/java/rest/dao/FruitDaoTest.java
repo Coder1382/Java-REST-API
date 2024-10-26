@@ -6,7 +6,6 @@ import org.testcontainers.containers.PostgreSQLContainer;
 import rest.database.DatabaseTest;
 import rest.model.Fruit;
 
-import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.IOException;
@@ -18,15 +17,12 @@ public class FruitDaoTest {
     static PostgreSQLContainer<?> postgres = new PostgreSQLContainer<>("postgres:16-alpine");
 
     @BeforeAll
-    public static void before() throws SQLException {
+    public static void beforeAll() throws SQLException {
         postgres.start();
-        dbt.createTablesTest();
-        dbt.resetTablesTest();
+        dbt.TablesTest();
     }
-
     @AfterAll
-    public static void after() {
-        PostgreSQLContainer<?> postgres = new PostgreSQLContainer<>("postgres:16-alpine");
+    public static void afterAll() {
         postgres.stop();
     }
 
@@ -44,17 +40,30 @@ public class FruitDaoTest {
 
     @Test
     public void saveTest() {
-        assertEquals(fruitDao.save(new Fruit("tomato", 1)), 4);
+        assertEquals(fruitDao.save(new Fruit("tomato", 30)), 4);
     }
 
     @Test
-    public void updateTest() {
-        assertEquals(fruitDao.update(new Fruit(4, 8)), 4);
+    public void updateTest_1() {
+        assertEquals(fruitDao.updatePrice(new Fruit("tomato", 20)), 4);
     }
 
+    @Test
+    public void updateTest_2() {
+        assertEquals(fruitDao.updateSellers(new Fruit("tomato", "one")), 4);
+    }
+    @Test
+    public void findTest_3() throws IOException {
+        assertEquals((fruitDao.find().get(3)).getName(), "tomato");
+        assertEquals((fruitDao.find().get(3)).getPrice(), 20);
+    }
+    @Test
+    public void findTest_4() throws IOException {
+        assertEquals(fruitDao.find(4).getName(), "tomato");
+        assertEquals(fruitDao.find(4).getPrice(), 20);
+    }
     @Test
     public void deleteTest() {
-        assertEquals(fruitDao.delete(new Fruit(4)), 4);
+        assertEquals(fruitDao.delete(new Fruit("tomato")), 4);
     }
-
 }

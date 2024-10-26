@@ -13,8 +13,7 @@ public class DatabaseConnector {
         Connection connect = null;
         String db = null, driver = null, url = null, login = null, pwd = null;
         Properties props = new Properties();
-        try {
-            FileInputStream read = new FileInputStream(Paths.get("config.properties").toAbsolutePath().toString());
+        try(FileInputStream read = new FileInputStream(Paths.get("config.properties").toAbsolutePath().toString());) {
             props.load(read);
             db = props.getProperty("db");
             driver = props.getProperty("driver");

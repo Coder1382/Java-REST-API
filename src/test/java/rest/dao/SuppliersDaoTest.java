@@ -13,49 +13,54 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class SuppliersDaoTest {
     SuppliersDao suppliersDao = new SuppliersDao();
-
     static DatabaseTest dbt = new DatabaseTest();
     static PostgreSQLContainer<?> postgres = new PostgreSQLContainer<>("postgres:16-alpine");
 
     @BeforeAll
     public static void before() throws SQLException {
         postgres.start();
-        dbt.createTablesTest();
-        dbt.resetTablesTest();
+        dbt.TablesTest();
     }
 
     @AfterAll
     public static void after() {
-        PostgreSQLContainer<?> postgres = new PostgreSQLContainer<>("postgres:16-alpine");
         postgres.stop();
     }
 
     @Test
     public void findTest_1() throws IOException {
-        assertEquals((suppliersDao.find().get(0)).getId(), 2);
-        assertEquals((suppliersDao.find().get(0)).getName(), "small");
+        assertEquals((suppliersDao.find().get(0)).getName(), "big");
     }
 
     @Test
     public void findTest_2() throws IOException {
-        assertEquals(suppliersDao.find(1).getId(), 1);
         assertEquals(suppliersDao.find(1).getName(), "big");
     }
 
     @Test
     public void saveTest() {
-        assertEquals(suppliersDao.save(new Supplier("new")), 4);
+        assertEquals(suppliersDao.save(new Supplier("huge")), 4);
     }
 
 
     @Test
     public void updateTest() throws SQLException {
-        assertEquals(suppliersDao.update(new Supplier(1, "ignat")), 1);
+        assertEquals(suppliersDao.update(new Supplier("huge", "two")), 4);
+    }
+
+    @Test
+    public void findTest_3() throws IOException {
+        assertEquals((suppliersDao.find().get(3)).getName(), "huge");
+    }
+
+    @Test
+    public void findTest_4() throws IOException {
+        assertEquals(suppliersDao.find(4).getName(), "huge");
     }
 
     @Test
     public void deleteTest() {
-        assertEquals(suppliersDao.delete(new Supplier(4)), 4);
+        assertEquals(suppliersDao.delete(new Supplier("huge")), 4);
     }
 
 }
