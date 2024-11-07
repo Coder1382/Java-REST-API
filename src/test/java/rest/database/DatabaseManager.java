@@ -9,6 +9,10 @@ public class
 DatabaseManager {
     static final Connection connect = DatabaseConnector.connector();
 
+    public static void createDatabase() throws SQLException {
+        connect.createStatement().executeUpdate("CREATE DATABASE IF NOT EXISTS goods");
+    }
+
     public static void createFruitTable() throws SQLException {
         connect.createStatement().executeUpdate("CREATE TABLE IF NOT EXISTS fruit(id BIGSERIAL PRIMARY KEY, " +
                 "name TEXT UNIQUE NOT NULL, price NUMERIC CHECK (price>0), sellers TEXT [])");
@@ -31,5 +35,9 @@ DatabaseManager {
 
     public static void truncateTable(String table) throws SQLException {
         connect.createStatement().executeUpdate("TRUNCATE TABLE " + table + " RESTART IDENTITY");
+    }
+
+    public static void dropDatabase(String db) throws SQLException {
+        connect.createStatement().executeUpdate("DROP DATABASE IF EXISTS goods");
     }
 }
